@@ -1,0 +1,142 @@
+<include file="Public/min-header" />
+<script>
+function export_order(){
+    var keyword = $.trim($('input[name=keyword]').val());
+    var phone = $.trim($('input[name=phone]').val());
+    var sex = $.trim($('input[name=sex]').val());
+    location.href="{:U('Export/enroll')}?keyword="+keyword+"&phone="+phone+"&sex="+sex;
+}
+</script>
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+	<section class="content">
+       <div class="row">
+       		<div class="col-xs-12">
+	       		<div class="box">
+	             <div class="box-header">
+	             	<if condition="$admin_info.type eq 1">
+	             	<include file="Course/nav" act_nav="course"/>
+	             	</if>
+	               	<nav class="navbar navbar-default">	     
+				        <div class="collapse navbar-collapse">
+				          <form class="navbar-form form-inline" action="{:U('Course/index')}" method="get">
+				            <div class="form-group">
+				              	<input type="text" name="keywords" class="form-control" placeholder="课程名称" value="{:I('keywords')}">
+				              	<select name="type" class="form-control">
+				              	<option value="">课程类型</option>
+				              	<foreach name="course_types" item="val" key="key">
+				              	<option value="{$key}" <if condition="$request.type eq $key">selected</if> >{$val}</option>
+				              	</foreach>
+				              	</select>
+				            </div>
+				            <button type="submit" class="btn btn-default">搜索</button>
+				          </form>		
+				      	</div>
+	    			</nav>
+	             </div>	             
+	             <div class="box-body">	               
+	           		<div class="row">
+	            	<div class="col-sm-12">
+		              <table id="list-table" class="table table-bordered table-striped dataTable">
+		                 <thead>
+		                   <tr role="row">
+			                   <th>ID</th>
+			                   <th>图片</th>
+			                   <th>名称</th>
+			                   <th>类型</th>
+			                   <th>价格</th>
+							   <th>是否推荐</th>
+							   <th>上/下架</th>
+			                   <th>添加时间</th>
+			                   <th>操作</th>
+		                   </tr>
+		                 </thead>
+						<tbody>
+						  <foreach name="list" item="vo" key="k" >
+						  	<tr role="row" align="center">
+		                     <td>{$vo.id}</td>
+		                     <td><img src="{$vo['pics'][0]}" style="width:50px; height:50px;"></td>
+		                     <td>{$vo.name}</td>
+		                     <td>{:$course_types[$vo['type']]}</td>
+							 <td>{$vo.price}</td>
+		                     <if condition="$vo.is_stick eq 1">
+		                     <td><img style="cursor:pointer;" width="20" height="20" src="__PUBLIC__/images/yes.png" onclick="set_stick(this,'{$vo.id}','1')"/></td>
+		                     <else/>
+		                     <td><img style="cursor:pointer;" width="20" height="20" src="__PUBLIC__/images/cancel.png" onclick="set_stick(this,'{$vo.id}','2')"/></td>
+		                     </if>
+		                     <if condition="$vo.status eq 1">
+		                     <td><img style="cursor:pointer;" width="20" height="20" src="__PUBLIC__/images/yes.png" onclick="set_status(this,'{$vo.id}','1')"/>  </td>
+		                     <else/>
+		                     <td><img style="cursor:pointer;" width="20" height="20" src="__PUBLIC__/images/cancel.png" onclick="set_status(this,'{$vo.id}','2')"/>  </td>
+		                     </if>
+		                     <td>{$vo.check_time}</td>
+		                     <td>
+		                       <if condition="$admin_info.type eq 2">
+		                       <a title="编辑信息" class="btn btn-primary" href="{:U('Course/edit',array('id'=>$vo['id']))}"><i class="fa fa-pencil"></i></a>
+		                       </if>
+		                       <a title="删除课程" class="btn btn-danger" href="javascript:void(0)" data-id="{$vo.id}" onclick="dele_course('{$vo.id}')"><i class="fa fa-trash-o"></i></a>
+							 </td>
+		                   </tr>
+		                  </foreach>
+		                   </tbody>
+		                 <tfoot>		                 
+		                 </tfoot>
+		               </table>	 
+	               </div>
+	          </div>
+              <div class="row">
+              	    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">{$page}</div>		
+              </div>
+	         </div>
+	        </div>
+       	</div>
+       </div>
+   </section>
+</div>
+<script>
+//设置推荐
+function set_stick(obj,id,is_stick){
+	$.post("{:U('Course/set_stick')}",{id:id,is_stick:is_stick},function(data){
+		if(data.status == '1'){
+			location.reload();
+		}else{
+			jsalert(data.info,2);
+		}
+	});
+}
+//设置推荐
+function set_status(obj,id,status){
+	$.post("{:U('Course/set_status')}",{id:id,status:status},function(data){
+		if(data.status == '1'){
+			location.reload();
+		}else{
+			jsalert(data.info,2);
+		}
+	});
+}
+//注销老师账号
+function dele_course(id){
+	jsconfirm('确认要注销此账号吗？',function(){
+		$.ajax({
+			type : 'post',
+			url : "{:U('Course/dele_course')}",
+			data : {id:id},
+			dataType : 'json',
+			success : function(data){
+				if(data.status == '1'){
+					jsalert(data.info,1,function(){
+						location.reload();
+					});
+				}else{
+					jsalert(data.info,2);
+				}
+			}
+		})
+	});
+	return false;
+}
+
+</script> 
+</body>
+</html>

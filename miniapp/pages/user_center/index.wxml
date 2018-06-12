@@ -1,0 +1,73 @@
+<view class="edu-center-top">
+    <view class="edu-center-n-info">
+        <view class="edu-center-left">
+            <image src="../../assets/images/timg.jpeg" class="edu-center-logo"/>
+        </view>
+        <view class="edu-center-right">
+           <label class="edu-center-title">小珏子</label>
+           <label class="edu-center-name">老师</label>
+        </view>
+    </view>
+</view>
+<!-- 我的订单 start -->
+<view class="edu-center-order">
+      <view class="edu-center-look">
+          <view class="edu-center-look-a edu-bottom-solid">  
+              <view class="edu-center-o-left">
+                    <text class="edu-center-myorder">我的订单</text>
+              </view>
+               <view class="edu-center-o-right">
+                     <a href="#">
+                      <text class="edu-center-look-all">查看全部订单</text>
+                       <image src="../../assets/images/left-icon.png" class="edu-left-icon"/>
+                     </a>
+               </view>
+          </view>
+          <view class="edu-center-pay-evaluate">
+              <view class="edu-center-pay edu-width-b">
+                   <view class="edu-center-pay-top">
+                       <image  src="../../assets/images/wait-pay-icon.png" class="edu-center-pay-icon"/>
+                   </view>
+                     <text class="edu-center-waitpay-text">待付款</text> 
+                     <label class="edu-center-nums">1</label>
+              </view>
+              <view class="edu-center-pay edu-width-b">
+                   <view class="edu-center-pay-top">
+                       <image  src="../../assets/images/evaluate-icon.png" class="edu-center-pay-icon"/>
+                   </view>
+                     <text class="edu-center-waitpay-text">待评价</text> 
+                     <label class="edu-center-nums-b">12</label>
+              </view>
+          </view>
+      </view>
+      <!-- 其他 -->
+      <view class="edu-center-other">
+            <view class="edu-center-o-q">
+                   <view class="edu-center-o-a">
+                        <image src="../../assets/images/gz-icon.png" class="edu-center-o-icon"/>
+                   </view>
+                   <text>我的关注</text>
+            </view>
+            <view class="edu-center-o-q">
+                   <view class="edu-center-o-a">
+                        <image src="../../assets/images/teacher-icon.png" class="edu-center-o-icon"/>
+                   </view>
+                   <text>成为老师</text>
+                   <label class="edu-center-c-t">审核中</label>
+            </view>
+            <view class="edu-center-o-q">
+                   <view class="edu-center-o-a">
+                        <image src="../../assets/images/question-cion.png" class="edu-center-o-icon"/>
+                   </view>
+                   <text>常见问题</text>  
+            </view>
+            <view class="edu-center-o-q">
+                   <view class="edu-center-o-a">
+                        <image src="../../assets/images/about-icon.png" class="edu-center-o-icon"/>
+                   </view>
+                   <text>关于我们</text>  
+            </view>   
+      </view>
+      <!-- 其他end -->  
+</view>
+<!-- 我的订单 end -->

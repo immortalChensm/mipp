@@ -1,0 +1,81 @@
+<include file="Public/min-header" />
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+	<section class="content">
+       <div class="row">
+       		<div class="col-xs-12">
+	       		<div class="box">
+	             <div class="box-header">
+	               	<nav class="navbar navbar-default">	     
+				        <div class="collapse navbar-collapse">
+				          <form class="navbar-form form-inline" action="{:U('Comment/course_cnlist')}" method="get">
+				            <div class="form-group">
+				              	<input type="text" name="keywords" class="form-control" placeholder="课程名称" value="{$request_data.keywords}">
+				            </div>
+				            <button type="submit" class="btn btn-default">搜索</button>
+				          </form>		
+				      	</div>
+	    			</nav>
+	             </div>	             
+	             <div class="box-body">	               
+	           		<div class="row">
+	            	<div class="col-sm-12">
+		              <table id="list-table" class="table table-bordered table-striped dataTable">
+		                 <thead>
+		                   <tr role="row">
+			                   <th>ID</th>
+			                   <th>课程名称</th>
+			                   <th>学生</th>
+			                   <th>分数</th>
+			                   <th>评论内容</th>
+			                   <th>评论时间</th>
+			                   <th>是否显示</th>
+		                   </tr>
+		                 </thead>
+						<tbody>
+						  <foreach name="list" item="vo" key="k" >
+						  	<tr role="row" align="center">
+		                     <td>{$vo.id}</td>
+		                     <td>{$vo.course_name}</td>
+		                     <td>{$vo.name}</td>
+							 <td>{$vo.star|default='0'}</td>
+							 <td>{$vo.content|default='--'}</td>
+		                     <td>{$vo.create_date}</td>
+		                     <if condition="$vo.status eq 1">
+		                     <td title="显示"><img style="cursor:pointer;" width="20" height="20" src="__PUBLIC__/images/yes.png" onclick="set_status(this,'{$vo.id}','1')"/>  </td>
+		                     <else/>
+		                     <td title="不显示"><img style="cursor:pointer;" width="20" height="20" src="__PUBLIC__/images/cancel.png" onclick="set_status(this,'{$vo.id}','2')"/>  </td>
+		                     </if>
+		                   </tr>
+		                  </foreach>
+		                   </tbody>
+		                 <tfoot>		                 
+		                 </tfoot>
+		               </table>	 
+	               </div>
+	          </div>
+              <div class="row">
+              	    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">{$page}</div>
+              </div>
+	         </div>
+	        </div>
+       	</div>
+       </div>
+   </section>
+</div>
+<include file="Public/dialog" />
+<script>
+//设置显示/不显示
+function set_status(obj,id,status){
+	$.post("{:U('Comment/set_status')}",{id:id,status:status},function(data){
+		if(data.status == '1'){
+			location.reload();
+		}else{
+			jsalert(data.info,2);
+		}
+	});
+}
+</script>
+</body>
+</html>

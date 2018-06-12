@@ -1,0 +1,141 @@
+<include file="Public/min-header" />
+<script>
+function export_order(){
+    var keyword = $.trim($('input[name=keyword]').val());
+    var phone = $.trim($('input[name=phone]').val());
+    var sex = $.trim($('input[name=sex]').val());
+    location.href="{:U('Export/enroll')}?keyword="+keyword+"&phone="+phone+"&sex="+sex;
+}
+</script>
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+	<section class="content">
+       <div class="row">
+       		<div class="col-xs-12">
+	       		<div class="box">
+	             <div class="box-header">
+	             	<include file="Teacher/nav" act_nav="teacher"/>
+	               	<nav class="navbar navbar-default">	     
+				        <div class="collapse navbar-collapse">
+				          <form class="navbar-form form-inline" action="{:U('Admin/Teacher/index')}" method="get">
+				            <div class="form-group">
+				              	<input type="text" name="keywords" class="form-control" placeholder="姓名/手机号/昵称" value="{:I('keywords')}">
+				              	<select name="teach_type" class="form-control">
+				              	<option value="">授课类型</option>
+				              	<foreach name="teach_types" item="val">
+				              	<option value="{$key}" <if condition="$request.teach_type eq $key">selected</if> >{$val}</option>
+				              	</foreach>
+				              	</select>
+				              	<select name="sex" class="form-control">
+				              	<option value="">性别</option>
+				              	<option value="1" <if condition="$request.sex eq 1">selected</if> >男</option>
+				              	<option value="2" <if condition="$request.sex eq 2">selected</if>>女</option>
+				              	</select>
+
+				            </div>
+				            <button type="submit" class="btn btn-default">搜索</button>
+				            <!-- <div class="form-group pull-right">
+				              <a href="javascript:void(0)"  style="margin-left:6px;"  onclick="export_order()" class="btn btn-primary pull-right"><i class="fa fa-upload"></i> 导出报名列表</a>
+				            </div> -->		          
+				          </form>		
+				      	</div>
+	    			</nav>
+	             </div>	             
+	             <div class="box-body">	               
+	           		<div class="row">
+	            	<div class="col-sm-12">
+		              <table id="list-table" class="table table-bordered table-striped dataTable">
+		                 <thead>
+		                   <tr role="row">
+			                   <th>ID</th>
+			                   <th>头像</th>
+			                   <th>昵称</th>
+			                   <th>姓名</th>
+			                   <th>性别</th>
+			                   <th>手机号</th>
+							   <th>授课类型</th>
+							   <th>是否推荐</th>
+			                   <th>加入时间</th>
+			                   <th>操作</th>
+		                   </tr>
+		                 </thead>
+						<tbody>
+						  <foreach name="list" item="vo" key="k" >
+						  	<tr role="row" align="center">
+		                     <td>{$vo.id}</td>
+		                     <td><img src="{$vo.headimgurl}" style="width:50px; height:50px;"></td>
+		                     <td>{$vo.nickname}</td>
+		                     <td>{$vo.name}</td>
+		                     <td><if condition="$vo.sex eq 1">男<elseif condition="$vo.sex eq 2"/>女<else/>未知</if></td>
+							 <td>{$vo.phone}</td>
+		                     <td>{:$teach_types[$vo['teach_type']]}</td>
+		                     <if condition="$vo.is_stick eq 1">
+		                     <td><img style="cursor:pointer;" width="20" height="20" src="/Public/images/yes.png" onclick="set_stick(this,'{$vo.id}','1')"/>  </td>
+		                     <else/>
+		                     <td><img style="cursor:pointer;" width="20" height="20" src="/Public/images/cancel.png" onclick="set_stick(this,'{$vo.id}','2')"/>  </td>
+		                     </if>
+		                     <td>{$vo.check_time}</td>
+		                     <td>
+							  <if condition="$vo.has_account neq null">
+		                      <a title="越权登录" class="btn btn-primary" href="{:U('Admin/over_login',array('teacher_id'=>$vo['id']))}" ><i class="fa fa-user"></i></a>
+							  <else/>
+		                      <a title="添加账号" class="btn btn-warning" href="{:U('Admin/add_adminer',array('teacher_id'=>$vo['id']))}" ><i class="fa fa-user-plus"></i></a>
+							  </if>
+		                      <a title="编辑信息" class="btn btn-primary" href="{:U('Teacher/edit',array('id'=>$vo['id']))}"><i class="fa fa-pencil"></i></a>
+		                      <a title="注销账号" class="btn btn-danger" href="javascript:void(0)" data-id="{$vo.id}" onclick="dele_teacher('{$vo.id}')"><i class="fa fa-trash-o"></i></a>
+							 </td>
+		                   </tr>
+		                  </foreach>
+		                   </tbody>
+		                 <tfoot>		                 
+		                 </tfoot>
+		               </table>	 
+	               </div>
+	          </div>
+              <div class="row">
+              	    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">{$page}</div>		
+              </div>
+	         </div>
+	        </div>
+       	</div>
+       </div>
+   </section>
+</div>
+<script>
+//设置推荐
+function set_stick(obj,id,is_stick){
+	$.post("/Admin/Teacher/set_stick",{id:id,is_stick:is_stick},function(data){
+		if(is_stick == '1'){
+			$(obj).attr('src','/Public/images/cancel.png');
+		}else{
+			$(obj).attr('src','/Public/images/yes.png');
+		}
+		location.reload();
+	});
+}
+
+//注销老师账号
+function dele_teacher(id){
+	jsconfirm('确认要注销此账号吗？',function(){
+		$.ajax({
+			type : 'post',
+			url : '/Admin/Teacher/dele_teacher',
+			data : {id:id},
+			dataType : 'json',
+			success : function(data){
+				if(data.status == '1'){
+					jsalert(data.info,1,function(){
+						location.reload();
+					});
+				}else{
+					jsalert(data.info,2);
+				}
+			}
+		})
+	});
+	return false;
+}
+</script> 
+</body>
+</html>

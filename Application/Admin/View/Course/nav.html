@@ -1,0 +1,11 @@
+<ul class="nav nav-tabs" style="margin-bottom:10px;">
+    <li name="course"><a href="{:U('Course/index')}">课程列表</a></li>                           
+    <li name="course_type"><a href="{:U('Course/course_type')}">课程类型</a></li>                        
+    <li name="course_tag"><a href="{:U('Course/course_tag')}">课程标签</a></li>                        
+</ul>
+<script>
+$(function(){
+	var act_nav = '[act_nav]';
+	$('.nav-tabs').find('li[name='+act_nav+']').addClass('active');
+})
+</script>

@@ -1,0 +1,70 @@
+<!-- dialog_begin -->
+<style>
+/*弹窗*/
+.dialog{ background:#FFF;-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;box-shadow: 1px 1px 2px #BBBBBB;}
+.dialog_top{ height:34px; width:auto; line-height:34px; border-bottom:1px solid #e7e7e7; background:#f6f6f6;-moz-border-radius:3px 3px 0px 0px; -webkit-border-radius:3px 3px 0px 0px; border-radius:3px 3px 0px 0px;}
+.dialog_top_left{ float:left; line-height:34px; color:#666; font-size:14px; padding-left:10px;font-weight:bold;}
+.dialog_top_right{ float:right; padding-right:10px; font-size:14px;}
+
+.list_content_box ul{width:100%;padding:0!important;}
+.list_content_box ul li{width:100%;list-style:none;float:left;/*min-height:50px;*/ border-bottom:1px solid #ebebeb;}
+.list_content_box ul li:hover{ background:#fbfbfb;}
+.list_content_box ul .image_list{float:left;width:150px;height:150px;margin-left:12px;margin-top:8px;cursor:pointer;}
+.list_content{ float:left; font-size:14px; text-align:center; padding-top:10px; padding-bottom:10px; color:#565656;}
+.list_content img{ border:1px solid #ccc;}
+.list_content select{height:30px;}
+.list_text{border:solid 1px #ccc;border-radius:3px;padding-left:5px;}
+.list_text[type=text]{height:30px;}
+.dialog-btn{padding: 4px 20px;border:1px solid #337ab7;cursor: pointer;background: none repeat scroll 0% 0% #337ab7;border-radius: 5px;color: #FFF;font-family: "Microsoft YaHei","黑体","宋体";font-size: 14px;}
+</style>
+<div id="dialog" style="display:none;">
+    <div class="dialog" style="width:500px;">
+        <div class="dialog_top">
+            <div class="dialog_top_left" id="logtit">信息</div>
+<!--             <div class="dialog_top_right"> -->
+<!--                 <a href="javascript:void(0)" title="关闭窗口" onclick="close_box()">关闭</a> -->
+<!--             </div> -->
+        </div>
+        <div class="dialog_box">
+            <div class="mainlist">
+                <div class="list_content_box">
+                    <ul id="dialogHtml">
+                    
+                    </ul>
+                </div>
+                <div class="list_content" style="width:100%; padding-top:15px; padding-bottom:15px;">
+                	<span class="dialog-btn" id="dialog_btn">确定</span>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+function dialog(html,title,backfun){
+	$('#logtit').text(title);
+	$("#dialogHtml").html(html);
+	$('#dialog_btn').unbind('click');//先解除其他的点击事件绑定
+	if(backfun == null){
+		$('#dialog_btn').bind('click',function(){layer.closeAll();});
+	}else{
+		$('#dialog_btn').bind('click',backfun);
+	}
+    var close = function(){
+        $('#dialogHtml').empty();
+    }
+    layer.open({
+	    type:1,
+	    skin: 'layui-layer-demo', //样式类名
+	    closeBtn: 1, //不显示关闭按钮
+	    title:false,
+	    shift: 1,
+	    shadeClose: false, //开启遮罩关闭
+	    area:['500px','auto'],
+	    shade:'#fff',
+	    content:$("#dialog"),
+        cancel :close
+	});
+}
+</script>
+<!-- dialog_end -->

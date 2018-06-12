@@ -1,0 +1,76 @@
+<view class="edu-att-tab edu-border-top edu-att-position-w">
+    <view class="{{selected?'edu-width-b edu-att-fl ':'edu-width-b edu-att-fl  edu-att-select '}}" bindtap='attSelect'>老师</view>
+    <view class="{{selected?'edu-width-b edu-att-fl edu-att-select':'edu-width-b edu-att-fl '}}" bindtap='attSelect'>课程</view> 
+</view>
+
+<view class="edu-att-topspace-a">
+<!-- 老师列表 -->
+<view class="{{selected?'container edu-none':'container edu-show'}}">
+     <view class="edu-att-ew-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
+       <view class="content edu-acticle-list-tj scroll-view-item ">
+         <view class="edu-list-left-a edu-att-l-q">
+            <image src="../../assets/images/001.jpg" class="edu-list-img-a"/>
+         </view>
+          <view class="edu-list-right-a edu-att-l-w">
+              <view class="edu-list-one">
+                  <text class="edu-list-cy-name">张雨</text>
+              </view>
+              <view class="edu-list-two">
+                <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <text>4.7</text>
+              </view>
+              <view class="edu-introduce">
+                 <label>简介：精品茶道，等你来到，等你和大家...</label>
+              </view>
+               <view class="edu-jl-list">
+                 <label class="edu-tea-name">茶艺</label>
+                  <label class="edu-sales edu-jl">
+                    <image src="../../assets/images/gps-icon.png"  class="edu-gps"/>
+                     1.2km
+                  </label>
+              </view>
+          </view> 
+          </view>
+            <view class="  del scroll-view-item" catchtap="del" data-index="{{index}}">取消关注</view>
+     </view>
+</view>
+<!-- 老师列表end -->
+<!-- 课程列表 -->
+<view class="{{selected?'container edu-show':'container edu-none'}}">
+  <view class="edu-att-ew-item  {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
+   <view class="content edu-acticle-list-tj scroll-view-item ">
+         <view class="edu-list-left edu-att-le">
+            <image src="../../assets/images/001.jpg" class="edu-list-img"/>
+         </view>
+          <view class="edu-list-right edu-att-right-ae">
+              <view class="edu-list-one">
+                  <text class="edu-list-cy-name">茶艺精品班{{item.content}}</text>
+              </view>
+              <view class="edu-list-two">
+                <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <text>4.7</text>
+              </view>
+              <view class="edu-introduce">
+                 <label>简介：精品茶道，等你来到...</label>
+              </view>
+               <view class="edu-price">
+                 <label class="edu-price-num">¥88.00</label>
+                  <label class="edu-sales">已售：231</label>
+              </view>
+      
+         </view> 
+     </view>
+       <view class="  del scroll-view-item" catchtap="del" data-index="{{index}}">取消关注</view>
+ </view> 
+</view> 
+<!-- 课程列表end -->
+</view>
+

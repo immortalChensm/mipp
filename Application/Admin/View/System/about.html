@@ -1,0 +1,62 @@
+<include file="Public/min-header"/>
+<include file="Public/myeditor"/>
+<script>
+myeditor('content');
+</script>
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+    <section class="content" style="padding:0px 15px;">
+        <!-- Main content -->
+        <div class="container-fluid">
+            <!-- <div class="pull-right">
+                <a href="javascript:history.go(-1)" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="返回"><i class="fa fa-reply"></i></a>
+            </div> -->
+            <div class="panel panel-default">     
+            	<div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-list"></i> 关于我们</h3>
+                </div>      
+                <div class="panel-body ">   
+                    <!--表单数据-->
+                    <form method="post" id="dataForm">    
+                    <input type="hidden" name="info[id]" value="{$info.id}"/>       
+                        <!--通用信息-->
+                    <div class="tab-content" style="padding:20px 0px;">                 	  
+                        <div class="tab-pane active" id="tab_tongyong">
+                            <table class="table table-bordered">
+                                <tbody>
+                                <tr>
+                                    <td class="col-sm-2">内容：</td>
+                                    <td width="85%" class="col-sm-8">
+                                        <textarea class="span12 ckeditor" id="content" name="info[content]" title="">{$info.content}</textarea>
+                                    </td>                                                                       
+                                </tr>  
+                                </tbody> 
+                                <tfoot>
+                                	<tr>
+                                	<td><!-- <input type="hidden" name="inc_type" value="{$inc_type}"> --></td>
+                                	<td class="text-right"><input class="btn btn-primary" type="button" onclick="save()" value="保存"></td></tr>
+                                </tfoot>                               
+                                </table>
+                        </div>                           
+                    </div>              
+			    	</form><!--表单数据-->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+function save(){
+	$.post("{:U('System/about')}",$('#dataForm').serializeArray(),function(data){
+		if(data.status == '1'){
+			jsalert(data.info,1,function(){
+				location.reload();
+			});
+		}else{
+			jsalert(data.info,2);
+		}
+	});
+}
+</script>
+</body>
+</html>

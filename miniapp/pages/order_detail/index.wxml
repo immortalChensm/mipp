@@ -1,0 +1,40 @@
+<view class="edu-det-status">
+    <image src="../../assets/images/waitpay-icon.png" class="edu-status-a"/>
+    <image src="../../assets/images/waitpayb-icon.png" class="edu-status-b"/>  
+    <image src="../../assets/images/complete-icon.png" class="edu-status-b"/>   
+    <text>等待支付</text>
+</view>
+<!-- 消费凭证 -->
+<view class="edu-det-voucher edu-bottom-solid">
+   <text>以下手机号将作为消费凭证</text>
+   <text>以下手机号为：13312344321</text> 
+</view>
+<!-- 消费凭证end -->
+<!-- 订单内容 -->
+<view class="edu-det-order-n">
+   <view class="edu-myorder-two edu-det-canl-q">
+            <view class="edu-myorder-t-ls">
+                <image src="../../assets/images/001.jpg"/>
+            </view>
+            <view class="edu-myorder-t-r">
+                  <text class="edu-myorder-l-w edu-myorder-n-a">茶艺精品班</text>
+                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：李浩</text>
+                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：李四</text>
+                  <text class="edu-myorder-l-w edu-myorder-n-c">¥88.00</text>
+            </view> 
+      </view> 
+</view>
+<!-- 订单内容end -->
+<!-- 订单编号记录 -->
+<view class="edu-det-order-jl">
+    <text>订单编号：  32156586365965632</text>
+    <text>下单时间：  2018-02-12 15:25:10</text>
+    <text>付款时间：  2018-02-03 16:12:10</text>
+    <text>评价时间：  2018-02-12 15:25:10</text>      
+</view>
+<!-- 订单编号记录end -->
+<!-- 底部 -->
+<view class="edu-det-bottom">
+   <button class="edu-det-btns">付款</button>
+</view>
+<!-- 底部end -->

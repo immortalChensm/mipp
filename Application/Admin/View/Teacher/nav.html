@@ -1,0 +1,15 @@
+<ul class="nav nav-tabs" style="margin-bottom:10px;">
+    <if condition="$admin_info.type eq 2">     
+    <li name="edit"><a href="{:U('Teacher/edit',array('id'=>$admin_info.teacher_id))}">编辑教师信息</a></li>
+    <else/>
+    <li name="teacher"><a href="{:U('Teacher/index')}">教师列表</a></li>                           
+<!--     <li name="teacher_type"><a href="{:U('Teacher/teacher_type')}">教师类型</a></li>                            -->
+    <li name="teach_type"><a href="{:U('Teacher/teach_type')}">授课类型</a></li> 
+    </if>
+</ul>
+<script>
+$(function(){
+	var act_nav = '[act_nav]';
+	$('.nav-tabs').find('li[name='+act_nav+']').addClass('active');
+})
+</script>

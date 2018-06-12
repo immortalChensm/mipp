@@ -1,0 +1,107 @@
+<include file="Public/min-header" />
+<script>
+function export_order(){
+    var keyword = $.trim($('input[name=keyword]').val());
+    var phone = $.trim($('input[name=phone]').val());
+    var sex = $.trim($('input[name=sex]').val());
+    location.href="{:U('Export/enroll')}?keyword="+keyword+"&phone="+phone+"&sex="+sex;
+}
+</script>
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+	<section class="content">
+       <div class="row">
+       		<div class="col-xs-12">
+	       		<div class="box">
+	             <div class="box-header">
+	               	<nav class="navbar navbar-default">	     
+				        <div class="collapse navbar-collapse">
+				          <form class="navbar-form form-inline" action="{:U('Course/apply_list')}" method="get">
+				            <div class="form-group">
+				              	<input type="text" name="keywords" class="form-control" placeholder="课程名称" value="{:I('keywords')}">
+				              	<select name="type" class="form-control">
+				              	<option value="">课程类型</option>
+				              	<foreach name="course_types" item="val" key="key">
+				              	<option value="{$key}" <if condition="$request.type eq $key">selected</if> >{$val}</option>
+				              	</foreach>
+				              	</select>
+				            </div>
+				            <button type="submit" class="btn btn-default">搜索</button>
+				            <!-- <div class="form-group pull-right">
+				              <a href="javascript:void(0)"  style="margin-left:6px;"  onclick="export_order()" class="btn btn-primary pull-right"><i class="fa fa-upload"></i> 导出报名列表</a>
+				            </div> -->		          
+				          </form>		
+				      	</div>
+	    			</nav>
+	             </div>	             
+	             <div class="box-body">	               
+	           		<div class="row">
+	            	<div class="col-sm-12">
+		              <table id="list-table" class="table table-bordered table-striped dataTable">
+		                 <thead>
+		                   <tr role="row">
+			                   <th>ID</th>
+			                   <th>图片</th>
+			                   <th>老师</th>
+			                   <th>名称</th>
+			                   <th>类型</th>
+			                   <th>价格</th>
+			                   <th>审核状态</th>
+			                   <th>添加时间</th>
+			                   <th>审核</th>
+		                   </tr>
+		                 </thead>
+						<tbody>
+						  <foreach name="list" item="vo" key="k" >
+						  	<tr role="row" align="center">
+		                     <td>{$vo.id}</td>
+		                     <td><img src="{$vo['pics'][0]}" style="width:50px; height:50px;"></td>
+		                     <td>{$vo.teacher.name}</td>
+		                     <td>{$vo.name}</td>
+		                     <td>{:$course_types[$vo['type']]}</td>
+							 <td>{$vo.price}</td>
+							 <if condition="$vo.status eq 4">
+		                     <td style="color:red;">审核不通过</td>
+		                     <elseif condition="$vo.status eq 3"/>
+		                     <td style="color:orange;">待审核</td>
+		                     </if>
+		                     <td>{$vo.create_date}</td>
+		                     <td>
+		                      <a title="审核通过" class="btn btn-primary" href="javascript:void(0)" onclick="check_course('{$vo.id}',1)">通过</a>
+		                      <if condition="$vo.status eq 3">
+		                      <a title="审核不通过" class="btn btn-danger" href="javascript:void(0)" onclick="check_course('{$vo.id}',4)">不通过</a>
+		                      </if>
+							 </td>
+		                   </tr>
+		                  </foreach>
+		                   </tbody>
+		                 <tfoot>		                 
+		                 </tfoot>
+		               </table>	 
+	               </div>
+	          </div>
+              <div class="row">
+              	    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">{$page}</div>		
+              </div>
+	         </div>
+	        </div>
+       	</div>
+       </div>
+   </section>
+</div>
+<script>
+function check_course(id,status){
+	$.post("{:U('Course/check_course')}",{id:id,status:status},function(res){
+		if(res.status == '1'){
+			jsalert(res.info,1,function(){
+				location.reload();
+			});
+		}else{
+			jsalert(res.info,2);
+		}
+	});
+}
+</script> 
+</body>
+</html>

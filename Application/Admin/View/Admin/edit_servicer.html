@@ -1,0 +1,140 @@
+<include file="Public/min-header" />
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+    <section class="content ">
+        <!-- Main content -->
+        <div class="container-fluid">
+            <div class="pull-right">
+                <a href="javascript:history.go(-1)" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="返回管理员列表"><i class="fa fa-reply"></i></a>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-list"></i> {:$info['id']?'编辑客服账号':'添加客服账号'}</h3>
+                </div>
+                <div class="panel-body ">   
+                    <!--表单数据-->
+                    <form method="post" id="formData">                    
+                        <!--通用信息-->
+                    <div class="tab-content col-md-10">
+                        <div class="tab-pane active" id="tab_tongyong">
+                            <table class="table table-bordered">
+                                <tbody>
+                                <tr>
+                                    <td class="col-sm-2">用户名：</td>
+                                    <td class="col-sm-8">
+                                    	<if condition="$info['id']">
+                                        <input type="text" class="form-control" value="{$info.user_name}" readonly/>
+                                        <else/>
+                                        <input type="text" class="form-control" name="info[user_name]" value=""/>
+                                        </if>        
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td class="col-sm-2">Email地址：</td>
+                                    <td class="col-sm-8">
+                         				<input type="text" class="form-control" name="info[email]" value="{$info.email}" >
+                                                                     
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td class="col-sm-2">登陆密码：</td>
+                                    <td class="col-sm-8">
+                               			<input type="password" class="form-control" name="info[password]" value="" >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-sm-2">客服类型：</td>
+                                    <td class="col-sm-8">
+                               			<select class="form-control" name="service_type" onchange="get_service(this.value)">
+                               				<option value="">请选择客服类型</option>
+                               				<option value="1">400客服</option>
+                               				<option value="2">注册客服</option>
+                               				<option value="3">省份客服</option>
+                               			</select>
+                                    </td>
+                                </tr>
+                                <tr id="get_service" style="display:none;">
+                                    <td class="col-sm-2">关联客服：</td>
+                                    <td class="col-sm-8">
+                               			<select class="form-control" name="province_id" onchange="province_service(this.value)">
+                               				<option value="">请选择省份</option>
+                               				<foreach name="area[province]" item="val">
+                               				<option value="{$val.id}">{$val.name}</option>
+                               				</foreach>
+                               			</select>
+                               			<select class="form-control" name="info[service_id]">
+                               				<option value="">请选择客服</option>
+                               			</select>
+                                    </td>
+                                </tr>
+                                </tbody> 
+                                <tfoot>
+                                	<tr>
+                                	<td>
+                                		<input type="hidden" name="info[type]" value="3">
+                                		<input type="hidden" name="info[id]" value="{$info.id}">
+                                	</td>
+                                	<td class="text-right"><input class="btn btn-primary" type="button" onclick="save()" value="保存"></td></tr>
+                                </tfoot>                               
+                                </table>
+                        </div>                           
+                    </div>              
+			    	</form><!--表单数据-->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+function save(){
+	$.post("{:U('Admin/edit_servicer')}",$('#formData').serializeArray(),function(data){
+		if(data.status == '1'){
+			jsalert(data.info);
+			setTimeout("location.href='"+data.url+"'",1500);
+		}else{
+			jsalert(data.info,2);
+		}
+	});
+}
+function get_service(type){
+	$('select[name=province_id]').val('');
+	$('select[name=service_id]').val('');
+	if(type == ''){
+		$('#get_service').hide();
+		return false;
+	}
+	if(type == '3'){
+		$('#get_service').show();
+		$('select[name=province_id]').css({width:'25%'}).show()
+		$("select[name='info[service_id]']").css({width:'25%'}).html('<option value="">请选择客服</option>')
+	}else{
+		$('#get_service').show();
+		$('select[name=province_id]').hide();
+		$("select[name='info[service_id]']").css({width:'50%'})
+		$.post("{:U('Admin/get_service')}",{type:type},function(data){
+			var str = '<option value="">请选择客服</option>';
+			if(data.status == '1'){
+				var service = data.info;
+				for(var i=0;i<service.length;i++){
+					str += '<option value="'+service[i].id+'">'+service[i].name+'</option>';
+				}
+			}
+			$("select[name='info[service_id]']").html(str);
+		})
+	}
+}
+function province_service(province_id){
+	$.post("{:U('Admin/get_service')}",{type:3,province_id:province_id},function(data){
+		var str = '<option value="">请选择客服</option>';
+		if(data.status == '1'){
+			var service = data.info;
+			for(var i=0;i<service.length;i++){
+				str += '<option value="'+service[i].id+'">'+service[i].name+'</option>';
+			}
+		}
+		$("select[name='info[service_id]']").html(str);
+	})
+}
+</script>
+</body>
+</html>

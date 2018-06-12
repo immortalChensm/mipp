@@ -1,0 +1,193 @@
+<!-- 视频 -->
+<view class="edu-course-width">
+    <view class="section tc">
+      <video src="{{src}}"   controls class="edu-course-width"></video>
+    </view>
+</view>
+<!-- 视频end -->
+<!-- 标题start -->
+<view class="edu-course-qa">
+    <text class="edu-course-name">茶艺精品班</text>
+    <view class="edu-course-xx">
+          <image src="../../assets/images/xing-icon.png"/>
+          <image src="../../assets/images/xing-icon.png"/>
+          <image src="../../assets/images/xing-icon.png"/>
+          <image src="../../assets/images/xing-icon.png"/>
+          <image src="../../assets/images/xing-icon.png"/>
+          <text>4.7</text>
+    </view>
+    <text class="edu-course-jj">简介：精品茶道，等你来到，等你来评选品茶和交友和大…222222343242</text>
+     <view class="edu-course-price edu-course-space-a">
+        <label class="edu-price-num">¥88.00</label>
+          <label class="edu-sales">已售：231</label>
+    </view>
+    <view class="edu-course-kc edu-border-top">
+        <a href="#"  class="edu-btn-a">精品课程</a>
+        <a href="#"  class="edu-btn-a">放心课程</a>
+    </view>
+</view>
+<!-- 标题end -->
+<!-- 隔离 -->
+<view class="edu-course-space-b"></view>
+<!-- 隔离end -->
+<!-- 关联老师 -->
+<view class="edu-course-gl">
+     <view class="edu-course-l-icon">
+      <image src="../../assets/images/guanlian-icon.png" class="edu-course-glimg"/>
+       <label class="edu-course-teacher">关联老师</label>
+     </view>
+       <view  class="edu-course-info edu-bottom-solid">
+            <view class="edu-course-left">
+               <image src="../../assets/images/timg.jpeg" class="edu-course-logo"/>
+            </view>
+            <view class="edu-course-right">
+                 <text class="edu-course-teach-name">若兰</text>
+                 <text class="edu-course-address">地址：苏州工业园区若水路388号纳米科技园E栋1206楼</text>
+            </view>
+       </view>
+       <view class="edu-course-fl-icon">
+            <view class="edu-course-cft edu-right-solid">
+                <view class="edu-course-icon-jg">
+                    <image src="../../assets/images/shoucang-icon.png" class="edu-course-gltb"/>
+                </view>
+                <view class="edu-list-title edu-list-can-q">收藏</view>
+            </view>
+            <view class="edu-course-cft edu-right-solid">
+                <view class="edu-course-icon-jg">
+                    <image src="../../assets/images/zhuanfa-icon.png" class="edu-course-gltb"/>
+                </view>
+                <view class="edu-list-title edu-list-can-q">分享</view>
+            </view>
+            <view class="edu-course-cft">
+                 <view class="edu-course-icon-jg">
+                    <image src="../../assets/images/tel-icon.png" class="edu-course-gltb"/>
+                </view>
+                <view class="edu-list-title edu-list-can-q">电话</view>
+            </view>
+       </view>
+</view>
+<!-- 关联老师end -->
+<!-- 隔离 -->
+<view class="edu-course-space-c"></view>
+<!-- 隔离end -->
+<!-- 课程详情和评价 -->
+      <view class="edu-course-xq-pj edu-bottom-solid">
+          <view class="{{showkecd?'edu-course-qh-sty ':'edu-course-qh-sty edu-select-qw'}}" bindtap="tabShow">课程详情</view> 
+          <view class="{{showkecd?'edu-course-qh-sty edu-select-qw':'edu-course-qh-sty'}}" bindtap="tabShow">课程评价</view> 
+      </view>
+      <!-- 课程内容 -->
+      <view class="{{showkecd?'edu-none ':'edu-course-kc-content'}}">
+                <text>"感恩先人开创的“茶马古道”，让我得以世界闻名，但从来，最好的我们
+      永远是宫廷贡品除了皇宫贵族就是赠送到国外。我认为，我应该属于更
+      多人，特别是没有背景，通过自己努力获得成功的人，人类，是靠一代
+      又一代的人前赴后继才取得进步的，你们都是世界的功臣。所以，我认
+      为你们更值得拥有。
+      世界上最奢侈的艺术品，是你独一无二的人生，
+      世界遗产诉说不尽的，是你的人生故事。
+      所以，我愿意为你镌刻人生的点滴，我愿意为你诉说关于你的每段故事。"</text>
+            <image src="../../assets/images/img1-icon.png" style='width:100%;'></image>
+            <image src="../../assets/images/img2-icon.png" style='width:100%;height:600px;'/>
+      </view>
+      <!-- 课程内容end -->
+      <!-- 课程评价 -->
+      <view class="{{showkecd?'edu-course-bot-a':'edu-none'}}">
+          <view class="edu-course-pj-content">
+              <view class="edu-course-evaluate">
+                    <view class="edu-course-one">
+                      <image src="../../assets/images/timg.jpeg" class="edu-course-tx"/>
+                      <text>小明</text>
+                    </view>
+                    <view class="edu-course-two">
+                      <view class="edu-course-eva-left">
+                        <text class="edu-course-bbpj">宝贝评价</text>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                          <text class="edu-course-nums">5.0</text>
+                      </view>
+                      <view class="edu-course-eva-right">
+                        <text>2018-02-03 15:30</text>
+                      </view>
+                    </view>
+                    <view class="edu-course-three">
+                        <text class="edu-course-assess">学了这个课，感觉身体素质都有提高，特别是老师满专业的，下次还回来</text>
+                    </view>
+              </view>
+              <!-- 间隔 -->
+                <view class="edu-space-d"></view>
+              <!-- 间隔end -->
+          </view>
+
+            <view class="edu-course-pj-content">
+              <view class="edu-course-evaluate">
+                    <view class="edu-course-one">
+                      <image src="../../assets/images/timg.jpeg" class="edu-course-tx"/>
+                      <text>小明</text>
+                    </view>
+                    <view class="edu-course-two">
+                      <view class="edu-course-eva-left">
+                        <text class="edu-course-bbpj">宝贝评价</text>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                          <text class="edu-course-nums">5.0</text>
+                      </view>
+                      <view class="edu-course-eva-right">
+                        <text>2018-02-03 15:30</text>
+                      </view>
+                    </view>
+                    <view class="edu-course-three">
+                        <text class="edu-course-assess">学了这个课，感觉身体素质都有提高，特别是老师满专业的，下次还回来</text>
+                    </view>
+              </view>
+              <!-- 间隔 -->
+                <view class="edu-space-d"></view>
+              <!-- 间隔end -->
+          </view>
+
+            <view class="edu-course-pj-content">
+              <view class="edu-course-evaluate">
+                    <view class="edu-course-one">
+                      <image src="../../assets/images/timg.jpeg" class="edu-course-tx"/>
+                      <text>小明</text>
+                    </view>
+                    <view class="edu-course-two">
+                      <view class="edu-course-eva-left">
+                        <text class="edu-course-bbpj">宝贝评价</text>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                          <text class="edu-course-nums">5.0</text>
+                      </view>
+                      <view class="edu-course-eva-right">
+                        <text>2018-02-03 15:30</text>
+                      </view>
+                    </view>
+                    <view class="edu-course-three">
+                        <text class="edu-course-assess">学了这个课，感觉身体素质都有提高，特别是老师满专业的，下次还回来</text>
+                    </view>  
+              </view>
+              <!-- 间隔 -->
+                <view class="edu-space-d"></view>
+              <!-- 间隔end -->
+          </view>
+    </view>      
+      <!-- 课程评价 -->
+<!-- 课程详情和评价end -->
+<!-- 底部按钮 -->
+  <view class="edu-course-bottom-btn">
+   <view class="edu-course-lr">
+       <button>立即购买</button>
+   </view>
+   <view class="edu-course-lr">
+       <button>预约试听</button>
+   </view>
+</view>  
+<!-- 底部按钮end -->
+ 

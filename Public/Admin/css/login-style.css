@@ -1,0 +1,92 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+/* div{
+    display: unset;
+} */
+h1{
+    margin:0;
+}
+.edu-fulid{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-size: 100% 100%;
+    background-image: url(../images/login-bg-a.png);
+    background: linear-gradient(to right , rgba(18, 52, 161, 0.85) 0%, rgba(117, 183, 249, 0.85) 100%);
+}
+.edu-container{
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding: 40px 0px;
+    text-align: center;
+    background-image: url(../images/login-bg-b.png);
+}
+.edu-box{
+    /*height: 600px;*/
+    float: left;
+    width: 100%;
+    position: absolute;
+    top: 20%;
+}
+.edu-login-action{
+    background-color: #F1F5FF;
+    border: solid 1px #ffffff;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 73px 130px;
+    box-shadow: 0px 4px 4px 0px rgba(100, 100, 100, 0.75);
+}
+.edu-login-action p{
+    width: 100%;
+}
+.edu-login-action label{
+    text-align: left;
+    width: 65px;
+    font-size: 14px;
+    display: -webkit-inline-box;
+}
+.edu-login-action input{
+    width: 200px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    border: solid 1px #a8d0ff;
+	text-indent:10px;
+}
+.edu-login-action button{
+    color:#ffffff;
+    background-color: #84B0F2;
+    border: 1px solid  #ffffff;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    background-image: linear-gradient(0deg,
+    #73b3ef 49%,
+    #7ac0ff 100%);
+}
+.edu-login-action p:nth-child(3){
+    margin-bottom: 0px;
+}
+.edu-login-title{
+
+    width: 100%;
+    text-align: center;
+    float: left;
+    margin-bottom: 40px;
+
+}
+.edu-login-title h1{
+    font-family:STKaiti;
+    font-size: 55px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #ffffff;
+    text-shadow: 5px 7px 16px #000;
+}
+

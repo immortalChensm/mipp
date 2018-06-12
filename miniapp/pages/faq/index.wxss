@@ -1,0 +1,26 @@
+/* pages/常见问题/problem.wxss */
+.edu-pro-contents{
+  padding: 30rpx;
+}
+.edu-pro-name{
+  margin-bottom: 60rpx;
+  display: block;
+  width: 100%;
+  font-size: 26rpx;
+  color: rgb(36,36,36);
+}
+.edu-pro-a{
+  width: 100%;
+  display: block;
+  font-size: 26rpx;
+  color: rgb(36,36,36);
+}
+.edu-pro-b{
+  width: 100%;
+  display: block;
+  font-size: 22rpx;
+  color: rgb(36,36,36);
+}
+.edu-e-w{
+  margin-bottom: 6rpx;
+}

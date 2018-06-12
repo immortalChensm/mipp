@@ -1,0 +1,167 @@
+<view class="body">
+  <!-- 顶部轮播图 start -->
+  <view class="edu-banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:280rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
+      <block wx:for="{{banners}}">
+        <swiper-item>
+          <image src="{{item.pic}}" class="slide-image" bindtap="toBannerLink" data-link="{{item.link}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 顶部轮播图end -->
+  <!-- 菜单分类 start -->
+  <view class="edu-list">
+    <swiper indicator-dots="{{indicatorDots}}" autoplays="{{autoplays}}" interval="{{interval}}" duration="{{duration}}" style="height:412rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
+      <swiper-item class="edu-rows">
+        <block wx:for="{{course_types}}" wx:key="key">
+          <view class="edu-list-fl" bindtap="">
+            <view class="edu-icon-k">
+              <image src="{{item.pic}}" />
+            </view>
+            <view class="edu-list-title-a">茶艺班</view>
+          </view>
+
+        </block>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 菜单分类 start -->
+</view>
+<!-- 隔离 stsrt-->
+<view class="edu-space-a"></view>
+<!-- 隔离 end-->
+<!-- 推荐课程 start -->
+<view class="edu-recommend-courses">
+  <view class="edu-remm-name">
+    <image src="../../assets/images/remm-left-icon.png" class="edu-tj-icon" />
+    <text class="edu-remm-kc">推荐课程</text>
+    <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon" />
+    <image src="../../assets/images/more-icon.png" class="edu-more-icon" />
+  </view>
+  <!-- 列表 -->
+  <view class=" edu-acticle-list-a edu-bottom-solid">
+    <view class="edu-list-left">
+      <image src="../../assets/images/001.jpg" class="edu-list-img" />
+    </view>
+    <view class="edu-list-right">
+      <view class="edu-list-one">
+        <text class="edu-list-cy-name">茶艺精品班</text>
+      </view>
+      <view class="edu-list-two">
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <text>4.7</text>
+      </view>
+      <view class="edu-introduce">
+        <label>简介：精品茶道，等你来到...</label>
+      </view>
+      <view class="edu-price">
+        <label class="edu-price-num">¥88.00</label>
+        <label class="edu-sales">已售：231</label>
+      </view>
+    </view>
+  </view>
+  <view class=" edu-acticle-list-a">
+    <view class="edu-list-left">
+      <image src="../../assets/images/001.jpg" class="edu-list-img" />
+    </view>
+    <view class="edu-list-right">
+      <view class="edu-list-one">
+        <text class="edu-list-title">茶艺精品班</text>
+      </view>
+      <view class="edu-list-two">
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <text>4.7</text>
+      </view>
+      <view class="edu-introduce">
+        <label>简介：精品茶道，等你来到...</label>
+      </view>
+      <view class="edu-price">
+        <label class="edu-price-num">¥88.00</label>
+        <label class="edu-sales">已售：231</label>
+      </view>
+    </view>
+  </view>
+  <!-- 列表end -->
+</view>
+<!-- 推荐课程 end -->
+
+<!-- 隔离 stsrt-->
+<view class="edu-space-a"></view>
+<!-- 隔离 end-->
+<!-- 金牌老师 start -->
+<view class="edu-recommend-courses">
+  <view class="edu-remm-name">
+    <image src="../../assets/images/remm-left-icon.png" class="edu-tj-icon" />
+    <text class="edu-remm-kc">金牌老师</text>
+    <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon" />
+    <image src="../../assets/images/more-icon.png" class="edu-more-icon" />
+  </view>
+
+  <!-- 列表 -->
+  <view class="edu-acticle-list-b edu-bottom-solid">
+    <view class="edu-list-left-a">
+      <image src="../../assets/images/teach-icon.png" class="edu-list-img-a" />
+    </view>
+    <view class="edu-list-right-a">
+      <view class="edu-list-one">
+        <text class="edu-list-cy-name">张雨</text>
+      </view>
+      <view class="edu-list-two">
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <text>4.7</text>
+      </view>
+      <view class="edu-introduce">
+        <label>简介：精品茶道，等你来到，等你和大家...</label>
+      </view>
+      <view class="edu-jl-list">
+        <label class="edu-tea-name">茶艺</label>
+        <label class="edu-sales edu-jl">
+          <image src="../../assets/images/gps-icon.png" class="edu-gps" /> 1.2km
+        </label>
+      </view>
+    </view>
+  </view>
+  <view class="edu-acticle-list-b">
+    <view class="edu-list-left-a">
+      <image src="../../assets/images/teach-icon.png" class="edu-list-img-a" />
+    </view>
+    <view class="edu-list-right-a">
+      <view class="edu-list-one">
+        <text class="edu-list-cy-name">张雨</text>
+      </view>
+      <view class="edu-list-two">
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" />
+        <text>4.7</text>
+      </view>
+      <view class="edu-introduce">
+        <label>简介：精品茶道，等你来到，等你和大家...</label>
+      </view>
+      <view class="edu-jl-list">
+        <label class="edu-tea-name">茶艺</label>
+        <label class="edu-sales edu-jl">
+          <image src="../../assets/images/gps-icon.png" class="edu-gps" /> 1.2km
+        </label>
+      </view>
+    </view>
+  </view>
+
+  <!-- 列表end -->
+</view>
+<!-- 金牌老师 end -->

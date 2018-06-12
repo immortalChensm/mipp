@@ -1,0 +1,117 @@
+<include file="Public/min-header" />
+<include file="Public/datepicker" />
+<script>
+window.onload = function(){
+    iniDate('start_date');
+    iniDate('end_date');
+}
+function export_order(){
+    var keyword = $.trim($('input[name=keyword]').val());
+    var phone = $.trim($('input[name=phone]').val());
+    var sex = $.trim($('input[name=sex]').val());
+    location.href="{:U('Export/enroll')}?keyword="+keyword+"&phone="+phone+"&sex="+sex;
+}
+</script>
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+	<section class="content">
+       <div class="row">
+       		<div class="col-xs-12">
+	       		<div class="box">
+	             <div class="box-header">
+	               	<nav class="navbar navbar-default">	     
+				        <div class="collapse navbar-collapse">
+				          <form class="navbar-form form-inline" action="{:U('Order/yuyue_order')}" method="get">
+				            <div class="form-group">
+				              	<input type="text" name="keywords" class="form-control" placeholder="订单号" value="{$request_data.keywords}">
+				              	<select name="status" class="form-control">
+				              	<option value="">预约状态</option>
+				              	<option value="1" {:$request_data['status'] == 1 ? 'selected':''} >预约中</option>
+				              	<option value="3" {:$request_data['status'] == 3 ? 'selected':''} >已关闭</option>
+				              	</select>
+				              	<input type="text" id="start_date" name="begin_date" class="form-control" placeholder="开始日期" value="{:I('begin_date')}"> ~ 
+				              	<input type="text" id="end_date" name="end_date" class="form-control" placeholder="结束日期" value="{:I('end_date')}">
+				            </div>
+				            <button type="submit" class="btn btn-default">搜索</button>
+				          </form>		
+				      	</div>
+	    			</nav>
+	             </div>	             
+	             <div class="box-body">	               
+	           		<div class="row">
+	            	<div class="col-sm-12">
+		              <table id="list-table" class="table table-bordered table-striped dataTable">
+		                 <thead>
+		                   <tr role="row">
+			                   <th>ID</th>
+			                   <th>订单号</th>
+			                   <th>课程名称</th>
+			                   <th>授课老师</th>
+			                   <th>学生</th>
+							   <th>手机号</th>
+							   <th>状态</th>
+			                   <th>预约时间</th>
+			                   <th>操作</th>
+		                   </tr>
+		                 </thead>
+						<tbody>
+						  <foreach name="list" item="vo" key="k" >
+						  	<tr role="row" align="center">
+		                     <td>{$vo.id}</td>
+		                     <td>{$vo.order_sn}</td>
+		                     <td>{$vo.course.name|default='--'}</td>
+							 <td>{$vo.teacher.name|default='--'}</td>
+							 <td>{$vo.name|default='--'}</td>
+		                     <td>{$vo.phone|default='0'}</td>
+		                     <if condition="$vo.status eq  1">
+		                     <td style="color:#25be13;">预约中</td>
+		                     <elseif condition="$vo.status eq  3"/>
+		                     <td style="color:#aaa;">已关闭</td>
+		                     </if>
+		                     <td>{$vo.create_date}</td>
+		                     <td>
+		                       <a title="订单详情" class="btn btn-primary" href="javascript:void(0)" onclick="view_detail('{$vo.id}')"><i class="fa fa-eye"></i></a>
+		                       <if condition="$vo.status lt 3">
+		                       <a title="关闭订单" class="btn btn-danger" href="javascript:void(0)" onclick="close_order('{$vo.id}')"><i class="fa fa-power-off"></i></a>
+							   </if>
+							 </td>
+		                   </tr>
+		                  </foreach>
+		                   </tbody>
+		                 <tfoot>		                 
+		                 </tfoot>
+		               </table>	 
+	               </div>
+	          </div>
+              <div class="row">
+              	    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">{$page}</div>
+              </div>
+	         </div>
+	        </div>
+       	</div>
+       </div>
+   </section>
+</div>
+<include file="Public/dialog" />
+<script>
+function view_detail(id){
+	$.post("{:U('Order/detail')}",{id:id},function(res){
+		dialog(res,'订单详情');
+	});
+}
+function close_order(id){
+	jsconfirm('确定要关闭此订单吗？',function(){
+		$.post("{:U('Order/close_order')}",{id:id},function(res){
+			if(res.status == '1') {
+				location.reload();
+				return false;
+			}else{
+				jsalert(res.info,2);
+			}
+		});
+	});
+}
+</script>
+</body>
+</html>

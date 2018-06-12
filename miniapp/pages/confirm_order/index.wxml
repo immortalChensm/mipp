@@ -1,0 +1,84 @@
+<!-- 订单展示 -->
+<view class="edu-recommend-courses-tj edu-bottom-solid edu-border-top">
+    <!-- 列表 -->
+     <view class="edu-acticle-list-tj-s edu-order-qa">
+         <view class="edu-list-left">
+            <image src="../../assets/images/001.jpg" class="edu-list-img"/>
+         </view>
+          <view class="edu-list-right">
+              <view class="edu-list-one">
+                  <text class="edu-list-cy-name">茶艺精品班</text>
+              </view>
+              <view class="edu-list-two">
+                <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <text>4.7</text>
+              </view>
+              <view class="edu-introduce">
+                 <label>简介：精品茶道，等你来到...</label>
+              </view>
+               <view class="edu-price">
+                 <label class="edu-price-num">¥88.00</label>
+              </view>
+          </view> 
+     </view>
+    </view> 
+<!-- 订单展示end -->
+<!-- 数量和小计 -->
+<view class="edu-order-n-x">
+   <view class="edu-order-list">
+      <view class="edu-order-py edu-bottom-solid">
+          <text class="edu-order-n-title">数量</text>
+          <view class="edu-order-btn-view">
+                <view class="edu-order-right">
+                    <a href="#" class="edu-order-btn">-</a>
+                    <input type='tel' placeholder='1'/>
+                    <a href="#" class="edu-order-btn">+</a> 
+                </view>
+          </view>
+      </view>
+   </view>
+   <view class="edu-order-list">
+      <view class="edu-order-py">
+          <text class="edu-order-n-title">小计</text>
+          <view class="edu-order-btn-view">
+                    <label class="edu-order-right-price">¥88</label>
+          </view>
+      </view>
+   </view>
+</view>
+<!-- 数量和小计end -->
+<!-- 间隔 -->
+<view class="edu-course-space-c"></view>
+<!-- 间隔end -->
+<!-- 订单信息 -->
+<view class="edu-order-n-x">
+   <view class="edu-order-list">
+      <view class="edu-order-py edu-bottom-solid">
+          <text class="edu-order-n-title edu-order-qw-title">用户名</text>
+          <view class="edu-order-align">
+             <input type='text' placeholder='请输入用户名' class="edu-order-ut"/>
+          </view>
+      </view>
+   </view>
+   <view class="edu-order-list">
+      <view class="edu-order-py">
+          <text class="edu-order-n-title edu-order-qw-title">电话</text>
+          <view class="edu-order-align">
+            <input type='number' placeholder='13314522562' maxlength='11' class="edu-order-ut"/>
+          </view>
+      </view>
+   </view>
+</view> 
+<!-- 订单信息end -->
+<!-- 间隔 -->
+<view class="edu-course-space-c"></view>
+<!-- 间隔end -->
+<!-- 底部按钮 -->
+<view class="edu-order-pay">
+      <button class="edu-order-pays">去支付88元</button>
+</view>
+<!-- 底部按钮end -->

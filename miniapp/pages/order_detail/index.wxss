@@ -1,0 +1,12 @@
+/* pages/订单详情/order-details.wxss */
+page{
+  background-color: #f2f2f2;
+}
+.edu-myorder-t-ls{
+  height:188rpx;
+}
+.edu-myorder-t-ls image{
+  width: 268rpx;
+  height: 188rpx;
+  border-radius: 10rpx;
+}

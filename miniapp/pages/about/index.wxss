@@ -1,0 +1,21 @@
+/* pages/关于我们/about.wxss */
+.edu-about-contents{
+  padding: 30rpx;
+}
+.edu-about-user-title{
+  width: 100%;
+  display: block;
+  font-family: PingFang-SC-Bold;
+  color: rgb(0,0,0);
+  font-size: 36rpx;
+  border-bottom:1px solid rgb(229,229,229);
+  padding-bottom: 18rpx;
+}
+.edu-about-nr{
+  padding-top: 40rpx;
+}
+.edu-about-nr text{
+   color: rgb(36,36,36);
+   font-size: 26rpx;
+   font-family: PingFang-SC-Regular;
+}

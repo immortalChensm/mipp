@@ -1,0 +1,133 @@
+<include file="Public/min-header"/>
+
+<link href="__PUBLIC__/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/plugins/daterangepicker/moment.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+    <section class="content" style="padding:0px 15px;">
+        <!-- Main content -->
+        <div class="container-fluid">
+            <div class="pull-right">
+                <a href="javascript:history.go(-1)" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="返回"><i class="fa fa-reply"></i></a>
+            </div>
+            <div class="panel panel-default">           
+                <div class="panel-body ">   
+                   	<ul class="nav nav-tabs">
+                    	<li class="active"><a href="{:U('System/index')}" data-toggle="tab" >网站设置</a></li>
+                    </ul>
+                    <!--表单数据-->
+                    <form method="post" id="dataForm">                    
+                        <!--通用信息-->
+                    <div class="tab-content" style="padding:20px 0px;">                 	  
+                        <div class="tab-pane active" id="tab_tongyong">                           
+                            <table class="table table-bordered">
+                                <tbody>
+                                <tr>
+                                    <td class="col-sm-2">
+                                       	网站域名：
+                                    </td>
+                                    <td class="col-sm-8">
+                                        <input type="text" class="form-control" name="site_url" value="{$site_url}" placeholder="如:http://www.xxx.com 后面不带 '/'" >
+                                        <span id="err_attr_name" style="color:#F00; display:none;"></span>                                        
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-2">网站备案号：</td>
+                                    <td class="col-sm-8">
+                                        <input type="text" class="form-control" name="record_no" value="{$record_no}" >
+                                        <span id="err_attr_name" style="color:#F00; display:none;"></span>                                        
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <td class="col-sm-2">网站名称：</td>
+                                    <td class="col-sm-8">
+                                        <input type="text" class="form-control" name="store_name" value="{$store_name}" >
+                                        <span id="err_attr_name" style="color:#F00; display:none;"></span>                                        
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td class="col-sm-2">网站标题：</td>
+                                    <td class="col-sm-8">
+                                        <input type="text" class="form-control" name="store_title" value="{$store_title}" >
+                                        <span id="err_type_id" style="color:#F00; display:none;"></span>                                        
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td class="col-sm-2">网站描述：</td>
+                                    <td class="col-sm-8">
+                                        <input type="text" class="form-control" name="store_desc" value="{$store_desc}" >
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td class="col-sm-2">网站关键字：</td>
+                                    <td class="col-sm-8">
+                                        <input type="text" class="form-control" name="store_keyword" value="{$store_keyword}" >
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="col-sm-2">使用模拟数据：</td>
+                                    <td class="col-sm-8">
+                                        <label><input type="radio" name="use_mock" value="1" {:$use_mock == '1'?'checked':''}> 使用</label>
+                                        <label><input type="radio" name="use_mock" value="2" {:$use_mock != '1'?'checked':''}> 不使用</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                 <td class="col-sm-2">招聘企业（家）：</td>
+                                 <td class="col-sm-8">
+                                     <input type="text" class="form-control" name="company_count" value="{$company_count}" >
+                                 </td>
+                                </tr> 
+                                <tr>
+                                 <td class="col-sm-2">成功入职（人）：</td>
+                                 <td class="col-sm-8">
+                                        <input type="text" class="form-control" name="entry_count" value="{$entry_count}" >
+                                 </td>
+                                </tr> 
+                                
+                                <tr>  
+                                 <td class="col-sm-2">生活补贴（元）：</td>
+                                 <td class="col-sm-8">
+                      			 <input type="text" class="form-control" name="subsidy_money" value="{$subsidy_money}" >
+                                  </td>
+                                </tr> 
+                                <tr>
+                                    <td class="col-sm-2">是否显示推荐好友：</td>
+                                    <td class="col-sm-8">
+                                        <label><input type="radio" name="is_show" value="1" {:$is_show == '1'?'checked':''}> 显示</label>
+                                        <label><input type="radio" name="is_show" value="2" {:$is_show == '2'?'checked':''}> 不显示</label>
+                                    </td>
+                                </tr>
+  
+                                </tbody> 
+                                <tfoot>
+                                	<tr>
+                                	<td><input type="hidden" name="inc_type" value="{$inc_type}"></td>
+                                	<td class="text-right"><input class="btn btn-primary" type="button" onclick="save()" value="保存"></td></tr>
+                                </tfoot>                               
+                                </table>
+                        </div>                           
+                    </div>              
+			    	</form><!--表单数据-->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+function save(){
+	$.post("{:U('System/handle')}",$('#dataForm').serializeArray(),function(data){
+		if(data.status == '1'){
+			jsalert(data.info,1,function(){
+				location.href = data.url
+			});
+		}else{
+			jsalert(data.info,2);
+		}
+	});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<form id="dataForm">
+<input type="hidden" name="info[id]" value="{$info.id}"/>
+<input type="hidden" name="act" value="save"/>
+<li>
+	<div class="list_content" style="width:100px; text-align:right;">图片链接：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px;padding-right:5px;">
+	    <input type="text" class="list_text" style="width:340px;" name="info[link]" value="{$info.link}"/>
+	</div>
+</li>
+<li>
+	<div class="list_content" style="width:100px; text-align:right;">上传图片：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px;padding-right:5px;">
+		<if condition="$info.pic neq null">
+		<img style="cursor:pointer;height:140px;" alt="" src="{$info.pic}" onclick="$(this).next().click()">
+		<else/>
+		<img style="cursor:pointer;height:140px;" alt="" src="__PUBLIC__/Admin/images/default.png" onclick="$(this).next().click()">
+		</if>
+		<input style="display:none;" type="file" id="pic" name="pic" onchange="upload_img($(this).attr('id'),$(this).next('input').attr('id'))">
+	    <input type="hidden" id="info_pic" name="info[pic]" value="{$info.pic}"/>
+	</div>
+</li>
+<li>
+	<div class="list_content" style="width:100px; text-align:right; padding-top:15px;">排序序号：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px; padding-right:5px;">
+	    <input type="text" class="list_text" style="width:340px;" name="info[sort_index]" value="{$info.sort_index|default=$default_sort}"/>
+	</div>
+</li>
+</form>

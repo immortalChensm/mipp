@@ -1,0 +1,85 @@
+<include file="Public/min-header"/>
+<div class="wrapper">
+  <include file="Public/breadcrumb"/>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-list"></i> 系统消息</h3>
+            <button type="button" style="margin-top:-26px" onclick="location.href='/index.php/Admin/Index/push_msg'" class="btn btn-primary pull-right"><i class="fa fa-plus"></i>添加消息</button>
+        </div>
+        <div class="panel-body">
+        <form id="op" action="{:U('Index/push_msg_del')}" method="post">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th class="sorting text-left">
+		                <input type="checkbox" onclick="$('input[name*=\'id[]\']').prop('checked', this.checked);">全选
+                    </th>                
+                    <th class="sorting text-left">提示文字</th>
+                    <th class="sorting text-left">通知标题</th>
+                    <th class="sorting text-left">状态</th>
+                    <th class="sorting text-left">发送时间</th>
+                    <th class="sorting text-left">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <volist name="msg_list" id="list">
+                    <tr>
+                        <td class="text-left"><input type="checkbox" name="id[]" value="{$list.id}"></td>
+                        <td class="text-left content_{$list.id}">
+                            {$list.title}
+                        </td>
+                        <td class="text-left content_{$list.id}">
+                        	{$list.text}
+                        </td>
+
+                        <td class="text-left content_{$list.id}">
+                            <if condition="$list.status eq 1">
+                                发送成功
+                                <else />
+                                    发送失败
+                            </if>
+                        </td>
+
+                        <td class="text-left">{$list.push_time|date='Y-m-d H:i',###}</td>
+                        <td class="text-left">
+	                        <!--<a href="javascript:void(0);" onclick="showMsg('content_{$list.id}');" class="btn btn-primary" ><i class="fa fa-eye"></i></a>-->
+	                        <a href="{:U('index/push_msg_edit',array('id'=>$list[id]))}"  class="btn btn-primary" ><i class="fa fa-eye"></i></a>
+                            <a href="javascript:void(0);" data-href="{:U('index/push_msg_del',array('id'=>$list[id]))}" onclick="del('{$list[id]}',this)" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                </volist>
+                </tbody>
+            </table>
+            <button type="submit">批量删除</button>
+        </div>   
+    </form>            
+	    <div class="row">
+	        <div class="col-sm-6 text-left"></div>
+	        <div class="col-sm-6 text-right">{$page}</div>
+	    </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+
+    // 显示消息
+ 	function showMsg(content_id)
+	{		 			  
+		 layer.msg($('.'+content_id).html(), {time: 5000, icon:6});
+			 
+	}
+    // 删除操作
+    function del(id,t)
+    {
+        if(!confirm('确定要删除吗?'))
+            return false;
+        location.href = $(t).data('href');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "pages": [
+	"pages/index/index",
+	"pages/teacher_detail/index",    
+	"pages/user_center/index",
+	"pages/comment/index",    
+	"pages/near_teacher/index",
+	"pages/yuyue/index",    
+	"pages/confirm_order/index",    
+	"pages/course/index",
+	"pages/stick_teacher/index",
+	"pages/stick_course/index", 
+	"pages/yuyue_suc/index", 
+	"pages/order_detail/index",
+	"pages/follow/index",
+	"pages/apply_teacher/index",   
+	"pages/about/index",
+	"pages/faq/index",
+	"pages/my_order/index",
+	"pages/course_detail/index",
+	"pages/auth/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "首页 ",
+    "backgroundColor": "#f2f2f2",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#444444",
+    "selectedColor": "#f2a118",
+    "backgroundColor":"#ffffff",
+    "borderStyle":"#e5e5e5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/images/jingxuan-icon.png",
+        "selectedIconPath": "assets/images/jingxuan-s-icon.png",
+        "text": "精选"
+      },
+      {
+        "pagePath": "pages/near_teacher/index",
+        "iconPath": "assets/images/fujin-icon.png",
+        "selectedIconPath": "assets/images/fujin-s-icon.png",
+        "text": "附近"
+      },
+      {
+        "pagePath": "pages/course/index",
+        "iconPath": "assets/images/kecheng-icon.png",
+        "selectedIconPath": "assets/images/kecheng-s-icon.png",
+        "text": "课程"
+      },
+      {
+        "pagePath": "pages/user_center/index",
+        "iconPath": "assets/images/my-icon.png",
+        "selectedIconPath": "assets/images/my-s-icon.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

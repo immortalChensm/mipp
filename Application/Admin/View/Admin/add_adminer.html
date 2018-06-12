@@ -1,0 +1,80 @@
+<include file="Public/min-header" />
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+    <section class="content ">
+        <!-- Main content -->
+        <div class="container-fluid">
+            <div class="pull-right">
+                <a href="javascript:history.back('-1')" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="返回管理员列表"><i class="fa fa-reply"></i></a>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-list"></i> {:$info['id']?'编辑教师账号':'添加教师账号'}</h3>
+                </div>
+                <div class="panel-body ">   
+                    <!--表单数据-->
+                    <form method="post" id="formData">
+                    <input type="hidden" name="info[id]" value="{$info.id}"/>
+                        <!--通用信息-->
+                    <div class="tab-content col-md-10" style="width:100%;">
+                        <div class="tab-pane active">
+                            <table class="table table-bordered" id="tab_tongyong">
+                                <tbody>
+                                <tr>
+                                    <td class="col-sm-2">昵称：</td>
+                                    <td class="col-sm-8">
+										<if condition="$info.role_name neq null">                                   
+                                    	<input type="text" name="info[role_name]" class="form-control" value="{$info.role_name}" placeholder="请输入昵称"/>
+                                    	<else/>
+                                   		<input type="text" name="info[role_name]" class="form-control" value="{$teacher.name}" placeholder="请输入昵称"/>
+                                    	</if>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-sm-2">用户名：</td>
+                                    <td class="col-sm-8">
+                                    	<if condition="$info['id']">
+                                        <input type="text" class="form-control" value="{$info.user_name}" readonly/>
+                                        <else/>
+                                        <input type="text" class="form-control" name="info[user_name]" value="{$teacher.phone}" placeholder="请输入用户名"/>
+                                        </if>        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-sm-2">登陆密码：</td>
+                                    <td class="col-sm-8">
+                               			<input type="password" class="form-control" name="info[password]" value="" placeholder="请输入6~20位密码，密码由英文字母、数字、下划线组成">
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                	<tr>
+                                	<td>
+                                		<input type="hidden" name="info[type]" value="2">
+                                		<input type="hidden" name="info[teacher_id]" value="<if condition='$info.teacher_id neq null'>{$info.teacher_id}<else/>{$teacher.id}</if>">
+                                	</td>
+                                	<td class="text-right"><input class="btn btn-primary" type="button" onclick="save()" value="保存"></td></tr>
+                                </tfoot>                               
+                                </table>
+                        </div>                           
+                    </div>              
+			    	</form><!--表单数据-->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+function save(){
+	$.post("{:U('Admin/add_adminer')}",$('#formData').serializeArray(),function(data){
+		if(data.status == '1'){
+			jsalert(data.info);
+			setTimeout("location.href='"+document.referrer+"'",1500);
+		}else{
+			jsalert(data.info,2);
+		}
+	});
+}
+</script>
+</body>
+</html>

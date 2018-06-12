@@ -1,0 +1,35 @@
+
+<view class="edu-eva-section">
+      <view class="edu-eva-kc edu-bottom-solid edu-border-top">
+        <text class="edu-eva-name">评价课程</text>
+        <image src="../../assets/images/pj-s-icon.png" class="edu-eva-x"/>
+        <image src="../../assets/images/pj-icon.png" class="edu-eva-x"/>
+        <image src="../../assets/images/pj-icon.png" class="edu-eva-x"/>
+        <image src="../../assets/images/pj-icon.png" class="edu-eva-x"/>
+        <image src="../../assets/images/pj-icon.png" class="edu-eva-x"/> 
+    </view>
+    <view class="edu-eva-inputcontent body-view">
+      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入帖子内容" />
+    </view>
+</view>
+<view class="edu-eva-section">
+      <view class="edu-eva-kc edu-bottom-solid">
+        <text class="edu-eva-name">评价课程</text>
+        <image src="../../assets/images/pj-s-icon.png" class="edu-eva-x"/>
+        <image src="../../assets/images/pj-icon.png" class="edu-eva-x"/>
+        <image src="../../assets/images/pj-icon.png" class="edu-eva-x"/>
+        <image src="../../assets/images/pj-icon.png" class="edu-eva-x"/>
+        <image src="../../assets/images/pj-icon.png" class="edu-eva-x"/> 
+    </view>
+    <view class="edu-eva-inputcontent body-view">
+      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入帖子内容" />
+    </view>
+</view>
+
+<!-- 底部提交按钮 -->
+<view class="edu-eva-bottom-btn">
+      <form bindsubmit="bindFormSubmit">
+          <button form-type="submit" class="edu-eva-tj-btn">提交</button>
+      </form>
+</view>
+<!-- 底部提交按钮end -->

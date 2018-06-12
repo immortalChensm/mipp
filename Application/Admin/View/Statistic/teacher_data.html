@@ -1,0 +1,165 @@
+<include file="Public/min-header"/>
+<include file="Public/datepicker"/>
+
+<script src="__PUBLIC__/Admin/js/jquery.animsition.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/admin1.css"/>
+<script src="https://cdn.bootcss.com/echarts/3.5.3/echarts.min.js"></script>
+<script>
+$(document).ready(function(){
+    //初始化切换
+    $(".animsition").animsition({
+      
+        inClass               :   'fade-in-right',
+        outClass              :   'fade-out',
+        inDuration            :    1500,
+        outDuration           :    800,
+        linkElement           :   '.animsition-link',
+        // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+        loading               :    true,
+        loadingParentElement  :   'body', //animsition wrapper element
+        loadingClass          :   'animsition-loading',
+        unSupportCss          : [ 'animation-duration',
+                                  '-webkit-animation-duration',
+                                  '-o-animation-duration'
+                                ],
+        //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+        //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+        
+        overlay               :   false,
+        
+        overlayClass          :   'animsition-overlay-slide',
+        overlayParentElement  :   'body'
+    });
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main_chart'),'macarons');
+    // 指定图表的配置项和数据
+    var date =  JSON.parse('{$num_time}');
+    var my_data = JSON.parse('{$num_value}');
+    var option = {
+        tooltip: {
+            trigger: 'axis',
+            /*formatter: function(data){
+                //console.log(data)
+                 myChart.setOption({
+                    title : {
+                        text: '会员数量' + data.value,
+                    }
+                });
+                
+               return data.name + '</br>' + '新增数：' + data.value + '</br>';
+            }*/
+            
+        },
+        title: {
+            text: '教师统计',
+            /*subtext: '昨日新增：',
+            subtextStyle: {
+                fontSize:14,
+                color : '#ff4a84'
+            }*/
+        },
+        
+        toolbox: {
+            show : true,
+             feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: true},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {}
+            }
+        },
+        calculable : true,
+        xAxis: {
+            type : 'category',
+            boundaryGap : false,
+            data : date
+/*          axisLabel: {
+                interval : 0,//横轴信息全部显示
+                rotate : 60,//60度角倾斜显示
+                 formatter:function(val){
+                    return val.split("").join("\n"); //横轴信息文字竖直显示
+                }
+            }*/
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '100%']
+        },
+        dataZoom: [{
+            type: 'inside',
+            start: 0,
+            end: 100
+        }, {
+            start: 0,
+            end: 100,
+            handleSize: '80%',
+            handleStyle: {
+                color: '#fff',
+                shadowBlur: 3,
+                shadowColor: 'rgba(0, 0, 0, 0.6)',
+                shadowOffsetX: 2,
+                shadowOffsetY: 2
+            }
+        }],
+        series: [
+            {
+                name:'新增数',
+                type:'line',
+                smooth:true,
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(255, 70, 131)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 158, 68)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 70, 131)'
+                        }])
+                    }
+                },
+                data : my_data
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    myChart.on('mousemove',function(params){ // 控制台打印数据的名称 
+        $('#my_date_set1').html(params.name);
+    });
+})
+</script>
+<script type="text/javascript">
+window.onload = function(){
+    iniDate('begin_date');
+    iniDate('end_date');
+}
+</script>
+<div class="bees_main_right">
+    <div class="bees_main_content">
+		<div class="order_contain" style="border:none">
+			<p class="main_title">教师统计</p>
+			<form method="get" id="dataForm" action="{:U('Statistic/teacher_data')}">
+				<div class="controller">
+				    <div style="padding:20px 0;border-bottom:1px solid #a6a8ab;">
+				        <input type="text" placeholder="请选择开始时间" value="{$request_data.begin_date}" class="time_btn" id="begin_date" name="begin_date" />
+				        <input type="text" placeholder="请选择结束时间" value="{$request_data.end_date}" class="time_btn" id="end_date" name="end_date" />
+				        <input type="submit"  value="筛选" class="ct_btn" />
+				        <p style="clear:both;"></p>
+				    </div>
+				</div>
+			</form>
+			<div class="animsition" style="padding:60px 40px;">
+			    <div id="main_chart" style="height:448px;width:100%;border:1px solid #909090;"></div>
+			</div>
+		</div>
+	</div>
+</div>  
+<div class="clear"></div>
+</body>
+</html>

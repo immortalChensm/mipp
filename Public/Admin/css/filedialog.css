@@ -1,0 +1,46 @@
+*{  box-sizing: border-box;margin: 0;padding: 0; }
+ul,li{  list-style: none;margin-bottom: 0; }
+.up_warp{  width: 800px;box-shadow: 0 0 0 2px #0099CB;border-radius: 5px;  position: fixed;top: 10%;left: 0;right: 0;margin: auto;z-index: 99;overflow: hidden;}
+/*头部*/
+.up_title{  width: 100%;height: 45px;background-color: #f1f2f4;position: relative;  }
+.up_title:after{  visibility: hidden;  display: block;  font-size: 0;  content: " ";  clear: both;  height: 0;  }
+.up_title_l{  width: 140px;height: 100%;  text-align: center;line-height: 45px;font-size: 20px;color: #333;  float: left;  }
+.up_title_r{  width: 17px;height: 17px;font-size: 12px;text-align: center;line-height: 15px;  background-color: #0099cb;color: #fff;  float: right;margin: 14px 14px 0 0;cursor: pointer;  }
+.up_catgory{  width: 100%;padding: 22px 12px;  }
+/*文件库or 上传*/
+.up_catgory:after{  visibility: hidden;  display: block;  font-size: 0;  content: " ";  clear: both;  height: 0;  }
+.up_catgory li{  width: 85px;height: 28px;margin-right: 15px;float: left;  font-size: 14px;line-height: 28px;text-align: center;cursor: pointer;  background-color: #f1f2f4;color: #666;border-radius: 2px;  }
+.up_catgory .active{  background-color: #0099cb;color: #fff;  }
+/*文件库*/
+.select-catgory{ width: 100%;padding: 0 120px 0 30px;height: 30px;margin-bottom: 20px;}
+.select-catgory label input{  display:inline-block;width: 180px;height: 30px;border: 1px solid #ddd;padding: 0 10px;font-size: 14px;}
+.select-catgory label span{ display:inline-block;width: 60px;height: 30px;border: 1px solid #ddd;padding: 0 10px;text-align: center;line-height: 28px;vertical-align: top;font-size: 14px;cursor: pointer;}
+.select-catgory label span:hover{ background-color: #006990;border-color:#006990;color: #fff;}
+/*滚动区*/
+.up_sidle{  width: 100%;height: 280px;padding: 0;position: relative;}
+table {  border-collapse: collapse;}
+.table {  width: 100%;  max-width: 100%;background-color: transparent;border-bottom: 1px solid #e9ecef;margin-left: 30px;}
+.table td, .table th{padding: .5rem;vertical-align: top;border-top: 1px solid #e9ecef;}
+.table .th1{ width: 10%;text-align: center;}
+.table .th2{ width: 60%;text-align: center;}
+.table .th2>div{ max-width: 400px;text-align: center;overflow: hidden;  text-overflow: ellipsis; white-space: nowrap;margin: 0 auto;}
+.table .th3{ width: 20%;text-align: center;}
+.a-page{ width: 100%;height: 50px;line-height: 50px;padding: 0 40%;}
+.a-page>span:hover{ color: #006990;cursor: pointer;}
+.go-page{float: right;}
+.up_sidle_up{  display: none;width: 100%;min-height: 150px;position: relative;padding: 0 50px; }
+.a-select-img{ width: 100%;height: 30px;margin: 15px auto}
+.a-select-img span{ display: block;float: left;width: 15%;font-size: 14px;line-height: 30px;}
+.a-select-img label{ float: left;width:75%;}
+.a-select-img label input{ display:block;width: 89%;margin-right:3%;height: 30px;float: left;text-align: center;line-height:28px;border: 1px solid #ddd;font-size: 14px;color: #666;}
+.a-select-file{ width: 100%;height: 30px;margin: 15px auto}
+.a-select-file i{ display: block;float: left;width: 15%;font-size: 14px;line-height: 30px;font-style: normal;}
+.a-select-file span{ display: block;float: left;width: 55%;font-size: 14px;line-height: 30px;margin-right: 3.5%;border: 1px solid #ddd;padding: 0 10px;}
+.a-select-file label{ float: left;width:10%;position: relative}
+.a-select-file label input{ display:block;width: 88%;height: 32px;opacity: 0;position: absolute;top: 0;left: 0;}
+.a-select-file label span{ display:block;width: 88%;margin-right:3%;height: 32px;text-align: center;line-height:28px;border: 1px solid #ddd;font-size: 14px;color: #666;}
+.a-select-zs{   width: 100%;height: 30px;margin: -8px auto 15px;padding-left: 15%;}
+.a-select-zs span{ font-size: 14px;color: #999;}
+.up_add input{  display: block;width: 100%;height: 100%;opacity: 0;cursor: pointer;  position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: auto;  }
+.up_bottom{  width: 100%;height: 47px;background-color: #f1f2f4;  }
+.up_btn{  width: 72px;height: 28px;line-height: 28px;text-align: center;font-size: 14px;  float: right;margin: 10px 10px 0 0;border-radius: 2px;  background-color: #0099CB;color: #fff;cursor: pointer;  }

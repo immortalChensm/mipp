@@ -1,0 +1,200 @@
+<include file="Public/min-header" />
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+	<section class="content">
+       <div class="row">
+       		<div class="col-xs-12">
+	       		<div class="box">
+	             <div class="box-header">
+	               	<nav class="navbar navbar-default">	     
+				        <div class="collapse navbar-collapse">
+				          <form class="navbar-form form-inline" action="{:U('User/comments')}" method="post">
+				            <div class="form-group">
+				            	<input type="text" name="title" class="form-control" placeholder="职位名称" value="{:I('title')}">
+				              	<input type="text" name="keywords" class="form-control" placeholder="评论内容" value="{:I('keywords')}">
+				            </div>
+				            <button type="submit" class="btn btn-default">提交</button>
+				          </form>		
+				      	</div>
+	    			</nav>  
+	             </div>	             
+	             <div class="box-body">	               
+	           		<div class="row">
+	            	<div class="col-sm-12">
+		              <table id="list-table" class="table table-bordered table-striped dataTable">
+		                 <thead>
+		                   <tr role="row">
+		                   	   <th>选择</th>
+			                   <th>ID</th>
+			                   <th>头像</th>
+			                   <th>姓名</th>
+			                   <th>性别</th>
+			                   <th>手机号</th>
+			                   <th>评论职位</th>
+			                   <th>评论内容</th>
+			                   <th>评论时间</th>
+			                   <th>是/否显示</th>
+			                   <th>操作</th>
+		                   </tr>
+		                 </thead>
+						<tbody>
+						  <foreach name="list" item="vo" key="k" >
+						  	<tr role="row" align="center">
+						  	 <td><input type="checkbox" name="dataobj" key="n" value="{$vo.id}"/></td>
+						  	 <td>{$vo.id}</td>
+		                     <td><a onclick href="{$vo.user.headimgurl}" target="_blank"> <img alt="" src="{$vo.user.headimgurl}" width="80px" height="50px"> </a></td>
+		                     <td>{$vo.user.relname|default='--'}</td>
+		                     <td>{:$vo['user']['sex'] == '1'?'男':'女'}</td>
+		                     <td>{$vo.user.phone|default='--'}</td>
+		                      <td>{$vo.position_title|default='--'}</td>
+		                     <td>
+		                     <if condition="$vo.content neq null">
+		                     	 <table class="comment-table">
+		                     	 <tr><td class="comment-user">{$vo.username}：</td><td class="comment-con">{$vo.content}</td></tr>
+			                     <if condition="$vo.reply_data neq null">
+			                     <foreach name="vo.reply_data" item="v">
+			                     <tr><td class="comment-user">{$v.username}：</td><td class="comment-con">{$v.content}</td></tr>
+			                     </foreach>
+			                     </if>
+			                     </table>
+		                     <else/>
+		                     --
+		                     </if>
+		                     </td>
+		                     <td>{:substr($vo['create_date'],0,10)}</td>
+		                     <td>
+                                 <img width="20" height="20" src="__PUBLIC__/images/{:$vo['is_show'] == '1'?'yes.png':'cancel.png'}" onclick="setHot(this,'{$vo.id}','{$vo.is_show}')"/>                                        
+                             </td>
+		                     <td>
+		                      <a title="回复" class="btn btn-primary" href="javascript:void(0)" onclick="reply('{$vo.id}')"><i class="fa fa-comments"></i></a>
+		                      <a title="删除" class="btn btn-danger" href="javascript:void(0)" data-id="{$vo.id}" onclick="dele_data('{$vo.id}')"><i class="fa fa-trash-o"></i></a>
+							 </td>
+		                   </tr>
+		                  </foreach>
+		                 </tbody>
+		                 <tfoot>		                 
+		                 </tfoot>
+		               </table>	 
+	               </div>
+	          </div>
+	<if condition="$list neq null">
+	    <div class="gp_div">
+	    	<label> <input type="checkbox" name="checkall"/> <span> 全选</span></label>
+	    	<textarea name="huifu" id="huifu" placeholder="请输入回复内容" style="width:300px; height:100px;"></textarea>&nbsp;&nbsp;
+	        <input class="btn" type="button" value="批量回复" id="batch_remove"/>
+
+	    </div> 
+    </if>
+              <div class="row">
+              	    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">{$page}</div>		
+              </div>
+	         </div>
+	        </div>
+       	</div>
+       </div>
+   </section>
+</div>
+<include file="Public/dialog"/>
+<script>
+$(function(){
+	//获取选中的数据
+	var select_data = function(){
+		var datas = [];
+		$('input[name=dataobj]').each(function(){
+			if($(this).prop('checked')) datas.push($(this).val());
+		});
+		if(datas.length == 0) return false;
+		return datas;
+	}
+    
+	//全选/全不选
+    $('input[name=checkall]').click(function(){
+    	if($(this).is(':checked')){
+    		$('input[name=dataobj]').prop('checked',true);
+    	}else{
+    		$('input[name=dataobj]').prop('checked',false);
+    	}
+    });
+    
+	//反选
+    // $('input[name=checkfan]').click(function(){
+    //     $('input[name=dataobj]').each(function () {  
+    //         this.checked = !this.checked;  
+    //      })  
+    // });
+    
+    //批量删除
+    $('#batch_remove').click(function(){
+    	var huifu = $('#huifu').val();
+    	var obj = this;
+    	var post_data = select_data();
+		if(!post_data) {
+			jsalert('请选择要回复的数据',2);
+			return false;
+		}
+		if(huifu ==''){
+			jsalert('回复内容不能为空',2);
+			return false;
+		}
+    if(confirm('确定要回复吗？')){
+		$.post("{:U('content_all')}",{datas:post_data,content:huifu},function(data){
+			if(data.status == '1'){
+				jsalert(data.info,1);
+				var url = "{:U('User/comments')}";
+                setTimeout("location.href='"+url+"'",1000);
+			}else{
+				jsalert(data.info,2);
+			}
+		});
+    }
+    })
+}); 
+function setHot(obj,id,is_show){
+	$.post("{:U('User/set_show')}",{id:id,is_show:is_show},function(data){
+		if(is_show == '1'){
+			$(obj).attr('src','__PUBLIC__/images/cancel.png');
+		}else{
+			$(obj).attr('src','__PUBLIC__/images/yes.png');
+		}
+		location.href="";
+	});
+}
+function reply(id){
+	$.post("{:U('User/reply')}",{act:'show_form',id:id},function(data){
+		dialog(data,'回复评论',function(){
+			$.post("{:U('User/reply')}",$('#dataForm').serializeArray(),function(res){
+				if(res.status == '1'){
+					jsalert(res.info,1,function(){
+						location.reload();
+					});
+				}else{
+					jsalert(res.info,2);
+				}
+			});
+		})
+	});
+}
+function dele_data(id){
+	jsconfirm('确认要删除吗？',function(){
+		$.ajax({
+			type : 'post',
+			url : '{:U("Enroll/dele_enroll")}',
+			data : {id:id},
+			dataType : 'json',
+			success : function(data){
+				if(data.status == '1'){
+					jsalert(data.info,1,function(){
+						location.reload();
+					});
+				}else{
+					jsalert(data.info,2);
+				}
+			}
+		})
+	});
+	return false;
+}
+</script> 
+</body>
+</html>

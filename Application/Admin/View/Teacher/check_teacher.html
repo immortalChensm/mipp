@@ -1,0 +1,19 @@
+<form id="dataForm">
+<input type="hidden" name="info[id]" value="{$info.id}"/>
+<input type="hidden" name="info[name]" value="{$info.name}"/>
+<input type="hidden" name="info[phone]" value="{$info.phone}"/>
+<input type="hidden" name="act" value="save"/>
+<li>
+	<div class="list_content" style="width:100px; text-align:right; padding-top:15px;">审核结果：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px; line-height:33px; padding-right:5px;">
+	<label style="font-weight:normal;"><input type="radio" name="info[status]" value="2" {:$info['status'] == '2'?'checked':''}>已确认</label>
+	<label style="font-weight:normal;"><input type="radio" name="info[status]" value="3" {:$info['status'] == '3'?'checked':''}>不合格</label>
+	</div>
+</li>
+<!--<li>
+	<div class="list_content" style="width:100px; text-align:right; padding-top:15px;color:red;">注意：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px; padding-right:5px;color:red;">
+	    审核通过后将会解冻返现资金和好友推荐资金，转正后将不可冻结
+	</div>
+</li>-->
+</form>

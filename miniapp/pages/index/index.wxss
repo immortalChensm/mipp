@@ -1,0 +1,190 @@
+/** wxss **/
+/* .body{
+  background-color: #F2F2F2;
+}
+.edu-banner{
+  width:100%;
+  height: 140px;
+} 
+.edu-banner image{
+  width: 100%;
+  height: 100%;
+}
+.edu-list{
+   height: 206px;
+   background-color: #ffffff;
+}
+.edu-list-fl{
+  width: 25%;
+  float: left;
+}
+.edu-rows{
+  flex-direction: row;
+  float: left;
+}
+.edu-list-fl image{
+  width: 46px;
+  height: 46px;
+}
+.edu-icon-k{
+  margin: 15px 20px 0px;
+  text-align: center;
+}
+.edu-list-title{
+   width: 100%;
+   font-size: 12px;
+   color: rgb(36,36,36);
+   text-align: center;
+   overflow: hidden;
+   margin-bottom:5px;
+   font-family: PingFang-SC-Medium;
+}
+.edu-space-a{
+  height: 10px;
+  background-color: #f2f2f2;
+}
+.edu-recommend-courses{
+  padding: 15px;
+}
+.edu-remm-name{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  line-height: 16px;
+  margin-bottom: 14px;
+}
+.edu-remm-kc{
+   font-size: 13px;
+   margin:0px 3px;
+   color: rgb(68,68,68);
+}
+.edu-tj-icon{
+  width: 10px;
+  height: 10px;
+}
+.edu-more-icon{
+  width: 20px;
+  height:5px;
+  position: absolute;          
+  right: 0px;
+}
+.edu-acticle-list{
+   width: 100%;
+   height: 90px;
+   display: flex;
+   margin: 35px 0px;
+}
+.edu-list-left{
+  width: 134px;
+  margin-right: 15px;
+}
+.edu-list-right{
+  width: 60%;
+}
+.edu-list-img{
+  width: 134px;
+  height: 90px;
+  border-radius: 4px;
+}
+.edu-list-cy-name{
+  font-size: 16px;
+  font-family: PingFang-SC-Medium;
+  color:rgb(36,36,36);
+}
+.edu-list-one{
+  width:100%; 
+  height: 20px;
+  line-height: 20px;
+}
+.edu-list-two{
+  width: 100%;
+  height: 20px;
+   display: flex;
+   align-items: center;
+   overflow: hidden;
+   justify-content:  flex-start;
+}
+.edu-list-two image{
+    width: 12px;
+    height: 12px;
+    margin:0px 2px;
+}
+.edu-list-two text{
+      font-size: 13px;
+      color: rgb(255,195,35);
+      padding-top:2px;
+      font-family: PingFang-SC-Medium;
+}
+.edu-introduce{
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  overflow: hidden;
+}
+.edu-introduce label{
+   height: 25px;
+  line-height: 25px;
+  font-size: 13px;
+  color: rgb(68,68,68);
+  font-family: PingFang-SC-Regular;
+}
+.edu-price{
+  width: 100%;
+  height: 25px;
+  line-height: 36px;
+  display: flex;
+}
+.edu-price-num{
+  width: 50%;
+  font-size: 14px;
+  color: rgb(255,0,0);
+  display: flex;
+  justify-content: flex-start;
+}
+.edu-sales{
+  width: 50%;
+  font-size: 11px;
+  color: rgb(68,68,68);
+  font-family: PingFang-SC-Regular;
+  justify-content: flex-end;
+  display: flex;
+}
+.edu-list-img-a{
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+}
+.edu-list-left-a{
+  width: 75px;
+  height: 100%;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.edu-tea-name{
+   width: 50%;
+   color: rgb(242,161,24);
+   font-size: 12px;
+   font-family: PingFang-SC-Medium;
+}
+.edu-gps{
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+.edu-jl{
+   color: rgb(120,120,120);
+   font-size: 12px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+.edu-jl-list{
+  width:100%;
+  height:25px;
+ line-height:25px; 
+  display:flex;
+
+} */

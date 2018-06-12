@@ -1,0 +1,81 @@
+<!-- 推荐课程 start -->
+<view class="edu-recommend-courses-tj">
+    <!-- 列表 -->
+     <!-- <view class="edu-acticle-list-tj-s">
+         <view class="edu-list-left">
+            <image src="../../assets/images/001.jpg" class="edu-list-img"/>
+         </view>
+          <view class="edu-list-right">
+              <view class="edu-list-one">
+                  <text class="edu-list-cy-name">茶艺精品班</text>
+              </view>
+              <view class="edu-list-two">
+                <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <text>4.7</text>
+              </view>
+              <view class="edu-introduce">
+                 <label>简介：精品茶道，等你来到...</label>
+              </view>
+               <view class="edu-price">
+                 <label class="edu-price-num">¥88.00</label>
+                  <label class="edu-sales">已售：231</label>
+              </view>
+          </view> 
+     </view> -->
+      <!-- <view class="edu-acticle-list-tj-s">
+              <view class="edu-list-left">
+                  <image src="../../assets/images/001.jpg" class="edu-list-img"/>
+              </view>
+                <view class="edu-list-right">
+                    <view class="edu-list-one">
+                        <text class="edu-list-title">茶艺精品班</text>
+                    </view>
+                    <view class="edu-list-two">
+                      <image src="../../assets/images/xing-icon.png"/>
+                          <image src="../../assets/images/xing-icon.png"/>
+                          <image src="../../assets/images/xing-icon.png"/>
+                          <image src="../../assets/images/xing-icon.png"/>
+                          <image src="../../assets/images/xing-icon.png"/>
+                          <text>4.7</text>
+                    </view>
+                    <view class="edu-introduce">
+                      <label>简介：精品茶道，等你来到...</label>
+                    </view>
+                    <view class="edu-price">
+                      <label class="edu-price-num">¥88.00</label>
+                        <label class="edu-sales">已售：231</label>
+                    </view>
+                </view> 
+        </view> -->
+           <view class="edu-acticle-list-tj-s" wx:for="{{acticleData}}" wx:for-item="circle" wx:key="id">
+              <view class="edu-list-left">
+                  <image src="../../assets/images/001.jpg" class="edu-list-img"/>
+              </view>
+                <view class="edu-list-right">
+                    <view class="edu-list-one">
+                        <text class="edu-list-title">{{circle.name}}</text>
+                    </view>
+                    <view class="edu-list-two">
+                          <image src="../../assets/images/xing-icon.png" />
+                          <image src="../../assets/images/xing-icon.png"/>
+                          <image src="../../assets/images/xing-icon.png"/>
+                          <image src="../../assets/images/xing-icon.png"/>
+                          <image src="../../assets/images/xing-icon.png"/>
+                          <text>4.7</text>
+                    </view>
+                    <view class="edu-introduce">
+                      <label>{{circle.introduction}}</label>
+                    </view>
+                    <view class="edu-price">
+                      <label class="edu-price-num">{{circle.price}}</label>
+                        <label class="edu-sales">已售：{{circle.nums}}</label>
+                    </view>
+                </view> 
+        </view>
+      <!-- 列表end -->
+</view>
+<!-- 推荐课程 end -->

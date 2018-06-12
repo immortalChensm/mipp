@@ -1,0 +1,6 @@
+<!-- <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button> -->
+<view class='shadow logo'>
+  <image class='logo' src='/assets/images/art-icon.png'></image>
+  <view class='logoname'>C2C艺术教育平台</view>
+  <button bindgetuserinfo='userLogin' open-type='getUserInfo'>立刻体验</button>
+</view>

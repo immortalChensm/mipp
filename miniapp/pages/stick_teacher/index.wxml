@@ -1,0 +1,64 @@
+<!-- 金牌老师 start -->
+<view class="edu-recommend-courses-tj">
+   
+    <!-- 列表 -->
+     <view class="edu-acticle-list-tj-s" wx:for="{{teacherData}}" wx:for-item="teacherName" wx:key="id">
+         <view class="edu-list-left-a">
+            <image src="../../assets/images/teach-icon.png" class="edu-list-img-a"/>
+         </view>
+          <view class="edu-list-right-a">
+              <view class="edu-list-one">
+                  <text class="edu-list-cy-name">{{teacherName.name}}</text>
+              </view>
+              <view class="edu-list-two">
+                <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <text>{{teacherName.score}}</text>
+              </view>
+              <view class="edu-introduce">
+                 <label>{{teacherName.introduction}}</label>
+              </view>
+               <view class="edu-jl-list">
+                 <label class="edu-tea-name">{{teacherName.category}}</label>
+                  <label class="edu-sales edu-jl">
+                    <image src="../../assets/images/gps-icon.png"  class="edu-gps"/>
+                    {{teacherName.distance}}km
+                  </label>
+              </view>
+          </view> 
+     </view>
+        <view class="edu-acticle-list-tj-s">
+         <view class="edu-list-left-a">
+            <image src="../../assets/images/teach-icon.png" class="edu-list-img-a"/>
+         </view>
+          <view class="edu-list-right-a">
+              <view class="edu-list-one">
+                  <text class="edu-list-cy-name">张雨</text>
+              </view>
+              <view class="edu-list-two">
+                <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <text>4.7</text>
+              </view>
+              <view class="edu-introduce">
+                 <label>简介：精品茶道，等你来到，等你和大家...</label>
+              </view>
+               <view class="edu-jl-list">
+                 <label class="edu-tea-name">茶艺</label>
+                  <label class="edu-sales edu-jl">
+                     <image src="../../assets/images/gps-icon.png"  class="edu-gps"/>
+                     1.2km
+                  </label>
+              </view>
+          </view> 
+     </view>
+  
+       <!-- 列表end -->
+</view>
+<!-- 金牌老师 end -->

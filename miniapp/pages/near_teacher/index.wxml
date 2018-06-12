@@ -1,0 +1,143 @@
+<!-- 分类筛选 start -->
+<view class="edu-screen edu-border-top edu-bottom-solid">
+      <view class="{{showkecd?'edu-screen-a edu-select-fl':'edu-screen-a edu-select-fl'}}" bindtap="showok">
+          距离
+          <image src="../../assets/images/w-top-icon.png" class="{{showkecd?'edu-a-b edu-show':'edu-a-b edu-show'}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="{{showkecd?'edu-a-b edu-none':'edu-a-b edu-none'}}"/>
+      </view>
+      <view class="{{showkecda?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="showxl">
+          茶艺
+          <image src="../../assets/images/w-top-icon.png" class="{{showkecda?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="{{showkecda?'edu-a-b edu-none':'edu-a-b edu-show'}}"/>
+      </view>
+      <view class="edu-screen-a">
+          销量
+          <image src="../../assets/images/w-top-icon.png" class="edu-a-b"/>
+          <image src="../../assets/images/w-botton-icon.png" class="edu-a-b"/>
+      </view>
+</view>
+<!-- 遮罩层 -->
+    <view class="{{showkecd?'edu-mask':'edu-none'}}"></view> 
+    <view class="{{showkecda?'edu-mask':'edu-none'}}"></view> 
+<!-- 遮罩层 -->
+<!-- 距离 -->
+<view  class="{{showkecd?'edu-show edu-sty-qa':'edu-none'}}">
+    <view class="edu-kc-list">
+       <text class="edu-ke-c-name">全部</text>
+       <view class="edu-success-icon edu-icon-we">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+    <view class="edu-kc-list">
+       <text class="edu-ke-c-name">1km内</text>
+       <view class="edu-success-icon edu-icon-we">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+    <view class="edu-kc-list">
+       <text class="edu-ke-c-name">3km内</text>
+       <view class="edu-success-icon edu-icon-we">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+       <view class="edu-kc-list">
+       <text class="edu-ke-c-name">5km内</text>
+       <view class="edu-success-icon edu-icon-we">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+</view>
+<!-- 距离 end -->
+<!-- 茶艺 -->
+<view  class="{{showkecda?'edu-show edu-sty-qa':'edu-none'}}">
+    <view class="edu-kc-list">
+       <text class="edu-ke-c-name">全部</text>
+       <view class="edu-success-icon edu-icon-we">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+    <view class="edu-kc-list">
+       <text class="edu-ke-c-name">咖啡</text>
+       <view class="edu-success-icon edu-icon-we">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+    <view class="edu-kc-list">
+       <text class="edu-ke-c-name">健身</text>
+       <view class="edu-success-icon edu-icon-we">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+      <view class="edu-kc-list">
+       <text class="edu-ke-c-name">击剑</text>
+       <view class="edu-success-icon edu-icon-we">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+</view>
+<!-- 销量 end -->
+<!-- 分类筛选 end -->
+<!-- 金牌老师 start -->
+<view class="edu-recommend-courses-tj">
+   
+    <!-- 列表 -->
+     <view class="edu-acticle-list-tj-s edu-bottom-solid">
+         <view class="edu-list-left-a">
+            <image src="../../assets/images/teach-icon.png" class="edu-list-img-a"/>
+         </view>
+          <view class="edu-list-right-a">
+              <view class="edu-list-one">
+                  <text class="edu-list-cy-name">张雨</text>
+              </view>
+              <view class="edu-list-two">
+                <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <text>4.7</text>
+              </view>
+              <view class="edu-introduce">
+                 <label>简介：精品茶道，等你来到，等你和大家...</label>
+              </view>
+               <view class="edu-jl-list">
+                 <label class="edu-tea-name">茶艺</label>
+                  <label class="edu-sales edu-jl">
+                    <image src="../../assets/images/gps-icon.png"  class="edu-gps"/>
+                     1.2km
+                  </label>
+              </view>
+          </view> 
+     </view>
+        <view class="edu-acticle-list-tj-s edu-bottom-solid">
+         <view class="edu-list-left-a">
+            <image src="../../assets/images/teach-icon.png" class="edu-list-img-a"/>
+         </view>
+          <view class="edu-list-right-a">
+              <view class="edu-list-one">
+                  <text class="edu-list-cy-name">张雨</text>
+              </view>
+              <view class="edu-list-two">
+                <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <image src="../../assets/images/xing-icon.png"/>
+                    <text>4.7</text>
+              </view>
+              <view class="edu-introduce">
+                 <label>简介：精品茶道，等你来到，等你和大家...</label>
+              </view>
+               <view class="edu-jl-list">
+                 <label class="edu-tea-name">茶艺</label>
+                  <label class="edu-sales edu-jl">
+                     <image src="../../assets/images/gps-icon.png"  class="edu-gps"/>
+                     1.2km
+                  </label>
+              </view>
+          </view> 
+     </view>
+  
+       <!-- 列表end -->
+</view>
+<!-- 金牌老师 end -->

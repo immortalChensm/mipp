@@ -1,0 +1,178 @@
+<include file="Public/min-header"/>
+<script src="__PUBLIC__/js/ajaxfileupload.js" type="text/javascript"></script>
+<style>
+.group-list li{list-style-type: none;float:left;width:180px;height:30px;}
+.group-list li input{margin-right:5px;}
+</style>
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+    <section class="content" style="padding:0px 15px;">
+        <!-- Main content -->
+        <div class="container-fluid">
+            <div class="pull-right">
+                <a href="javascript:history.go(-1)" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="返回"><i class="fa fa-reply"></i></a>
+            </div>
+            <div class="panel panel-default">     
+            	<div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-list"></i> 编辑会员信息</h3>
+                </div>      
+                <div class="panel-body ">   
+                    <!--表单数据-->
+                    <form method="post" id="dataForm">    
+                    <input type="hidden" name="info[id]" value="{$info.id}"/>                
+                        <!--通用信息-->
+                    <div class="tab-content" style="padding:20px 0px;">                 	  
+                        <div class="tab-pane active" id="tab_tongyong">                           
+                            <table class="table table-bordered">
+                                <tbody>
+                                <tr>
+                                    <td class="col-sm-2">会员昵称：</td>
+                                    <td class="col-sm-8">
+                                        <input type="text" class="form-control" value="{$info.nickname}" readonly/>
+                                        <span id="err_attr_name" style="color:#F00; display:none;"></span>                                        
+                                    </td>
+                                </tr>   
+                                <tr>
+                                    <td class="col-sm-2">真实姓名：</td>
+                                    <td class="col-sm-8">
+                                        <input type="text" class="form-control" name="info[relname]" value="{$info.relname}" placeholder="请输入真实姓名"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-sm-2">性别：</td>
+                                    <td class="col-sm-8">
+                                        <label><input type="radio" name="info[sex]" value="1" {:$info['sex'] == '1'?'checked':''}> 男</label>
+                                        <label><input type="radio" name="info[sex]" value="2" {:$info['sex'] == '2'?'checked':''}> 女</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-sm-2">手机号：</td>
+                                    <td class="col-sm-8">
+                                        <input type="text" class="form-control" value="{$info.phone}" readonly/>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="col-sm-2">会员头像：</td>
+                                    <td class="col-sm-8">
+                         		 		<input type="text" id="headimgurl" class="form-control" name="info[headimgurl]" value="{$info.headimgurl}" placeholder="点击右侧按钮上传图片">
+                         		 		<input type="button" class="button" onClick="$(this).next('input').click()"  value="上传图片"/>
+                         		 		<input type="file" id="upimg" name="upimg" onchange="upload_img(this.id,'headimgurl')" style="display:none;"/>
+                         		 		<if condition="$info.headimgurl neq null">
+                         		 		<a href="{$info.headimgurl}" target="_blank" class="button">查看头像</a>
+                         		 		</if>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-sm-2">籍贯：</td>
+                                    <td class="col-sm-8">
+                                        <select class="form-control" name="info[province_id]" style="width:25%;" onchange="get_city(this.value)">
+                                        	<option value="">请选择省份</option>
+                                        	<foreach name="area_data['province']" item="val">	
+                                        	<option value="{$val.id}" {:$val['id'] == $info['province_id']?'selected':''}>{$val.name}</option>
+                                        	</foreach>
+                                        </select>
+                                        <select class="form-control" name="info[city_id]" style="width:25%;">
+                                        	<option value="">请选择城市</option>
+                                        	<foreach name="area_data[city]" item="val">
+                                        	<option value="{$val.id}" {:$val['id'] == $info['city_id']?'selected':''}>{$val.name}</option>
+                                        	</foreach>
+                                        </select>
+                                        <span id="err_attr_name" style="color:#F00; display:none;"></span>                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-sm-2">身份证号：</td>
+                                    <td class="col-sm-8">
+                                        <input type="text" class="form-control" name="info[card_number]" value="{$info.card_number}" placeholder="请输入身份证号"/>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="col-sm-2">身份证正面照：</td>
+                                    <td class="col-sm-8">
+                         		 		<input type="text" id="pcard_image" class="form-control" name="info[pcard_image]" value="{$info.pcard_image}" placeholder="点击右侧按钮上传图片">
+                         		 		<input type="button" class="button" onClick="$(this).next('input').click()"  value="上传图片"/>
+                         		 		<input type="file" id="pcard" name="pcard" onchange="upload_img(this.id,'pcard_image')" style="display:none;"/>
+                         		 		<if condition="$info.pcard_image neq null">
+                         		 		<a href="{$info.pcard_image}" target="_blank" class="button">查看照片</a>
+                         		 		</if>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-sm-2">身份证反面照：</td>
+                                    <td class="col-sm-8">
+                         		 		<input type="text" id="bcard_image" class="form-control" name="info[bcard_image]" value="{$info.bcard_image}" placeholder="点击右侧按钮上传图片">
+                         		 		<input type="button" class="button" onClick="$(this).next('input').click()"  value="上传图片"/>
+                         		 		<input type="file" id="bcard" name="bcard" onchange="upload_img(this.id,'bcard_image')" style="display:none;"/>
+                         		 		<if condition="$info.bcard_image neq null">
+                         		 		<a href="{$info.bcard_image}" target="_blank" class="button">查看照片</a>
+                         		 		</if>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-sm-2">求职状态：</td>
+                                    <td class="col-sm-8">
+                                        <label><input type="radio" name="info[position_type]" value="1" {:$info['position_type'] != '2'?'checked':''}> 在职</label>
+                                        <label><input type="radio" name="info[position_type]" value="2" {:$info['position_type'] == '2'?'checked':''}> 待职</label>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                	<tr>
+                                	<td></td>
+                                	<td class="text-right"><input class="btn btn-primary" type="button" onclick="save()" value="保存"></td></tr>
+                                </tfoot>                               
+                                </table>
+                        </div>                           
+                    </div>              
+			    	</form><!--表单数据-->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+function save(){
+	$.post("{:U('User/edit_user')}",$('#dataForm').serializeArray(),function(data){
+		if(data.status == '1'){
+			jsalert(data.info,1,function(){
+				location.href = data.url
+			});
+		}else{
+			jsalert(data.info,2);
+		}
+	});
+}
+function get_city(pid){
+	if(pid == null || pid == '') {
+		$("select[name='info[city_id]']").html('<option value="">请选择城市</option>');
+		return false;
+	}
+	$.post("{:U('User/getCity')}",{pid:pid},function(data){
+		if(data.status == '1'){
+			var str = '';
+			var citys = data.info;
+			if(citys.length>0){
+				for(var i=0;i<citys.length;i++){
+					str += '<option value="'+citys[i].id+'">'+citys[i].name+'</option>';
+				}
+			}else{
+				str += '<option value="">请选择城市</option>';
+			}
+			$("select[name='info[city_id]']").html(str);
+		}else{
+			jsalert(data.info,2);
+		}
+	});
+}
+function upload_img(ele_id,save_id){
+	upload(ele_id,function(data){
+		if(data.status == '1'){
+	 		$('#'+save_id).val(data.info.image_url);
+	 	}else{
+	 		jsalert(data.msg,2);
+	 	}
+	});
+}
+</script>
+</body>
+</html>

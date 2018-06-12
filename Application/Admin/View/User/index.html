@@ -1,0 +1,86 @@
+<include file="Public/min-header" />
+<script>
+function export_order(){
+    var keyword = $.trim($('input[name=keyword]').val());
+    var phone = $.trim($('input[name=phone]').val());
+    var sex = $.trim($('input[name=sex]').val());
+    location.href="{:U('Export/enroll')}?keyword="+keyword+"&phone="+phone+"&sex="+sex;
+}
+</script>
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+	<section class="content">
+       <div class="row">
+       		<div class="col-xs-12">
+	       		<div class="box">
+	             <div class="box-header">
+	               	<nav class="navbar navbar-default">	     
+				        <div class="collapse navbar-collapse">
+				          <form class="navbar-form form-inline" action="{:U('User/index')}" method="get">
+				            <div class="form-group">
+				              	<input type="text" name="keywords" class="form-control" placeholder="昵称/姓名/手机号" value="{$request_data.keywords}">
+				              	<select name="identify" class="form-control">
+				              	<option value="">会员身份</option>
+				              	<option value="1" {:$request_data['identify'] == 1 ? 'selected':''} >普通会员</option>
+				              	<option value="2" {:$request_data['identify'] == 2 ? 'selected':''} >教师</option>
+				              	</select>
+				            </div>
+				            <button type="submit" class="btn btn-default">搜索</button>
+				          </form>		
+				      	</div>
+	    			</nav>
+	             </div>	             
+	             <div class="box-body">	               
+	           		<div class="row">
+	            	<div class="col-sm-12">
+		              <table id="list-table" class="table table-bordered table-striped dataTable">
+		                 <thead>
+		                   <tr role="row">
+			                   <th>ID</th>
+			                   <th>头像</th>
+			                   <th>昵称</th>
+			                   <th>身份</th>
+			                   <th>姓名</th>
+			                   <th>手机</th>
+							   <th>消费总额</th>
+			                   <th>关注时间</th>
+			                   <th>操作</th>
+		                   </tr>
+		                 </thead>
+						<tbody>
+						  <foreach name="list" item="vo" key="k" >
+						  	<tr role="row" align="center">
+		                     <td>{$vo.id}</td>
+		                     <td><img src="{$vo.headimgurl}" onclick="window.open('{$vo.headimgurl}')" style="cursor:pointer; height:50px;"></td>
+		                     <td>{$vo.nickname|default='--'}</td>
+		                     <td>{:$vo['identify'] == '1'?'普通会员':'老师'}</td>
+							 <td>{$vo.name|default='--'}</td>
+							 <td>{$vo.phone|default='--'}</td>
+		                     <td>{$vo.consume_money|default='0'}</td>
+		                     <td>{$vo.create_date}</td>
+		                     <td>
+		                       <a title="查看订单" class="btn btn-primary" href="{:U('Order/user_order',array('user_id'=>$vo['id']))}"><i class="fa fa-cart-arrow-down"></i></a>
+		                       <if condition="$vo.identify eq 2">
+		                       <a title="越权登录" class="btn btn-primary" href="{:U('Admin/over_login',array('teacher_id'=>$vo['teacher_id']))}"><i class="fa fa-user"></i></a>
+		                       </if>
+							 </td>
+		                   </tr>
+		                  </foreach>
+		                   </tbody>
+		                 <tfoot>		                 
+		                 </tfoot>
+		               </table>	 
+	               </div>
+	          </div>
+              <div class="row">
+              	    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">{$page}</div>
+              </div>
+	         </div>
+	        </div>
+       	</div>
+       </div>
+   </section>
+</div>
+</body>
+</html>
