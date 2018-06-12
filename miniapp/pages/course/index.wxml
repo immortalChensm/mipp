@@ -1,7 +1,7 @@
 <!-- 分类筛选 start -->
 <view class="edu-screen edu-border-top edu-bottom-solid">
       <view class="{{showkecd?'edu-screen-a edu-select-fl':'edu-screen-a edu-select-fl'}}" bindtap="showok">
-          全部课程
+          {{default_type}}
           <image src="../../assets/images/w-top-icon.png" class="{{showkecd?'edu-a-b edu-show':'edu-a-b edu-show'}}"/>
           <image src="../../assets/images/w-botton-icon.png" class="{{showkecd?'edu-a-b edu-none':'edu-a-b edu-none'}}"/>
       </view>

@@ -1,10 +1,12 @@
-// pages/课程/curriculum.js
+var tool = require("../../utils/tool.js")
+var app = getApp()
 Page({
   /**
     * 页面的初始数据
     */
   data: {
-    bools:1
+    bools:1,
+    default_type:'全部课程'
   },
   // 全部课程筛选点击事件
   showok(){
@@ -94,5 +96,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  /**
+   * 获取课程列表
+   */
+  courseList:function(){
+
   }
 })
