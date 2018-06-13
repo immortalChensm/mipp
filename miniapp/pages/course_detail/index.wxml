@@ -2,28 +2,32 @@
 <view class="edu-course-width">
     <view class="section tc">
       <video src="{{src}}"   controls class="edu-course-width"></video>
+      <!-- <block wx:for="{{course_info.pics}}" wx:key="key">
+        <image src='{{item}}'></image>
+      </block> -->
     </view>
 </view>
 <!-- 视频end -->
 <!-- 标题start -->
 <view class="edu-course-qa">
-    <text class="edu-course-name">茶艺精品班</text>
+    <text class="edu-course-name">{{course_info.name}}</text>
     <view class="edu-course-xx">
+          <image src="../../assets/images/xing-icon.png" style="width:{{4.5/5}}"/>
           <image src="../../assets/images/xing-icon.png"/>
           <image src="../../assets/images/xing-icon.png"/>
           <image src="../../assets/images/xing-icon.png"/>
           <image src="../../assets/images/xing-icon.png"/>
-          <image src="../../assets/images/xing-icon.png"/>
-          <text>4.7</text>
+          <text>{{course_info.star}}</text>
     </view>
-    <text class="edu-course-jj">简介：精品茶道，等你来到，等你来评选品茶和交友和大…222222343242</text>
+    <text class="edu-course-jj">简介：{{course_info.profile}}</text>
      <view class="edu-course-price edu-course-space-a">
-        <label class="edu-price-num">¥88.00</label>
-          <label class="edu-sales">已售：231</label>
+        <label class="edu-price-num">¥{{course_info.price}}</label>
+          <label class="edu-sales">已售：{{course_info.sale_count}}</label>
     </view>
     <view class="edu-course-kc edu-border-top">
-        <a href="#"  class="edu-btn-a">精品课程</a>
-        <a href="#"  class="edu-btn-a">放心课程</a>
+        <block wx:for="{{course_info.tags}}" wx:key="key">
+        <a href="#"  class="edu-btn-a">{{item}}</a>
+        </block>
     </view>
 </view>
 <!-- 标题end -->
@@ -38,27 +42,27 @@
      </view>
        <view  class="edu-course-info edu-bottom-solid">
             <view class="edu-course-left">
-               <image src="../../assets/images/timg.jpeg" class="edu-course-logo"/>
+               <image src="{{teacher_info.headimgurl}}" class="edu-course-logo"/>
             </view>
             <view class="edu-course-right">
-                 <text class="edu-course-teach-name">若兰</text>
-                 <text class="edu-course-address">地址：苏州工业园区若水路388号纳米科技园E栋1206楼</text>
+                 <text class="edu-course-teach-name">{{teacher_info.name}}</text>
+                 <text class="edu-course-address">地址：{{teacher_info.address}}</text>
             </view>
        </view>
        <view class="edu-course-fl-icon">
-            <view class="edu-course-cft edu-right-solid">
+            <view class="edu-course-cft edu-right-solid" bindtap='collect'>
                 <view class="edu-course-icon-jg">
                     <image src="../../assets/images/shoucang-icon.png" class="edu-course-gltb"/>
                 </view>
                 <view class="edu-list-title edu-list-can-q">收藏</view>
             </view>
-            <view class="edu-course-cft edu-right-solid">
+            <view class="edu-course-cft edu-right-solid" bindtap='onShareAppMessage'>
                 <view class="edu-course-icon-jg">
                     <image src="../../assets/images/zhuanfa-icon.png" class="edu-course-gltb"/>
                 </view>
                 <view class="edu-list-title edu-list-can-q">分享</view>
             </view>
-            <view class="edu-course-cft">
+            <view class="edu-course-cft" bindtap='calling' data-phone='{{teacher_info.phone}}'>
                  <view class="edu-course-icon-jg">
                     <image src="../../assets/images/tel-icon.png" class="edu-course-gltb"/>
                 </view>

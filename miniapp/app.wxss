@@ -22,7 +22,12 @@
   /* height: 412rpx; */
   background-color: #fff;
 }
+.edu-xing-a{
+  width:35%;
+height:20rpx;
+margin:0rpx 4rpx;
 
+}
 .edu-list-title-a {
   width: 100%;
   font-size: 24rpx;

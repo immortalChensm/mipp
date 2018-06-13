@@ -49,11 +49,18 @@
         <text class="edu-list-title">{{item.name}}</text>
       </view>
       <view class="edu-list-two">
+      <view class="edu-hidden-a">
+         <!-- <view class="">
+          <image src="../../assets/images/star.png"  class="edu-xing-a"/>
+        </view> -->
+        
+      </view>
+          
+        <!-- <image src="../../assets/images/xing-icon.png" />
         <image src="../../assets/images/xing-icon.png" />
         <image src="../../assets/images/xing-icon.png" />
         <image src="../../assets/images/xing-icon.png" />
-        <image src="../../assets/images/xing-icon.png" />
-        <image src="../../assets/images/xing-icon.png" />
+        <image src="../../assets/images/xing-icon.png" /> -->
         <text>{{item.star}}</text>
       </view>
       <view class="edu-introduce">

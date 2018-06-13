@@ -5878,3 +5878,2355 @@ SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_
 SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0010s ]
 SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
 
+[ 2018-06-13T14:35:59+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002104s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0204s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0080s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:36:01+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004098s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0056s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T14:36:05+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004266s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY price desc,create_date desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0063s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T14:36:07+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001188s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002382s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY price desc,create_date desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0076s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T14:36:09+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003536s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0188s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 4 ORDER BY price desc,create_date desc LIMIT 0,10   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0080s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T14:36:11+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002402s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 4 ORDER BY price desc,create_date desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0059s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T14:36:13+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003773s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 4 ORDER BY price asc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0095s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T14:36:16+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002148s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 4 ORDER BY price desc,create_date desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0057s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-06-13T14:36:18+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003653s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 4 ORDER BY sale_count asc,create_date desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0067s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:44:01+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004202s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0178s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0011s ]
+
+[ 2018-06-13T14:44:01+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010972s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0101s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:44:01+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005647s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0014s ]
+
+[ 2018-06-13T14:44:02+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003174s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0182s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0122s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0099s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:49:56+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003758s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0011s ]
+
+[ 2018-06-13T14:49:56+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003191s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0022s ]
+
+[ 2018-06-13T14:49:56+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003782s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0105s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:49:56+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.033015s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0178s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0132s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0101s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T14:53:54+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002601s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0182s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0012s ]
+
+[ 2018-06-13T14:53:54+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002630s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0085s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T14:54:00+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003640s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 7 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0073s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:54:02+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002116s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 3 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:54:05+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 7 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0061s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:54:09+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002083s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 5 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:54:12+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001059s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002127s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 7 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0064s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:54:16+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004387s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0232s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0066s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T14:54:19+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002986s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY price asc,create_date desc LIMIT 0,10   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0096s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0026s ]
+
+[ 2018-06-13T14:54:21+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY price desc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0066s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T14:55:36+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001057s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002369s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 1 ORDER BY price desc,create_date desc LIMIT 0,10   [ RunTime:0.0008s ]
+
+[ 2018-06-13T14:55:39+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004309s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 1 ORDER BY price desc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:55:41+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002043s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY price desc,create_date desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0070s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T14:56:20+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004021s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY sale_count asc,create_date desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0067s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T14:56:22+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002167s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0062s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T14:56:25+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002088s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 1 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:56:27+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002073s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 1 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:56:29+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002266s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 2 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0052s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T14:56:32+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002306s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 5 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+
+[ 2018-06-13T14:56:34+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002143s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0199s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 6 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0073s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T14:56:36+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002567s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 7 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0075s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T14:56:39+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002171s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 6 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0056s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T14:56:42+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002233s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 8 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0104s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T14:56:44+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002206s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `type` = 4 ORDER BY sale_count desc,create_date desc LIMIT 0,10   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0066s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T15:53:57+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005567s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0014s ]
+
+[ 2018-06-13T15:53:57+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006158s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009596s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0011s ]
+
+[ 2018-06-13T15:53:57+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002207s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0099s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T15:53:57+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002509s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0140s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0065s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0062s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T15:54:23+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004831s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0011s ]
+
+[ 2018-06-13T15:54:23+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012486s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0115s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T15:54:23+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010502s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T15:54:23+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006477s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0106s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0090s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0075s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T15:54:38+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002175s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003747s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T15:54:38+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002618s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0090s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T16:29:21+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002869s ]
+ERR: 非法操作:teacher_info
+
+[ 2018-06-13T16:29:21+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006204s ]
+
+[ 2018-06-13T16:29:21+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010493s ]
+
+[ 2018-06-13T16:30:21+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004286s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0012s ]
+
+[ 2018-06-13T16:30:21+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003161s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0095s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2018-06-13T16:30:21+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003634s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0011s ]
+
+[ 2018-06-13T16:30:21+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003802s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0167s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0097s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0106s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T16:30:25+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002886s ]
+
+[ 2018-06-13T16:30:25+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005158s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006865s ]
+ERR: 非法操作:teacher_info
+
+[ 2018-06-13T16:30:25+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003686s ]
+
+[ 2018-06-13T16:31:14+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006232s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0102s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T16:31:14+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003878s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T16:31:14+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002801s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0092s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2018-06-13T16:31:14+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002796s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0156s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0102s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0092s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T16:31:18+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010855s ]
+ERR: 非法操作:teacher_info
+
+[ 2018-06-13T16:31:18+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007640s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2018-06-13T16:31:18+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002750s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0009s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T16:40:06+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007739s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0169s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0034s ]
+
+[ 2018-06-13T16:40:06+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006761s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0012s ]
+
+[ 2018-06-13T16:40:06+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008455s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0136s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0060s ]
+
+[ 2018-06-13T16:40:07+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012818s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0096s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0101s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0110s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T16:40:30+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002826s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0098s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2018-06-13T16:40:30+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003291s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-06-13T16:40:30+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.021295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.026510s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0022s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T16:43:47+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013163s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0017s ]
+
+[ 2018-06-13T16:43:47+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004448s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0007s ]
+
+[ 2018-06-13T16:43:47+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006032s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0124s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-06-13T16:43:47+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.034079s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0165s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0117s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0106s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-06-13T16:45:28+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003022s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0020s ]
+
+[ 2018-06-13T16:45:28+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001160s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003979s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T16:45:28+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003112s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0078s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T16:45:29+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008222s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0152s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0073s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0077s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T16:45:32+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002997s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T16:45:32+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003141s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0114s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0014s ]
+
+[ 2018-06-13T16:45:36+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004474s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0172s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2018-06-13T16:45:36+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002924s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0163s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0019s ]
+
+[ 2018-06-13T16:45:36+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003749s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0009s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T16:48:48+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002913s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0008s ]
+
+[ 2018-06-13T16:48:48+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003072s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0108s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T16:48:48+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004876s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T16:48:48+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012043s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0188s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0099s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0073s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-06-13T16:48:52+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.013161s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.023111s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-06-13T16:48:52+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002677s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0164s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0010s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T16:48:52+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.029613s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0172s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2018-06-13T16:51:04+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005248s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T16:51:04+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002958s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0008s ]
+
+[ 2018-06-13T16:51:04+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002818s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0093s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0028s ]
+
+[ 2018-06-13T16:51:04+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002868s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0094s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0081s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0097s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T16:51:07+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003776s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0159s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-06-13T16:51:07+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002975s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0086s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-06-13T16:51:07+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004211s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0012s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T16:53:36+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002940s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004837s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T16:53:36+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002782s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0019s ]
+
+[ 2018-06-13T16:53:36+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002604s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0086s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T16:53:37+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003281s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0158s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0100s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0059s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-06-13T16:58:31+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001616s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003094s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2018-06-13T16:58:31+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002806s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0010s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T16:58:31+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002205s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0089s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2018-06-13T17:12:41+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003940s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:12:41+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002018s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003665s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:12:41+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003456s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0082s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T17:12:42+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002279s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0092s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0062s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0076s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T17:13:15+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004350s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:13:15+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003269s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T17:13:15+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003971s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0092s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T17:13:16+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001809s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0134s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0055s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0061s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T17:15:05+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011309s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:15:05+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002814s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0007s ]
+
+[ 2018-06-13T17:15:05+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013297s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0111s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:15:05+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006159s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0105s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0101s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0094s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T17:16:57+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004875s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0007s ]
+
+[ 2018-06-13T17:16:57+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002474s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:16:57+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002866s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0072s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:16:57+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003119s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0156s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0101s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0099s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T17:17:08+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003950s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0093s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:17:08+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.022828s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:17:08+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005561s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0169s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0009s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T17:18:07+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018120s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0045s ]
+
+[ 2018-06-13T17:18:07+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002947s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0112s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2018-06-13T17:18:07+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.013726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015777s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0015s ]
+
+[ 2018-06-13T17:18:07+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003138s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0145s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0136s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0098s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T17:19:18+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004271s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:19:18+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002525s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:19:18+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003188s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0120s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T17:19:18+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003383s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0157s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0101s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0108s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:20:19+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003531s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0149s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T17:20:19+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005094s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T17:20:19+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009608s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0094s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:20:19+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007252s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0155s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0084s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0064s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:21:53+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003133s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:21:53+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003659s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T17:21:53+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003135s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0083s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0058s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:21:53+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003704s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0144s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0061s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0057s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-06-13T17:22:53+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004626s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:22:53+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002955s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T17:22:53+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002733s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0105s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:22:53+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001935s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0082s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0074s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0055s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-06-13T17:25:54+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003197s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0040s ]
+
+[ 2018-06-13T17:25:54+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001016s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002094s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0007s ]
+
+[ 2018-06-13T17:25:54+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004074s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0071s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:25:54+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005147s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007102s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0156s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0095s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0101s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T17:27:09+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003288s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:27:09+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003472s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0218s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0014s ]
+
+[ 2018-06-13T17:27:09+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002791s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0254s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0110s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:27:10+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002546s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0145s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0060s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0078s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T17:27:17+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005125s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:27:17+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010365s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:27:17+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003205s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0093s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:27:17+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010349s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0159s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0104s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0107s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2018-06-13T17:27:28+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005102s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:27:28+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003267s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:27:28+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005046s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0102s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2018-06-13T17:27:28+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000943s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002064s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0155s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0073s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0059s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T17:27:42+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002962s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:27:42+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002550s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:27:42+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007516s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0077s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:27:42+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003004s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0113s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0083s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0080s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2018-06-13T17:27:46+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003095s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0157s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:27:46+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007358s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0101s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:27:46+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002987s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0015s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T17:42:48+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001471s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002851s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0165s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:42:48+08:00 ] 127.0.0.1 /Api/Course/course_list?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001920s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003140s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0165s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 ORDER BY is_stick asc,create_date desc LIMIT 0,10   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0084s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:43:28+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002890s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:43:28+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002748s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6  [ RunTime:0.0010s ]
+
+[ 2018-06-13T17:43:28+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002620s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0083s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2018-06-13T17:43:50+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003038s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0014s ]
+
+[ 2018-06-13T17:43:50+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007530s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:43:50+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004130s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0095s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:43:51+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002864s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0096s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0068s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0103s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T17:43:53+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002362s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:43:53+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002664s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0079s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:43:53+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002687s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0012s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T17:58:16+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004026s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:58:16+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005214s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0020s ]
+
+[ 2018-06-13T17:58:16+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003093s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0094s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2018-06-13T17:58:17+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001767s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0133s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0067s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0058s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T17:58:20+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003043s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0083s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T17:58:20+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002769s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0091s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:58:20+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002669s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0009s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T17:59:33+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003197s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+[ 2018-06-13T17:59:33+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.018991s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.021855s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0020s ]
+
+[ 2018-06-13T17:59:34+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.017814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.042834s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0171s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0143s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T17:59:34+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003269s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0155s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0105s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0087s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T17:59:38+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003214s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0092s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T17:59:38+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009587s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0099s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2018-06-13T17:59:38+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018780s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0172s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0011s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T18:01:30+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.025072s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0026s ]
+
+[ 2018-06-13T18:01:30+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014454s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0020s ]
+
+[ 2018-06-13T18:01:30+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004265s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0103s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0022s ]
+
+[ 2018-06-13T18:01:30+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004431s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0160s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0095s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0096s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T18:01:34+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002768s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0010s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T18:01:34+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.028769s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0119s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T18:01:34+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003074s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0095s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2018-06-13T18:02:55+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004602s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0008s ]
+
+[ 2018-06-13T18:02:55+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004071s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0091s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T18:02:55+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007077s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0012s ]
+
+[ 2018-06-13T18:02:56+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007218s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0088s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0075s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0093s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T18:03:01+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002851s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0089s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-06-13T18:03:01+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.020833s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0087s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T18:03:01+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003041s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0009s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T18:21:05+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004114s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T18:21:05+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015094s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T18:21:05+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002914s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006122s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0102s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0087s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2018-06-13T18:21:05+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001929s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0138s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0064s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0051s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2018-06-13T18:23:57+08:00 ] 127.0.0.1 /Api/Course/course_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003875s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0149s ]
+SQL: SELECT * FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0090s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T18:23:57+08:00 ] 127.0.0.1 /Api/Course/comments?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003304s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1  [ RunTime:0.0008s ]
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+NOTIC: [2] trim() expects parameter 1 to be string, array given G:\WWW\educate\Application\Common\Common\common.php 第 207 行.
+
+[ 2018-06-13T18:23:57+08:00 ] 127.0.0.1 /Api/Teacher/teacher_info?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005317s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0217s ]
+SQL: SELECT `teacher_id` FROM `edu_course` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `edu_teacher` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2018-06-13T18:38:17+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002177s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004081s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0009s ]
+
+[ 2018-06-13T18:38:17+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004446s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0010s ]
+
+RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0100s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2018-06-13T18:38:17+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003012s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0146s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0061s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0069s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-06-13T18:38:37+08:00 ] 127.0.0.1 /Api/Course/course_types?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003414s ]
+SQL: SHOW COLUMNS FROM `edu_course_type` [ RunTime:0.0189s ]
+SQL: SELECT * FROM `edu_course_type` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0015s ]
+
+[ 2018-06-13T18:38:37+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.019651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024770s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0012s ]
+
+[ 2018-06-13T18:38:37+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004276s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0110s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 5 LIMIT 1   [ RunTime:0.0024s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 6 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2018-06-13T18:38:37+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003110s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0148s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0055s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0083s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0008s ]
+

@@ -1,26 +1,16 @@
-function getRandomColor() {
-  let rgb = []
-  for (let i = 0; i < 3; ++i) {
-    let color = Math.floor(Math.random() * 256).toString(16)
-    color = color.length == 1 ? '0' + color : color
-    rgb.push(color)
-  }
-  return '#' + rgb.join('')
-}
-
-// pages/coursename/coursename.js
+var tool = require("../../utils/tool.js")
+const app = getApp()
 Page({
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')
   },
-  inputValue: '',
   data: {
-
     bools: true,
-    
-    src: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400'
-
-  
+    src: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
+    'request':null,
+    'course_info':[],
+    'teacher_info': [],
+    'comments': [],
   },
   //课程详情和评价点击事件
   tabShow:function(){
@@ -53,9 +43,52 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      'request':options
+    })
+    //获取课程信息
+    this.getCourseInfo();
+    //获取关联老师的信息
+    this.getTeacherInfo();
+    //获取评价信息
+    this.getCommentInfo();
   },
-
+  /**
+   * 获取课程信息
+   */
+  getCourseInfo: function () {
+    var that = this;
+    tool.post('Course/course_info',{course_id:that.data.request.id}, function (res) {
+      //console.log(res)
+      that.setData({
+        course_info: res.data.data
+      })
+    })
+  },
+  /**
+   * 获取关联老师的信息
+   */
+  getTeacherInfo: function () {
+    var that = this;
+    tool.post('Teacher/teacher_info', { course_id: that.data.request.id }, function (res) {
+      //console.log(res)
+      that.setData({
+        teacher_info: res.data.data
+      })
+    })
+  },
+  /**
+ * 获取评价信息
+ */
+  getCommentInfo: function () {
+    var that = this;
+    tool.post('Course/comments', { course_id: that.data.request.id }, function (res) {
+      //console.log(res)
+      that.setData({
+        comments: res.data.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -103,5 +136,29 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  /**
+   * 拨打电话
+   */
+  calling: function (event) {
+    var phone = event.currentTarget.dataset['phone'];
+    wx.makePhoneCall({
+      phoneNumber: phone,  
+      success: function () {
+        console.log("拨打电话成功！")
+      },
+      fail: function () {
+        console.log("拨打电话失败！")
+      }
+    })
+  },
+  /**
+   * 收藏
+   */
+  collect:function(event){
+    var id = event.currentTarget.dataset['id'];
+    tool.post('User/collect',{relation_id:id,type:2},function(result){
+      tool.jsalert(result.data.msg);
+    })
   }
 })
