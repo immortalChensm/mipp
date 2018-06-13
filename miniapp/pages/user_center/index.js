@@ -14,7 +14,31 @@ Page({
   onLoad: function (options) {
   
   },
-
+  toOrder: function () {
+    wx.navigateTo({
+      url: '/pages/my_order/index'
+    })
+  },
+  toFollow: function () {
+    wx.navigateTo({
+      url: '/pages/follow/index'
+    })
+  },
+  toFaq: function () {
+    wx.navigateTo({
+      url: '/pages/faq/index'
+    })
+  },
+  toAbout: function () {
+    wx.navigateTo({
+      url: '/pages/about/index'
+    })
+  },
+  toApplyTeacher: function () {
+    wx.navigateTo({
+      url: '/pages/apply_teacher/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

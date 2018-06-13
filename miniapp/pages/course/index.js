@@ -11,12 +11,14 @@ Page({
     sele_type: false,
     sele_sale_count: false,
     sele_price: false,
+    cur_type:'',
+    cur_price: '',
+    cur_sale_count: '',
+    cur_page: 1,
     default_type:'全部课程',
     course_list: [],
     course_types: [],
-    course_sort:'',
-    course_type: '',
-    course_page: 1
+    is_add:true
   },
   switchType:function(){
     var that = this
@@ -44,6 +46,7 @@ Page({
         sele_sale_count: true,
         hidden_type: true,
         hidden_price: true,
+        sele_type:false,
         sele_price: false,
       })
     } else {
@@ -61,6 +64,7 @@ Page({
         sele_price: true,
         hidden_type: true,
         hidden_sale_count: true,
+        sele_type: false,
         sele_sale_count: false
       })
     } else {
@@ -134,19 +138,67 @@ Page({
   courseList:function(){
     var that = this;
     var postdata = {};
-    postdata.sort_type = this.data.course_sort;
-    postdata.type = this.data.course_type;
-    postdata.p = this.data.course_page;
+    postdata.sort_sale_count = this.data.cur_sale_count;
+    postdata.sort_price = this.data.cur_price;
+    postdata.type = this.data.cur_type;
+    postdata.p = this.data.cur_page;
     tool.post('Course/course_list',postdata,function(result){
       var info = result.data;
       //console.log(info)
       if(info.status == '1'){
+        var list = that.data.is_add ? that.data.course_list.concat(info.data) : info.data;
         that.setData({
-          course_list:info.data
+          course_list: list
         })
       }else{
+        that.setData({
+          course_list: []
+        })
         console.log(info.msg,2)
       }
+    })
+  },
+  //根据条件获取列表
+  searchList: function (event) {
+    var opt_type = event.currentTarget.dataset['type'];
+    var val = event.currentTarget.dataset['val'];
+    this.setData({
+      cur_page: 1,
+      hidden_type: true,
+      hidden_sale_count: true,
+      hidden_price: true,
+      is_add:false
+    })
+    switch(opt_type){
+      case 'type':
+        var name = event.currentTarget.dataset['name'];
+        this.setData({
+          cur_type:val,
+          default_type:name,
+          sele_type: false,
+        });
+        break;
+      case 'sale_count':
+        this.setData({
+          cur_sale_count: val,
+          cur_price:'',
+          sele_sale_count: false,
+        });
+        break;
+      case 'price':
+        this.setData({
+          cur_price: val,
+          cur_sale_count: '',
+          sele_price: false,
+        });
+        break;
+    }
+    this.courseList()
+  },
+  toCourseDetail: function (event) {
+    var course_id = event.currentTarget.dataset['id'];
+    wx.navigateTo({
+      url: '/pages/course_detail/index?id=' + course_id
     })
   },
       /**

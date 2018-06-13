@@ -81,7 +81,7 @@
 <view class="edu-recommend-courses-tj">
    
     <!-- 列表 -->
-     <view class="edu-acticle-list-tj-s edu-bottom-solid">
+     <view class="edu-acticle-list-tj-s edu-bottom-solid" bindtap='toTeacherDetail'>
          <view class="edu-list-left-a">
             <image src="../../assets/images/teach-icon.png" class="edu-list-img-a"/>
          </view>
@@ -109,7 +109,7 @@
               </view>
           </view> 
      </view>
-        <view class="edu-acticle-list-tj-s edu-bottom-solid">
+        <view class="edu-acticle-list-tj-s edu-bottom-solid" bindtap='toTeacherDetail'>
          <view class="edu-list-left-a">
             <image src="../../assets/images/teach-icon.png" class="edu-list-img-a"/>
          </view>

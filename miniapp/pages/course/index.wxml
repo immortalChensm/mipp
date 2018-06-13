@@ -2,8 +2,8 @@
 <view class="edu-screen edu-border-top edu-bottom-solid">
       <view class="{{sele_type?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="switchType">
           {{default_type}}
-          <image src="../../assets/images/w-top-icon.png" class="{{sele_type?'edu-a-b edu-show':'edu-a-b edu-show'}}"/>
-          <image src="../../assets/images/w-botton-icon.png" class="{{sele_type?'edu-a-b edu-none':'edu-a-b edu-none'}}"/>
+          <image src="../../assets/images/w-top-icon.png" class="{{sele_type?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="{{sele_type?'edu-a-b edu-none':'edu-a-b edu-show'}}"/>
       </view>
       <view class="{{sele_sale_count?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="switchSaleCount">
           销量
@@ -20,27 +20,33 @@
     <view class="{{showkecd?'edu-mask':'edu-none'}}"></view> 
     <view class="{{showkecda?'edu-mask':'edu-none'}}"></view> 
 <!-- 遮罩层 -->
-<!-- 全部课程 -->
+<!-- 课程类型 -->
 <view hidden='{{hidden_type}}' class="edu-show edu-sty-qa">
-    <view class="edu-kc-list-a" wx:for="{{course_types}}" wx:key="key" >
+    <view class="edu-kc-list-a" bindtap="searchList" data-type="type" data-val="" data-name="全部课程">
+       <text class="edu-ke-c-name">全部课程</text>
+       <view class="edu-success-icon edu-icon-we" hidden="{{cur_type == '' ? false : true}}">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+    <view class="edu-kc-list-a" wx:for="{{course_types}}" wx:key="key" bindtap="searchList" data-type="type" data-val="{{item.id}}" data-name="{{item.name}}">
        <text class="edu-ke-c-name">{{item.name}}</text>
-       <view class="edu-success-icon edu-icon-we">
+       <view class="edu-success-icon edu-icon-we" hidden="{{cur_type == item.id ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
 </view>
-<!-- 全部课程 end -->
+<!-- 课程类型 end -->
 <!-- 销量 -->
 <view hidden="{{hidden_sale_count}}" class="edu-show edu-sty-qa">
-    <view class="edu-kc-list-a">
+    <view class="edu-kc-list-a" bindtap="searchList" data-type="sale_count" data-val="1">
        <text class="edu-ke-c-name">按销量从低到高排序</text>
-       <view class="edu-success-icon edu-icon-we">
+       <view class="edu-success-icon edu-icon-we" hidden="{{cur_sale_count == 1 ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
-    <view class="edu-kc-list-a">
+    <view class="edu-kc-list-a" bindtap="searchList" data-type="sale_count" data-val="2">
        <text class="edu-ke-c-name">按销量从高到低排序</text>
-       <view class="edu-success-icon edu-icon-we">
+       <view class="edu-success-icon edu-icon-we" hidden="{{cur_sale_count == 2 ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
@@ -48,15 +54,15 @@
 <!-- 销量 end -->
 <!-- 价格 -->
 <view hidden="{{hidden_price}}" class="edu-show edu-sty-qa">
-    <view class="edu-kc-list-a">
+    <view class="edu-kc-list-a" bindtap="searchList" data-type="price" data-val="1">
        <text class="edu-ke-c-name">按价格从低到高排序</text>
-       <view class="edu-success-icon edu-icon-we">
+       <view class="edu-success-icon edu-icon-we" hidden="{{cur_price == 1 ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
-    <view class="edu-kc-list-a">
+    <view class="edu-kc-list-a" bindtap="searchList" data-type="price" data-val="2">
        <text class="edu-ke-c-name">按价格从高到低排序</text>
-       <view class="edu-success-icon edu-icon-we">
+       <view class="edu-success-icon edu-icon-we" hidden="{{cur_price == 2 ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
@@ -66,7 +72,7 @@
 <!-- 课程 start -->
 <view class="edu-recommend-courses-tj">
     <!-- 列表 -->
-     <view class="edu-acticle-list-tj-s edu-bottom-solid" wx:for="{{course_list}}" wx:key="key" >
+     <view class="edu-acticle-list-tj-s edu-bottom-solid" wx:for="{{course_list}}" wx:key="key" bindtap="toCourseDetail" data-id="{{item.id}}">
          <view class="edu-list-left">
             <image src="{{item.pic}}" class="edu-list-img"/>
          </view>

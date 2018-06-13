@@ -39,7 +39,16 @@ Page({
   },
 
 
-
+  buyCourse:function(){
+    wx.navigateTo({
+      url: '/pages/confirm_order/index'
+    })
+  },
+  toYuyue: function () {
+    wx.navigateTo({
+      url: '/pages/yuyue/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

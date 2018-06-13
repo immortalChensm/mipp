@@ -21,7 +21,12 @@ Page({
   onReady: function () {
   
   },
-
+  
+  courseList: function() {
+    wx.switchTab({
+      url: '/pages/course/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

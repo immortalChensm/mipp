@@ -182,10 +182,10 @@
 <!-- 课程详情和评价end -->
 <!-- 底部按钮 -->
   <view class="edu-course-bottom-btn">
-   <view class="edu-course-lr">
+   <view class="edu-course-lr" bindtap='buyCourse'>
        <button>立即购买</button>
    </view>
-   <view class="edu-course-lr">
+   <view class="edu-course-lr" bindtap='toYuyue'>
        <button>预约试听</button>
    </view>
 </view>  

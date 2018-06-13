@@ -21,6 +21,11 @@ Page({
   onReady: function () {
   
   },
+  yuyueSuc: function () {
+    wx.navigateTo({
+      url: '/pages/yuyue_suc/index'
+    })
+  },
 
   /**
    * 生命周期函数--监听页面显示

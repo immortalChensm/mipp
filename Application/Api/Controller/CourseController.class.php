@@ -31,14 +31,17 @@ class CourseController extends BaseController {
     	I('request.type') && $where['type'] = I('request.type');
     	
     	$p = I('request.p') ? (int)I('request.p') : 1;
-    	$order = 'is_stick asc,create_date desc';
-    	switch (I('request.sort_type')){
-    		case '1':$order = 'sale_count desc,create_date desc';break;
-    		case '2':$order = 'sale_count asc,create_date desc';break;
-    		case '3':$order = 'price asc,create_date desc';break;
-    		case '4':$order = 'price desc,create_date desc';break;
-    	}
     	$pagesize = 10;
+    	
+    	$order = 'is_stick asc,create_date desc';
+    	switch (I('request.sort_sale_count')){
+    		case '1':$order = 'sale_count asc,create_date desc';break;
+    		case '2':$order = 'sale_count desc,create_date desc';break;
+    	}
+    	switch (I('request.sort_price')){
+    		case '1':$order = 'price asc,create_date desc';break;
+    		case '2':$order = 'price desc,create_date desc';break;
+    	}
     	$courses = D('Course')->where($where)->order($order)->limit(($p-1)*$pagesize,$pagesize)->select();
     	foreach ($courses as &$val){
     		$val = output_data($val);
