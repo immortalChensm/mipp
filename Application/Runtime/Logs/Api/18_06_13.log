@@ -6515,3 +6515,47 @@ SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_
 SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 3 LIMIT 1   [ RunTime:0.0010s ]
 SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 2 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
 
+[ 2018-06-13T14:54:48+08:00 ] 127.0.0.1 /Api/Banner/banner?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `edu_user` [ RunTime:0.0562s ]
+NOTIC: [8] Undefined index: openid D:\www\educate\Application\Api\Controller\BaseController.class.php 第 14 行.
+SQL: SELECT `id` FROM `edu_user` WHERE `openid` = null LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `edu_banner` [ RunTime:0.0276s ]
+SQL: SELECT * FROM `edu_banner` ORDER BY sort_index asc,create_date desc  [ RunTime:0.0003s ]
+
+[ 2018-06-13T14:54:48+08:00 ] 127.0.0.1 /Api/Course/course_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `edu_user` [ RunTime:0.0397s ]
+NOTIC: [8] Undefined index: openid D:\www\educate\Application\Api\Controller\BaseController.class.php 第 14 行.
+SQL: SELECT `id` FROM `edu_user` WHERE `openid` = null LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `edu_course` [ RunTime:0.0237s ]
+SQL: SELECT * FROM `edu_course` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY create_date asc LIMIT 6   [ RunTime:0.1735s ]
+
+[ 2018-06-13T14:54:48+08:00 ] 127.0.0.1 /Api/Teacher/teacher_stick?ajax=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+SQL: SHOW COLUMNS FROM `edu_user` [ RunTime:0.0072s ]
+NOTIC: [8] Undefined index: openid D:\www\educate\Application\Api\Controller\BaseController.class.php 第 14 行.
+SQL: SELECT `id` FROM `edu_user` WHERE `openid` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `edu_teacher` [ RunTime:0.0123s ]
+SQL: SELECT *,ACOS(SIN((31.26249 * 3.1415926535898) / 180) * SIN((lat * 3.1415926535898) / 180 ) +COS((31.26249 * 3.1415926535898) / 180 ) * COS((lat * 3.1415926535898) / 180 ) *COS((120.63212* 3.1415926535898) / 180 - (lng * 3.1415926535898) / 180 ) ) * 6371 as distance FROM `edu_teacher` WHERE `status` = 1 AND `is_stick` = 1 ORDER BY distance asc,create_date asc LIMIT 6   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `edu_comment` [ RunTime:0.0313s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `edu_teach_type` [ RunTime:0.0309s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT AVG(star) as star FROM `edu_comment` WHERE `type` = 1 AND `relation_id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `edu_teach_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
