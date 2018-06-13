@@ -159,66 +159,6 @@ function fmt_date($date, $time_flg = TRUE) {
 
 
 /**
- * 将键值为数组的值序列化以便存入数组
- * @param unknown $data
- * @return boolean|string
- */
-function input_data($data){
-	if (empty($data)) return false;
-	if(is_array($data)){
-		foreach ($data as $key=>$val){
-			if(is_array($val)){
-				foreach ($val as $k=>$v){
-					if(empty($v)) unset($val[$k]);
-				}
-				$data[$key] = serialize($val);
-			}
-		}
-	}
-	return $data;
-}
-
-/**
- * 反序列化数组中的序列化字段|反序列化字符串
- * @param unknown $data
- * @return boolean|mixed
- */
-function output_data($data){
-	if (empty($data)) return false;
-	if(is_array($data)){
-		foreach ($data as $key=>$val){
-			if(is_serialized($val)){
-				$data[$key] = unserialize($val);
-			}
-		}
-	}else{
-		is_serialized($data) && $data = unserialize($data);
-	}
-	return $data;
-}
-
-/**
- * 判断字符串是不是序列化的
- * @param unknown $data
- * @return boolean
- */
-function is_serialized( $data ) {
-	$data = trim( $data );
-	if ( 'N;' == $data ) return true;
-	if ( !preg_match( '/^([adObis]):/', $data, $badions ) ) return false;
-	switch ( $badions[1] )
-	{
-		case 'a' : ;
-		case 'o' : ;
-		case 's' :if ( preg_match( "/^{$badions[1]}:[0-9]+:.*[;}]\$/s", $data ) ) return true;break;
-		case 'b' : ;
-		case 'i' : ;
-		case 'd' :if ( preg_match( "/^{$badions[1]}:[0-9.E-]+;\$/", $data ) ) return true;break;
-	}
-	return false;
-}
-
-/**
  * 添加操作日志
  */
 function add_opt_log(){

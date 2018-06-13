@@ -147,64 +147,6 @@ function queryExpress($postcom , $getNu){
 		return array( 'status'=>1, 'message'=>'ok','data'=> array_reverse($data));
 	}
 }
-/**
- * 获取缓存或者更新缓存
- * @param string $config_key 缓存文件名称
- * @param array $data 缓存数据  array('k1'=>'v1','k2'=>'v3')
- * @return array or string or bool
- */
-function tpCache($config_key,$data = array()){
-	$param = explode('.', $config_key);
-	if(empty($data)){
-		//如$config_key=shop_info则获取网站信息数组
-		//如$config_key=shop_info.logo则获取网站logo字符串
-		$config = F($param[0],'',TEMP_PATH);//直接获取缓存文件
-		if(empty($config)){
-			//缓存文件不存在就读取数据库
-			$res = D('config')->where("inc_type='$param[0]'")->select();
-			if($res){
-				foreach($res as $k=>$val){
-					$config[$val['name']] = $val['value'];
-				}
-				F($param[0],$config,TEMP_PATH);
-			}
-		}
-		if(count($param)>1){
-			return $config[$param[1]];
-		}else{
-			return $config;
-		}
-	}else{
-		//更新缓存
-		$result =  D('config')->where("inc_type='$param[0]'")->select();
-		if($result){
-			foreach($result as $val){
-				$temp[$val['name']] = $val['value'];
-			}
-			foreach ($data as $k=>$v){
-				$newArr = array('name'=>$k,'value'=>trim($v),'inc_type'=>$param[0]);
-				if(!isset($temp[$k])){
-					M('config')->add($newArr);//新key数据插入数据库
-				}else{
-					if($v!=$temp[$k])
-						M('config')->where("name='$k'")->save($newArr);//缓存key存在且值有变更新此项
-				}
-			}
-			//更新后的数据库记录
-			$newRes = D('config')->where("inc_type='$param[0]'")->select();
-			foreach ($newRes as $rs){
-				$newData[$rs['name']] = $rs['value'];
-			}
-		}else{
-			foreach($data as $k=>$v){
-				$newArr[] = array('name'=>$k,'value'=>trim($v),'inc_type'=>$param[0]);
-			}
-			M('config')->addAll($newArr);
-			$newData = $data;
-		}
-		return F($param[0],$newData,TEMP_PATH);
-	}
-}
 
 /**
  * 获取字符串内容中的图片元素
@@ -216,188 +158,66 @@ function getpic($note){
 	return $ereg[1];
 }
 
-/**
- * 字符串敏感词过滤
- * @param unknown $str
- * @param string $replace_char
- * @return boolean|mixed
- */
-function sense_filter($str,$replace_char = '***'){
-	if(empty($str)) return false;
-	$sense_words = D('SenseWord')->getField('keyword',true);
-	foreach ($sense_words as $val){
-		$str = str_replace($val, $replace_char, $str);
-	}
-	return $str;
-}
 
 /**
- * 创建邀请码
- * @param number $strlength
- * @return multitype:number |string
+ * 将键值为数组的值序列化以便存入数组
+ * @param unknown $data
+ * @return boolean|string
  */
-function create_invite_code($strlength = 6){
-	if (!function_exists('create_rand_num')) {
-		function create_rand_num($min,$max,$len){
-			$select = array();
-			do {
-				$index = mt_rand($min, $max);
-				if(in_array($index, $select)){
-					continue;
-				}else{
-					$select[] = $index;
+function input_data($data){
+	if (empty($data)) return false;
+	if(is_array($data)){
+		foreach ($data as $key=>$val){
+			if(is_array($val)){
+				foreach ($val as $k=>$v){
+					if(empty($v)) unset($val[$k]);
 				}
-			}while(count($select) <= 6);
-			return $select;
+				$data[$key] = serialize($val);
+			}
 		}
 	}
-	$length = C('INVITE_CODE_LENGTH');
-	$str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-	$index_array = create_rand_num(0, strlen($str)-2, $strlength);
-	$char_array = array();
-	foreach ($index_array as $val){
-		$char_array[] = substr($str, $val,1);
-	}
-	$code = implode('', $char_array);
-	if(D('Users')->where(array('my_code'=>$code))->find()){
-		$this->create_invite_code();
-	}else{
-		return $code;
-	}
+	return $data;
 }
+
 /**
- * 创建职位唯一代号
- * @param number $strlength
- * @return multitype:number |string
+ * 反序列化数组中的序列化字段|反序列化字符串
+ * @param unknown $data
+ * @return boolean|mixed
  */
-function create_position_code($strlength = 6){
-	function get_random_index($min,$max,$len){
-		$select = array();
-		do {
-			$index = mt_rand($min, $max);
-			if(in_array($index, $select)){
-				continue;
-			}else{
-				$select[] = $index;
+function output_data($data){
+	if (empty($data)) return false;
+	if(is_array($data)){
+		foreach ($data as $key=>$val){
+			if(is_serialized($val)){
+				$data[$key] = unserialize($val);
 			}
-		}while(count($select) <= 6);
-		return $select;
-	}
-	$length = C('INVITE_CODE_LENGTH');
-	$str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-	$index_array = get_random_index(0, strlen($str)-2, $strlength);
-	$char_array = array();
-	foreach ($index_array as $val){
-		$char_array[] = substr($str, $val,1);
-	}
-	$code = implode('', $char_array);
-	if(D('Position')->where(array('position_code'=>$code))->find()){
-		create_position_code();
+		}
 	}else{
-		return $code;
+		is_serialized($data) && $data = unserialize($data);
 	}
+	return $data;
 }
+
 /**
- * 获取配置文件
- * @return multitype:Ambigous <>
+ * 判断字符串是不是序列化的
+ * @param unknown $data
+ * @return boolean
  */
-function getWebConfig(){
-	$config = D('Config')->select();
-	$config_data = array();
-	foreach ($config as $val){
-		$config_data[$val['name']] = $val['value'];
+function is_serialized( $data ) {
+	$data = trim( $data );
+	if ( 'N;' == $data ) return true;
+	if ( !preg_match( '/^([adObis]):/', $data, $badions ) ) return false;
+	switch ( $badions[1] )
+	{
+		case 'a' : ;
+		case 'o' : ;
+		case 's' :if ( preg_match( "/^{$badions[1]}:[0-9]+:.*[;}]\$/s", $data ) ) return true;break;
+		case 'b' : ;
+		case 'i' : ;
+		case 'd' :if ( preg_match( "/^{$badions[1]}:[0-9.E-]+;\$/", $data ) ) return true;break;
 	}
-	return $config_data;
+	return false;
 }
-
-/**
- * 发送模板消息
- * @param array $data 模板消息参数
- * @param string $type 类型
- * @return string
- */
-function send_tmp_msg($data,$type){
-	vendor('WxTmpMsg.TmpMsg');
-	vendor ( 'Wechat.Wechat' );
-	$wechat = new \Wechat(array('appid' => C('APPID'),'appsecret'=> C('APPSECRET')));
-	$token = $wechat->checkAuth();
-	$tmpmsg = new \TmpMsg($token);
-	$tmpmsg->$type($data);
-}
-/**
- * 推送IOS消息
- * @param unknown $device_id 设备ID
- * @param unknown $content 消息内容
- * @param unknown $redirect_url 跳转链接
- */
-function sendIosMsg($device_id,$content,$redirect_url=''){
-	vendor('AppMessage.AppMessage');
-	$AppMessage = new \AppMessage(C('APPMSG_KEY'), C('APPMSG_SECRET'));
-	$AppMessage->sendIOSUnicast($device_id, $content, $redirect_url);
-	//ob_end_clean();
-}
-
-/**
- * 推送Android消息
- * @param unknown $device_id 设备ID
- * @param unknown $title 标题
- * @param unknown $content 消息内容
- * @param unknown $redirect_url 跳转链接
- */
-function sendAndroidMsg($device_id,$title,$content,$redirect_url=''){
-	vendor('AppMessage.AppMessage');
-	$AppMessage = new \AppMessage(C('APPMSGKEY'), C('APPMSGSECRET'));
-	$AppMessage->sendAndroidUnicast($device_id, $title, $content, $redirect_url);
-	//ob_end_clean();
-}
-
-/**
- * 添加金钱记录
- * @param unknown $to
- */
-function add_money_log($user_id,$type,$cash,$get_time){
-	D('MoneyLog')->add(array(
-		'user_id' => (int)$user_id,
-		'type' => (int)$type,
-		'cash' => (float)$cash,
-		'get_time' => (int)$get_time
-	));
-}
-
-/**
- * 添加消息记录
- * @param unknown $user_id
- * @param unknown $name
- * @param unknown $phone
- * @param unknown $title
- * @param unknown $content
- * @return Ambigous <\Think\mixed, boolean, unknown, string>
- */
-function add_mes_log($user_id,$name,$phone,$title,$content){
-	if(!empty($user_id) && !empty($content)){
-		return D('Message')->add(array('user_id'=>$user_id,'name'=>$name,'phone'=>$phone,'title'=>$title,'content'=>$content));
-	}
-}
-
-/**
- * 寻找上级中的区域代理
- * @param $user_id 用户ID
- * @param $code 用户推荐码
- */
- function check_agent($user_id,$code = ''){
-     if(empty($user_id) && empty($code)) return false;
-     if($user_id){
-         $udata = D('Users')->where(array('id'=>$user_id))->find();
-     }else{
-         $udata = D('Users')->where(array('my_code'=>$code))->find();
-     }
-     if(empty($udata)) return false;
-     if($udata['type'] == '1'){
-         return $udata;
-     }else{
-         return check_agent('',$udata['invite_code']);
-     }
- }
  /**
   * 将二维数组转为键值数组
   * @param unknown $data_arr

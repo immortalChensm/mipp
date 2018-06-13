@@ -1,19 +1,19 @@
 <!-- 分类筛选 start -->
 <view class="edu-screen edu-border-top edu-bottom-solid">
-      <view class="{{showkecd?'edu-screen-a edu-select-fl':'edu-screen-a edu-select-fl'}}" bindtap="showok">
+      <view class="{{sele_type?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="switchType">
           {{default_type}}
-          <image src="../../assets/images/w-top-icon.png" class="{{showkecd?'edu-a-b edu-show':'edu-a-b edu-show'}}"/>
-          <image src="../../assets/images/w-botton-icon.png" class="{{showkecd?'edu-a-b edu-none':'edu-a-b edu-none'}}"/>
+          <image src="../../assets/images/w-top-icon.png" class="{{sele_type?'edu-a-b edu-show':'edu-a-b edu-show'}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="{{sele_type?'edu-a-b edu-none':'edu-a-b edu-none'}}"/>
       </view>
-      <view class="{{showkecda?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="showxl">
+      <view class="{{sele_sale_count?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="switchSaleCount">
           销量
-          <image src="../../assets/images/w-top-icon.png" class="{{showkecda?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
-          <image src="../../assets/images/w-botton-icon.png" class="{{showkecda?'edu-a-b edu-none':'edu-a-b edu-show'}}"/>
+          <image src="../../assets/images/w-top-icon.png" class="{{sele_sale_count?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="{{sele_sale_count?'edu-a-b edu-none':'edu-a-b edu-show'}}"/>
       </view>
-      <view class="edu-screen-a">
+      <view class="{{sele_price?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="switchPrice">
           价格
-          <image src="../../assets/images/w-top-icon.png" class="edu-a-b"/>
-          <image src="../../assets/images/w-botton-icon.png" class="edu-a-b"/>
+          <image src="../../assets/images/w-top-icon.png" class="{{sele_price?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="{{sele_price?'edu-a-b edu-none':'edu-a-b edu-show'}}"/>
       </view>
 </view>
 <!-- 遮罩层 -->
@@ -21,21 +21,9 @@
     <view class="{{showkecda?'edu-mask':'edu-none'}}"></view> 
 <!-- 遮罩层 -->
 <!-- 全部课程 -->
-<view  class="{{showkecd?'edu-show edu-sty-qa':'edu-none'}}">
-    <view class="edu-kc-list-a">
-       <text class="edu-ke-c-name">全部课程</text>
-       <view class="edu-success-icon edu-icon-we">
-           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
-       </view>
-    </view>
-    <view class="edu-kc-list-a">
-       <text class="edu-ke-c-name">茶艺班</text>
-       <view class="edu-success-icon edu-icon-we">
-           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
-       </view>
-    </view>
-    <view class="edu-kc-list-a">
-       <text class="edu-ke-c-name">咖啡班</text>
+<view hidden='{{hidden_type}}' class="edu-show edu-sty-qa">
+    <view class="edu-kc-list-a" wx:for="{{course_types}}" wx:key="key" >
+       <text class="edu-ke-c-name">{{item.name}}</text>
        <view class="edu-success-icon edu-icon-we">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
@@ -43,38 +31,48 @@
 </view>
 <!-- 全部课程 end -->
 <!-- 销量 -->
-<view  class="{{showkecda?'edu-show edu-sty-qa':'edu-none'}}">
+<view hidden="{{hidden_sale_count}}" class="edu-show edu-sty-qa">
     <view class="edu-kc-list-a">
-       <text class="edu-ke-c-name">销量</text>
+       <text class="edu-ke-c-name">按销量从低到高排序</text>
        <view class="edu-success-icon edu-icon-we">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
     <view class="edu-kc-list-a">
-       <text class="edu-ke-c-name">茶艺班</text>
-       <view class="edu-success-icon edu-icon-we">
-           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
-       </view>
-    </view>
-    <view class="edu-kc-list-a">
-       <text class="edu-ke-c-name">咖啡班</text>
+       <text class="edu-ke-c-name">按销量从高到低排序</text>
        <view class="edu-success-icon edu-icon-we">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
 </view>
 <!-- 销量 end -->
+<!-- 价格 -->
+<view hidden="{{hidden_price}}" class="edu-show edu-sty-qa">
+    <view class="edu-kc-list-a">
+       <text class="edu-ke-c-name">按价格从低到高排序</text>
+       <view class="edu-success-icon edu-icon-we">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+    <view class="edu-kc-list-a">
+       <text class="edu-ke-c-name">按价格从高到低排序</text>
+       <view class="edu-success-icon edu-icon-we">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+</view>
+<!-- 价格 end -->
 <!-- 分类筛选 end -->
 <!-- 课程 start -->
 <view class="edu-recommend-courses-tj">
     <!-- 列表 -->
-     <view class="edu-acticle-list-tj-s edu-bottom-solid">
+     <view class="edu-acticle-list-tj-s edu-bottom-solid" wx:for="{{course_list}}" wx:key="key" >
          <view class="edu-list-left">
-            <image src="../../assets/images/001.jpg" class="edu-list-img"/>
+            <image src="{{item.pic}}" class="edu-list-img"/>
          </view>
           <view class="edu-list-right">
               <view class="edu-list-one">
-                  <text class="edu-list-cy-name">茶艺精品班</text>
+                  <text class="edu-list-cy-name">{{item.name}}</text>
               </view>
               <view class="edu-list-two">
                 <image src="../../assets/images/xing-icon.png"/>
@@ -82,67 +80,18 @@
                     <image src="../../assets/images/xing-icon.png"/>
                     <image src="../../assets/images/xing-icon.png"/>
                     <image src="../../assets/images/xing-icon.png"/>
-                    <text>4.7</text>
+                    <text>{{item.star}}</text>
               </view>
               <view class="edu-introduce">
-                 <label>简介：精品茶道，等你来到...</label>
+                 <label>简介：{{item.profile}}</label>
               </view>
                <view class="edu-price">
-                 <label class="edu-price-num">¥88.00</label>
-                  <label class="edu-sales">已售：231</label>
+                 <label class="edu-price-num">¥{{item.price}}</label>
+                  <label class="edu-sales">已售：{{item.sale_count}}</label>
               </view>
           </view> 
      </view>
-      <view class="edu-acticle-list-tj-s edu-bottom-solid">
-              <view class="edu-list-left">
-                  <image src="../../assets/images/001.jpg" class="edu-list-img"/>
-              </view>
-                <view class="edu-list-right">
-                    <view class="edu-list-one">
-                        <text class="edu-list-cy-name">茶艺精品班</text>
-                    </view>
-                    <view class="edu-list-two">
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <text>4.7</text>
-                    </view>
-                    <view class="edu-introduce">
-                      <label>简介：精品茶道，等你来到...</label>
-                    </view>
-                    <view class="edu-price">
-                      <label class="edu-price-num">¥88.00</label>
-                        <label class="edu-sales">已售：231</label>
-                    </view>
-                </view> 
-        </view>
-           <view class="edu-acticle-list-tj-s edu-bottom-solid">
-              <view class="edu-list-left">
-                  <image src="../../assets/images/001.jpg" class="edu-list-img"/>
-              </view>
-                <view class="edu-list-right">
-                    <view class="edu-list-one">
-                        <text class="edu-list-cy-name">茶艺精品班</text>
-                    </view>
-                    <view class="edu-list-two">
-                      <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <text>4.7</text>
-                    </view>
-                    <view class="edu-introduce">
-                      <label>简介：精品茶道，等你来到...</label>
-                    </view>
-                    <view class="edu-price">
-                      <label class="edu-price-num">¥88.00</label>
-                        <label class="edu-sales">已售：231</label>
-                    </view>
-                </view> 
-        </view>
+
       <!-- 列表end -->
 </view>
 <!-- 课程 end -->
