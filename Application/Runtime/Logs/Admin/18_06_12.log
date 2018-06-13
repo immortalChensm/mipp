@@ -1,0 +1,62 @@
+[ 2018-06-12T17:56:47+08:00 ] 127.0.0.1 /Admin/Admin/login?t=0.06830399126324016
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+NOTIC: [8] Undefined index: login D:\www\educate\Application\Admin\Common\function.php 第 60 行.
+ERR: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND'
+
+[ 2018-06-12T17:56:49+08:00 ] 127.0.0.1 /Admin/Admin/login?t=0.2243371573984405
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+NOTIC: [8] Undefined index: login D:\www\educate\Application\Admin\Common\function.php 第 60 行.
+ERR: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND'
+
+[ 2018-06-12T17:56:52+08:00 ] 127.0.0.1 /Admin/Admin/login?t=0.7081945592233982
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+NOTIC: [8] Undefined index: login D:\www\educate\Application\Admin\Common\function.php 第 60 行.
+ERR: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND'
+
+[ 2018-06-12T17:57:04+08:00 ] 127.0.0.1 /Admin/Admin/login?t=0.42924779106097355
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000435s ]
+NOTIC: [8] Undefined index: login D:\www\educate\Application\Admin\Common\function.php 第 60 行.
+ERR: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND'
+
+[ 2018-06-12T17:57:59+08:00 ] 127.0.0.1 /Admin/Admin/login?t=0.747795231100115
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000507s ]
+NOTIC: [8] Undefined index: login D:\www\educate\Application\Admin\Common\function.php 第 60 行.
+ERR: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND'
+
+[ 2018-06-12T17:59:05+08:00 ] 127.0.0.1 /Admin/Admin/login?t=0.13531331106637912
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+NOTIC: [8] Undefined index: login D:\www\educate\Application\Admin\Common\function.php 第 60 行.
+
+[ 2018-06-12T18:00:27+08:00 ] 127.0.0.1 /Admin/Admin/login?t=0.13531331106637912
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+NOTIC: [8] Undefined index: login D:\www\educate\Application\Admin\Common\function.php 第 60 行.
+ERR: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND'
+
+[ 2018-06-12T18:08:42+08:00 ] 127.0.0.1 /Admin/Admin/login?t=0.7342069007691976
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000827s ]
+NOTIC: [8] Undefined index: login D:\www\educate\Application\Admin\Common\function.php 第 60 行.
+ERR: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND'
+
+[ 2018-06-12T18:12:49+08:00 ] 127.0.0.1 /Admin/Admin/login?t=0.29595195495735904
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001343s ]
+NOTIC: [8] Undefined index: login D:\www\educate\Application\Admin\Common\function.php 第 60 行.
+ERR: Undefined class constant 'MYSQL_ATTR_INIT_COMMAND'
+
