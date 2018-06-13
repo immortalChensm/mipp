@@ -4,5 +4,5 @@
 <view class="edu-success-ms">
    <label class="edu-success-one">恭喜你已经成功预约</label>
    <label class="edu-success-two">请留意您的手机，我们将通知商户尽快与您联系</label>
-   <button>再去逛逛</button>
+   <button bindtap='courseList'>再去逛逛</button>
 </view>

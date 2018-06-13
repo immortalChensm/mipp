@@ -80,5 +80,11 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  toTeacherDetail: function (event) {
+    var teacher_id = 1;//event.currentTarget.dataset['id'];
+    wx.navigateTo({
+      url: '/pages/teacher_detail/index?id=' + teacher_id
+    })
+  },
 })

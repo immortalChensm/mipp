@@ -51,7 +51,7 @@
 <view class="edu-course-space-c"></view>
 <!-- 间隔end -->
 <!-- 底部按钮 -->
-<view class="edu-order-pay">
+<view class="edu-order-pay" bindtap='yuyueSuc'>
       <button class="edu-order-pays">立即预约</button>
 </view>
 <!-- 底部按钮end -->

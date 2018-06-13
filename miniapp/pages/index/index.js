@@ -73,7 +73,7 @@ Page({
   toCourseDetail: function (event) {
     var course_id = event.currentTarget.dataset['id'];
     wx.navigateTo({
-      url: '/pages/course_detail/index?course_id=' + course_id
+      url: '/pages/course_detail/index?id=' + course_id
     })
   },
   toTeacherDetail: function (event) {
