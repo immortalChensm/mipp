@@ -366,12 +366,12 @@
 }
 
 .edu-success-icon {
-  width: 66%;
+  width: 50%;
   /* display: none;  */
 }
 
 .edu-ke-c-name {
-  width: 27%;
+  width: 50%;
   /* position: relative;   *//* left: 5%;  */
   display: flex;
   justify-content: flex-start;
