@@ -10,7 +10,7 @@ class UploadController extends BaseController {
 			'image/pjpeg'=>'jpg',//jpg
 			'image/jpeg'=>'jpg',//jpg
 			'image/x-png'=>'png',//png
-			'image/png'=>'png',//png
+			'image/png'=>'png',//png    
 			'image/bmp'=>'bmp',//bmp
 			'image/x-icon'=>'ico'//ico
 	);

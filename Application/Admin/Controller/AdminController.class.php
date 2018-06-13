@@ -50,6 +50,7 @@ class AdminController extends BaseController {
      * 管理员登陆
      */
     public function login(){
+        // echo phpinfo(); die();
         if(session('admin_id')>0){
              $this->error("您已登录",U('Index/index'));
         }
@@ -58,6 +59,7 @@ class AdminController extends BaseController {
             $where['user_name'] = I('post.username');
             $where['password'] = I('post.password');
             if(!$res = D('Admin')->create($where)){
+                var_dump(I('post.')); die();
             	$this->error(D('Admin')->getError());
             }else{
                 $where['password'] = encrypt($where['password']);
