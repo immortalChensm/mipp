@@ -1,7 +1,5 @@
+<import src="../../wxParse/wxParse.wxml" />
 <view class="edu-about-contents">
   <text class="edu-about-user-title">用户协助</text>
-
-  <view class="edu-about-nr">
-      <text>1.用户使用我们产品的……</text>
-  </view>
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
 </view>

@@ -1,7 +1,9 @@
+<import src="../../wxParse/wxParse.wxml" />
 <view class="edu-pro-contents edu-border-top">
-   <text class="edu-pro-name">支付问题</text>
-   <text class="edu-pro-a edu-e-w">Q:   为什么提示我“账户存在异常，无法下单”？</text>
+ <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    <!-- <text class="edu-pro-name">{{info.content}}</text> -->
+   <!--<text class="edu-pro-a edu-e-w">Q:   为什么提示我“账户存在异常，无法下单”？</text>
    <text class="edu-pro-b edu-e-w">包含（但不仅限于）以下行为者</text>
    <text class="edu-pro-b">i）有过虚假交易（编造不存在的买卖订单）</text>
-   <text class="edu-pro-b">i）有过恶意下单的行为</text>
+   <text class="edu-pro-b">i）有过恶意下单的行为</text> -->
 </view>
