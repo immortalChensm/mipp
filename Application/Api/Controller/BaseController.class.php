@@ -76,6 +76,30 @@ class BaseController extends Controller
         }
     } 
     /**
+     * 获取用户手机号
+     * @param unknown $sessionKey
+     * @param unknown $encryptedData
+     * @param unknown $iv
+     */
+    public function getPhone(){
+    	$sessionKey = I('request.session_key');
+    	$encryptedData = I('request.encryptedData');
+    	$iv = I('request.iv');
+    	vendor('WxMini.wxBizDataCrypt');
+    	$data_dc = new \WXBizDataCrypt(C('APPID'), $sessionKey);
+    	$data = array();
+    	$errCode = $data_dc->decryptData($encryptedData, $iv, $data);
+    	if($errCode == 0){
+    		//保存用户信息
+    		if (I('request.openid')) {
+				D('User')->where(array('openid'=>I('request.openid')))->save(array('phone'=>$data->phoneNumber));
+    		}
+    		$this->returnSuccess('',$data);
+    	}else{
+    		$this->returnError($errCode);
+    	}
+    }
+    /**
 	 * 小程序登录获取session_key
 	 * @param unknown $code
 	 */

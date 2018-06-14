@@ -1,43 +1,65 @@
 var tool = require("../../utils/tool.js")
+var WxParse = require('../../wxParse/wxParse.js')
 const app = getApp()
 Page({
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')
   },
   data: {
-    bools: true,
-    src: 'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
     'request':null,
     'course_info':[],
     'teacher_info': [],
     'comments': [],
+    'course_content':'',
+    'hide_content':false,
+    indicatorDots: true,
+    autoplay: false,
+    interval: 3000,
+    duration: 1000,
+    autoplays: false,
+    bools: true
   },
   //课程详情和评价点击事件
-  tabShow:function(){
+  tabShow:function(event){
     var that = this;
-    if (that.data.bools == 1) {
-      that.data.bools = 2;
+    var type = event.currentTarget.dataset['type'];
+    if(type == 'content'){
       that.setData({
-        showkecd: true
+        hide_content:false
       })
-    } else {
-      that.data.bools = 1;
+    }else{
       that.setData({
-        showkecd: false
+        hide_content: true
       })
     }
   },
-
-
-  buyCourse:function(){
-    wx.navigateTo({
-      url: '/pages/confirm_order/index'
-    })
+  buyCourse:function(info){
+    wx.setStorageSync('cart_info', this.data.course_info);
+    var postdata = info.detail;
+    postdata.session_key = wx.getStorageSync('session_key');
+    // console.log(postdata)
+    tool.post('Base/getPhone', postdata, function (result) {
+      // console.log(result)
+      var info = result.data;
+      wx.setStorageSync('phone', info.data.phoneNumber);
+      wx.navigateTo({
+        url: '/pages/confirm_order/index'
+      })
+    });
   },
-  toYuyue: function () {
-    wx.navigateTo({
-      url: '/pages/yuyue/index'
-    })
+  toYuyue: function (info) {
+    wx.setStorageSync('cart_info', this.data.course_info);
+    var postdata = info.detail;
+    postdata.session_key = wx.getStorageSync('session_key');
+    // console.log(postdata)
+    tool.post('Base/getPhone', postdata, function (result) {
+      // console.log(result)
+      var info = result.data;
+      wx.setStorageSync('phone', info.data.phoneNumber);
+      wx.navigateTo({
+        url: '/pages/yuyue/index'
+      })
+    });
   },
   /**
    * 生命周期函数--监听页面加载
@@ -59,10 +81,11 @@ Page({
   getCourseInfo: function () {
     var that = this;
     tool.post('Course/course_info',{course_id:that.data.request.id}, function (res) {
-      //console.log(res)
+      //console.log(content)
       that.setData({
-        course_info: res.data.data
+        course_info: res.data.data,
       })
+      WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
     })
   },
   /**

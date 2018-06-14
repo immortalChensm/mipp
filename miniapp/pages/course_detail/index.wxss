@@ -1,1 +1,2 @@
-/* pages/coursename/coursename.wxss */
+/* pages/coursename/coursename.wxss */ 
+@import "/wxParse/wxParse.wxss";

@@ -62,6 +62,7 @@ class CourseController extends BaseController {
     	if ($course_info) {
     		$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>2,'relation_id'=>$course_info['id']))->find();
     		$course_info['star'] = $row['star'] ? round($row['star'],1) : 0;
+    		$course_info['content'] = html_entity_decode($course_info['content']);
     		$this->returnSuccess('',output_data($course_info));
     	}else{
     		$this->returnError('暂无数据');
@@ -73,7 +74,7 @@ class CourseController extends BaseController {
     public function comments(){
     	$course_id = (int)I('request.course_id');
     	$course_id || $this->returnError('非法的访问');
-    	$comments = D('Comment')->where(array('type'=>2,'relation_id'=>$course_id))->select();
+    	$comments = D('Comment')->relation('user')->where(array('type'=>2,'relation_id'=>$course_id))->select();
     	$comments && $this->returnSuccess('',output_data($comments));
     	$comments || $this->returnError('暂无数据');
     }
