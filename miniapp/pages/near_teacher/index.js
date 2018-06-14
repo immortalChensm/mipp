@@ -1,12 +1,36 @@
 // pages/附近老师/nearbyteacher.js
+var tool = require("../../utils/tool.js")
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    bools: 1
+    bools: 1,
+    boolss: 1,
+    cur_page: 1,
+    cur_type:'',
+    cur_sale:1,
+    cur_distance:'',
+    showkecd:false,
+    showkecda:false,
+    teacher_list: [],
+    teacher_type:[],
+    default_type: '距离',
+
   },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onLoad: function (options) {
+    //获取附近老师
+    this.getStickTeacher();
+    //获取类型
+    this.getTypeTeacher();
+  },
+
   // 全部课程筛选点击事件
   showok() {
     var that = this;
@@ -14,7 +38,6 @@ Page({
       that.data.bools = 2;
       that.setData({
         showkecd: true
-
       })
     } else {
       that.data.bools = 1;
@@ -24,63 +47,70 @@ Page({
       })
     }
   },
-  
+  showxl:function(){
+    var that = this;
+    if (that.data.boolss == 1) {
+      that.data.boolss = 2;
+      that.setData({
+        showkecda: true
+      })
+    } else {
+      that.data.boolss = 1;
+      that.setData({
+        showkecda: false
+      })
+    }
+  }, 
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  getStickTeacher: function () {
+    var that = this;
+    var postdata = {};
+    postdata.p = this.data.cur_page;
+    postdata.distance = this.data.cur_distance;
+    wx.getLocation({
+      success: function (res) {
+        postdata.lng = res.longitude;
+        postdata.lat = res.latitude;
+        tool.post('Teacher/list', postdata, function (res) {
+          // console.log(res); return false;
+          that.setData({
+            teacher_list: res.data.data
+          })
+        })
+      },
+    })
+  },
+  getTypeTeacher:function(){
+    var that = this;
+    tool.post('Teacher/teach_types',{}, function (res) {
+      // console.log(res.data.data); return false;
+      that.setData({
+        teacher_type: res.data.data
+      })
+    })
+  },
+  // 根据条件获取列表
+  searchList: function (event) {
+    var opt_type = event.currentTarget.dataset['type'];
+    var val = event.currentTarget.dataset['val'];
+    this.setData({
+      cur_page: 1,
+      showkecd: true,
+    })
+    switch (opt_type) {
+      case 'distance':
+        var name = event.currentTarget.dataset['name'];
+        var id = event.currentTarget.dataset['val'];
+        this.setData({
+          cur_distance: id,
+          default_type: name,
+          showkecd: false,
+        });
+        break;
+    }
+    this.getStickTeacher()
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   toTeacherDetail: function (event) {
     var teacher_id = 1;//event.currentTarget.dataset['id'];
     wx.navigateTo({

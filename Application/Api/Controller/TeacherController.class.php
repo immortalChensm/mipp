@@ -25,6 +25,37 @@ class TeacherController extends BaseController {
 		$teachers && $this->returnSuccess('',$teachers);
 		$teachers || $this->returnError('暂无数据');
 	}
+
+	/**
+	 * 教师列表
+	 */
+	public function list(){
+		$where = array();
+		$where['status'] = 1;
+		// $where['is_stick'] = 1;
+		$pagesize = 10;
+		$p = I('request.p') ? (int)I('request.p') : 1;
+		$lng = I('request.lng') ? I('request.lng') : 0;
+		$lat = I('request.lat') ? I('request.lat') : 0;
+    	D('Teacher')->field('*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance');
+		$teachers = D('Teacher')->where($where)->limit(($p-1)*$pagesize,$pagesize)->order('distance asc,create_date asc')->select();
+		$teacher = array();
+		foreach ($teachers as &$val){
+			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
+			$val['star'] = $row['star'] ? round($row['star'],1) : 0;
+			$val['teach_type'] = D('TeachType')->where(array('id'=>$val['teach_type']))->getField('name');
+			$val['profile'] = strip_tags(html_entity_decode($val['profile']));
+			if(I('distance') && $val['distance'] < I('distance')){
+				$val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
+				$teacher[] = $val;
+			}
+				$val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
+		}
+		$teachers && $this->returnSuccess('',$teacher ? $teacher : $teachers);
+		$teachers || $this->returnError('暂无数据');
+	}
+
+
 	/**
 	 * 教师信息
 	 */
