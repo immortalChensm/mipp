@@ -25,7 +25,17 @@ class TeacherController extends BaseController {
 		$teachers && $this->returnSuccess('',$teachers);
 		$teachers || $this->returnError('暂无数据');
 	}
-
+	/**
+	 * 教师信息
+	 */
+	public function teacher_info(){
+		(int)I('request.course_id') && $teacher_id = D('Course')->where(array('id'=>(int)I('request.course_id')))->getField('teacher_id');
+		(int)I('request.teacher_id') && $teacher_id = (int)I('request.teacher_id');
+		$teacher_id || $this->returnError('非法的访问');
+		$teacher_info = D('Teacher')->where(array('id'=>$teacher_id))->find();
+		$teacher_info && $this->returnSuccess('',output_data($teacher_info));
+		$teacher_info || $this->returnError('暂无数据');
+	}
 	/**
 	 * 老师授课类型
 	 */
