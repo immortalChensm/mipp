@@ -18,6 +18,7 @@ class TeacherController extends BaseController {
 		foreach ($teachers as &$val){
 			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
 			$val['star'] = $row['star'] ? round($row['star'],1) : 0;
+			$val['stararr'] = $this->starArr($val['star']);
 			$val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
 			$val['teach_type'] = D('TeachType')->where(array('id'=>$val['teach_type']))->getField('name');
 			$val['profile'] = strip_tags(html_entity_decode($val['profile']));

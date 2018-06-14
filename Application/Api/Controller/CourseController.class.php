@@ -15,6 +15,7 @@ class CourseController extends BaseController {
 			$val = output_data($val);
 			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>2,'relation_id'=>$val['id']))->find();
 			$val['star'] = $row['star'] ? round($row['star'],1) : 0;
+			$val['stararr'] = $this->starArr($val['star']);
 			$val['pic'] = $val['pics'][0];
 		}
 		$courses && $this->returnSuccess('',$courses);
@@ -47,6 +48,7 @@ class CourseController extends BaseController {
     		$val = output_data($val);
 			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>2,'relation_id'=>$val['id']))->find();
 			$val['star'] = $row['star'] ? round($row['star'],1) : 0;
+			$val['stararr'] = $this->starArr($val['star']);
 			$val['pic'] = $val['pics'][0];
 		}
 		$courses && $this->returnSuccess('',$courses);
@@ -62,6 +64,7 @@ class CourseController extends BaseController {
     	if ($course_info) {
     		$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>2,'relation_id'=>$course_info['id']))->find();
     		$course_info['star'] = $row['star'] ? round($row['star'],1) : 0;
+    		$course_info['stararr'] = $this->starArr($row['star']);
     		$course_info['content'] = html_entity_decode($course_info['content']);
     		$this->returnSuccess('',output_data($course_info));
     	}else{

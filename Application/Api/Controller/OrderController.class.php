@@ -3,19 +3,32 @@ namespace Api\Controller;
 class OrderController extends BaseController {
 
     //我的订单列表
-    public function index($p = 1){
+    public function index(){
         !$this->user_id && $this->returnError('参数错误');
+        
+        $p = I('request.p') ? (int)I('request.p') : 1;
+        $pagesize = 10;
+        
         $where = array();
         $where['user_id'] = $this->user_id;
-        I('status') && $where['status'] = I('status');
-        $list = D('Order')->where($where)->field('order_sn,name,pay_money,create_time,status')->relation(true)->page($p,8)->select();
+        if (I('status')) {
+        	if (I('status') == 3) {
+        		$where['status'] = array('EGT',3);
+        	}else{
+        		$where['status'] = I('status');
+        	}
+        }
+        $list = D('Order')->where($where)->relation(true)->page($p,$pagesize)->select();
+        foreach ($list as &$val){
+        	$val['course'] = output_data($val['course']);
+        }
         $this->returnSuccess('',$list);
     }
 
     //订单详情
     public function detail(){
         !I('id') && $this->returnError('参数错误');
-        $info = D('Order')->where(array('id'=>I('id')))->field('order_sn,name,phone,pay_money,status,pay_time,comment_time,create_time')->relation(true)->find();
+        $info = D('Order')->where(array('id'=>I('id')))->relation(true)->find();
         $this->returnSuccess('',$info);
     }
 
@@ -65,7 +78,15 @@ class OrderController extends BaseController {
     	$order_info['pay_money'] = $order_info['price'];
     	$order_info['status'] = 1;
     	$order_info['pay_time'] = date('Y-m-d H:i:s');
-    	D('Order')->add($order_info) ? $this->returnSuccess('下单成功！') : $this->returnError('系统繁忙，请您稍后操作');
+    	
+    	$res = D('Order')->add($order_info);
+    	if ($res) {
+	    	//增加销量
+	    	D('Course')->where(array('id'=>$course_info['id']))->setInc('sale_count');
+	    	$this->returnSuccess('下单成功！');
+    	}else {
+    		$this->returnError('系统繁忙，请您稍后操作');
+    	}
     }
     
     /**

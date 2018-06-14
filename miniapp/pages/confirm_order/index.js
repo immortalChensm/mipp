@@ -65,13 +65,20 @@ Page({
     tool.post('Order/add_order',postdata,function(result){
       var info = result.data;
       console.log(info)
+      if(info.status == '1'){
+        wx.navigateTo({
+          url: '/pages/my_order/index'
+        })
+      }else{
+        tool.jsalert(info.msg);
+      }
     })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**

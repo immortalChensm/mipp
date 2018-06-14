@@ -1413,9 +1413,18 @@ view, scroll-view {
   olor: rgb(36, 36, 36);
   justify-content: flex-end;
 }
-
 .edu-color-a {
   color: rgb(255, 0, 0);
+}
+
+.edu-color-err {
+  color: rgb(255, 0, 0);
+}
+.edu-color-suc {
+  color: #25be13;
+}
+.edu-color-cancel {
+  color: #aaa;
 }
 
 .edu-myorder-two {
@@ -1651,4 +1660,27 @@ view, scroll-view {
   justify-content: space-between;
   width: 100%;
   overflow: hidden;
+}
+
+.edu-score-total {
+ margin-top: 6rpx;
+ margin-left: 4rpx;
+}
+
+.edu-no-data{
+text-align:center;
+padding-top:200rpx;
+}
+.edu-nodata-l{
+  width: 100%;
+  text-align: center;
+}
+.edu-nodata-img{
+width:200rpx;
+height:200rpx;
+}
+.edu-nodata-wu{
+  font-size: 26rpx;
+  color: #787878;
+  margin-left: 28rpx;
 }

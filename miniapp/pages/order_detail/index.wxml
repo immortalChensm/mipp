@@ -1,3 +1,4 @@
+
 <view class="edu-det-status">
     <image src="../../assets/images/waitpay-icon.png" class="edu-status-a"/>
     <image src="../../assets/images/waitpayb-icon.png" class="edu-status-b"/>  
@@ -33,6 +34,7 @@
     <text>评价时间：  2018-02-12 15:25:10</text>      
 </view>
 <!-- 订单编号记录end -->
+
 <!-- 底部 -->
 <view class="edu-det-bottom">
    <button class="edu-det-btns">付款</button>

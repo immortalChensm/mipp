@@ -6,12 +6,12 @@ Page({
     this.videoContext = wx.createVideoContext('myVideo')
   },
   data: {
-    'request':null,
-    'course_info':[],
-    'teacher_info': [],
-    'comments': [],
-    'course_content':'',
-    'hide_content':false,
+    request:null,
+    course_info:[],
+    teacher_info: [],
+    comments: [],
+    course_content:'',
+    hide_content:false,
     indicatorDots: true,
     autoplay: false,
     interval: 3000,

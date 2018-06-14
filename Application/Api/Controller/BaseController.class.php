@@ -68,7 +68,7 @@ class BaseController extends Controller
                     D('User')->add($user);
                 }else {
                     D('User')->where(array('id'=>$info['id']))->save($user);
-                   }
+                }
             }
                $this->returnSuccess('',$data);
         }else{
@@ -121,5 +121,26 @@ class BaseController extends Controller
         $jsondata = curl_request(C('APP_AUTH_URL').'appid='.C('APPID').'&secret='.C('APPSECRET').'&js_code='.$code);
         $data = json_decode($jsondata);
         $this->returnSuccess('',$data);
-    } 
+    }
+    /**
+     * 获取评分星数组
+     * @param number $starnum
+     */
+    protected function starArr($starnum = 0){
+    	$start_num = floor($starnum);
+    	$end_num = round(($starnum-$start_num)*10);
+    	$starArr = array();
+    	for ($i=0;$i<5;$i++){
+    		$index = $i+1;
+    		if($index <= $start_num) $starArr[] = 1;
+    		if($index == ($start_num+1)){
+    			if ($end_num <1) $starArr[] = 2;
+    			if ($end_num >=1 && $end_num <=3) $starArr[] = 3;
+    			if ($end_num >3 && $end_num<=8) $starArr[] = 4;
+    			if ($end_num >8) $starArr[] = 1;
+    		}
+    		if($index > ($start_num+1)) $starArr[] = 2;
+    	}
+    	return $starArr;
+    }
 }

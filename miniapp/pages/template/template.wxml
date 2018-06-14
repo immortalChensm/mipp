@@ -1,0 +1,10 @@
+<template name="default">
+ <view class="edu-no-data">
+     <view class="edu-nodata-one">
+       <image src="../../assets/images/no-data.png" class="edu-nodata-img"></image>
+     </view>
+     <view class="edu-nodata-l">
+        <label class="edu-nodata-wu">{{message ? message : '暂无相关数据'}}</label>
+     </view>
+ </view>
+</template>

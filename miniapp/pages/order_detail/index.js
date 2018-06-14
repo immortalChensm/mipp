@@ -1,20 +1,35 @@
-// pages/订单详情/order-details.js
+var tool = require("../../utils/tool.js")
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    request: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      'request': options
+    })
+    console.log(options)
+    //获取订单详情
+    this.getOrderInfo();
   },
-
+  getOrderInfo:function(){
+    var that = this;
+    tool.post('Order/detail',{id:this.data.request.order_id},function(result){
+      var info = result.data;
+      console.log(info);
+      that.setData({
+        
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
