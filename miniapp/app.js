@@ -62,6 +62,6 @@ App({
     }
   },
 	globalData: {
-		apiurl:'http://educate.com/Api/',
+    apiurl:'http://educate.com/Api/',
 	},
 })
