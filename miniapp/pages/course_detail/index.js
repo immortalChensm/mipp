@@ -180,7 +180,7 @@ Page({
    */
   collect:function(event){
     var id = event.currentTarget.dataset['id'];
-    tool.post('User/collect',{relation_id:id,type:2},function(result){
+    tool.post('User/follow',{relation_id:id,type:2},function(result){
       tool.jsalert(result.data.msg);
     })
   }

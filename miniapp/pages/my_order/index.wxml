@@ -10,15 +10,15 @@
 <!-- 全部订单 -->
 <view class="edu-myorder-top-cv edu-show">
 
-  <view class="edu-myorder-all" wx:for="{{list_info}}" wx:key="key" bindtap='toOrderDetail' data-id="{{item.id}}">
-      <view class="edu-myorder-one">
+  <view class="edu-myorder-all" wx:for="{{list_info}}" wx:key="key">
+      <view class="edu-myorder-one" bindtap='toOrderDetail' data-id="{{item.id}}">
             <text class="edu-myorder-dd">订单号：{{item.order_sn}}</text>
             <text class="edu-myorder-pay edu-color-err" wx:if="{{item.status == 1}}">待付款</text>
             <text class="edu-myorder-pay edu-color-err" wx:if="{{item.status == 2}}">待评价</text>
             <text class="edu-myorder-pay edu-color-suc" wx:if="{{item.status == 3}}">已完成</text>
             <text class="edu-myorder-pay edu-color-cancel" wx:if="{{item.status == 4}}">已取消</text>
       </view>
-      <view class="edu-myorder-two">
+      <view class="edu-myorder-two" bindtap='toOrderDetail' data-id="{{item.id}}">
             <view class="edu-myorder-t-l">
                 <image src="{{item.course.pics[0]}}"/>
             </view>

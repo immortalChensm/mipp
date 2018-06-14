@@ -30,7 +30,7 @@ class TeacherController extends BaseController {
 	/**
 	 * 教师列表
 	 */
-	public function list(){
+	public function teacher_list(){
 		$where = array();
 		$where['status'] = 1;
 		// $where['is_stick'] = 1;
@@ -50,7 +50,7 @@ class TeacherController extends BaseController {
 				$val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
 				$teacher[] = $val;
 			}
-				$val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
+			$val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
 		}
 		$teachers && $this->returnSuccess('',$teacher ? $teacher : $teachers);
 		$teachers || $this->returnError('暂无数据');

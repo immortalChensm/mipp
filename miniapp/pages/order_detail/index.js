@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    request: null
+    request: null,
+    order_info:[]
   },
 
   /**
@@ -20,14 +21,26 @@ Page({
     //获取订单详情
     this.getOrderInfo();
   },
+    /**
+   * 获取订单详情
+   */
   getOrderInfo:function(){
     var that = this;
     tool.post('Order/detail',{id:this.data.request.order_id},function(result){
       var info = result.data;
       console.log(info);
       that.setData({
-        
+        order_info:info.data
       })
+    })
+  },
+  /**
+   * 去评价
+   */
+  toComment: function (e) {
+    var order_id = e.currentTarget.dataset['id'];
+    wx.navigateTo({
+      url: '/pages/comment/index?order_id='+order_id
     })
   },
   /**
