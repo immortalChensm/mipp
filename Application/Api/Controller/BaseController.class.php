@@ -58,7 +58,7 @@ class BaseController extends Controller
             if ($data) {
                 $user = array();
                 $user['openid'] = $data->openId;
-                $user['nickname'] = $data->nickName;
+                $user['nickname'] = $this->filterEmoji($data->nickName);
                 $user['gender'] = $data->gender;
                 $user['city'] = $data->city;
                 $user['province'] = $data->province;
@@ -74,7 +74,19 @@ class BaseController extends Controller
         }else{
                $this->returnError($errCode);
         }
-    } 
+    }
+
+    // 过滤掉emoji表情
+    function filterEmoji($str){
+     $str = preg_replace_callback(
+       '/./u',
+       function (array $match) {
+        return strlen($match[0]) >= 4 ? '' : $match[0];
+       },
+       $str);
+      return $str;
+     }
+
     /**
 	 * 小程序登录获取session_key
 	 * @param unknown $code

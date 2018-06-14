@@ -3,14 +3,20 @@ var tool = require("../../utils/tool.js")
 const app = getApp()
 Page({
   data: {
-  
+    user:''
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onShow: function () {
+    var that = this;
+    var openid = wx.getStorageSync('openid');
+    tool.post('User/index', { openid: openid}, function (res) {
+      // console.log(res.data.data); return false;
+      that.setData({
+        user: res.data.data
+      })
+    })
   },
   toOrder: function () {
     wx.navigateTo({
@@ -47,9 +53,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  // onShow: function () {
   
-  },
+  // },
 
   /**
    * 生命周期函数--监听页面隐藏

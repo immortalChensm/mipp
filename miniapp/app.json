@@ -55,7 +55,7 @@
         "pagePath": "pages/user_center/index",
         "iconPath": "assets/images/my-icon.png",
         "selectedIconPath": "assets/images/my-s-icon.png",
-        "text": "我的"
+        "text": "我的"                               
       }
     ]
   }

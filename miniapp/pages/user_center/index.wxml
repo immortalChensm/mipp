@@ -1,11 +1,12 @@
 <view class="edu-center-top">
     <view class="edu-center-n-info">
         <view class="edu-center-left">
-            <image src="../../assets/images/timg.jpeg" class="edu-center-logo"/>
+            <image src="{{user.headimgurl}}" class="edu-center-logo"/>
         </view>
         <view class="edu-center-right">
-           <label class="edu-center-title">小珏子</label>
-           <label class="edu-center-name">老师</label>
+           <label class="edu-center-title">{{user.nickname}}</label>
+           <label class="edu-center-name" wx:if="{{user.identify ==1}}">普通会员</label>
+           <label class="edu-center-name" wx:elif="{{user.identify ==2}}">老师</label>
         </view>
     </view>
 </view>
@@ -29,14 +30,14 @@
                        <image  src="../../assets/images/wait-pay-icon.png" class="edu-center-pay-icon"/>
                    </view>
                      <text class="edu-center-waitpay-text" >待付款</text> 
-                     <label class="edu-center-nums">1</label>
+                     <label class="edu-center-nums">{{user.pay_num}}</label>
               </view>
               <view class="edu-center-pay edu-width-b" bindtap='toOrder'>
                    <view class="edu-center-pay-top">
                        <image  src="../../assets/images/evaluate-icon.png" class="edu-center-pay-icon"/>
                    </view>
                      <text class="edu-center-waitpay-text" >待评价</text> 
-                     <label class="edu-center-nums-b">12</label>
+                     <label class="edu-center-nums-b">{{user.com_num}}</label>
               </view>
           </view>
       </view>
@@ -53,7 +54,7 @@
                         <image src="../../assets/images/teacher-icon.png" class="edu-center-o-icon"/>
                    </view>
                    <text>成为老师</text>
-                   <label class="edu-center-c-t">审核中</label>
+                   <label class="edu-center-c-t" wx:if="{{user.status ==3}}">审核中</label>
             </view>
             <view class="edu-center-o-q" bindtap='toFaq'>
                    <view class="edu-center-o-a">
