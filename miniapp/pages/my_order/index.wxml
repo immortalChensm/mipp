@@ -1,195 +1,40 @@
+<import src="../template/template.wxml"/> 
 <!-- 顶部切换 -->
 <view class="edu-myorder-tab edu-bottom-solid edu-border-top">
-     <view class="{{selecttaba?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='orderTab1'>全部</view>
-     <view class="{{selecttabb?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='orderTab2'>待付款</view>
-     <view class="{{selecttabc?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='orderTab3'>待评价</view>
-     <view class="{{selecttabd?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='orderTab4'>已完成</view> 
+     <view class="{{showall?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='seleall'>全部</view>
+     <view class="{{showpay?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='selepay'>待付款</view>
+     <view class="{{showcomment?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='selecomment'>待评价</view>
+     <view class="{{showcomplete?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='selecomplete'>已完成</view> 
 </view>
 <!-- 顶部切换end -->
 <!-- 全部订单 -->
- <view class="{{selecttaba?'edu-myorder-top-cv edu-show':'edu-none'}}">
-      <view class="edu-myorder-all">
+<view class="edu-myorder-top-cv edu-show">
+
+  <view class="edu-myorder-all" wx:for="{{list_info}}" wx:key="key" bindtap='toOrderDetail' data-id="{{item.id}}">
       <view class="edu-myorder-one">
-            <text class="edu-myorder-dd">订单号：323145256325</text>
-            <text class="edu-myorder-pay edu-color-a">待付款</text>
+            <text class="edu-myorder-dd">订单号：{{item.order_sn}}</text>
+            <text class="edu-myorder-pay edu-color-err" wx:if="{{item.status == 1}}">待付款</text>
+            <text class="edu-myorder-pay edu-color-err" wx:if="{{item.status == 2}}">待评价</text>
+            <text class="edu-myorder-pay edu-color-suc" wx:if="{{item.status == 3}}">已完成</text>
+            <text class="edu-myorder-pay edu-color-cancel" wx:if="{{item.status == 4}}">已取消</text>
       </view>
       <view class="edu-myorder-two">
             <view class="edu-myorder-t-l">
-                <image src="../../assets/images/001.jpg"/>
+                <image src="{{item.course.pics[0]}}"/>
             </view>
             <view class="edu-myorder-t-r">
-                  <text class="edu-myorder-l-w edu-myorder-n-a">茶艺精品班</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：李浩</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：李四</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-c">¥88.00</text>
+                  <text class="edu-myorder-l-w edu-myorder-n-a">{{item.course.name}}</text>
+                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：{{item.teacher.name}}</text>
+                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：{{item.user.name}}</text>
+                  <text class="edu-myorder-l-w edu-myorder-n-c">{{item.price == 0 ? '免费' : '¥'+item.price}}</text>
             </view> 
       </view> 
-      <view class="edu-myorder-three edu-border-top">
-            <label class="edu-myorder-btn-c">取消订单</label>
-            <label class="edu-myorder-btn-p">去付款</label>
+      <view class="edu-myorder-three edu-border-top" wx:if="{{item.status <=2}}">
+            <label class="edu-myorder-btn-c" wx:if="{{item.status == 1}}">取消订单</label>
+            <label class="edu-myorder-btn-p" wx:if="{{item.status == 1}}">去付款</label>
+            <label class="edu-myorder-btn-p" wx:if="{{item.status == 2}}">去评价</label>
       </view>
   </view>
-  <view class="edu-myorder-all">
-      <view class="edu-myorder-one">
-            <text class="edu-myorder-dd">订单号：323145256325</text>
-            <text class="edu-myorder-pay edu-color-a">待评价</text>
-      </view>
-      <view class="edu-myorder-two">
-            <view class="edu-myorder-t-l">
-                <image src="../../assets/images/001.jpg"/>
-            </view>
-            <view class="edu-myorder-t-r">
-                  <text class="edu-myorder-l-w edu-myorder-n-a">茶艺精品班</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：李浩</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：李四</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-c">¥88.00</text>
-            </view> 
-      </view> 
-      <view class="edu-myorder-three edu-border-top">
-            <label class="edu-myorder-btn-p">去评价</label>
-      </view>
-  </view>
-  <view class="edu-myorder-all">
-      <view class="edu-myorder-one">
-            <text class="edu-myorder-dd">订单号：323145256325</text>
-            <text class="edu-myorder-pay">已完成</text>
-      </view>
-      <view class="edu-myorder-two">
-            <view class="edu-myorder-t-l">
-                <image src="../../assets/images/001.jpg"/>
-            </view>
-            <view class="edu-myorder-t-r">
-                  <text class="edu-myorder-l-w edu-myorder-n-a">茶艺精品班</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：李浩</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：李四</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-c">¥88.00</text>
-            </view> 
-      </view>
-  </view> 
-   <view class="edu-myorder-all">
-      <view class="edu-myorder-one">
-            <text class="edu-myorder-dd">订单号：323145256325</text>
-            <text class="edu-myorder-pay edu-color-a">待评价</text>
-      </view>
-      <view class="edu-myorder-two">
-            <view class="edu-myorder-t-l">
-                <image src="../../assets/images/001.jpg"/>
-            </view>
-            <view class="edu-myorder-t-r">
-                  <text class="edu-myorder-l-w edu-myorder-n-a">茶艺精品班</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：李浩</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：李四</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-c">免费</text>
-            </view> 
-      </view> 
-      <view class="edu-myorder-three edu-border-top">
-            <label class="edu-myorder-btn-p">去评价</label>
-      </view>
-  </view>
-  <view class="edu-myorder-all">
-      <view class="edu-myorder-one">
-            <text class="edu-myorder-dd">订单号：323145256325</text>
-            <text class="edu-myorder-pay">已完成</text>
-      </view>
-      <view class="edu-myorder-two">
-            <view class="edu-myorder-t-l">
-                <image src="../../assets/images/001.jpg"/>
-            </view>
-            <view class="edu-myorder-t-r">
-                  <text class="edu-myorder-l-w edu-myorder-n-a">茶艺精品班</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：李浩</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：李四</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-c">免费</text>
-            </view>  
-      </view> 
-  </view> 
-</view> 
-<!-- 全部订单end -->
-<!-- 待付款 -->
-  <view class="{{selecttabb?'edu-myorder-top-cv edu-show':'edu-none'}}">
-      <view class="edu-myorder-all">
-      <view class="edu-myorder-one">
-            <text class="edu-myorder-dd">订单号：323145256325</text>
-            <text class="edu-myorder-pay edu-color-a">待付款</text>
-      </view>
-      <view class="edu-myorder-two">
-            <view class="edu-myorder-t-l">
-                <image src="../../assets/images/001.jpg"/>
-            </view>
-            <view class="edu-myorder-t-r">
-                  <text class="edu-myorder-l-w edu-myorder-n-a">茶艺精品班</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：李浩</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：李四</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-c">¥88.00</text>
-            </view> 
-      </view> 
-      <view class="edu-myorder-three edu-border-top">
-            <label class="edu-myorder-btn-c">取消订单</label>
-            <label class="edu-myorder-btn-p">去付款</label>
-      </view>
-  </view>
-</view>  
-<!-- 待付款end -->
-<!-- 待评价 -->
-  <view class="{{selecttabc?'edu-myorder-top-cv edu-show':'edu-none'}}">
-      <view class="edu-myorder-all">
-      <view class="edu-myorder-one">
-            <text class="edu-myorder-dd">订单号：323145256325</text>
-            <text class="edu-myorder-pay edu-color-a">待评价 </text>
-      </view>
-      <view class="edu-myorder-two">
-            <view class="edu-myorder-t-l">
-                <image src="../../assets/images/001.jpg"/>
-            </view>
-            <view class="edu-myorder-t-r">
-                  <text class="edu-myorder-l-w edu-myorder-n-a">茶艺精品班</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：李浩</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：李四</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-c">¥88.00</text>
-            </view> 
-      </view> 
-      <view class="edu-myorder-three edu-border-top">
-            <label class="edu-myorder-btn-p">去评价</label>
-      </view>
-  </view>
-</view>  
-<!-- 待评价end -->
-<!-- 已完成 -->
- <view class="{{selecttabd?'edu-myorder-top-cv edu-show':'edu-none'}}">
-      <view class="edu-myorder-all">
-      <view class="edu-myorder-one">
-            <text class="edu-myorder-dd">订单号：323145256325</text>
-            <text class="edu-myorder-pay ">已完成</text>
-      </view>
-      <view class="edu-myorder-two">
-            <view class="edu-myorder-t-l">
-                <image src="../../assets/images/001.jpg"/>
-            </view>
-            <view class="edu-myorder-t-r">
-                  <text class="edu-myorder-l-w edu-myorder-n-a">茶艺精品班</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：李浩</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：李四</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-c">¥88.00</text>
-            </view> 
-      </view> 
-      </view>
-            <view class="edu-myorder-all">
-      <view class="edu-myorder-one">
-            <text class="edu-myorder-dd">订单号：323145256325</text>
-            <text class="edu-myorder-pay">已完成</text>
-      </view>
-      <view class="edu-myorder-two">
-            <view class="edu-myorder-t-l">
-                <image src="../../assets/images/001.jpg"/>
-            </view>
-            <view class="edu-myorder-t-r">
-                  <text class="edu-myorder-l-w edu-myorder-n-a">茶艺精品班</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">老师：李浩</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：李四</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-c">免费</text>
-            </view> 
-      </view> 
-      </view>
-</view>   
-<!-- 已完成end -->
+  <template is="default" wx:if="{{list_info.length == 0}}" data="{{message:'暂无订单数据'}}"></template>
+</view>
 

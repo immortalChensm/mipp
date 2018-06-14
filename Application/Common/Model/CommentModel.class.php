@@ -14,8 +14,8 @@ class CommentModel extends CommonModel{
 				'mapping_type'      => self::BELONGS_TO,
 				'class_name'        => 'User',
 				'foreign_key'       => 'user_id',
-				'mapping_fields'       => 'name',
-				'as_fields'       => 'name',
+				'mapping_fields'       => 'nickname,headimgurl',
+				'as_fields'       => 'nickname,headimgurl',
 		),
 	);
 }

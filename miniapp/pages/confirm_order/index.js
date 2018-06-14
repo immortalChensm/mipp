@@ -1,3 +1,5 @@
+var tool = require("../../utils/tool.js")
+
 // pages/确认订单/确认订单.js
 Page({
 
@@ -5,21 +7,78 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    'course_info':[],
+    'form_phone': '',
+    'count':1,
+    'total_price': 0,
+    'form_name':''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var course_info = wx.getStorageSync('cart_info');
+    var phone = wx.getStorageSync('phone');
+    var total_price = this.data.count*course_info.price;
+    this.setData({
+      'course_info':course_info,
+      'form_phone':phone,
+      'total_price': total_price
+    })
   },
-
+  add: function () {
+    var now_count = this.data.count + 1 ;
+    var total_price = this.data.course_info.price*now_count;
+    this.setData({
+      'count': now_count,
+      'total_price': total_price
+    })
+  },
+  reduce:function(){
+    var now_count = this.data.count <= 1 ? 1 : this.data.count-1;
+    var total_price = this.data.course_info.price * now_count;
+    this.setData({
+      'count': now_count,
+      'total_price': total_price
+    })
+  },
+  setFormName: function (e) {
+    this.setData({
+      'form_name': e.detail.value
+    })
+  },
+  setFormPhone: function (e) {
+    this.setData({
+      'form_phone': e.detail.value
+    })
+  },
+  add_order:function(){
+    console.log(this.data)
+    var postdata = {
+      'type':1,
+      'course_id':this.data.course_info.id,
+      'name': this.data.form_name,
+      'phone': this.data.form_phone,
+      'goods_num': this.data.count
+    }
+    tool.post('Order/add_order',postdata,function(result){
+      var info = result.data;
+      console.log(info)
+      if(info.status == '1'){
+        wx.navigateTo({
+          url: '/pages/my_order/index'
+        })
+      }else{
+        tool.jsalert(info.msg);
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**

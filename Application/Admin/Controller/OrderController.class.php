@@ -87,7 +87,7 @@ class OrderController extends BaseController {
     	{
     		$id = (int)I('post.id');
     		$id || $this->error('非法的操作');
-    		D('Order')->where(array('id'=>$id))->save(array('status'=>3)) && $this->success('');
+    		D('Order')->where(array('id'=>$id))->save(array('status'=>4)) && $this->success('');
     		$this->error('网络异常，删除失败！');
     	}
     }

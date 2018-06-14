@@ -18,6 +18,7 @@ class TeacherController extends BaseController {
 		foreach ($teachers as &$val){
 			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
 			$val['star'] = $row['star'] ? round($row['star'],1) : 0;
+			$val['stararr'] = $this->starArr($val['star']);
 			$val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
 			$val['teach_type'] = D('TeachType')->where(array('id'=>$val['teach_type']))->getField('name');
 			$val['profile'] = strip_tags(html_entity_decode($val['profile']));
@@ -25,7 +26,17 @@ class TeacherController extends BaseController {
 		$teachers && $this->returnSuccess('',$teachers);
 		$teachers || $this->returnError('暂无数据');
 	}
-
+	/**
+	 * 教师信息
+	 */
+	public function teacher_info(){
+		(int)I('request.course_id') && $teacher_id = D('Course')->where(array('id'=>(int)I('request.course_id')))->getField('teacher_id');
+		(int)I('request.teacher_id') && $teacher_id = (int)I('request.teacher_id');
+		$teacher_id || $this->returnError('非法的访问');
+		$teacher_info = D('Teacher')->where(array('id'=>$teacher_id))->find();
+		$teacher_info && $this->returnSuccess('',output_data($teacher_info));
+		$teacher_info || $this->returnError('暂无数据');
+	}
 	/**
 	 * 老师授课类型
 	 */

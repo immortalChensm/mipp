@@ -1,62 +1,97 @@
-// pages/我的订单/myorder.js
+var tool = require("../../utils/tool.js")
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-
-   /** 全部-待付款-待评价-已完成 -切换初始数据**/
-    selecttaba:true,
-    selecttabb: false,
-    selecttabc: false,
-    selecttabd: false
-  },
-  /** 全部-待付款-待评价-已完成 -切换**/
-  orderTab1:function(){
-    var that =this;
-    that.setData({
-      selecttaba: true,
-      selecttabb: false,
-      selecttabc: false,
-      selecttabd: false
-    })
-  },
-  orderTab2:function() {
-    var that = this;
-    that.setData({
-      selecttaba: false,
-      selecttabb: true,
-      selecttabc: false,
-      selecttabd: false
-    })
-  },
-  orderTab3:function() {
-    var that = this;
-    that.setData({
-      selecttaba: false,
-      selecttabb: false,
-      selecttabc: true,
-      selecttabd: false
-    })
-  },
-  orderTab4:function () {
-    var that = this;
-    that.setData({
-      selecttaba: false,
-      selecttabb: false,
-      selecttabc: false,
-      selecttabd: true
-    })
+    showall:true,
+    showpay: false,
+    showcomment: false,
+    showcomplete: false,
+    list_status:'',
+    list_page:1,
+    list_info:[],
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var wait_pay_count = wx.getStorageSync('wait_pay_count');
+    if (wait_pay_count > 0){
+      this.selepay();
+    }else{
+      this.seleall();
+    }
   },
-
+  seleall: function () {
+    var that = this;
+    that.setData({
+      list_status: '',
+      showall: true,
+      showpay: false,
+      showcomment: false,
+      showcomplete: false
+    })
+    that.getOrderList()
+  },
+  selepay: function () {
+    var that = this;
+    that.setData({
+      list_status: '1',
+      showall: false,
+      showpay: true,
+      showcomment: false,
+      showcomplete: false
+    })
+    that.getOrderList()
+  },
+  selecomment: function () {
+    var that = this;
+    that.setData({
+      list_status: '2',
+      showall: false,
+      showpay: false,
+      showcomment: true,
+      showcomplete: false
+    })
+    that.getOrderList()
+  },
+  selecomplete: function () {
+    var that = this;
+    that.setData({
+      list_status: '3',
+      showall: false,
+      showpay: false,
+      showcomment: false,
+      showcomplete: true
+    })
+    that.getOrderList()
+  },
+  getOrderList: function () {
+    var that = this;
+    tool.post('Order/index', { status: this.data.list_status, p: this.data.list_page }, function (result) {
+      var info = result.data;
+      console.log(info)
+      if(info.status == '1'){
+        that.setData({
+          list_info: info.data
+        })
+      }else{
+        tool.jsalert(info.msg,2);
+        that.setData({
+          list_info: []
+        })
+      }
+    })
+  },
+  toOrderDetail:function(e){
+    var order_id = e.currentTarget.dataset['id'];
+    wx.navigateTo({
+      url: '/pages/order_detail/index?order_id='+order_id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
