@@ -6,12 +6,12 @@
       <text class="edu-info-address">地址：{{tlist.address}}</text>
       <!-- 转发-收藏按钮 -->
         <view class="edu-info-z-s">
-            <view class="edu-info-zs-icon edu-info-zs-bot">
+            <view class="edu-info-zs-icon edu-info-zs-bot" bindtap="onShareAppMessage">
                  <image src="../../assets/images/zhuanfa-a-icon.png" class="edu-info-zf"/>
             </view>
-             <view class="edu-info-zs-icon edu-info-zs-bots">
-                 <image src="../../assets/images/shoucang-a-icon.png" class="{{checked?'edu-info-zf edu-none':'edu-info-zf edu-show'}}" bindtap='scShow'/>
-                 <image src="../../assets/images/shoucang-b-icon.png" class="{{checked?'edu-info-zf edu-show':'edu-info-zf edu-none'}}" bindtap='scShow'/>
+             <view class="edu-info-zs-icon edu-info-zs-bots" data-id="{{tlist.id}}" bindtap="collect">
+                 <image src="../../assets/images/shoucang-a-icon.png" class="{{checked?'edu-info-zf edu-none':'edu-info-zf edu-show'}}" />
+                 <image src="../../assets/images/shoucang-b-icon.png" class="{{checked?'edu-info-zf edu-show':'edu-info-zf edu-none'}}"/>
             </view>
             <view class="edu-info-zs-icon"><text>{{tlist.follow}}</text></view>
         </view>
@@ -29,7 +29,7 @@
        </view>
         <view class="edu-info-teach-jj">
            <text class="edu-info-lx edu-info-left">老师介绍：</text>
-           <template is="wxParse" data="{{wxParseData:profile.nodes}}" />
+             <text class="edu-info-lx edu-info-cy edu-info-right edu-info-ms">{{tlist.profile}}</text>
        </view>
    </view>
 </view>
@@ -43,18 +43,12 @@
       </view>
       <view class="edu-info-scroll">
          <!-- <view class="edu-info-gd"> -->
+         <block wx:for="{{item.links}}" wx:for-item="va">
           <view class="edu-info-section">
-              <video id="myVideo" class="edu-info-video-a" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" danmu-list="{{danmuList}}" show-fullscreen-btn  initial-time  controls></video> 
+              <video id="myVideo" class="edu-info-video-a" src="{{va}}" show-fullscreen-btn  initial-time  controls></video> 
               <text class="edu-info-bt">福泉茶苑喝茶</text>
           </view>
-          <view class="edu-info-section">
-                <video id="myVideo" class="edu-info-video-a" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" danmu-list="{{danmuList}}" show-fullscreen-btn  initial-time  controls></video>
-                <text class="edu-info-bt">福泉茶苑喝茶</text>
-          </view>
-          <view class="edu-info-section"> 
-               <video id="myVideo" class="edu-info-video-a" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" danmu-list="{{danmuList}}" show-fullscreen-btn  initial-time  controls></video>
-                <text class="edu-info-bt">福泉茶苑喝茶</text>
-          </view>
+          </block>
           <!-- </view> -->
       </view>
 </view>
@@ -72,13 +66,13 @@
 
 <!-- 老师详情内容 -->
       <view class="{{selected1?'edu-info-teach-xq edu-show':'edu-info-teach-xq edu-none'}}">
-         <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+      <template class="edu-info-rn" is="wxParse" data="{{wxParseData:content.nodes}}" />
       </view>
 <!-- 老师详情内容 -->
 <!-- 主要授课内容 -->
 <view class="{{selected2?'edu-info-sk edu-show':'edu-info-sk edu-none'}}">
      <!-- 课程 start -->
-<view class="edu-recommend-courses-tj" wx:for="{{tlist.course}}" wx:for-item="items" wx:key="key" bindtap="toCourseDetail" data-id="{{item.id}}">
+<view class="edu-recommend-courses-tj" wx:for="{{tlist.course}}" wx:for-item="items" wx:key="key" bindtap="toCourseDetail" data-id="{{items.id}}">
     <!-- 列表 -->
            <view class="edu-acticle-list-tj-s edu-acticle-x">
               <view class="edu-list-left">
@@ -89,15 +83,16 @@
                         <text class="edu-list-cy-name">{{items.name}}</text>
                     </view>
                     <view class="edu-list-two">
-                      <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
+                        <block wx:for="{{course_info.stararr}}" wx:for-item="va">
+                          <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
+                          <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
+                          <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png"></image> 
+                          <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
+                        </block>
                           <text>{{items.star}}</text>
                     </view>
                     <view class="edu-introduce">
-                      <label>简介：{{items.content}}</label>
+                      <label>简介：{{items.profile}}</label>
                     </view>
                     <view class="edu-price">
                       <label class="edu-price-num">¥{{items.price}}</label>
@@ -122,11 +117,13 @@
                   <view class="edu-course-two">
                     <view class="edu-course-eva-left">
                       <text class="edu-course-bbpj">宝贝评价</text>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                       <block wx:for="{{item.stararr}}" wx:for-item="va">
+                      <image wx:if="{{va === 1 }}" src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                      <image wx:if="{{va === 2 }}" src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                      <image  wx:if="{{va === 3 }}"src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                      <image wx:if="{{va === 4 }}"src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                      <image wx:if="{{va === 5 }}"src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                      </block>
                         <text class="edu-course-nums">{{item.star}}</text>
                     </view>
                     <view class="edu-course-eva-right">

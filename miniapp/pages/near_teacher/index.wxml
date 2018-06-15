@@ -1,14 +1,15 @@
+<import src="../template/template.wxml"/> 
 <!-- 分类筛选 start -->
 <view class="edu-screen edu-border-top edu-bottom-solid">
-      <view class="{{showkecd?'edu-screen-a edu-select-fl':'edu-screen-a edu-select-fl'}}" bindtap="showok">
+      <view class="{{showkecda?'edu-screen-a edu-select-fl':'edu-screen-a '}}" bindtap="showa">
           {{default_type}}
-           <image src="../../assets/images/w-top-icon.png" class="{{showkecd?'edu-a-b edu-show':'edu-a-b edu-show'}}"/>
-          <image src="../../assets/images/w-botton-icon.png" class="{{showkecd?'edu-a-b edu-none':'edu-a-b edu-none'}}"/> 
+           <image src="../../assets/images/w-top-icon.png" class="{{showkecda?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="{{showkecda?'edu-a-b edu-none':'edu-a-b edu-show'}}"/> 
       </view>
-      <view class="{{showkecda?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="showxl">
+      <view class="{{showkecdb?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="showb">
           {{type_name}}
-          <image src="../../assets/images/w-top-icon.png" class="{{showkecda?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
-          <image src="../../assets/images/w-botton-icon.png" class="{{showkecda?'edu-a-b edu-none':'edu-a-b edu-show'}}"/>
+          <image src="../../assets/images/w-top-icon.png" class="{{showkecdb?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="{{showkecdb?'edu-a-b edu-none':'edu-a-b edu-show'}}"/>
       </view>
       <view class="edu-screen-a" bindtap="searchList" data-type="sale" data-val="{{cur_sale}}">
           销量
@@ -17,12 +18,12 @@
       </view>
 </view>
 <!-- 遮罩层 -->
-    <view class="{{showkecd?'edu-mask':'edu-none'}}"></view> 
-    <view class="{{showkecda?'edu-mask':'edu-none'}}"></view> 
+    <view class="{{showkecdab?'edu-mask':'edu-none'}}"></view> 
+    <view class="{{showkecdbc?'edu-mask':'edu-none'}}"></view> 
 <!-- 遮罩层 -->
 <!-- 距离 -->
-<view  class="{{showkecd?'edu-show edu-sty-qa':'edu-none'}}">
-    <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="" data-name="全部">
+<view hidden='{{hidden_typea}}' class="'edu-show edu-sty-qa">
+    <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="" data-name="距离">
        <text class="edu-ke-c-name">全部</text>
        <view class="edu-success-icon edu-icon-we" hidden="{{cur_distance == '' ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
@@ -49,14 +50,13 @@
 </view>
 <!-- 距离 end -->
 <!-- 茶艺 -->
-<view  class="{{showkecda?'edu-show edu-sty-qa':'edu-none'}}">
-    <view class="edu-kc-list">
+<view  hidden="{{hidden_typeb}}" class="edu-show edu-sty-qa">
+    <view class="edu-kc-list" bindtap="searchList" data-type="type" data-val="" data-name="茶艺">
        <text class="edu-ke-c-name">全部</text>
        <view class="edu-success-icon edu-icon-we"  hidden="{{cur_type == '' ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
-    
     <view class="edu-kc-list" wx:for="{{teacher_type}}" wx:key="key" bindtap="searchList" data-type="type" data-val="{{item.id}}" data-name="{{item.name}}">
        <text class="edu-ke-c-name">{{item.name}}</text>
        <view class="edu-success-icon edu-icon-we"  hidden="{{cur_type == item.id ? false : true}}">
@@ -79,11 +79,12 @@
                   <text class="edu-list-cy-name">{{item.name}}</text>
               </view>
               <view class="edu-list-two">
-                <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
+                 <block wx:for="{{item.stararr}}" wx:for-item="va">
+                  <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
+                  <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
+                  <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png"></image> 
+                  <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
+                </block>
                     <text>{{item.star}}</text>
               </view>
               <view class="edu-introduce">
@@ -99,5 +100,6 @@
           </view> 
      </view>  
        <!-- 列表end -->
+         <template is="default" hidden="{{ teacher_list.length == 0}}"  data="{{message:'暂无老师数据'}}"></template> 
 </view>
 <!-- 金牌老师 end -->

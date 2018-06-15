@@ -7,18 +7,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bools: 1,
-    boolss: 1,
-    cur_page: 1,
+    cur_page: 2,
     cur_type:'',
     cur_sale:1,
     cur_distance:'',
-    showkecd:false,
-    showkecda:false,
+    hidden_showa:false,
+    hidden_showb:false,
     teacher_list: [],
     teacher_type:[],
     default_type: '距离',
     type_name: '茶艺',
+    showkecda: false,
+    showkecdb: false,
+    showkecdab:false,
+    showkecdbc:false,
+    hidden_typea: true,
+    hidden_typeb: true,
+    cur_status:2
 
   },
 
@@ -31,42 +36,54 @@ Page({
     //获取类型
     this.getTypeTeacher();
   },
-
   // 全部课程筛选点击事件
-  showok() {
+  showa: function () {
     var that = this;
-    if (that.data.bools == 1) {
-      that.data.bools = 2;
+    if (that.data.hidden_typea) {
       that.setData({
-        showkecd: true
+        showkecda: true,
+        showkecdab: true,
+        showkecdb: false,
+        showkecdc: false,
+        hidden_typea: false,
+        hidden_typeb: true,
+        hidden_typec: true,
+
+
       })
     } else {
-      that.data.bools = 1;
       that.setData({
-        showkecd: false
-
+        hidden_typea: true,
+        showkecda: false,
+        showkecdab: false
       })
     }
   },
-  showxl:function(){
+  showb: function () {
     var that = this;
-    if (that.data.boolss == 1) {
-      that.data.boolss = 2;
+    if (that.data.hidden_typeb) {
       that.setData({
-        showkecda: true
+        showkecda: false,
+        showkecdbc: true,
+        showkecdb: true,
+        showkecdc: false,
+        hidden_typea: true,
+        hidden_typeb: false,
+        hidden_typec: true,
+
       })
     } else {
-      that.data.boolss = 1;
       that.setData({
-        showkecda: false
+        hidden_typeb: true,
+        showkecdb: false,
+        showkecdbc: false
       })
     }
-  }, 
+  },
 
   getStickTeacher: function () {
     var that = this;
     var postdata = {};
-    postdata.p = this.data.cur_page;
     postdata.distance = this.data.cur_distance; 
     postdata.teach_type = this.data.cur_type;
     postdata.sale = this.data.cur_sale;
@@ -75,10 +92,15 @@ Page({
         postdata.lng = res.longitude;
         postdata.lat = res.latitude;
         tool.post('Teacher/teacher_list', postdata, function (res) {
-          // console.log(res); return false;
+          if (res.data.status =='1') {
           that.setData({
-            teacher_list: res.data.data
+              teacher_list: res.data.data
           })
+          }else{
+            that.setData({
+              teacher_list: []
+            })
+          }
         })
       },
     })
@@ -98,8 +120,8 @@ Page({
     var val = event.currentTarget.dataset['val'];
     this.setData({
       cur_page: 1,
-      showkecd: true,
       showkecda: true,
+      showkecdb: true,
     })
     switch (opt_type) {
       case 'distance':
@@ -108,8 +130,12 @@ Page({
         this.setData({
           cur_distance: id,
           default_type: name,
-          showkecd: false,
-          showkecda: false,
+          showkecdb: false,
+          showkecda:false,
+          showkecdab: false,
+          hidden_typea: true
+          // bools: 1,
+          
         });
         break;
       case 'type':
@@ -118,8 +144,12 @@ Page({
         this.setData({
           cur_type: id,
           type_name: name,
-          showkecda: false,
-          showkecd: false,
+
+          showkecdbc: false,
+          showkecdb: false,
+          hidden_typeb:true,
+          showkecda:false
+          // boolss: 1
         });
         break;
       case 'sale':
@@ -127,8 +157,10 @@ Page({
         var id = event.currentTarget.dataset['val'];
         this.setData({
           cur_sale: id=='1'?'2':'1',
+          showkecdb: false,
           showkecda: false,
-          showkecd: false,
+          bools: 1,
+          boolss: 1
         });
         break;
     }
@@ -141,4 +173,26 @@ Page({
       url: '/pages/teacher_detail/index?id=' + teacher_id
     })
   },
+
+  //滚动底部监听
+  onReachBottom: function () { //下拉刷新
+    var that = this;
+    var cur_page = that.data.cur_page;
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 3000
+    });
+    console.log(that.data.cur_page);
+    tool.post('Teacher/teacher_list', { "p": ++cur_page }, function (res) {
+        if (res.data.status == '1') {
+          that.setData({
+            teacher_list: that.data.teacher_list.concat(res.data.data),
+            cur_page:cur_page,
+          })
+        }
+        setTimeout(function () { wx.hideToast(); }, 1000);
+    })
+
+  }
 })
