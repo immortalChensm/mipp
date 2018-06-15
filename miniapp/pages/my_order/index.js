@@ -93,6 +93,15 @@ Page({
     })
   },
   /**
+ * 去评价
+ */
+  toComment: function (e) {
+    var order_id = e.currentTarget.dataset['id'];
+    wx.navigateTo({
+      url: '/pages/comment/index?order_id=' + order_id
+    })
+  }, 
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
