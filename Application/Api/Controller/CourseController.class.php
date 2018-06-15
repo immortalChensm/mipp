@@ -78,6 +78,9 @@ class CourseController extends BaseController {
     	$course_id = (int)I('request.course_id');
     	$course_id || $this->returnError('非法的访问');
     	$comments = D('Comment')->relation('user')->where(array('type'=>2,'relation_id'=>$course_id))->select();
+    	foreach ($comments as &$val){
+    		$val['stararr'] = $this->starArr($val['star']);
+    	}
     	$comments && $this->returnSuccess('',output_data($comments));
     	$comments || $this->returnError('暂无数据');
     }

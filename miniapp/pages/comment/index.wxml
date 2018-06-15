@@ -8,7 +8,7 @@
         </block>
     </view>
     <view class="edu-eva-inputcontent body-view">
-      <textarea bindblur="setCmtContent" data-type="course" auto-height placeholder="请输入评价内容" />
+      <textarea bindinput="setCmtContent" data-type="course" auto-height placeholder="请输入评价内容" />
     </view>
 </view>
 <view class="edu-eva-section">
@@ -20,7 +20,7 @@
         </block>
     </view>
     <view class="edu-eva-inputcontent body-view">
-      <textarea bindblur="setCmtContent" data-type="teacher" auto-height placeholder="请输入评价内容" />
+      <textarea bindinput="setCmtContent" data-type="teacher" auto-height placeholder="请输入评价内容" />
     </view>
 </view>
 
