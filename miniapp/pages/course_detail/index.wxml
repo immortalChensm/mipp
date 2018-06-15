@@ -114,11 +114,12 @@
                     <view class="edu-course-two">
                       <view class="edu-course-eva-left">
                         <text class="edu-course-bbpj">宝贝评价</text>
-                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                        <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
+                          <block wx:for="{{item.stararr}}" wx:for-item="va">
+                            <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png" class="edu-course-icon"></image> 
+                            <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png" class="edu-course-icon"></image> 
+                            <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png" class="edu-course-icon"></image> 
+                            <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png" class="edu-course-icon"></image> 
+                          </block>
                           <text class="edu-course-nums">{{item.star}}</text>
                       </view>
                       <view class="edu-course-eva-right">
@@ -144,6 +145,6 @@
    <view class="edu-course-lr">
        <button bindgetphonenumber='toYuyue' open-type='getPhoneNumber'>预约试听</button>
    </view>
-</view>  
+</view>
 <!-- 底部按钮end -->
  

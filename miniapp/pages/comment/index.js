@@ -1,5 +1,5 @@
-// pages/评价/evaluate.js
-
+var tool = require("../../utils/tool.js")
+const app = getApp()
 Page({
 
   /**
@@ -7,10 +7,15 @@ Page({
    */
   data: {
     request:null,
-    teacher_star:4,
-    course_star:1
+    teacher_star:1,
+    teacher_content: '',
+    course_star:1,
+    course_content: '',
+    save_status:false
   },
-
+  /**
+   * 
+   */
   setCmtContent: function (e) {
     var val = e.detail.value;
     var type = e.currentTarget.dataset['type'];
@@ -41,11 +46,40 @@ Page({
       teacher_star: e.currentTarget.dataset['count']
     })
   },
+  saveCmt:function(){
+    var that = this;
+    // if (that.data.save_status) return false;
+    // that.setData({
+    //   save_status:true
+    // })
+    var postdata = {
+      order_id:this.data.request.order_id,
+      teacher_star: this.data.teacher_star,
+      teacher_content: this.data.teacher_content,
+      course_star: this.data.course_star,
+      course_content: this.data.course_content
+    }
+    tool.post('Order/add_comment',postdata,function(result){
+      var info = result.data;
+      if(info.status == '1'){
+        tool.jsalert(info.msg);
+        setTimeout(function(){
+          wx.navigateTo({
+            url: '/pages/my_order/index?status=3'
+          })
+        },1200);
+      }else{
+        tool.jsalert(info.msg,2);
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      request:options
+    })
   },
 
   /**

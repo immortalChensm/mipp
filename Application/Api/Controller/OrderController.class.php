@@ -42,12 +42,17 @@ class OrderController extends BaseController {
     //评价订单
     public function add_comment(){
         !$this->user_id && $this->returnError('参数错误');
-        $data = I('post.');
+        $data = I('request.');
         //自动验证
-        $data = D('Comment')->create($data);
-        !$data && $this->error(D('Comment')->getError());
+        if(!$r = D('Comment')->create($data)) $this->returnError(D('Comment')->getError());
         $res = D('Comment')->addorder($this->user_id,$data);
-        $res && $this->returnSuccess('评论成功');
+        if ($res) {
+        	//更新订单状态为已评价
+        	D('Order')->where(array('id'=>$data['order_id']))->save(array('comment_time'=>date('Y-m-d H:i:s'),'status'=>3));
+        	$this->returnSuccess('评论成功');
+        }else{
+        	$this->returnError('系统繁忙，提交失败');
+        }
     }
     
     //添加订单

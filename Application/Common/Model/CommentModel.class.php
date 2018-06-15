@@ -22,12 +22,12 @@ class CommentModel extends CommonModel{
 
 	
 	public function addorder($user_id,$data){
-		$order = D('Order')->where(array('id'=>$data['id']))->field('order_id,teacher_id,course_id')->find();
+		$order = D('Order')->where(array('id'=>$data['order_id']))->field('id,teacher_id,course_id')->find();
 		$teacher = D('Comment')->add(array(
 				'order_id'=>$order['id'],
 				'user_id'=>$user_id,
 				'relation_id'=>$order['teacher_id'],
-				'content'=>$data['content'],
+				'content'=>$data['teacher_content'],
 				'star'=>$data['teacher_star']
 		));
 		$course = D('Comment')->add(array(
@@ -37,6 +37,6 @@ class CommentModel extends CommonModel{
 				'relation_id'=>$order['course_id'],
 				'content'=>$data['course_content'],
 				'star'=>$data['course_star']));
-		if($teacher && $course)  return true;
+		return $teacher && $course;
 	}
 }
