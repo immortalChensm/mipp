@@ -67,10 +67,16 @@ class TeacherController extends BaseController {
 		!I('request.id') && $this->returnError('参数错误');
 		$where = array();
 		$where['t.status'] = 1;
-		var_dump($list);
+		$where['t.id'] = I('request.id');
+		$list = D('Teacher')
+				->alias('t')
+				->field('t.*,c.*,s.*')
+				->join('edu_comment as c ON t.id = c.relation_id','LEFT')
+				->join('edu_course as s ON t.id = s.teacher_id','LEFT')
+				->where($where)
+				->select();
+				dump($list); die();
 	}
-
-
 	/**
 	 * 教师信息
 	 */

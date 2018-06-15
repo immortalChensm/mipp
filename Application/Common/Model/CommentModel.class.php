@@ -18,4 +18,11 @@ class CommentModel extends CommonModel{
 				'as_fields'       => 'nickname,headimgurl',
 		),
 	);
+
+	public function addorder($user_id,$data){
+            $order = D('Order')->where(array('id'=>$data['id']))->field('teacher_id,course_id')->find();
+            $teacher = D('Comment')->add(array('user_id'=>$user_id,'relation_id'=>$order['teacher_id'],'content'=>$data['content'],'star'=>$data['teacher_star']));
+            $course = D('Comment')->add(array('user_id'=>$user_id,'type'=>'2','relation_id'=>$order['course_id'],'content'=>$data['course_content'],'star'=>$data['course_star']));
+            if($teacher && $course)  return true;
+        }
 }
