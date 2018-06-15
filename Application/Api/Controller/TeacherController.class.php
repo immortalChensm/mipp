@@ -12,7 +12,7 @@ class TeacherController extends BaseController {
 		$where = array();
 		$where['status'] = 1;
 		$where['is_stick'] = 1;
-		D('Teacher')->field('*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance');
+		D('Teacher')->field('t.*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance');
 		
 		$teachers = D('Teacher')->where($where)->limit(6)->order('distance asc,create_date asc')->select();
 		foreach ($teachers as &$val){
@@ -30,16 +30,22 @@ class TeacherController extends BaseController {
 	/**
 	 * 教师列表
 	 */
-	public function list(){
+	public function teacher_list(){
 		$where = array();
-		$where['status'] = 1;
-		// $where['is_stick'] = 1;
+		$where['t.status'] = 1;
 		$pagesize = 10;
 		$p = I('request.p') ? (int)I('request.p') : 1;
 		$lng = I('request.lng') ? I('request.lng') : 0;
 		$lat = I('request.lat') ? I('request.lat') : 0;
-    	D('Teacher')->field('*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance');
-		$teachers = D('Teacher')->where($where)->limit(($p-1)*$pagesize,$pagesize)->order('distance asc,create_date asc')->select();
+		$order = 'distance asc,t.create_date asc';
+		I('sale') == '2' && $order = 'sale_num asc';
+		I('teach_type') && $where['t.teach_type'] = I('teach_type');
+
+    	D('Teacher')->field('t.*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance ,c.sale_count');
+		$teachers = D('Teacher')
+					->alias('t')
+					->join('edu_course as c  ON t.id = c.teacher_id')
+					->where($where)->limit(($p-1)*$pagesize,$pagesize)->order($order)->select();
 		$teacher = array();
 		foreach ($teachers as &$val){
 			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
@@ -54,6 +60,14 @@ class TeacherController extends BaseController {
 		}
 		$teachers && $this->returnSuccess('',$teacher ? $teacher : $teachers);
 		$teachers || $this->returnError('暂无数据');
+	}
+
+	/*老师详情*/
+	public function detail(){
+		!I('request.id') && $this->returnError('参数错误');
+		$where = array();
+		$where['t.status'] = 1;
+		var_dump($list);
 	}
 
 

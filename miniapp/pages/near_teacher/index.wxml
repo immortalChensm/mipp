@@ -6,7 +6,7 @@
           <image src="../../assets/images/w-botton-icon.png" class="{{showkecd?'edu-a-b edu-none':'edu-a-b edu-none'}}"/> 
       </view>
       <view class="{{showkecda?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="showxl">
-          茶艺
+          {{type_name}}
           <image src="../../assets/images/w-top-icon.png" class="{{showkecda?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
           <image src="../../assets/images/w-botton-icon.png" class="{{showkecda?'edu-a-b edu-none':'edu-a-b edu-show'}}"/>
       </view>

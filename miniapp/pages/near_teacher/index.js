@@ -18,6 +18,7 @@ Page({
     teacher_list: [],
     teacher_type:[],
     default_type: '距离',
+    type_name: '茶艺',
 
   },
 
@@ -66,12 +67,14 @@ Page({
     var that = this;
     var postdata = {};
     postdata.p = this.data.cur_page;
-    postdata.distance = this.data.cur_distance;
+    postdata.distance = this.data.cur_distance; 
+    postdata.teach_type = this.data.cur_type;
+    postdata.sale = this.data.cur_sale;
     wx.getLocation({
       success: function (res) {
         postdata.lng = res.longitude;
         postdata.lat = res.latitude;
-        tool.post('Teacher/list', postdata, function (res) {
+        tool.post('Teacher/teacher_list', postdata, function (res) {
           // console.log(res); return false;
           that.setData({
             teacher_list: res.data.data
@@ -96,6 +99,7 @@ Page({
     this.setData({
       cur_page: 1,
       showkecd: true,
+      showkecda: true,
     })
     switch (opt_type) {
       case 'distance':
@@ -104,6 +108,26 @@ Page({
         this.setData({
           cur_distance: id,
           default_type: name,
+          showkecd: false,
+          showkecda: false,
+        });
+        break;
+      case 'type':
+        var name = event.currentTarget.dataset['name'];
+        var id = event.currentTarget.dataset['val'];
+        this.setData({
+          cur_type: id,
+          type_name: name,
+          showkecda: false,
+          showkecd: false,
+        });
+        break;
+      case 'sale':
+        var name = event.currentTarget.dataset['name'];
+        var id = event.currentTarget.dataset['val'];
+        this.setData({
+          cur_sale: id=='1'?'2':'1',
+          showkecda: false,
           showkecd: false,
         });
         break;
