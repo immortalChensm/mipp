@@ -12,11 +12,7 @@ class OrderController extends BaseController {
         $where = array();
         $where['user_id'] = $this->user_id;
         if (I('status')) {
-        	if (I('status') == 3) {
-        		$where['status'] = array('EGT',3);
-        	}else{
-        		$where['status'] = I('status');
-        	}
+        	$where['status'] = I('status');
         }
         $list = D('Order')->where($where)->relation(true)->page($p,$pagesize)->select();
         foreach ($list as &$val){
@@ -29,6 +25,8 @@ class OrderController extends BaseController {
     public function detail(){
         !I('id') && $this->returnError('参数错误');
         $info = D('Order')->where(array('id'=>I('id')))->relation(true)->find();
+        $info['course'] = output_data($info['course']);
+        $info['teacher'] = output_data($info['teacher']);
         $this->returnSuccess('',$info);
     }
 
@@ -37,7 +35,7 @@ class OrderController extends BaseController {
         (!$this->user_id || !I('id')) && $this->returnError('参数错误');
         $order = D('Order')->where(array('id'=>I('id')))->getField('id');
         !$order && $this->returnError('订单不存在');
-        $res = D('Order')->where(array('id'=>I('id')))->delete();
+        $res = D('Order')->where(array('id'=>I('id')))->save(array('status'=>'4'));
         $res && $this->returnSuccess('取消成功');
     }
 
@@ -47,7 +45,7 @@ class OrderController extends BaseController {
         $data = I('post.');
         //自动验证
         $data = D('Comment')->create($data);
-        !$data &&$this->error(D('Comment')->getError());
+        !$data && $this->error(D('Comment')->getError());
         $res = D('Comment')->addorder($this->user_id,$data);
         $res && $this->returnSuccess('评论成功');
         
