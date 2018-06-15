@@ -32,7 +32,7 @@
       <view class="edu-myorder-three edu-border-top" wx:if="{{item.status <=2}}">
             <label class="edu-myorder-btn-c" wx:if="{{item.status == 1}}">取消订单</label>
             <label class="edu-myorder-btn-p" wx:if="{{item.status == 1}}">去付款</label>
-            <label class="edu-myorder-btn-p" wx:if="{{item.status == 2}}">去评价</label>
+            <label class="edu-myorder-btn-p" wx:if="{{item.status == 2}}" bindtap='toComment' data-id='{{item.id}}'>去评价</label>
       </view>
   </view>
   <template is="default" wx:if="{{list_info.length == 0}}" data="{{message:'暂无订单数据'}}"></template>

@@ -40,7 +40,7 @@ class OrderController extends BaseController {
     }
 
     //评价订单
-    public function comment(){
+    public function add_comment(){
         !$this->user_id && $this->returnError('参数错误');
         $data = I('post.');
         //自动验证
@@ -48,7 +48,6 @@ class OrderController extends BaseController {
         !$data && $this->error(D('Comment')->getError());
         $res = D('Comment')->addorder($this->user_id,$data);
         $res && $this->returnSuccess('评论成功');
-        
     }
     
     //添加订单

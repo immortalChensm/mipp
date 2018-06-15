@@ -6,15 +6,40 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-
+    request:null,
+    teacher_star:4,
+    course_star:1
   },
 
-  bindTextAreaBlur: function (e) {
-    console.log(e.detail.value)
+  setCmtContent: function (e) {
+    var val = e.detail.value;
+    var type = e.currentTarget.dataset['type'];
+    if(type == 'course'){
+      this.setData({
+        course_content:val
+      })
+    }
+    if (type == 'teacher') {
+      this.setData({
+        teacher_content: val
+      })
+    }
   },
-  bindFormSubmit: function (e) {
-    console.log(e.detail.value.textarea)
+  /**
+   * 设置课程评价星数
+   */
+  setCourseStar: function (e) {
+    this.setData({
+      course_star: e.currentTarget.dataset['count']
+    })
+  },
+    /**
+   * 设置老师评价星数
+   */
+  setTeacherStar: function (e) {
+    this.setData({
+      teacher_star: e.currentTarget.dataset['count']
+    })
   },
   /**
    * 生命周期函数--监听页面加载

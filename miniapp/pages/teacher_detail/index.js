@@ -7,7 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
     bools: 1,
     selected1: true,
     selected2: false,
