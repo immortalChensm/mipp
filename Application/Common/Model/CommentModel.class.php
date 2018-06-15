@@ -20,7 +20,6 @@ class CommentModel extends CommonModel{
 		),
 	);
 
-	
 	public function addorder($user_id,$data){
 		$order = D('Order')->where(array('id'=>$data['order_id']))->field('id,teacher_id,course_id')->find();
 		$teacher = D('Comment')->add(array(
@@ -39,4 +38,5 @@ class CommentModel extends CommonModel{
 				'star'=>$data['course_star']));
 		return $teacher && $course;
 	}
+
 }

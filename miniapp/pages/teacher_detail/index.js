@@ -1,5 +1,6 @@
 // pages/老师介绍/teacherinfo.js
 var tool = require("../../utils/tool.js")
+var WxParse = require('../../wxParse/wxParse.js')
 var app = getApp
 Page({
 
@@ -7,13 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
     bools: 1,
     selected1: true,
     selected2: false,
-    selected3: false
+    selected3: false,
+    tlist: [],
   },
-
 //收藏点击
   scShow() {
     var that = this;
@@ -58,13 +58,15 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    tool.post('Teacher/detail', {id:1}, function (res) {
-      console.log(res); return false;
+  onShow: function (id) {
+    var that = this;
+    tool.post('Teacher/details', {id:1}, function (res) {
+      // console.log(res.data.data); return false;
       that.setData({
-        teacher_list: res.data.data
+        tlist: res.data.data
       })
+      WxParse.wxParse('profile', 'html', res.data.data.profile, that, 5);
+      WxParse.wxParse('content', 'html', res.data.data.content, that, 5);
     })
   }
-
 })
