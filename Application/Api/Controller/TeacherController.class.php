@@ -38,7 +38,7 @@ class TeacherController extends BaseController {
 		$lng = I('request.lng') ? I('request.lng') : 0;
 		$lat = I('request.lat') ? I('request.lat') : 0;
 		$order = 'distance asc,t.create_date asc';
-		I('sale') == '2' && $order = 'sale_num asc';
+		I('sale') == '2' && $order = 'sale_count asc';
 		I('teach_type') && $where['t.teach_type'] = I('teach_type');
 
     	D('Teacher')->field('t.*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance ,c.sale_count');
@@ -63,19 +63,31 @@ class TeacherController extends BaseController {
 	}
 
 	/*老师详情*/
-	public function detail(){
+	public function details(){
 		!I('request.id') && $this->returnError('参数错误');
 		$where = array();
 		$where['t.status'] = 1;
 		$where['t.id'] = I('request.id');
-		$list = D('Teacher')
-				->alias('t')
-				->field('t.*,c.*,s.*')
-				->join('edu_comment as c ON t.id = c.relation_id','LEFT')
-				->join('edu_course as s ON t.id = s.teacher_id','LEFT')
-				->where($where)
-				->select();
-				dump($list); die();
+		$list = D('Teacher')->where(array('status'=>'1','id'=>I('request.id')))->find();
+		$list['links'] = unserialize($list['links']);
+		$list['teach_name'] = D('TeachType')->where(array('status'=>'1','id'=>$list['teach_type']))->getField('name');
+		$list['follow'] = D('Follow')->where(array('relation_id'=>$list['id'],'follow_type'=>'1'))->count();
+		$list['course'] =  D('Course')->where(array('status'=>'1','teacher_id'=>$list['id']))->order('create_date desc')->select();
+		$list['comment'] =	D('Comment')
+							->alias('c')
+							->field('c.*,u.nickname,u.headimgurl')
+							->join('edu_user as u  ON c.user_id = u.id')
+							->where(array('c.status'=>'1','c.relation_id'=>$list['id'],'c.type'=>'1'))
+							->order('c.create_date desc')
+							->select();
+		foreach ($list['course'] as $key => $val) {
+			$img = unserialize($val['pics']);
+			$list['course'][$key]['pics'] = $img[0];
+			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>2,'relation_id'=>$course_info['id']))->find();
+    		$list['couser'][$key]['star'] = $row['star'] ? round($row['star'],1) : 0;
+		}
+		// dump($list); die();
+		$this->returnSuccess('',$list);
 	}
 	/**
 	 * 教师信息

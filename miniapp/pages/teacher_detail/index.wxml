@@ -1,8 +1,9 @@
+<import src="../../wxParse/wxParse.wxml" />
 <view class="edu-info-content">
       <image src="../../assets/images/info-bg.png" class="edu-info-bg-a"/>
-      <image src="../../assets/images/timg.jpeg" class="edu-info-logo"/> 
-      <text class="edu-info-name">李浩老师</text>
-      <text class="edu-info-address">地址：苏州大道3号弘毅教育</text>
+      <image src="{{tlist.headimgurl}}" class="edu-info-logo"/> 
+      <text class="edu-info-name">{{tlist.name}}</text>
+      <text class="edu-info-address">地址：{{tlist.address}}</text>
       <!-- 转发-收藏按钮 -->
         <view class="edu-info-z-s">
             <view class="edu-info-zs-icon edu-info-zs-bot">
@@ -12,7 +13,7 @@
                  <image src="../../assets/images/shoucang-a-icon.png" class="{{checked?'edu-info-zf edu-none':'edu-info-zf edu-show'}}" bindtap='scShow'/>
                  <image src="../../assets/images/shoucang-b-icon.png" class="{{checked?'edu-info-zf edu-show':'edu-info-zf edu-none'}}" bindtap='scShow'/>
             </view>
-            <view class="edu-info-zs-icon"><text>88</text></view>
+            <view class="edu-info-zs-icon"><text>{{tlist.follow}}</text></view>
         </view>
        <!-- 转发-收藏按钮 -->
 </view>
@@ -24,11 +25,11 @@
        </view>
        <view class="edu-info-teach-jj edu-info-margin-a">
            <text class="edu-info-lx edu-info-left">授课类型：</text>
-           <text class="edu-info-lx edu-info-cy edu-info-right edu-info-h">茶艺</text>
+           <text class="edu-info-lx edu-info-cy edu-info-right edu-info-h">{{tlist.teach_name}}</text>
        </view>
         <view class="edu-info-teach-jj">
            <text class="edu-info-lx edu-info-left">老师介绍：</text>
-           <text class="edu-info-lx edu-info-cy edu-info-right edu-info-ms">我是一个好老师，上过我课的人都能考试及格，泡一手好茶</text>
+           <template is="wxParse" data="{{wxParseData:profile.nodes}}" />
        </view>
    </view>
 </view>
@@ -71,72 +72,21 @@
 
 <!-- 老师详情内容 -->
       <view class="{{selected1?'edu-info-teach-xq edu-show':'edu-info-teach-xq edu-none'}}">
-          <text class="edu-info-rn">七年，只专注于茶艺培训的心馨茶艺，一直以敢为人先的行业责任感要求自己。从将“时尚”的感念引入茶艺培训开始，到全国首开“茶艺创客”课程，再到现在，以自身为标准，创立“茶艺培训师”课程，心馨茶艺一直在“精益求精”的路上行走。</text>
-          <image src="../../assets/images/img3-icon.png" style="width:100%;"/>
+         <template is="wxParse" data="{{wxParseData:content.nodes}}" />
       </view>
 <!-- 老师详情内容 -->
 <!-- 主要授课内容 -->
 <view class="{{selected2?'edu-info-sk edu-show':'edu-info-sk edu-none'}}">
      <!-- 课程 start -->
-<view class="edu-recommend-courses-tj">
+<view class="edu-recommend-courses-tj" wx:for="{{tlist.course}}" wx:for-item="items" wx:key="key" bindtap="toCourseDetail" data-id="{{item.id}}">
     <!-- 列表 -->
-     <view class="edu-acticle-list-tj-s edu-acticle-x">
-         <view class="edu-list-left">
-            <image src="../../assets/images/001.jpg" class="edu-list-img"/>
-         </view>
-          <view class="edu-list-right">
-              <view class="edu-list-one">
-                  <text class="edu-list-cy-name">茶艺精品班</text>
-              </view>
-              <view class="edu-list-two">
-                <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <text>4.7</text>
-              </view>
-              <view class="edu-introduce">
-                 <label>简介：精品茶道，等你来到...</label>
-              </view>
-               <view class="edu-price">
-                 <label class="edu-price-num">¥88.00</label>
-                  <label class="edu-sales">已售：231</label>
-              </view>
-          </view> 
-     </view>
-      <view class="edu-acticle-list-tj-s edu-acticle-x">
-              <view class="edu-list-left">
-                  <image src="../../assets/images/001.jpg" class="edu-list-img"/>
-              </view>
-                <view class="edu-list-right">
-                    <view class="edu-list-one">
-                        <text class="edu-list-cy-name">茶艺精品班</text>
-                    </view>
-                    <view class="edu-list-two">
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <image src="../../assets/images/xing-icon.png"/>
-                          <text>4.7</text>
-                    </view>
-                    <view class="edu-introduce">
-                      <label>简介：精品茶道，等你来到...</label>
-                    </view>
-                    <view class="edu-price">
-                      <label class="edu-price-num">¥88.00</label>
-                        <label class="edu-sales">已售：231</label>
-                    </view>
-                </view> 
-        </view>
            <view class="edu-acticle-list-tj-s edu-acticle-x">
               <view class="edu-list-left">
-                  <image src="../../assets/images/001.jpg" class="edu-list-img"/>
+                  <image src="{{items.pics}}" class="edu-list-img"/>
               </view>
                 <view class="edu-list-right">
                     <view class="edu-list-one">
-                        <text class="edu-list-cy-name">茶艺精品班</text>
+                        <text class="edu-list-cy-name">{{items.name}}</text>
                     </view>
                     <view class="edu-list-two">
                       <image src="../../assets/images/xing-icon.png"/>
@@ -144,14 +94,14 @@
                           <image src="../../assets/images/xing-icon.png"/>
                           <image src="../../assets/images/xing-icon.png"/>
                           <image src="../../assets/images/xing-icon.png"/>
-                          <text>4.7</text>
+                          <text>{{items.star}}</text>
                     </view>
                     <view class="edu-introduce">
-                      <label>简介：精品茶道，等你来到...</label>
+                      <label>简介：{{items.content}}</label>
                     </view>
                     <view class="edu-price">
-                      <label class="edu-price-num">¥88.00</label>
-                        <label class="edu-sales">已售：231</label>
+                      <label class="edu-price-num">¥{{items.price}}</label>
+                        <label class="edu-sales">已售：{{items.sale_count}}</label>
                     </view>
                 </view> 
         </view>
@@ -161,42 +111,13 @@
 </view>
 <!-- 主要授课内容end -->
 <!-- 学生评价内容 -->
-<view class="{{selected3?'edu-info-pj-n edu-show':'edu-info-pj-n edu-none'}}">
+<view class="{{selected3?'edu-info-pj-n edu-show':'edu-info-pj-n edu-none'}}"  wx:for="{{tlist.comment}}" wx:for-item="item" wx:key="key"  data-id="{{item.id}}">
   <!-- 课程评价 -->
-        <view class="edu-course-pj-content">
-            <view class="edu-course-evaluate">
-                  <view class="edu-course-one">
-                    <image src="../../assets/images/timg.jpeg" class="edu-course-tx"/>
-                    <text>小明</text>
-                  </view>
-                  <view class="edu-course-two">
-                    <view class="edu-course-eva-left">
-                      <text class="edu-course-bbpj">宝贝评价</text>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                        <text class="edu-course-nums">5.0</text>
-                    </view>
-                    <view class="edu-course-eva-right">
-                      <text>2018-02-03 15:30</text>
-                    </view>
-                  </view>
-                  <view class="edu-course-three">
-                      <text class="edu-course-assess">学了这个课，感觉身体素质都有提高，特别是老师满专业的，下次还回来</text>
-                  </view>
-            </view>
-            <!-- 间隔 -->
-              <view class="edu-space-d edu-space-e"></view>
-            <!-- 间隔end -->
-        </view>
-
           <view class="edu-course-pj-content">
             <view class="edu-course-evaluate">
                   <view class="edu-course-one">
                     <image src="../../assets/images/timg.jpeg" class="edu-course-tx"/>
-                    <text>小明</text>
+                    <text>{{item.nickname}}</text>
                   </view>
                   <view class="edu-course-two">
                     <view class="edu-course-eva-left">
@@ -206,47 +127,18 @@
                       <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
                       <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
                       <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                        <text class="edu-course-nums">5.0</text>
+                        <text class="edu-course-nums">{{item.star}}</text>
                     </view>
                     <view class="edu-course-eva-right">
-                      <text>2018-02-03 15:30</text>
+                      <text>{{item.create_date}}</text>
                     </view>
                   </view>
                   <view class="edu-course-three">
-                      <text class="edu-course-assess">学了这个课，感觉身体素质都有提高，特别是老师满专业的，下次还回来</text>
-                  </view>
-            </view>
-            <!-- 间隔 -->
-              <view class="edu-space-d edu-space-e"></view>
-            <!-- 间隔end -->
-        </view>
-
-          <view class="edu-course-pj-content">
-            <view class="edu-course-evaluate">
-                  <view class="edu-course-one">
-                    <image src="../../assets/images/timg.jpeg" class="edu-course-tx"/>
-                    <text>小明</text>
-                  </view>
-                  <view class="edu-course-two">
-                    <view class="edu-course-eva-left">
-                      <text class="edu-course-bbpj">宝贝评价</text>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                        <text class="edu-course-nums">5.0</text>
-                    </view>
-                    <view class="edu-course-eva-right">
-                      <text>2018-02-03 15:30</text>
-                    </view>
-                  </view>
-                  <view class="edu-course-three">
-                      <text class="edu-course-assess">学了这个课，感觉身体素质都有提高，特别是老师满专业的，下次还回来</text>
+                      <text class="edu-course-assess">{{item.content}}</text>
                   </view>  
             </view>
             <!-- 间隔 -->
-              <view class="edu-space-d edu-space-e"></view>
+              <!-- <view class="edu-space-d edu-space-e"></view> -->
             <!-- 间隔end -->
         </view>
       <!-- 课程评价 -->
