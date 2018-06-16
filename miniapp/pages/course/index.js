@@ -193,7 +193,7 @@ Page({
         });
         break;
     }
-    this.courseList()
+    this.courseList();
   },
   toCourseDetail: function (event) {
     var course_id = event.currentTarget.dataset['id'];
