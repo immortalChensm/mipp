@@ -18,9 +18,10 @@ Page({
       })
     })
   },
-  toOrder: function () {
+  toOrder: function (e) {
+    var type = e.currentTarget.dataset['type'];
     wx.navigateTo({
-      url: '/pages/my_order/index'
+      url: '/pages/my_order/index?type=' + type
     })
   },
   toFollow: function () {

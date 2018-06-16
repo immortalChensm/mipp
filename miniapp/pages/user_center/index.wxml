@@ -6,7 +6,7 @@
         <view class="edu-center-right">
            <label class="edu-center-title">{{user.nickname}}</label>
            <label class="edu-center-name" wx:if="{{user.identify ==1}}">普通会员</label>
-           <label class="edu-center-name" wx:elif="{{user.identify ==2}}">老师</label>
+           <label class="edu-center-name" wx:if="{{user.identify ==2}}">老师</label>
         </view>
     </view>
 </view>
@@ -17,7 +17,7 @@
               <view class="edu-center-o-left">
                     <text class="edu-center-myorder">我的订单</text>
               </view>
-               <view class="edu-center-o-right" bindtap='toOrder'>
+               <view class="edu-center-o-right" bindtap='toOrder' data-type="all">
                      <a href="#">
                       <text class="edu-center-look-all" >查看全部订单</text>
                        <image src="../../assets/images/left-icon.png" class="edu-left-icon"/>
@@ -25,19 +25,19 @@
                </view>
           </view>
           <view class="edu-center-pay-evaluate">
-              <view class="edu-center-pay edu-width-b" bindtap='toOrder'>
+              <view class="edu-center-pay edu-width-b" bindtap='toOrder' data-type='pay'>
                    <view class="edu-center-pay-top">
                        <image  src="../../assets/images/wait-pay-icon.png" class="edu-center-pay-icon"/>
                    </view>
                      <text class="edu-center-waitpay-text" >待付款</text> 
-                     <label class="edu-center-nums">{{user.pay_num}}</label>
+                     <label class="{{user.pay_num > 9?'edu-center-nums-b':'edu-center-nums'}}">{{user.pay_num}}</label>
               </view>
-              <view class="edu-center-pay edu-width-b" bindtap='toOrder'>
+              <view class="edu-center-pay edu-width-b" bindtap='toOrder' data-type='comment'>
                    <view class="edu-center-pay-top">
                        <image  src="../../assets/images/evaluate-icon.png" class="edu-center-pay-icon"/>
                    </view>
                      <text class="edu-center-waitpay-text" >待评价</text> 
-                     <label class="edu-center-nums-b">{{user.com_num}}</label>
+                     <label class="{{user.com_num > 9?'edu-center-nums-b':'edu-center-nums'}}">{{user.com_num}}</label>
               </view>
           </view>
       </view>

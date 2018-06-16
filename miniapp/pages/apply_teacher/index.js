@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    is_edit:true,
+    hidden_qualification:true
   },
 
   /**
@@ -15,6 +16,9 @@ Page({
   
   },
 
+  formSubmit:function(e){
+    console.log(e)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

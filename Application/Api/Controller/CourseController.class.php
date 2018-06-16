@@ -54,6 +54,7 @@ class CourseController extends BaseController {
 		$courses && $this->returnSuccess('',$courses);
 		$courses || $this->returnError('暂无数据');
     }
+    
     /**
      * 课程信息
      */
@@ -71,6 +72,7 @@ class CourseController extends BaseController {
     		$this->returnError('暂无数据');
     	}
     }
+    
     /**
      * 评价信息
      */
