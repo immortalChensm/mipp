@@ -1,75 +1,81 @@
+<import src="../template/template.wxml"/> 
+
 <view class="edu-att-tab edu-border-top edu-att-position-w">
-    <view class="{{selected?'edu-width-b edu-att-fl ':'edu-width-b edu-att-fl  edu-att-select '}}" bindtap='attSelect'>老师</view>
-    <view class="{{selected?'edu-width-b edu-att-fl edu-att-select':'edu-width-b edu-att-fl '}}" bindtap='attSelect'>课程</view> 
+    <view class="{{show_teacher?'edu-width-b edu-att-fl  edu-att-select ':'edu-width-b edu-att-fl '}}" bindtap='getFollowTeacher'>老师</view>
+    <view class="{{show_course?'edu-width-b edu-att-fl edu-att-select':'edu-width-b edu-att-fl '}}" bindtap='getFollowCourse'>课程</view> 
 </view>
 
 <view class="edu-att-topspace-a">
 <!-- 老师列表 -->
-<view class="{{selected?'container edu-none':'container edu-show'}}">
-     <view class="edu-att-ew-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
-       <view class="content edu-acticle-list-tj scroll-view-item ">
+<view class="{{show_teacher?'container edu-show':'container edu-none'}}">
+     <view wx:for="{{follow_teacher}}" wx:key="key" class="edu-att-ew-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-id="{{item.id}}" bindtouchstart="touchTeacherStart" bindtouchmove="touchTeacherMove" data-index="{{index}}">
+       <view class="content edu-acticle-list-tj scroll-view-item " bindtap='toTeacherDetail' data-id='{{item.teacher.id}}'>
          <view class="edu-list-left-a edu-att-l-q">
-            <image src="../../assets/images/001.jpg" class="edu-list-img-a"/>
+            <image src="{{item.teacher.headimgurl}}" class="edu-list-img-a"/>
          </view>
           <view class="edu-list-right-a edu-att-l-w">
               <view class="edu-list-one">
-                  <text class="edu-list-cy-name">张雨</text>
+                  <text class="edu-list-cy-name">{{item.teacher.name}}</text>
               </view>
               <view class="edu-list-two">
-                <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <text>4.7</text>
+                <block wx:for="{{item.teacher.stararr}}" wx:for-item="va">
+                  <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
+                  <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
+                  <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png"></image> 
+                  <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
+                </block>
+                <text>{{item.teacher.star}}</text>
               </view>
               <view class="edu-introduce">
-                 <label>简介：精品茶道，等你来到，等你和大家...</label>
+                 <label>简介：{{item.teacher.profile}}</label>
               </view>
                <view class="edu-jl-list">
-                 <label class="edu-tea-name">茶艺</label>
+                 <label class="edu-tea-name">{{item.teacher.type}}</label>
                   <label class="edu-sales edu-jl">
                     <image src="../../assets/images/gps-icon.png"  class="edu-gps"/>
-                     1.2km
+                     {{item.teacher.distance}}
                   </label>
               </view>
           </view> 
           </view>
-            <view class="  del scroll-view-item" catchtap="del" data-index="{{index}}">取消关注</view>
+          <view class="  del scroll-view-item" catchtap="del" data-type="1" data-id="{{item.id}}" data-index="{{index}}">取消关注</view>
      </view>
+     <template is="default" wx:if="{{follow_teacher.length == 0}}" data="{{message:'暂无数据'}}"></template>
 </view>
 <!-- 老师列表end -->
 <!-- 课程列表 -->
-<view class="{{selected?'container edu-show':'container edu-none'}}">
-  <view class="edu-att-ew-item  {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
-   <view class="content edu-acticle-list-tj scroll-view-item ">
+<view class="{{show_course?'container edu-show':'container edu-none'}}">
+  <view wx:key="key" class="edu-att-ew-item  {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchCourseStart" bindtouchmove="touchCourseMove" wx:for="{{follow_course}}" >
+   <view class="content edu-acticle-list-tj scroll-view-item " bindtap='toCourseDetail' data-id='{{item.course.id}}'>
          <view class="edu-list-left edu-att-le">
-            <image src="../../assets/images/001.jpg" class="edu-list-img"/>
+            <image src="{{item.course.pics[0]}}" class="edu-list-img"/>
          </view>
           <view class="edu-list-right edu-att-right-ae">
               <view class="edu-list-one">
-                  <text class="edu-list-cy-name">茶艺精品班{{item.content}}</text>
+                  <text class="edu-list-cy-name">{{item.course.name}}</text>
               </view>
               <view class="edu-list-two">
-                <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <image src="../../assets/images/xing-icon.png"/>
-                    <text>4.7</text>
+                <block wx:for="{{item.course.stararr}}" wx:for-item="va">
+                  <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
+                  <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
+                  <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png"></image> 
+                  <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
+                </block>
+                <text>{{item.course.star}}</text>
               </view>
               <view class="edu-introduce">
-                 <label>简介：精品茶道，等你来到...</label>
+                 <label>简介：{{item.course.profile}}</label>
               </view>
                <view class="edu-price">
-                 <label class="edu-price-num">¥88.00</label>
-                  <label class="edu-sales">已售：231</label>
+                 <label class="edu-price-num">¥{{item.course.price}}</label>
+                  <label class="edu-sales">已售：{{item.course.sale_count}}</label>
               </view>
       
          </view> 
      </view>
-       <view class="  del scroll-view-item" catchtap="del" data-index="{{index}}">取消关注</view>
+       <view class="  del scroll-view-item"  catchtap="del" data-type="2" data-id="{{item.id}}" data-index="{{index}}">取消关注</view>
  </view> 
+ <template is="default" wx:if="{{follow_course.length == 0}}" data="{{message:'暂无数据'}}"></template>
 </view> 
 <!-- 课程列表end -->
 </view>

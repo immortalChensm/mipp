@@ -19,7 +19,7 @@ class UserController extends BaseController {
     	$type = I('request.type');
     	$relation_id = I('request.relation_id');
     	$type && $relation_id || $this->returnError('非法的操作');
-    	D('Follow')->where(array('user_id'=>$this->user_id,'relation_id'=>$relation_id))->count() && $this->returnSuccess('您已收藏');
+    	D('Follow')->where(array('user_id'=>$this->user_id,'follow_type'=>$type,'relation_id'=>$relation_id))->count() && $this->returnSuccess('您已收藏');
     	$flw_data = array();
     	$flw_data['user_id'] = $this->user_id;
     	$flw_data['follow_type'] = $type;

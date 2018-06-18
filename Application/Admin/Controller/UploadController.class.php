@@ -5,7 +5,6 @@ class UploadController extends \Think\Controller{
 
     public function index(){
     	$files = array_values($_FILES);
-    	
     	$result = curl_request(C('UPIMG_INTERFACE'),array(
     			'sign'=>C('API_SIGN'),
     			'source'=>base64_encode(file_get_contents($files[0]['tmp_name'])),
@@ -37,7 +36,7 @@ class UploadController extends \Think\Controller{
     }
     public function upvideo(){
     	$files = array_values($_FILES);
-    	var_dump($files);exit;
+    	// var_dump($files);exit;
     	$result = curl_request(C('UPVIDEO_INTERFACE'),array(
     			'sign'=>C('API_SIGN'),
     			'source'=>base64_encode(file_get_contents($files[0]['tmp_name'])),

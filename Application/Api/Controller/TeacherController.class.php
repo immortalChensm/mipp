@@ -104,6 +104,29 @@ class TeacherController extends BaseController {
         $this->returnSuccess('',$list);
     }
     /**
+     * 申请老师
+     */
+    public function apply_teacher(){
+    	!$this->user_id && $this->returnError('参数错误');
+    	if (I('request.act') == 'save') {
+    		$request_data = I('request.');
+    		unset($request_data['ajax'],$request_data['act'],$request_data['openid']);
+	    	if (!$res = D('Teacher')->create($request_data)) $this->returnError(D('Teacher')->getError());
+	    	$user_info = D('User')->where(array('id'=>$this->user_id))->find();
+	    	$request_data['user_id'] = $user_info['id'];
+	    	$request_data['nickname'] = $user_info['nickname'];
+	    	$request_data['headimgurl'] = $user_info['headimgurl'];
+	    	$request_data['sex'] = $user_info['gender'];
+// 	    	$this->returnSuccess('',$request_data);
+	    	$res = D('Teacher')->saveData($request_data);
+	    	$res ? $this->returnSuccess('提交成功！') : $this->returnError('系统繁忙，请稍后再试');
+    	}else {
+    		$teacher_info = D('Teacher')->where(array('user_id'=>$this->user_id))->find();
+    		$teacher_info && $this->returnSuccess('',output_data($teacher_info));
+    		$teacher_info || $this->returnError('暂无数据');
+    	}
+    }
+    /**
 	 * 教师信息
 	 */
     public function teacher_info(){

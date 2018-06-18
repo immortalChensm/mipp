@@ -1,18 +1,26 @@
-// pages/预约试听/reservations.js
+var tool = require("../../utils/tool.js")
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    'course_info': [],
+    'form_phone': '',
+    'form_name': ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var course_info = wx.getStorageSync('cart_info');
+    var phone = wx.getStorageSync('phone');
+    this.setData({
+      'course_info': course_info,
+      'form_phone': phone
+    })
   },
 
   /**
@@ -21,12 +29,40 @@ Page({
   onReady: function () {
   
   },
-  yuyueSuc: function () {
-    wx.navigateTo({
-      url: '/pages/yuyue_suc/index'
+  /**
+   * 添加订单
+   */
+  yuyue_order: function () {
+    console.log(this.data)
+    var postdata = {
+      'type': 2,
+      'course_id': this.data.course_info.id,
+      'name': this.data.form_name,
+      'phone': this.data.form_phone,
+      'goods_num': 1
+    }
+    tool.post('Order/add_order', postdata, function (result) {
+      var info = result.data;
+      console.log(info)
+      if (info.status == '1') {
+        wx.navigateTo({
+          url: '/pages/yuyue_suc/index'
+        })
+      } else {
+        tool.jsalert(info.msg);
+      }
     })
   },
-
+  setFormName: function (e) {
+    this.setData({
+      'form_name': e.detail.value
+    })
+  },
+  setFormPhone: function (e) {
+    this.setData({
+      'form_phone': e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -61,7 +97,6 @@ Page({
   onReachBottom: function () {
   
   },
-
   /**
    * 用户点击右上角分享
    */

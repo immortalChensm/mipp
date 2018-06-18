@@ -1,5 +1,5 @@
 
-var API_URL = 'http://educate.com/Api/'
+var API_URL = 'http://test.educate.com/Api/'
 
 function post(url,data,suc,fail){
     request('POST',url,data,suc,fail);
@@ -16,15 +16,19 @@ function request(method,url,data,suc,fail){
 	    }
 	if(method == 'POST'){
 		request_obj.header = {'Content-Type': 'application/x-www-form-urlencoded'};
-		request_obj.data = data;
     var userinfo = wx.getStorageSync('userinfo');
     if(userinfo.openId){
       data.openid = userinfo.openId;
     }
+    request_obj.data = data;
 	}else if(method == 'GET'){
-		request_obj.header = {'Content-Type': 'application/json'}
+		request_obj.header = {'Content-Type': 'application/json'};
+    var userinfo = wx.getStorageSync('userinfo');
+    if (userinfo.openId) {
+      request_obj.data = {openid: userinfo.openId};
+    }
 	}
-    wx.request(request_obj);
+  wx.request(request_obj);
 }
 function jsalert(msg,type){
     var toast_type = 'success';
@@ -63,9 +67,41 @@ function jsconfirm(msg,suc,fail,sucbtntext,failbtntext) {
     })
 }
 
+function uploadfile(path,backfun){
+  //启动上传等待中...  
+  wx.showToast({
+    title: '正在上传...',
+    icon: 'loading',
+    mask: true,
+    duration: 10000
+  })
+  console.log(path)
+  wx.uploadFile({
+    url: API_URL + 'Upload/upImage',
+    filePath: path,
+    name: 'upfile',
+    header: {
+      "Content-Type": "multipart/form-data"
+    },
+    success: function (res) {
+      var data = JSON.parse(res.data);
+      backfun(data)
+      wx.hideToast();
+    },
+    fail: function (res) {
+      wx.hideToast();
+      wx.showModal({
+        title: '错误提示',
+        content: '上传图片失败',
+        showCancel: false
+      })
+    }
+  });
+}
 module.exports = {
   get: get,
   post: post,
   jsalert: jsalert,
   jsconfirm: jsconfirm,
+  uploadfile: uploadfile
 }

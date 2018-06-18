@@ -97,20 +97,23 @@ myeditor('content');
                                     	<foreach name="info.links" item="val" key="key">
                                     	<if condition="$key eq 0">
                                     	<div class="upvideo">
-	                                        <input type="text" class="form-control" onclick="upVideos()" readonly name="info[links][]" value="{$val}" placeholder="点击上传视频，视频大小最大为10M">
-	                                        <span class="btn btn-primary" title="上传视频" ><i class="fa fa-plus"></i></span>
+	                                        <input type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[links][]" value="{$val}" placeholder="点击上传视频，视频大小最大为10M">
+                                            <input type="file" id="link{$key}" name="link{$key}" style="display:none;" onchange="upload_video(this.id)"/>
+	                                        <span class="btn btn-primary" title="添加" ><i class="fa fa-plus"></i></span>
                                         </div>
                                         <else/>
                                     	<div class="upvideo">
-	                                        <input type="text" class="form-control" onclick="upVideos()" readonly name="info[links][]" value="{$val}" placeholder="点击上传视频，视频大小最大为10M">
-	                                        <span class="btn btn-danger" title="上传视频" ><i class="fa fa-trash-o"></i></span>
+	                                        <input type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[links][]" value="{$val}" placeholder="点击上传视频，视频大小最大为10M">
+                                            <input type="file" id="link{$key}" name="link{$key}" style="display:none;" onchange="upload_video(this.id)"/>
+	                                        <span class="btn btn-danger" title="删除" ><i class="fa fa-trash-o"></i></span>
                                         </div>
                                         </if>
                                         </foreach>
                                         <else/>
                                         <div class="upvideo">
-	                                        <input type="text" class="form-control" onclick="upVideos()" readonly name="info[links][]" placeholder="点击上传视频，视频大小最大为10M">
-	                                        <span class="btn btn-primary" title="上传视频" ><i class="fa fa-plus"></i></span>
+	                                        <input type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[links][]" placeholder="点击上传视频，视频大小最大为10M">
+                                            <input type="file" id="link0" name="link0" style="display:none;" onchange="upload_video(this.id)"/>
+	                                        <span class="btn btn-primary" title="删除" ><i class="fa fa-plus"></i></span>
                                         </div>
                                         </if>
                                     </td>
@@ -148,21 +151,15 @@ myeditor('content');
      //重新实例化一个编辑器，防止在上面的editor编辑器中显示上传的图片或者文件
      var _editor = UE.getEditor('upload_ue');
      _editor.ready(function () {
+         _editor.addListener('afterUpVideo',function(t, arg) {  
+                    console.log(arg);  
+            }); 
          //设置编辑器不可用
          _editor.setDisabled();
          //隐藏编辑器，因为不会用到这个编辑器实例，所以要隐藏
          _editor.hide();
-         //侦听图片上传
-         _editor.addListener('beforeInsertImage', function (t, arg) {
-             //将地址赋值给相应的input,只去第一张图片的路径
-             $("#picture").attr("value", arg[0].src);
-             //图片预览
-             $("#preview").attr("src", arg[0].src);
-         })
-         //侦听文件上传，取上传文件列表中第一个上传的文件的路径
-         _editor.addListener('afterUpfile', function (t, arg) {
-             $("#file").attr("value", _editor.options.filePath + arg[0].url);
-         })
+         //侦听视频上传结束
+        
      });
      //弹出图片上传的对话框
      function upImage() {
@@ -182,16 +179,19 @@ myeditor('content');
 </script> 
 <script>
 $(function(){
+    var vdo_index = 1000;
 	$('.col-sm-8>.upvideo').on('click','.btn-primary',function(){
-		if($('.upvideo').length>=6){
+		if($('.upvideo').length>=3){
 			jsalert('视频最多上传六个！',2);
 			return false;
 		}
 		var str = '<div class="upvideo">';
 		str += '<input type="text" class="form-control" onclick="upVideos()" readonly name="info[links][]" value="http://www.baidu.com" placeholder="点击上传视频，视频大小最大为10M"> ';
-	    str += '<span class="btn btn-danger" title="上传视频" > <i class="fa fa-trash-o"></i></span>';
+        str += '<input type="file" id="link'+vdo_index+'" name="link'+vdo_index+'" style="display:none;" onchange="upload_video(this.id)"/>';
+	    str += '<span class="btn btn-danger" title="删除" > <i class="fa fa-trash-o"></i></span>';
 	    str += '</div>';
 		$(this).parent().parent().append(str);
+        vdo_index++;
 	})
 	$('.col-sm-8').on('click','.upvideo>.btn-danger',function(){
 		$(this).parent().remove();
@@ -202,6 +202,18 @@ function upload_img(ele_id){
 		if(data.status == '1'){
 	 		$('#image_btn').css({'background':'url('+data.info.image_url+') no-repeat center','background-size':'cover'});
 	 		$('#'+ele_id).next('input').val(data.info.image_url)
+	 	}else{
+	 		jsalert(data.msg,2);
+	 	}
+	});
+}
+function upload_video(ele_id){
+    var layind = jsloading();
+	upload_vdo(ele_id,function(data){
+        //console.log(data.info)
+        layer.close(layind)
+		if(data.status == '1'){
+	 		$('#'+ele_id).prev('input').val(data.info.video_url);
 	 	}else{
 	 		jsalert(data.msg,2);
 	 	}

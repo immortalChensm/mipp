@@ -82,7 +82,8 @@ myeditor('content');
                                 <tr>
                                     <td class="col-sm-2">介绍视频：</td>
                                     <td class="col-sm-8">
-                                        <input style="cursor:pointer" type="text" class="form-control" onclick="upVideos()" id="link" readonly name="info[link]" value="{$info.link}" placeholder="点击上传视频，视频大小最大为10M">
+                                        <input style="cursor:pointer" type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[link]" value="{$info.link}" placeholder="点击上传视频，视频大小最大为10M">
+                                        <input type="file" id="link" name="link" style="display:none;" onchange="upload_video(this.id)"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -200,6 +201,19 @@ function upload_img(ele_id){
 	upload(ele_id,function(data){
 		if(data.status == '1'){
 	 		$('#image_btn').before('<div class="image-div" name="course_pic" style="background:url('+data.info.image_url+') no-repeat center;background-size:contain;"><div class="delete-img">删除</div><input type="hidden" name="info[pics][]" value="'+data.info.image_url+'"/></div>');
+	 	}else{
+	 		jsalert(data.msg,2);
+	 	}
+	});
+}
+
+function upload_video(ele_id){
+    var layind = jsloading();
+	upload_vdo(ele_id,function(data){
+        //console.log(data.info)
+        layer.close(layind)
+		if(data.status == '1'){
+	 		$('#'+ele_id).prev('input').val(data.info.video_url);
 	 	}else{
 	 		jsalert(data.msg,2);
 	 	}

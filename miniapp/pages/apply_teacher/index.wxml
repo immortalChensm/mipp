@@ -22,15 +22,12 @@
          <text class="edu-come-title edu-come-t-m">电话</text>
           <text wx:if="{{!is_edit}}" class="edu-come-r-q">{{teacher_info.phone}}</text>
           <!-- 上面的text ，审核中的时候显示 -->
-         <input type='number' wx:if="{{is_edit}}" maxlength='11' placeholder='请填写您的联系方式' value='{{teacher_info.phone}}'/> 
+         <input type='number' name="phone" wx:if="{{is_edit}}" maxlength='11' placeholder='请填写您的联系方式' value='{{teacher_info.phone}}'/> 
     </view>
      <view class="edu-come-item edu-bottom-solid">
          <text class="edu-come-title edu-come-t-q">地图定位</text>
-         <label class="edu-come-address">{{teacher_info.address?teacher_info.address:'请选择地理位置'}}</label>
+         <label class="edu-come-address" bindtap="chooseAddress">{{address?address:'请选择地理位置'}}</label>
          <view class="edu-come-gps-k" bindtap="chooseAddress" wx:if="{{is_edit}}">
-             <image src="../../assets/images/mgps-icon.png" class="edu-come-gps"/>
-         </view>
-         <view class="edu-come-gps-k" wx:if="{{!is_edit}}">
              <image src="../../assets/images/mgps-icon.png" class="edu-come-gps"/>
          </view>
     </view>
@@ -49,24 +46,26 @@
 <!-- 上传身份证 -->
 <view class="edu-come-update">
     <text class="edu-come-update-title">上传身份证件(必填)</text>
-    <view class="edu-come-update-zf" wx:if="{{is_edit}}">
-         <view class="edu-come-update-lr edu-come-lm">
+    <view class="edu-come-update-zf">
+         <view class="edu-come-update-lr edu-come-lm" bindtap='upImage' data-field="fcard">
+              <block wx:if="{{is_edit && !show_fcard}}">
               <text class="edu-come-qwe edu-come-add">+添加</text>
               <text class="edu-come-qwr edu-come-up">上传身份证背面照</text>
-              <!-- <image src="../../assets/images/sfz1.jpg"/>  -->
+              </block>
+              <block wx:if="{{!is_edit}}">
+              <text class="edu-come-qwe edu-come-add">已上传</text>
+              </block>
+              <image hidden='{{!show_fcard}}' src="{{fcard}}"/>
          </view>
-         <view class="edu-come-update-lr edu-come-rm">
+         <view class="edu-come-update-lr edu-come-rm" bindtap='upImage' data-field="bcard">
+              <block wx:if="{{is_edit && !show_bcard}}">
               <text class="edu-come-qwe edu-come-add">+添加</text>
               <text class="edu-come-qwr edu-come-up">上传身份证背面照</text>
-         </view>
-    </view>
-    <view class="edu-come-update-zf" wx:if="{{!is_edit}}">
-         <view class="edu-come-update-lr edu-come-lm">
-                <image src="../../assets/images/sfz1.jpg"/> 
-         </view>
-         <view class="edu-come-update-lr edu-come-rm">
-              <text class="edu-come-qwe edu-come-add">+添加</text>
-              <text class="edu-come-qwr edu-come-up">上传身份证背面照</text>
+              </block>
+              <block wx:if="{{!is_edit}}">
+              <text class="edu-come-qwe edu-come-add">已上传</text>
+              </block>
+              <image hidden='{{!show_bcard}}' src="{{bcard}}"/>
          </view>
     </view>
     <text class="edu-come-sm">*上传的证件照，仅用于实名认证，不用于其他商业用途</text>
@@ -82,17 +81,27 @@
           <text>上传资格证书</text>
           <text>(选填)</text>
      </view>
-     <view class="edu-come-img-s" wx:if="{{!is_edit}}">
-          <text wx:if="{{!is_edit}}">已上传</text> 
-     </view>
-     <view class="edu-come-img-s" wx:if="{{is_edit}}">
-          <text hidden='{{!hidden_qualification}}'>+添加</text>
-          <image hidden='{{hidden_qualification}}' src="{{qualification}}"></image>
-          <input hidden='true' name="qualification" value='{{teacher_info.qualification}}'></input>
+     <view class="edu-come-img-s" bindtap='upImage' data-field="qualification">
+          <block wx:if="{{is_edit && !show_qualification}}">
+          <text class="edu-come-qwe edu-come-add" style='margin-top:10rpx;'>+添加</text>
+          </block>
+          <block wx:if="{{!is_edit}}">
+          <text class="edu-come-qwe edu-come-add">已上传</text>
+          </block>
+          <image hidden='{{!show_qualification}}' src="{{qualification}}"/>
      </view>
  </view> 
 <!-- 上传教师资格证end -->
-<view class="edu-come-certificate">
+<view hidden='{{true}}'>
+    <input name="id" value='{{teacher_info.id}}'/>
+    <input name="address" value='{{address}}'/>
+    <input name="lng" value='{{lng}}'/>
+    <input name="lat" value='{{lat}}'/>
+    <input name="fcard" value="{{fcard}}"/>
+    <input name="bcard" value="{{bcard}}"/>
+    <input name="qualification" value='{{qualification}}'/>
+</view>
+<view class="edu-come-certificate" wx:if="{{is_edit}}">
     <!-- 按钮 -->
         <view class="edu-come-two">
           <button form-type='submit'>提交</button>

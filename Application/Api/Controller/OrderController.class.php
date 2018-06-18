@@ -74,23 +74,73 @@ class OrderController extends BaseController {
     	$order_info['price'] = $course_info['price']*$post_data['goods_num'];
     	$order_info['name'] = $post_data['name'];
     	$order_info['phone'] = $post_data['phone'];
-    	$order_info['status'] = 2;
+    	$order_info['status'] = 1;
     	
     	//暂时让支付通 过
     	$order_info['pay_money'] = $order_info['price'];
-    	$order_info['status'] = 1;
+    	$order_info['status'] = 2;
     	$order_info['pay_time'] = date('Y-m-d H:i:s');
     	
     	$res = D('Order')->add($order_info);
     	if ($res) {
 	    	//增加销量
-	    	D('Course')->where(array('id'=>$course_info['id']))->setInc('sale_count');
-	    	$this->returnSuccess('下单成功！');
+	    	//D('Course')->where(array('id'=>$course_info['id']))->setInc('sale_count');
+	    	$paydata = $this->pay_order($post_data['openid'],$order_info);
+	    	$this->returnSuccess('下单成功！',$paydata);
     	}else {
     		$this->returnError('系统繁忙，请您稍后操作');
     	}
     }
+    /**
+     * 统一下单
+     * @param unknown $openid
+     * @param unknown $order_info
+     * @return Ambigous <json数据，可直接填入js函数作为参数, string>
+     */
+    private function pay_order($openid,$order_info)
+    {
+    	$order_info || $this->error('订单已失效！');
+   		$total_fee = $order_info['price'];
+
+    	$total  = $total_fee*100;
+    	//$total = 1;//暂时使用
     
+    	vendor("Wxpay.WxPayJsApiPay");
+    	$tools = new \JsApiPay();
+    	$input = new \WxPayUnifiedOrder();
+    
+    	$input->SetBody("C2C艺术教育");
+    	$input->SetAttach($order_info['order_sn']);
+    	$input->SetOut_trade_no($order_info['order_sn']);
+    	$input->SetTotal_fee($total);
+    	$input->SetTime_start(date("YmdHis"));
+    	$input->SetTime_expire(date("YmdHis", time() + 600));
+    	$input->SetGoods_tag("C2C艺术教育");
+    	$input->SetNotify_url('http://'.$_SERVER['HTTP_HOST'].'/Home/Order/order_notify');
+    	$input->SetTrade_type("JSAPI");
+    	$input->SetOpenid($openid);
+    	$order = \WxPayApi::unifiedOrder($input);
+    	return $tools->GetJsApiParameters($order);
+    }
+    //支付成功的通知函数
+    public function order_notify()
+    {
+    	$xml      = isset($GLOBALS["HTTP_RAW_POST_DATA"]) ? $GLOBALS["HTTP_RAW_POST_DATA"] : "";
+    	$xmlObj   = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
+    	$xmlArr   = json_decode(json_encode($xmlObj), true);
+    	if($xmlArr['return_code']=='SUCCESS'){
+    		$total_fee = $xmlArr['total_fee']/100;
+    		$order_sn = $xmlArr['attach'];
+    		if($total_fee){
+    			//更新订单状态
+    
+    			exit('SUCCESS');
+    		}else{
+    			exit('FAIL');
+    		}
+    	}
+    	exit('FAIL');
+    }
     /**
      * 获取订单号
      * @return string
