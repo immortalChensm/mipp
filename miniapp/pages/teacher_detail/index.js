@@ -1,7 +1,7 @@
 // pages/老师介绍/teacherinfo.js
 var tool = require("../../utils/tool.js")
 var WxParse = require('../../wxParse/wxParse.js')
-var app = getApp
+var app = getApp()
 Page({
 
   /**
@@ -13,6 +13,7 @@ Page({
     selected2: false,
     selected3: false,
     tlist: [],
+    id:0
   },
 //收藏点击
   // scShow() {
@@ -58,9 +59,11 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function (id) {
+  onLoad: function (option) {
     var that = this;
-    tool.post('Teacher/details', {id:1}, function (res) {
+    var id = option.id;
+    console.log(id);
+    tool.post('Teacher/details', {id:id}, function (res) {
       // console.log(res.data.data); return false;
       var checked = false;
       if (res.data.data.user_follow) checked = true;
