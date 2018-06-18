@@ -63,7 +63,7 @@ Page({
     tool.post('Teacher/details', {id:1}, function (res) {
       // console.log(res.data.data); return false;
       var checked = false;
-      if (res.data.data.user_follow) checked = true
+      if (res.data.data.user_follow) checked = true;
       that.setData({
         tlist: res.data.data,
         checked: checked
