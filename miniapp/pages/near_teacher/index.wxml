@@ -41,7 +41,7 @@
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
-       <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="5" data-name="3km内">
+       <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="5" data-name="5km内">
        <text class="edu-ke-c-name">5km内</text>
        <view class="edu-success-icon edu-icon-we" hidden="{{cur_distance == '5' ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
@@ -100,6 +100,6 @@
           </view> 
      </view>  
        <!-- 列表end -->
-         <template is="default" hidden="{{ teacher_list.length == 0}}"  data="{{message:'暂无老师数据'}}"></template> 
+         <template is="default" wx:if="{{cur_status === 0 }}"  data="{{message:'暂无老师数据'}}"></template> 
 </view>
 <!-- 金牌老师 end -->

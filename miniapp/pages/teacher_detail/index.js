@@ -1,7 +1,7 @@
 // pages/老师介绍/teacherinfo.js
 var tool = require("../../utils/tool.js")
 var WxParse = require('../../wxParse/wxParse.js')
-var app = getApp
+var app = getApp()
 Page({
 
   /**
@@ -14,6 +14,7 @@ Page({
     selected2: false,
     selected3: false,
     tlist: [],
+    id:0
   },
 //老师--授课--评价 切换
   selectTab1:function(e){
@@ -48,13 +49,14 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onLoad: function (option) {
     var that = this;
-    var id = this.data.request.id;
+    var id = option.id;
+    console.log(id);
     tool.post('Teacher/details', {id:id}, function (res) {
       // console.log(res.data.data); return false;
       var checked = false;
-      if (res.data.data.user_follow) checked = true
+      if (res.data.data.user_follow) checked = true;
       that.setData({
         tlist: res.data.data,
         checked: checked

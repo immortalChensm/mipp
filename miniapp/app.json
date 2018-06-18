@@ -1,12 +1,11 @@
 {
   "pages": [
-      
-      
+      "pages/near_teacher/index",
 	"pages/index/index",
 	 "pages/teacher_detail/index",
 	"pages/user_center/index",
 	"pages/comment/index",    
-  "pages/near_teacher/index",
+
 	"pages/yuyue/index",    
 	"pages/confirm_order/index",    
 	"pages/course/index",
