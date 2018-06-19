@@ -2,7 +2,6 @@
 var tool = require("../../utils/tool.js")
 var app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -86,16 +85,18 @@ Page({
   getStickTeacher: function () {
     var that = this;
     var postdata = {};
-    postdata.distance = this.data.cur_distance;
+    postdata.distance = this.data.cur_distance; 
     postdata.teach_type = this.data.cur_type;
     postdata.sale = this.data.cur_sale;
     postdata.p = that.data.cur_page;
     wx.getLocation({
       success: function (ress) {
         postdata.lng = ress.longitude;
-        postdata.lat = ress.latitude;        
+        postdata.lat = ress.latitude;
+        
         tool.post('Teacher/teacher_list', postdata, function (res) {
           if (res.data.status =='1') {
+            var list = res.data.data;
             if(that.data.cur_page > 1){
               that.setData({
                 lng: ress.longitude,
@@ -116,9 +117,9 @@ Page({
       },
     })
   },
-  getTypeTeacher: function () {
+  getTypeTeacher:function(){
     var that = this;
-    tool.post('Teacher/teach_types', {}, function (res) {
+    tool.post('Teacher/teach_types',{}, function (res) {
       // console.log(res.data.data); return false;
       that.setData({
         teacher_type: res.data.data
@@ -136,6 +137,7 @@ Page({
     })
     console.log(opt_type);
     switch (opt_type) {
+      
       case 'distance':
         var name = event.currentTarget.dataset['name'];
         var id = event.currentTarget.dataset['val'];
@@ -143,10 +145,11 @@ Page({
           cur_distance: id,
           default_type: name,
           showkecdb: false,
-          showkecda: false,
+          showkecda:false,
           showkecdab: false,
           hidden_typea: true,
-          cur_page: 1
+          cur_page:1
+          
         });
         break;
       case 'type':
@@ -155,18 +158,19 @@ Page({
         this.setData({
           cur_type: id,
           type_name: name,
+
           showkecdbc: false,
           showkecdb: false,
-          hidden_typeb: true,
-          showkecda: false,
-          cur_page: 1
+          hidden_typeb:true,
+          showkecda:false,
+           cur_page: 1
         });
         break;
       case 'sale':
         var name = event.currentTarget.dataset['name'];
         var id = event.currentTarget.dataset['val'];
         this.setData({
-          cur_sale: id == '1' ? '2' : '1',
+          cur_sale: id=='1'?'2':'1',
           showkecdb: false,
           showkecda: false,
           bools: 1,
