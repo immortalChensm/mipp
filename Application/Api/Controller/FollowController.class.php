@@ -43,6 +43,13 @@ class FollowController extends BaseController {
     	}
     	$this->returnSuccess('',$list);
     }
+    //检查是否关注/收藏
+    public function check_follow(){
+        $this->user_id || $this->returnError('参数错误');
+        $type = I('request.type');
+        $rel_id = I('request.rel_id');
+        D('Follow')->where(array('type'=>$type,'user_id'=>$this->user_id,'relation_id'=>$rel_id))->find() ? $this->returnSuccess('',true) : $this->returnSuccess('',false);
+    }
     //取消关注
     public function cancel(){
     	$this->user_id || $this->returnError('参数错误');

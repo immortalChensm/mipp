@@ -28,12 +28,12 @@ class UploadController extends BaseController {
     private $video_upload_path = '/Upload/videos/';//图片保存目录
     private $video_max_size = 20971520;//20M
     private $video_ext = array(
-        'video/avi'=>'avi',//gif
-        'application/vnd.rn-realmedia-vbr'=>'rmvb',//
+        //'video/avi'=>'avi',//gif
+        //'application/vnd.rn-realmedia-vbr'=>'rmvb',//
         'video/3gpp'=>'3gp',//
         'video/x-flv'=>'flv',// 
         'video/mp4'=>'mp4',//
-        'video/x-ms-wmv'=>'wmv'//
+        //'video/x-ms-wmv'=>'wmv'//
 	);
 	/**
 	 * base64图片资源上传图片

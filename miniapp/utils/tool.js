@@ -1,12 +1,17 @@
 
-var API_URL = 'http://educate.com/Api/'
+var API_URL = 'https://edu.mppstore.com/Api/'
 
+//post请求
 function post(url,data,suc,fail){
     request('POST',url,data,suc,fail);
 }
+
+//get请求
 function get(url,suc,fail){
     request('GET',url,null,suc,fail);
 }
+
+//request
 function request(method,url,data,suc,fail){
 	var request_obj = {
 	        url: API_URL+url+'?ajax=1',
@@ -30,6 +35,8 @@ function request(method,url,data,suc,fail){
 	}
   wx.request(request_obj);
 }
+
+//消息弹出框
 function jsalert(msg,type){
     var toast_type = 'success';
     switch(type){
@@ -43,6 +50,8 @@ function jsalert(msg,type){
       duration: 1200,
     })
 }
+
+//消息确认框
 function jsconfirm(msg,suc,fail,sucbtntext,failbtntext) {
     sucbtntext = sucbtntext == null || sucbtntext == 'undefined' ? '确认' : sucbtntext;
     failbtntext = failbtntext == null || failbtntext == 'undefined' ? '取消' : failbtntext;
@@ -67,15 +76,16 @@ function jsconfirm(msg,suc,fail,sucbtntext,failbtntext) {
     })
 }
 
+//上传图片
 function uploadfile(path,backfun){
-  //启动上传等待中...  
+  //启动上传等待中...
   wx.showToast({
     title: '正在上传...',
     icon: 'loading',
     mask: true,
     duration: 10000
   })
-  console.log(path)
+  // console.log(path)
   wx.uploadFile({
     url: API_URL + 'Upload/upImage',
     filePath: path,
@@ -85,8 +95,8 @@ function uploadfile(path,backfun){
     },
     success: function (res) {
       var data = JSON.parse(res.data);
-      backfun(data)
       wx.hideToast();
+      backfun(data)
     },
     fail: function (res) {
       wx.hideToast();
@@ -98,6 +108,7 @@ function uploadfile(path,backfun){
     }
   });
 }
+
 module.exports = {
   get: get,
   post: post,
