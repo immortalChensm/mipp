@@ -38,6 +38,7 @@ class TeacherController extends BaseController {
         $lat = I('request.lat') ? I('request.lat') : 0;
         $order = 'distance asc,create_date asc';
         $page = ($p-1)*10;
+        I('sale') == '1' && $order = 'sale_count desc';
         I('sale') == '2' && $order = 'sale_count asc';
         I('teach_type') && $where .=' and teach_type ='.I('teach_type');
         //计算距离
@@ -60,7 +61,7 @@ class TeacherController extends BaseController {
             $val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
         }
         $num = count($teachers);
-        $this->returnSuccess($num,$teacher ? $teacher : $teachers);
+        I('distance') ? $this->returnSuccess($num,$teacher) : $this->returnSuccess($num,$teachers);
     }
 
 

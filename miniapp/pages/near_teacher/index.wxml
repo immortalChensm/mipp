@@ -100,6 +100,6 @@
           </view> 
      </view>  
        <!-- 列表end -->
-         <template is="default" wx:if="{{cur_status === 0 }}"  data="{{message:'暂无老师数据'}}"></template> 
+      <text class="edu-info-all">-- 没有更多老师数据了 --</text>
 </view>
 <!-- 金牌老师 end -->

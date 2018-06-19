@@ -1,5 +1,5 @@
 
-var API_URL = 'http://test.educate.com/Api/'
+var API_URL = 'http://educate.com/Api/'
 
 function post(url,data,suc,fail){
     request('POST',url,data,suc,fail);
