@@ -51,7 +51,7 @@
 <!-- 距离 end -->
 <!-- 茶艺 -->
 <view  hidden="{{hidden_typeb}}" class="edu-show edu-sty-qa">
-    <view class="edu-kc-list" bindtap="searchList" data-type="type" data-val="" data-name="茶艺">
+    <view class="edu-kc-list" bindtap="searchList" data-type="type" data-val="" data-name="全部">
        <text class="edu-ke-c-name">全部</text>
        <view class="edu-success-icon edu-icon-we"  hidden="{{cur_type == '' ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
@@ -100,6 +100,7 @@
           </view> 
      </view>  
        <!-- 列表end -->
-      <text class="edu-info-all">-- 没有更多老师数据了 --</text>
+       <template is="default" wx:if="{{teacher_list.length == 0}}" data="{{message:'暂无课程数据'}}"></template>
+<text class="edu-info-all"  wx:if="{{cur_status < 10}}">-- 没有更多老师数据啦 --</text>
 </view>
 <!-- 金牌老师 end -->
