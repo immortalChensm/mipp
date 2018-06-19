@@ -15,7 +15,7 @@
     <swiper indicator-dots="{{indicatorDots}}" autoplays="{{autoplays}}" interval="{{interval}}" duration="{{duration}}" style="height:412rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
       <swiper-item class="edu-rows">
         <block wx:for="{{course_types}}" wx:key="key">
-          <view class="edu-list-fl" bindtap="toCourseList" data-id="{{item.id}}">
+          <view class="edu-list-fl" bindtap="toCourseList" data-type="{{item.id}}">
             <view class="edu-icon-k">
               <image src="{{item.pic}}"/>
             </view>
@@ -36,7 +36,7 @@
     <image src="../../assets/images/remm-left-icon.png" class="edu-tj-icon" />
     <text class="edu-remm-kc">推荐课程</text>
     <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon" />
-    <image src="../../assets/images/more-icon.png" class="edu-more-icon" />
+    <image src="../../assets/images/more-icon.png" bindtap='moreCourse' class="edu-more-icon" />
   </view>
   <!-- 列表 -->
 
@@ -81,7 +81,7 @@
     <image src="../../assets/images/remm-left-icon.png" class="edu-tj-icon" />
     <text class="edu-remm-kc">金牌老师</text>
     <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon" />
-    <image src="../../assets/images/more-icon.png" class="edu-more-icon" />
+    <image src="../../assets/images/more-icon.png" bindtap='moreTeacher' class="edu-more-icon" />
   </view>
 
   <!-- 列表 -->

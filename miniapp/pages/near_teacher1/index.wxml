@@ -1,0 +1,105 @@
+<import src="../template/template.wxml"/> 
+<!-- 分类筛选 start -->
+<view class="edu-screen edu-border-top edu-bottom-solid">
+      <view class="{{showkecda?'edu-screen-a edu-select-fl':'edu-screen-a '}}" bindtap="showa">
+          {{default_type}}
+           <image src="../../assets/images/w-top-icon.png" class="{{showkecda?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="{{showkecda?'edu-a-b edu-none':'edu-a-b edu-show'}}"/> 
+      </view>
+      <view class="{{showkecdb?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="showb">
+          {{type_name}}
+          <image src="../../assets/images/w-top-icon.png" class="{{showkecdb?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="{{showkecdb?'edu-a-b edu-none':'edu-a-b edu-show'}}"/>
+      </view>
+      <view class="edu-screen-a" bindtap="searchList" data-type="sale" data-val="{{cur_sale}}">
+          销量
+           <image src="../../assets/images/w-top-icon.png" class="edu-a-b" hidden="{{cur_sale == '1' ? false : true}}"/>
+          <image src="../../assets/images/w-botton-icon.png" class="edu-a-b" hidden="{{cur_sale == '2' ? false : true}}"/> 
+      </view>
+</view>
+<!-- 遮罩层 -->
+    <view class="{{showkecdab?'edu-mask':'edu-none'}}"></view> 
+    <view class="{{showkecdbc?'edu-mask':'edu-none'}}"></view> 
+<!-- 遮罩层 -->
+<!-- 距离 -->
+<view hidden='{{hidden_typea}}' class="'edu-show edu-sty-qa">
+    <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="" data-name="距离">
+       <text class="edu-ke-c-name">全部</text>
+       <view class="edu-success-icon edu-icon-we" hidden="{{cur_distance == '' ? false : true}}">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+    <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="1" data-name="1km内">
+       <text class="edu-ke-c-name">1km内</text>
+       <view class="edu-success-icon edu-icon-we" hidden="{{cur_distance == '1' ? false : true}}">
+            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/> 
+       </view>
+    </view>
+    <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="3" data-name="3km内">
+       <text class="edu-ke-c-name">3km内</text>
+       <view class="edu-success-icon edu-icon-we" hidden="{{cur_distance == '3' ? false : true}}">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+       <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="5" data-name="5km内">
+       <text class="edu-ke-c-name">5km内</text>
+       <view class="edu-success-icon edu-icon-we" hidden="{{cur_distance == '5' ? false : true}}">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+</view>
+<!-- 距离 end -->
+<!-- 茶艺 -->
+<view  hidden="{{hidden_typeb}}" class="edu-show edu-sty-qa">
+    <view class="edu-kc-list" bindtap="searchList" data-type="type" data-val="" data-name="茶艺">
+       <text class="edu-ke-c-name">全部</text>
+       <view class="edu-success-icon edu-icon-we"  hidden="{{cur_type == '' ? false : true}}">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+    <view class="edu-kc-list" wx:for="{{teacher_type}}" wx:key="key" bindtap="searchList" data-type="type" data-val="{{item.id}}" data-name="{{item.name}}">
+       <text class="edu-ke-c-name">{{item.name}}</text>
+       <view class="edu-success-icon edu-icon-we"  hidden="{{cur_type == item.id ? false : true}}">
+           <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
+       </view>
+    </view>
+</view>
+<!-- 销量 end -->
+<!-- 分类筛选 end -->
+<!-- 金牌老师 start -->
+<view class="edu-recommend-courses-tj">
+   
+    <!-- 列表 -->
+     <view class="edu-acticle-list-tj-s edu-bottom-solid" wx:for="{{teacher_list}}"  wx:for-item="item" wx:key="key" bindtap="toTeacherDetail" data-id="{{item.id}}">
+         <view class="edu-list-left-a">
+            <image src="{{item.headimgurl}}" class="edu-list-img-a"/>
+         </view>
+          <view class="edu-list-right-a">
+              <view class="edu-list-one">
+                  <text class="edu-list-cy-name">{{item.name}}</text>
+              </view>
+              <view class="edu-list-two">
+                 <block wx:for="{{item.stararr}}" wx:for-item="va">
+                  <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
+                  <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
+                  <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png"></image> 
+                  <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
+                </block>
+                    <text>{{item.star}}</text>
+              </view>
+              <view class="edu-introduce">
+                 <label>简介：{{item.profile}}</label>
+              </view>
+               <view class="edu-jl-list">
+                 <label class="edu-tea-name">{{item.teach_type}}</label>
+                  <label class="edu-sales edu-jl">
+                    <image src="../../assets/images/gps-icon.png"  class="edu-gps"/>
+                    {{item.distance}}
+                  </label>
+              </view>
+          </view> 
+     </view>  
+       <!-- 列表end -->
+         <template is="default" wx:if="{{cur_status === 0 }}"  data="{{message:'暂无老师数据'}}"></template> 
+</view>
+<!-- 金牌老师 end -->

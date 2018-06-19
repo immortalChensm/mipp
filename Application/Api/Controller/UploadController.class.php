@@ -8,6 +8,7 @@ class UploadController extends BaseController {
 	
 	private $ext = array(
 			'image/gif'=>'gif',//gif
+            'image/jpg'=>'jpg',//jpg
 			'image/jpeg'=>'jpg',//jpg
 			'image/jpeg'=>'jpeg',//jpeg
 			'image/x-png'=>'png',//png
@@ -45,7 +46,7 @@ class UploadController extends BaseController {
 		if(!file_exists($save_path) ) @mkdir($_SERVER['DOCUMENT_ROOT'].$save_path,0777);   //如果目录不存在就重新建
 		$filepath = $save_path.substr(md5(time()),0,16).'.'.$type;
 		if(file_put_contents($_SERVER['DOCUMENT_ROOT'].$filepath, base64_decode($_POST['source']))){
-			$this->returnSuccess('上传成功！',array('image_url'=>'http://'.$_SERVER['HTTP_HOST'].$filepath));
+			$this->returnSuccess('上传成功！',array('image_url'=>'https://'.$_SERVER['HTTP_HOST'].$filepath));
 		}else{
 			$this->returnError('系统繁忙，上传失败！');
 		}
@@ -56,6 +57,7 @@ class UploadController extends BaseController {
 	public function upImage(){
 // 		$this->returnSuccess('上传成功！',$_FILES);
 		$upfile = $_FILES['upfile'];
+        file_put_contents('aab.txt',json_encode($upfile));
 		($upfile['size'] > $this->max_size) && $this->returnError('图片大小不能超过2M');
 
 		in_array($upfile['type'], array_keys($this->ext)) || $this->returnError('不支持的图片格式');
@@ -66,7 +68,7 @@ class UploadController extends BaseController {
 		//上传图片
 		$ok = move_uploaded_file($upfile['tmp_name'],$_SERVER['DOCUMENT_ROOT'].$filepath);
 		if($ok){
-			$this->returnSuccess('上传成功！',array('image_url'=>'http://'.$_SERVER['HTTP_HOST'].$filepath));
+			$this->returnSuccess('上传成功！',array('image_url'=>'https://'.$_SERVER['HTTP_HOST'].$filepath));
 		}else{
 			$this->returnError('系统繁忙，上传失败！');
 		}
@@ -80,7 +82,7 @@ class UploadController extends BaseController {
 		if(!file_exists($dirpath) ) @mkdir($_SERVER['DOCUMENT_ROOT'].$save_path,0777);   //如果目录不存在就重新建
 		$filepath = $save_path.substr(md5(time()),0,16).'.'.$type;
 		if(file_put_contents($_SERVER['DOCUMENT_ROOT'].$filepath, base64_decode($_POST['source']))){
-			$this->returnSuccess('上传成功！',array('video_url'=>'http://'.$_SERVER['HTTP_HOST'].$filepath));
+			$this->returnSuccess('上传成功！',array('video_url'=>'https://'.$_SERVER['HTTP_HOST'].$filepath));
 		}else{
 			$this->returnError('系统繁忙，上传失败！');
 		}

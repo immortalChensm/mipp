@@ -5,33 +5,33 @@ Page({
     * 页面的初始数据
     */
   data: {
-    hidden_type:true,
+    hidden_type: true,
     hidden_sale_count: true,
     hidden_price: true,
     sele_type: false,
     sele_sale_count: false,
     sele_price: false,
-    cur_type:'',
+    cur_type: '',
     cur_price: '',
     cur_sale_count: '',
     cur_page: 1,
-    default_type:'全部课程',
+    default_type: '全部课程',
     course_list: [],
     course_types: [],
-    is_add:true
+    is_add: true
   },
-  switchType:function(){
+  switchType: function () {
     var that = this
-    if(that.data.hidden_type){
+    if (that.data.hidden_type) {
       that.setData({
-        hidden_type:false,
-        sele_type:true,
+        hidden_type: false,
+        sele_type: true,
         hidden_sale_count: true,
         hidden_price: true,
         sele_sale_count: false,
         sele_price: false,
       })
-    }else{
+    } else {
       that.setData({
         hidden_type: true,
         sele_type: false
@@ -46,7 +46,7 @@ Page({
         sele_sale_count: true,
         hidden_type: true,
         hidden_price: true,
-        sele_type:false,
+        sele_type: false,
         sele_price: false,
       })
     } else {
@@ -77,84 +77,99 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    //加载课程列表
-    this.courseList();
-    //获取课程分类
-    this.courseType();
+  onLoad: function () {
+    //看是否携带参数
+    var course_type = wx.getStorageSync('course_type');
+    wx.clearStorageSync('course_type');
+    if (course_type) {
+      this.setData({
+        cur_type: course_type
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function (options) {
+    var course_type = wx.getStorageSync('course_type');
+    wx.clearStorageSync('course_type');
+    if (course_type) {
+      this.setData({
+        cur_type: course_type,
+        is_add: false
+      })
+    }
+    //获取课程分类
+    this.courseType();
+    //加载课程列表
+    this.courseList();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
   /**
    * 获取课程列表
    */
-  courseList:function(){
+  courseList: function () {
     var that = this;
     var postdata = {};
     postdata.sort_sale_count = this.data.cur_sale_count;
     postdata.sort_price = this.data.cur_price;
     postdata.type = this.data.cur_type;
     postdata.p = this.data.cur_page;
-    tool.post('Course/course_list',postdata,function(result){
+    tool.post('Course/course_list', postdata, function (result) {
       var info = result.data;
       //console.log(info)
-      if(info.status == '1'){
+      if (info.status == '1') {
         var list = that.data.is_add ? that.data.course_list.concat(info.data) : info.data;
         that.setData({
           course_list: list
         })
-      }else{
+      } else {
         that.setData({
           course_list: []
         })
-        console.log(info.msg,2)
+        console.log(info.msg, 2)
       }
     })
   },
@@ -167,21 +182,21 @@ Page({
       hidden_type: true,
       hidden_sale_count: true,
       hidden_price: true,
-      is_add:false
+      is_add: false
     })
-    switch(opt_type){
+    switch (opt_type) {
       case 'type':
         var name = event.currentTarget.dataset['name'];
         this.setData({
-          cur_type:val,
-          default_type:name,
+          cur_type: val,
+          default_type: name,
           sele_type: false,
         });
         break;
       case 'sale_count':
         this.setData({
           cur_sale_count: val,
-          cur_price:'',
+          cur_price: '',
           sele_sale_count: false,
         });
         break;
@@ -201,15 +216,24 @@ Page({
       url: '/pages/course_detail/index?id=' + course_id
     })
   },
-      /**
-   * 获取课程分类
-   */
-  courseType:function() {
+  /**
+* 获取课程分类
+*/
+  courseType: function () {
     var that = this;
     tool.get('Course/course_types', function (result) {
       var info = result.data;
       //console.log(info)
       if (info.status == '1') {
+        if (that.data.cur_type != '') {
+          for (var i = 0; i < info.data.length; i++) {
+            if (info.data[i].id == that.data.cur_type) {
+              that.setData({
+                default_type: info.data[i].name
+              })
+            }
+          }
+        }
         that.setData({
           course_types: info.data
         })

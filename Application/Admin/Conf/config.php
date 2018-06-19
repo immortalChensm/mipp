@@ -11,8 +11,8 @@ return array(
 				'image'=>'图片管理','statistic'=>'数据统计'
     	),
 	'API_SIGN' => 'fd4002886ad2b079',
-	'UPIMG_INTERFACE' => 'http://'.$_SERVER['HTTP_HOST'].'/Api/Upload/upload_image',
-	'UPVIDEO_INTERFACE' => 'http://'.$_SERVER['HTTP_HOST'].'/Api/Upload/upload_video',
-	'UPFILE_INTERFACE' => 'http://'.$_SERVER['HTTP_HOST'].'/Api/Upload/upload_file',
+	'UPIMG_INTERFACE' => 'https://'.$_SERVER['HTTP_HOST'].'/Api/Upload/upload_image',
+	'UPVIDEO_INTERFACE' => 'https://'.$_SERVER['HTTP_HOST'].'/Api/Upload/upload_video',
+	'UPFILE_INTERFACE' => 'https://'.$_SERVER['HTTP_HOST'].'/Api/Upload/upload_file',
     'SHOW_PAGE_TRACE' =>true, 
 );

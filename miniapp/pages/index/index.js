@@ -65,9 +65,20 @@ Page({
     
   },  
   toCourseList: function (event) {
-    var course_id = event.currentTarget.dataset['id'];
+    var type = event.currentTarget.dataset['type'];
+    wx.setStorageSync('course_type',type);
     wx.switchTab({
-      url: '/pages/course/index?course_id=' + course_id
+      url: '/pages/course/index'
+    })
+  },
+  moreCourse: function (event) {
+    wx.switchTab({
+      url: '/pages/course/index'
+    })
+  },
+  moreTeacher: function (event) {
+    wx.switchTab({
+      url: '/pages/near_teacher/index'
     })
   },
   toCourseDetail: function (event) {
@@ -83,7 +94,7 @@ Page({
     })
   },
   toBannerLink: function (event) {
-	return false;
+	  return false;
     var link = event.currentTarget.dataset['link'];
     wx.navigateTo({
       url: link

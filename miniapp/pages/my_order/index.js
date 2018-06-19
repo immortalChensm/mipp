@@ -103,6 +103,53 @@ Page({
     })
   }, 
   /**
+  * 去支付
+  */
+  payOrder: function (e) {
+    var order_id = e.currentTarget.dataset['id'];
+    tool.post('Order/pre_pay_order', {order_id:order_id}, function (result) {
+      var info = result.data;
+      console.log(info)
+      if (info.status == '1') {
+        var res = JSON.parse(info.data);
+        console.log(res)
+        wx.requestPayment({
+          timeStamp: res.timeStamp,
+          nonceStr: res.nonceStr,
+          package: res.package,
+          signType: res.signType,
+          paySign: res.paySign,
+          success: function (res) {
+            wx.navigateTo({
+              url: '/pages/my_order/index'
+            })
+          },
+          fail: function (res) {
+            console.log(res);
+          }
+        })
+      } else {
+        tool.jsalert(info.msg);
+      }
+    })
+  }, 
+  /**
+ * 取消订单
+ */
+  cancelOrder: function (e) {
+    var that = this;
+    var order_id = e.currentTarget.dataset['id'];
+    tool.post('Order/del',{id:order_id},function(result){
+      var info = result.data;
+      if(info.status == '1'){
+        tool.jsalert(info.msg)
+        that.getOrderList();
+      }else{
+        tool.jsalert(info.msg)
+      }
+    })
+  }, 
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {

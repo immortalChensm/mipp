@@ -39,5 +39,8 @@ return array(
 	'APPID' => 'wx91ff772237eff014',
 	'APPSECRET' => '8185656c55109de807ec494953ad080d',
 	'APP_AUTH_URL' => 'https://api.weixin.qq.com/sns/jscode2session?grant_type=authorization_code&',//appid=APPID&secret=SECRET&js_code=JSCODE
+    //微信支付参数
+    'KEY'					=> '11596e737087dffa9f227cf4b06f9e9a',
+    'MCHID'					=> '1504497671',
 
 );
