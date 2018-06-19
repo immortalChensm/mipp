@@ -6,26 +6,26 @@ class TeacherController extends BaseController {
    /**
 	 * 首页推荐老师
 	 */
-    public function teacher_stick(){
-        $lng = I('request.lng') ? I('request.lng') : 0;
-        $lat = I('request.lat') ? I('request.lat') : 0;
-        $where = array();
-        $where['status'] = 1;
-        $where['is_stick'] = 1;
-        D('Teacher')->field('*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance');
-        
-        $teachers = D('Teacher')->where($where)->limit(6)->order('distance asc,create_date asc')->select();
-        foreach ($teachers as &$val){
-            $row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
-            $val['star'] = $row['star'] ? round($row['star'],1) : 0;
-            $val['stararr'] = $this->starArr($val['star']);
-            $val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
-            $val['teach_type'] = D('TeachType')->where(array('id'=>$val['teach_type']))->getField('name');
-            $val['profile'] = strip_tags(html_entity_decode($val['profile']));
-        }
-        $teachers && $this->returnSuccess('',$teachers);
-        $teachers || $this->returnError('暂无数据');
-    }
+	public function teacher_stick(){
+		$lng = I('request.lng') ? I('request.lng') : 0;
+		$lat = I('request.lat') ? I('request.lat') : 0;
+		$where = array();
+		$where['status'] = 1;
+		$where['is_stick'] = 1;
+		D('Teacher')->field('*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance');
+		
+		$teachers = D('Teacher')->where($where)->limit(6)->order('distance asc,create_date asc')->select();
+		foreach ($teachers as &$val){
+			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
+			$val['star'] = $row['star'] ? round($row['star'],1) : 0;
+			$val['stararr'] = $this->starArr($val['star']);
+			$val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
+			$val['teach_type'] = D('TeachType')->where(array('id'=>$val['teach_type']))->getField('name');
+			$val['profile'] = strip_tags(html_entity_decode($val['profile']));
+		}
+		$teachers && $this->returnSuccess('',$teachers);
+		$teachers || $this->returnError('暂无数据');
+	}
 
     /**
     * 教师列表
@@ -62,6 +62,7 @@ class TeacherController extends BaseController {
         $num = count($teachers);
         $this->returnSuccess($num,$teacher ? $teacher : $teachers);
     }
+
 
 	/*老师详情*/
 	public function details(){
@@ -101,6 +102,29 @@ class TeacherController extends BaseController {
 		}
 		// dump($list); die();
         $this->returnSuccess('',$list);
+    }
+    /**
+     * 申请老师
+     */
+    public function apply_teacher(){
+    	!$this->user_id && $this->returnError('参数错误');
+    	if (I('request.act') == 'save') {
+    		$request_data = I('request.');
+    		unset($request_data['ajax'],$request_data['act'],$request_data['openid']);
+	    	if (!$res = D('Teacher')->create($request_data)) $this->returnError(D('Teacher')->getError());
+	    	$user_info = D('User')->where(array('id'=>$this->user_id))->find();
+	    	$request_data['user_id'] = $user_info['id'];
+	    	$request_data['nickname'] = $user_info['nickname'];
+	    	$request_data['headimgurl'] = $user_info['headimgurl'];
+	    	$request_data['sex'] = $user_info['gender'];
+// 	    	$this->returnSuccess('',$request_data);
+	    	$res = D('Teacher')->saveData($request_data);
+	    	$res ? $this->returnSuccess('提交成功！') : $this->returnError('系统繁忙，请稍后再试');
+    	}else {
+    		$teacher_info = D('Teacher')->where(array('user_id'=>$this->user_id))->find();
+    		$teacher_info && $this->returnSuccess('',output_data($teacher_info));
+    		$teacher_info || $this->returnError('暂无数据');
+    	}
     }
     /**
 	 * 教师信息

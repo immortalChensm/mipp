@@ -17694,6 +17694,7 @@ UE.plugins['video'] = function (){
                 html.push(creatInsertStr( vi.url, vi.width || 420,  vi.height || 280, id + i, null, cl, 'image'));
             }
             me.execCommand("inserthtml",html.join(""),true);
+            me.fireEvent('afterUpVideo',videoObjs); //监听视频上传结束           
             var rng = this.selection.getRange();
             for(var i= 0,len=videoObjs.length;i<len;i++){
                 var img = this.document.getElementById('tmpVedio'+i);

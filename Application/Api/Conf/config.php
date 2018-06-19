@@ -19,5 +19,10 @@ return array(
 			'password_retrieval','index','questions','questions_list','more_comment','customer_service','cashback','recommend_code','connect_openid','code_by_openid'
 	),
 	'INVITE_CODE_LENGTH' => 6,
+	//微信支付参数
+	'APPID'					=> 'wx4a48e9196b72de1d',
+	'APPSECRET'				=> '1ba17062e0e4bf933d6397b0eef19324',
+	'KEY'					=> 'bianxieshigerenjiaotonggongjuhao',
+	'MCHID'					=> '1481936252',
 	
 );

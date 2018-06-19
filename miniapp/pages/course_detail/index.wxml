@@ -1,4 +1,5 @@
 <import src="../../wxParse/wxParse.wxml"/> 
+<import src="../template/template.wxml"/> 
 <!-- 视频 
 <view class="edu-course-width">
     <view class="section tc">
@@ -68,7 +69,7 @@
             </view>
        </view>
        <view class="edu-course-fl-icon">
-            <view class="edu-course-cft edu-right-solid" bindtap='collect'>
+            <view class="edu-course-cft edu-right-solid" bindtap='collect' data-id='{{course_info.id}}'>
                 <view class="edu-course-icon-jg">
                     <image src="../../assets/images/shoucang-icon.png" class="edu-course-gltb"/>
                 </view>
@@ -134,7 +135,8 @@
                 <view class="edu-space-d"></view>
               <!-- 间隔end -->
           </view>
-    </view>      
+          <template is="default" wx:if="{{comments.length == 0}}" data="{{message:'暂无数据'}}"></template>
+    </view>
       <!-- 课程评价 -->
 <!-- 课程详情和评价end -->
 <!-- 底部按钮 -->

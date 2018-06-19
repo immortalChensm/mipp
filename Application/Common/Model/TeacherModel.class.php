@@ -5,23 +5,22 @@ namespace Common\Model;
 class TeacherModel extends CommonModel{
     protected $_validate = array();
     public function _initialize(){
-			$this->_validate[] =array('name','require','请输入姓名',1);
+			$this->_validate[] =array('name','require','请输入姓名');
 			$this->_validate[] =array('sex','require','请选择性别');
 			$this->_validate[] =array('phone','require','请输入手机号');
 			$this->_validate[] =array('phone','/1[3-9][0-9]{9}/','手机号格式有误');
 			$this->_validate[] =array('email','require','请输入邮箱');
-			$this->_validate[] =array('lng','require','请输入经纬度');
-			$this->_validate[] =array('lat','require','请输入经纬度');
-// 			$this->_validate[] =array('lng','number','不合法的经纬度');
-// 			$this->_validate[] =array('lat','number','不合法的经纬度');
-			$this->_validate[] =array('teacher_type','require','请选择教师类型');
+			$this->_validate[] =array('lng','require','请选择地理位置');
+			$this->_validate[] =array('lat','require','请选择地理位置');
+			$this->_validate[] =array('teacher_type','require','请输入授课类型');
 			$this->_validate[] =array('teach_type','require','请选择授课类型');
+			
+			$this->_validate[] =array('fcard','require','请上传身份证正面照');
+			$this->_validate[] =array('bcard','require','请上传身份证反面照');
+			$this->_validate[] =array('qualification','require','请上传资格证书');
+			
 			$this->_validate[] =array('profile','require','请输入教师简介');
 			$this->_validate[] =array('content','require','请输入教师详情');
-// 			if(ACTION_NAME =='register' || ACTION_NAME =='edit_agent' || ACTION_NAME=='phone_save'){
-// 				$this->_validate[] =array('card_number','require','请输入身份证号');
-// 				$this->_validate[] =array('card_number','/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/','身份证格式不合法');
-// 			}
 		}
 	protected $_link = array(
 			'course'=>array(

@@ -63,10 +63,10 @@ function export_order(){
 							 <td>{$vo.teacher.name|default='--'}</td>
 							 <td>{$vo.name|default='--'}</td>
 		                     <td>{$vo.phone|default='0'}</td>
-		                     <if condition="$vo.status eq  1">
-		                     <td style="color:#25be13;">预约中</td>
+		                     <if condition="$vo.status eq  2">
+		                     <td style="color:#f39c12;">预约中</td>
 		                     <elseif condition="$vo.status eq  3"/>
-		                     <td style="color:#aaa;">已关闭</td>
+		                     <td style="color:#25be13;">已完成</td>
 		                     </if>
 		                     <td>{$vo.create_date}</td>
 		                     <td>

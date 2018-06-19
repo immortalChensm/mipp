@@ -3,11 +3,11 @@
     <!-- 列表 -->
      <view class="edu-acticle-list-tj-s edu-order-qa">
          <view class="edu-list-left">
-            <image src="../../assets/images/001.jpg" class="edu-list-img"/>
+            <image src="{{course_info.pics[0]}}" class="edu-list-img"/>
          </view>
           <view class="edu-list-right">
               <view class="edu-list-one">
-                  <text class="edu-list-cy-name">茶艺精品班</text>
+                  <text class="edu-list-cy-name">{{course_info.name}}</text>
               </view>
               <view class="edu-list-two">
                 <image src="../../assets/images/xing-icon.png"/>
@@ -15,13 +15,13 @@
                     <image src="../../assets/images/xing-icon.png"/>
                     <image src="../../assets/images/xing-icon.png"/>
                     <image src="../../assets/images/xing-icon.png"/>
-                    <text>4.7</text>
+                    <text>{{course_info.star}}</text>
               </view>
               <view class="edu-introduce">
-                 <label>简介：精品茶道，等你来到...</label>
+                 <label>简介：{{course_info.profile}}</label>
               </view>
                <view class="edu-price">
-                 <label class="edu-price-num">¥88.00</label>
+                 <label class="edu-price-num">¥{{course_info.price}}</label>
               </view>
           </view> 
      </view>
@@ -33,7 +33,7 @@
       <view class="edu-order-py edu-bottom-solid">
           <text class="edu-order-n-title edu-order-qw-title">用户名</text>
           <view class="edu-order-align">
-             <input type='text' placeholder='请输入用户名' class="edu-order-ut" done />
+             <input type='text' placeholder='请输入用户名' class="edu-order-ut" bindchange="setFormName"/>
           </view>
       </view>
    </view>
@@ -41,7 +41,7 @@
       <view class="edu-order-py">
           <text class="edu-order-n-title edu-order-qw-title">电话</text>
           <view class="edu-order-align">
-            <input type='number' confirm-type="done" placeholder='13314522562' maxlength='11' class="edu-order-ut" />
+            <input type='number' placeholder='请输入手机号' value="{{form_phone}}" bindchange="setFormPhone" maxlength='11' class="edu-order-ut"/>
           </view>
       </view>
    </view>
@@ -51,7 +51,7 @@
 <view class="edu-course-space-c"></view>
 <!-- 间隔end -->
 <!-- 底部按钮 -->
-<view class="edu-order-pay" bindtap='yuyueSuc'>
+<view class="edu-order-pay" bindtap='yuyue_order'>
       <button class="edu-order-pays">立即预约</button>
 </view>
 <!-- 底部按钮end -->

@@ -69,11 +69,11 @@
 	<div class="list_content" style="width:100px; text-align:right;">订单状态：</div>
 	<div class="list_content" style="width:370px; text-align:left; padding-left:5px;padding-right:5px;">
 		<if condition="$info.status eq 1">
-	    <font style="color:#25be13">已付款</font>
+	    <font style="color:red">待支付</font>
 		<elseif condition="$info.status eq 2"/>
-	    <font style="color:#f39c12">待付款</font>
+	    <font style="color:#f39c12">待评价</font>
 		<elseif condition="$info.status eq 3"/>
-	    <font style="color:#aaa">已关闭</font>
+	    <font style="color:#25be13">已完成</font>
 	    </if>
 	</div>
 </li>

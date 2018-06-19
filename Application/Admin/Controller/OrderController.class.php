@@ -10,6 +10,7 @@ class OrderController extends BaseController {
     public function index(){
     	$where = array();
     	$where['type'] = 1;
+    	$where['status'] = array('NEQ',4);
     	$this->admin_info['type'] == 2 && $where['teacher_id'] = $this->admin_info['teacher_id'];
         I('keywords') && $where['order_sn'] = array('like','%'.I('keywords').'%');
         I('status') && $where['status'] = I('status');
@@ -31,6 +32,7 @@ class OrderController extends BaseController {
     public function yuyue_order(){
     	$where = array();
     	$where['type'] = 2;
+    	$where['status'] = array('NEQ',4);
     	$this->admin_info['type'] == 2 && $where['teacher_id'] = $this->admin_info['teacher_id'];
         I('keywords') && $where['order_sn'] = array('like','%'.I('keywords').'%');
         I('status') && $where['status'] = I('status');
@@ -50,6 +52,7 @@ class OrderController extends BaseController {
     //用户订单列表
     public function user_order(){
     	$where = array();
+    	$where['status'] = array('NEQ',4);
     	$where['user_id'] = (int)I('user_id');
     	$user_info = D('User')->where(array('id'=>(int)I('user_id')))->find();
     	$user_info || $this->error('非法的访问');

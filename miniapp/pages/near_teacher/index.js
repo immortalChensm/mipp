@@ -8,25 +8,24 @@ Page({
    */
   data: {
     cur_page: 1,
-    cur_type: '',
-    cur_sale: 1,
-    cur_distance: '',
-    hidden_showa: false,
-    hidden_showb: false,
+    cur_type:'',
+    cur_sale:1,
+    cur_distance:'',
+    hidden_showa:false,
+    hidden_showb:false,
     teacher_list: [],
-    teacher_type: [],
+    teacher_type:[],
     default_type: '距离',
     type_name: '茶艺',
     showkecda: false,
     showkecdb: false,
-    showkecdab: false,
-    showkecdbc: false,
+    showkecdab:false,
+    showkecdbc:false,
     hidden_typea: true,
     hidden_typeb: true,
-    cur_status: 1,
-    lng: 0,
-    lat: 0
-
+    cur_status:1,
+    lng:0,
+    lat:0
   },
 
   /**
@@ -94,23 +93,21 @@ Page({
     wx.getLocation({
       success: function (ress) {
         postdata.lng = ress.longitude;
-        postdata.lat = ress.latitude;
-
+        postdata.lat = ress.latitude;        
         tool.post('Teacher/teacher_list', postdata, function (res) {
-          if (res.data.status == '1') {
-            var list = res.data.data;
-            if (that.data.cur_page > 1) {
+          if (res.data.status =='1') {
+            if(that.data.cur_page > 1){
               that.setData({
                 lng: ress.longitude,
                 lat: ress.latitude,
-                cur_status: res.data.msg,
-                teacher_list: that.data.teacher_list.concat(res.data.data),
+                cur_status:res.data.msg,
+                teacher_list:that.data.teacher_list.concat(res.data.data),
               })
-            } else {
+            }else{
               that.setData({
                 teacher_list: res.data.data,
                 lng: ress.longitude,
-                lat: ress.latitude,
+                lat: ress.latitude, 
                 cur_status: res.data.msg,
               })
             }
@@ -139,7 +136,11 @@ Page({
     })
     console.log(opt_type);
     switch (opt_type) {
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 101afd123f16f980ae51c36fd5b396cdaa89e13c
       case 'distance':
         var name = event.currentTarget.dataset['name'];
         var id = event.currentTarget.dataset['val'];
@@ -150,8 +151,13 @@ Page({
           showkecda: false,
           showkecdab: false,
           hidden_typea: true,
+<<<<<<< HEAD
           cur_page: 1
 
+=======
+          cur_page:1
+          
+>>>>>>> 101afd123f16f980ae51c36fd5b396cdaa89e13c
         });
         break;
       case 'type':
@@ -163,9 +169,15 @@ Page({
 
           showkecdbc: false,
           showkecdb: false,
+<<<<<<< HEAD
           hidden_typeb: true,
           showkecda: false,
           cur_page: 1
+=======
+          hidden_typeb:true,
+          showkecda:false,
+           cur_page: 1
+>>>>>>> 101afd123f16f980ae51c36fd5b396cdaa89e13c
         });
         break;
       case 'sale':

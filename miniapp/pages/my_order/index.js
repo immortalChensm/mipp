@@ -18,11 +18,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var wait_pay_count = wx.getStorageSync('wait_pay_count');
-    if (wait_pay_count > 0){
-      this.selepay();
-    }else{
-      this.seleall();
+    var type = options.type;
+    switch(type){
+      case 'all': this.seleall();break;
+      case 'pay': this.selepay(); break;
+      case 'comment': this.selecomment(); break;
+      default: this.seleall()
     }
   },
   seleall: function () {

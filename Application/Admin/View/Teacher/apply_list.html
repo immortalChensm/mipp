@@ -19,12 +19,12 @@ function export_order(){
 				          <form class="navbar-form form-inline" action="{:U('Admin/Teacher/apply_list')}" method="get">
 				            <div class="form-group">
 				              	<input type="text" name="keywords" class="form-control" placeholder="姓名/手机号/昵称" value="{:I('keywords')}">
-				              	<select name="teach_type" class="form-control">
+<!-- 				              	<select name="teach_type" class="form-control">
 				              	<option value="">授课类型</option>
 				              	<foreach name="teach_types" item="val">
 				              	<option value="{$key}" <if condition="$request.teach_type eq $key">selected</if> >{$val}</option>
 				              	</foreach>
-				              	</select>
+				              	</select> -->
 				              	<select name="sex" class="form-control">
 				              	<option value="">性别</option>
 				              	<option value="1" <if condition="$request.sex eq 1">selected</if> >男</option>
@@ -67,7 +67,7 @@ function export_order(){
 		                     <td>{$vo.name}</td>
 		                     <td><if condition="$vo.sex eq 1">男<elseif condition="$vo.sex eq 2"/>女<else/>未知</if></td>
 							 <td>{$vo.phone}</td>
-		                     <td>{:$teach_types[$vo['teach_type']]}</td>
+		                     <td>{$vo.teacher_type}</td>
 		                     <if condition="$vo.status eq 2">
 		                     <td style="color:red;">审核不通过</td>
 		                     <elseif condition="$vo.status eq 3"/>

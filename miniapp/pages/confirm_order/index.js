@@ -53,6 +53,9 @@ Page({
       'form_phone': e.detail.value
     })
   },
+  /**
+   * 添加订单
+   */
   add_order:function(){
     console.log(this.data)
     var postdata = {
@@ -66,8 +69,21 @@ Page({
       var info = result.data;
       console.log(info)
       if(info.status == '1'){
-        wx.navigateTo({
-          url: '/pages/my_order/index'
+        wx.requestPayment({
+          timeStamp: info.data.timeStamp,
+          nonceStr: info.data.nonceStr,
+          package: info.data.package,
+          signType: info.data.signType,
+          paySign: info.data.paySign,
+          success: function (res) {
+            wx.showModal({
+              title: '支付成功',
+              content: '',
+            })
+          },
+          fail: function (res) {
+            console.log(res);
+          }
         })
       }else{
         tool.jsalert(info.msg);
