@@ -6,7 +6,6 @@ class TeacherController extends BaseController {
    /**
 	 * 首页推荐老师
 	 */
-
 	public function teacher_stick(){
 		$lng = I('request.lng') ? I('request.lng') : 0;
 		$lat = I('request.lat') ? I('request.lat') : 0;
@@ -46,7 +45,7 @@ class TeacherController extends BaseController {
         $teachers = D('Teacher')->query("SELECT {$field} from edu_teacher t LEFT JOIN (SELECT teacher_id,COUNT(teacher_id) as sale_count FROM edu_order where status >=2 GROUP BY teacher_id) as o on t.id = o.teacher_id WHERE {$where} ORDER BY {$order}  limit $page,10");
         $teacher = array();
         foreach ($teachers as &$val){
-        	//获取老师的星级
+            //获取老师的星级
             $row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
             $val['star'] = $row['star'] ? round($row['star'],1) : 0;
             $val['stararr'] = $this->starArr($val['star']);
@@ -60,6 +59,7 @@ class TeacherController extends BaseController {
             $val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
         }
         $num = count($teachers);
+
         $teachers && $this->returnSuccess($num,$teacher ? $teacher : $teachers);
         $teachers || $this->returnError('暂无数据');
 	}

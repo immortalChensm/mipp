@@ -2,7 +2,6 @@
 var tool = require("../../utils/tool.js")
 var app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -26,7 +25,6 @@ Page({
     cur_status:1,
     lng:0,
     lat:0
-
   },
 
   /**
