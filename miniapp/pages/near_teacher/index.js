@@ -136,11 +136,6 @@ Page({
     })
     console.log(opt_type);
     switch (opt_type) {
-<<<<<<< HEAD
-
-=======
-      
->>>>>>> 101afd123f16f980ae51c36fd5b396cdaa89e13c
       case 'distance':
         var name = event.currentTarget.dataset['name'];
         var id = event.currentTarget.dataset['val'];
@@ -151,13 +146,7 @@ Page({
           showkecda: false,
           showkecdab: false,
           hidden_typea: true,
-<<<<<<< HEAD
           cur_page: 1
-
-=======
-          cur_page:1
-          
->>>>>>> 101afd123f16f980ae51c36fd5b396cdaa89e13c
         });
         break;
       case 'type':
@@ -166,18 +155,11 @@ Page({
         this.setData({
           cur_type: id,
           type_name: name,
-
           showkecdbc: false,
           showkecdb: false,
-<<<<<<< HEAD
           hidden_typeb: true,
           showkecda: false,
           cur_page: 1
-=======
-          hidden_typeb:true,
-          showkecda:false,
-           cur_page: 1
->>>>>>> 101afd123f16f980ae51c36fd5b396cdaa89e13c
         });
         break;
       case 'sale':
