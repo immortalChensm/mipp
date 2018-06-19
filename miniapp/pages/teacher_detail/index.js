@@ -93,7 +93,8 @@ Page({
       tool.jsalert(res.data.msg);
       if(res.data.status =='1'){
         that.setData({
-          checked: true
+          checked: true,
+          follow_num:res.data.data
         })
       }else {
         that.setData({
