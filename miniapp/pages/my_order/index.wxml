@@ -25,13 +25,13 @@
             <view class="edu-myorder-t-r">
                   <text class="edu-myorder-l-w edu-myorder-n-a">{{item.course.name}}</text>
                   <text class="edu-myorder-l-w edu-myorder-n-b">老师：{{item.teacher.name}}</text>
-                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：{{item.user.name}}</text>
+                  <text class="edu-myorder-l-w edu-myorder-n-b">学生：{{item.name}}</text>
                   <text class="edu-myorder-l-w edu-myorder-n-c">{{item.price == 0 ? '免费' : '¥'+item.price}}</text>
             </view> 
-      </view> 
+      </view>
       <view class="edu-myorder-three edu-border-top" wx:if="{{item.status <=2}}">
-            <label class="edu-myorder-btn-c" wx:if="{{item.status == 1}}">取消订单</label>
-            <label class="edu-myorder-btn-p" wx:if="{{item.status == 1}}">去付款</label>
+            <label class="edu-myorder-btn-c" wx:if="{{item.status == 1}}" bindtap='cancelOrder' data-id='{{item.id}}'>取消订单</label>
+            <label class="edu-myorder-btn-p" wx:if="{{item.status == 1}}" bindtap='payOrder' data-id='{{item.id}}'>去付款</label>
             <label class="edu-myorder-btn-p" wx:if="{{item.status == 2}}" bindtap='toComment' data-id='{{item.id}}'>去评价</label>
       </view>
   </view>

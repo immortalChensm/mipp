@@ -60,8 +60,5 @@ App({
       });
 
     }
-  },
-	globalData: {
-    apiurl:'http://educate.com/Api/',
-	},
+  }
 })

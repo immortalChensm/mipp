@@ -69,16 +69,21 @@ Page({
       var info = result.data;
       console.log(info)
       if(info.status == '1'){
+        var res = JSON.parse(info.data);
+        console.log(res)
         wx.requestPayment({
-          timeStamp: info.data.timeStamp,
-          nonceStr: info.data.nonceStr,
-          package: info.data.package,
-          signType: info.data.signType,
-          paySign: info.data.paySign,
+          timeStamp: res.timeStamp,
+          nonceStr: res.nonceStr,
+          package: res.package,
+          signType: res.signType,
+          paySign: res.paySign,
           success: function (res) {
-            wx.showModal({
-              title: '支付成功',
-              content: '',
+            // wx.showModal({
+            //   title: '支付成功',
+            //   content: '',
+            // })
+            wx.navigateTo({
+              url: '/pages/my_order/index'
             })
           },
           fail: function (res) {

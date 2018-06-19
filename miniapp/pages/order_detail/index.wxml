@@ -43,7 +43,7 @@
 
 <!-- 底部 -->
 <view class="edu-det-bottom">
-   <button wx:if="{{order_info.status == '1'}}" class="edu-det-btns">付款</button>
+   <button wx:if="{{order_info.status == '1'}}" bindtap='payOrder' data-id='{{order_info.id}}' class="edu-det-btns">付款</button>
    <button wx:if="{{order_info.status == '2'}}" bindtap='toComment' data-id='{{order_info.id}}' class="edu-det-btns">评价</button>
 </view>
 <!-- 底部end -->

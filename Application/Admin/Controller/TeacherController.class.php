@@ -212,7 +212,7 @@ class TeacherController extends BaseController {
     public function check_teacher(){
     	$id = (int)I('post.id');
     	$status = (int)I('post.status');
-    	D('Teacher')->save(array('id'=>$id,'status'=>$status)) && $this->success('审核成功!');
+    	D('Teacher')->save(array('id'=>$id,'status'=>$status,'check_time'=>date('Y-m-d H:i:s'))) && $this->success('审核成功!');
         $this->error('网络异常，请稍后再试！');
     }
 }

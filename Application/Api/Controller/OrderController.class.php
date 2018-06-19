@@ -7,14 +7,14 @@ class OrderController extends BaseController {
         !$this->user_id && $this->returnError('参数错误');
         
         $p = I('request.p') ? (int)I('request.p') : 1;
-        $pagesize = 10;
+        $pagesize = 20;
         
         $where = array();
         $where['user_id'] = $this->user_id;
         if (I('status')) {
         	$where['status'] = I('status');
         }
-        $list = D('Order')->where($where)->relation(true)->page($p,$pagesize)->select();
+        $list = D('Order')->where($where)->relation(true)->page($p,$pagesize)->order('create_date desc')->select();
         foreach ($list as &$val){
         	$val['course'] = output_data($val['course']);
         }
@@ -74,22 +74,27 @@ class OrderController extends BaseController {
     	$order_info['price'] = $course_info['price']*$post_data['goods_num'];
     	$order_info['name'] = $post_data['name'];
     	$order_info['phone'] = $post_data['phone'];
-    	$order_info['status'] = 1;
-    	
-    	//暂时让支付通 过
-    	$order_info['pay_money'] = $order_info['price'];
-    	$order_info['status'] = 2;
-    	$order_info['pay_time'] = date('Y-m-d H:i:s');
-    	
+    	$order_info['status'] = $post_data['type'] == 2 ? 2 : 1;
+
     	$res = D('Order')->add($order_info);
     	if ($res) {
-	    	//增加销量
-	    	//D('Course')->where(array('id'=>$course_info['id']))->setInc('sale_count');
+            //更新用户信息
+            D('User')->where(array('id'=>$user_id))->save(array('name'=>$order_info['name'],'phone'=>$order_info['phone']));
+            //获取支付参数
 	    	$paydata = $this->pay_order($post_data['openid'],$order_info);
 	    	$this->returnSuccess('下单成功！',$paydata);
     	}else {
     		$this->returnError('系统繁忙，请您稍后操作');
     	}
+    }
+    //去支付
+    public function pre_pay_order(){
+        $openid = I('request.openid');
+        $order_id = (int)I('request.order_id');
+        $openid && $order_id || $this->returnError('参数有误');
+        $order_info = D('Order')->where(array('id'=>$order_id))->find();
+        $paydata = $this->pay_order($openid,$order_info);
+	    $this->returnSuccess('',$paydata);
     }
     /**
      * 统一下单
@@ -103,12 +108,12 @@ class OrderController extends BaseController {
    		$total_fee = $order_info['price'];
 
     	$total  = $total_fee*100;
-    	//$total = 1;//暂时使用
+    	$total = 1;//暂时使用
     
     	vendor("Wxpay.WxPayJsApiPay");
     	$tools = new \JsApiPay();
     	$input = new \WxPayUnifiedOrder();
-    
+
     	$input->SetBody("C2C艺术教育");
     	$input->SetAttach($order_info['order_sn']);
     	$input->SetOut_trade_no($order_info['order_sn']);
@@ -116,11 +121,13 @@ class OrderController extends BaseController {
     	$input->SetTime_start(date("YmdHis"));
     	$input->SetTime_expire(date("YmdHis", time() + 600));
     	$input->SetGoods_tag("C2C艺术教育");
-    	$input->SetNotify_url('http://'.$_SERVER['HTTP_HOST'].'/Home/Order/order_notify');
+    	$input->SetNotify_url('https://'.$_SERVER['HTTP_HOST'].'/Api/Order/order_notify');
     	$input->SetTrade_type("JSAPI");
     	$input->SetOpenid($openid);
+        
     	$order = \WxPayApi::unifiedOrder($input);
-    	return $tools->GetJsApiParameters($order);
+        $jsapi = $tools->GetJsApiParameters($order);
+    	return $jsapi;
     }
     //支付成功的通知函数
     public function order_notify()
@@ -128,12 +135,23 @@ class OrderController extends BaseController {
     	$xml      = isset($GLOBALS["HTTP_RAW_POST_DATA"]) ? $GLOBALS["HTTP_RAW_POST_DATA"] : "";
     	$xmlObj   = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
     	$xmlArr   = json_decode(json_encode($xmlObj), true);
+        // file_put_contents('aaa.txt',json_encode($xmlObj));
     	if($xmlArr['return_code']=='SUCCESS'){
     		$total_fee = $xmlArr['total_fee']/100;
     		$order_sn = $xmlArr['attach'];
     		if($total_fee){
     			//更新订单状态
-    
+                $order = D('Order')->where(array('order_sn'=>$order_sn))->find();
+                if($order){
+                    //更新订单数据
+                    $update_data = array();
+                    $update_data['pay_money'] = $order['price'];
+                    $update_data['status'] = 2;
+                    $update_data['pay_time'] = date('Y-m-d H:i:s');
+                    D('Order')->where(array('id'=>$order['id']))->save($update_data);
+                    //增加销量
+                    D('Course')->where(array('id'=>$order['course_id']))->setInc('sale_count');
+                }
     			exit('SUCCESS');
     		}else{
     			exit('FAIL');
