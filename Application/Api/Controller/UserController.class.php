@@ -30,4 +30,11 @@ class UserController extends BaseController {
     	$res ? $this->returnSuccess('收藏成功') : $this->returnError('系统繁忙，请稍后再试');
     }
 
+    //我的关注
+    public function follow_teacher(){
+        !$this->user_id && $this->returnError('非法的操作');
+        $list = D('Follow')->relation('teacher')->where(array('user_id'=>$this->user_id,'follow_type'=>'1'))->select();
+        
+    }
+
 }

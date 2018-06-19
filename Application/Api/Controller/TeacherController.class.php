@@ -12,7 +12,7 @@ class TeacherController extends BaseController {
         $where = array();
         $where['status'] = 1;
         $where['is_stick'] = 1;
-        D('Teacher')->field('t.*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance');
+        D('Teacher')->field('*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance');
         
         $teachers = D('Teacher')->where($where)->limit(6)->order('distance asc,create_date asc')->select();
         foreach ($teachers as &$val){
@@ -39,29 +39,29 @@ class TeacherController extends BaseController {
         $order = 'distance asc,create_date asc';
         $page = ($p-1)*10;
         I('sale') == '2' && $order = 'sale_count asc';
-        I('teach_type') && $where .='t.teach_type='.I('teach_type');
+        I('teach_type') && $where .=' and teach_type ='.I('teach_type');
         //计算距离
         $field = '*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance';
         $teachers = D('Teacher')->query("SELECT {$field} from edu_teacher t LEFT JOIN (SELECT teacher_id,COUNT(teacher_id) as sale_count FROM edu_order where status >=2 GROUP BY teacher_id) as o on t.id = o.teacher_id WHERE {$where} ORDER BY {$order}  limit $page,10");
+
         $teacher = array();
         foreach ($teachers as &$val){
-        	//获取老师的星级
+            //获取老师的星级
             $row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
             $val['star'] = $row['star'] ? round($row['star'],1) : 0;
             $val['stararr'] = $this->starArr($val['star']);
             //授课类型
             $val['teach_type'] = D('TeachType')->where(array('id'=>$val['teach_type']))->getField('name');
             $val['profile'] = strip_tags(html_entity_decode($val['profile']));
-            if(I('distance') && $val['distance'] < I('distance')){
+            if(I('distance') && $val['distance'] <= I('distance')){
                 $val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
                 $teacher[] = $val;
             }
             $val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
         }
         $num = count($teachers);
-        $teachers && $this->returnSuccess($num,$teacher ? $teacher : $teachers);
-        $teachers || $this->returnError('暂无数据');
-	}
+        $this->returnSuccess($num,$teacher ? $teacher : $teachers);
+    }
 
 	/*老师详情*/
 	public function details(){
