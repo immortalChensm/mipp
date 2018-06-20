@@ -1,0 +1,46 @@
+<form id="dataForm">
+<input type="hidden" name="info[id]" value="{$info.id}"/>
+<li>
+	<div class="list_content" style="width:100px; text-align:right;">姓名：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px;padding-right:5px;">
+	    {$info.name}
+	</div>
+</li>
+<li>
+	<div class="list_content" style="width:100px; text-align:right;">电话：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px;padding-right:5px;">
+	    {$info.phone}
+	</div>
+</li>
+<li>
+	<div class="list_content" style="width:100px; text-align:right;">地理位置：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px;padding-right:5px;">
+	    {$info.address}
+	</div>
+</li>
+<li>
+	<div class="list_content" style="width:100px; text-align:right;">授课类型：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px;padding-right:5px;">
+	    {$info.teacher_type}
+	</div>
+</li>
+<li>
+	<div class="list_content" style="width:100px; text-align:right;">身份证：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px;padding-right:5px;">
+		<img title="身份证正面" style="cursor:pointer;height:140px;" alt="" src="{$info.fcard}" onclick="window.open('{$info.fcard}')">
+		<img title="身份证反面" style="cursor:pointer;height:140px;" alt="" src="{$info.bcard}" onclick="window.open('{$info.bcard}')">
+	</div>
+</li>
+<li>
+	<div class="list_content" style="width:100px; text-align:right;">资格证：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px;padding-right:5px;">
+		<img title="教师资格证" style="cursor:pointer;height:140px;" alt="" src="{$info.qualification}" onclick="window.open('{$info.qualification}')">
+	</div>
+</li>
+<li>
+	<div class="list_content" style="width:100px; text-align:right;">申请时间：</div>
+	<div class="list_content" style="width:370px; text-align:left; padding-left:5px;padding-right:5px;">
+	    {$info.create_date}
+	</div>
+</li>
+</form>

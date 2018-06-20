@@ -75,9 +75,10 @@ function export_order(){
 		                     </if>
 		                     <td>{:date('Y-m-d',strtotime($vo['create_date']))}</td>
 		                     <td>
-		                      <a title="审核通过" class="btn btn-primary" href="javascript:void(0)" onclick="check_teacher('{$vo.id}',1)">通过</a>
+                              <a title="查看信息" class="btn btn-primary" href="javascript:void(0)" onclick="view_info('{$vo.id}')"><i class="fa fa-eye"></i></a>
+		                      <a title="审核通过" class="btn btn-primary" href="javascript:void(0)" onclick="check_teacher('{$vo.id}',1)"><i class="fa fa-check"></i></a>
 		                      <if condition="$vo.status eq 3">
-		                      <a title="审核不通过" class="btn btn-danger" href="javascript:void(0)" onclick="check_teacher('{$vo.id}',2)">不通过</a>
+		                      <a title="审核不通过" class="btn btn-danger" href="javascript:void(0)" onclick="check_teacher('{$vo.id}',2)"><i class="fa fa-times"></i></a>
 		                      </if>
 							 </td>
 		                   </tr>
@@ -98,7 +99,13 @@ function export_order(){
        </div>
    </section>
 </div>
+<include file="Public/dialog" />
 <script>
+function view_info(id){
+	$.post("{:U('Teacher/info')}",{id:id},function(res){
+		dialog(res,'申请信息');
+	});
+}
 function set_stick(obj,id,is_stick){
 	$.post("{:U('Teacher/set_stick')}",{id:id,is_stick:is_stick},function(data){
 		if(is_stick == '1'){

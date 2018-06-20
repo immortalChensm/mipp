@@ -43,6 +43,7 @@
 					'Teacher/set_stick',
 					'Teacher/check_teacher',
 					'Teacher/edit',
+					'Teacher/info',
 				)
 			),
 			'course' => array('name' => '课程管理', 'icon'=>'fa-leaf', 
