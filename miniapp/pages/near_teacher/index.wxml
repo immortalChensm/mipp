@@ -17,9 +17,9 @@
           <image src="../../assets/images/w-botton-icon.png" class="edu-a-b" hidden="{{cur_sale == '2' ? false : true}}"/> 
       </view>
 </view>
-<!-- 遮罩层 -->
-    <view class="{{showkecdab?'edu-mask':'edu-none'}}"></view> 
-    <view class="{{showkecdbc?'edu-mask':'edu-none'}}"></view> 
+ <!-- 遮罩层  -->
+    <!-- <view class="{{showkecdab?'edu-mask':'edu-none'}}"></view> 
+    <view class="{{showkecdbc?'edu-mask':'edu-none'}}"></view>  -->
 <!-- 遮罩层 -->
 <!-- 距离 -->
 <view hidden='{{hidden_typea}}' class="'edu-show edu-sty-qa">
@@ -67,7 +67,7 @@
 <!-- 销量 end -->
 <!-- 分类筛选 end -->
 <!-- 金牌老师 start -->
-<view class="edu-recommend-courses-tj">
+<view class="edu-recommend-courses-tjs">
    
     <!-- 列表 -->
      <view class="edu-acticle-list-tj-s edu-bottom-solid" wx:for="{{teacher_list}}"  wx:for-item="item" wx:key="key" bindtap="toTeacherDetail" data-id="{{item.id}}">

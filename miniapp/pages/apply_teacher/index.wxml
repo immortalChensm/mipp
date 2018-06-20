@@ -50,7 +50,7 @@
          <view class="edu-come-update-lr edu-come-lm" bindtap='upImage' data-field="fcard">
               <block wx:if="{{is_edit && !show_fcard}}">
               <text class="edu-come-qwe edu-come-add">+添加</text>
-              <text class="edu-come-qwr edu-come-up">上传身份证背面照</text>
+              <text class="edu-come-qwr edu-come-up">上传身份证正面照</text>
               </block>
               <block wx:if="{{!is_edit}}">
               <text class="edu-come-qwe edu-come-add">已上传</text>

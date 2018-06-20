@@ -15,7 +15,7 @@ Page({
     teacher_list: [],
     teacher_type:[],
     default_type: '距离',
-    type_name: '茶艺',
+    type_name: '全部',
     showkecda: false,
     showkecdb: false,
     showkecdab:false,

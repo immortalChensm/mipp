@@ -78,8 +78,8 @@
             </view>
             <view class="edu-course-cft edu-right-solid" bindtap='onShareAppMessage'>
                 <view class="edu-course-icon-jg">
-                    <!-- <image src="../../assets/images/zhuanfa-icon.png" class="edu-course-gltb"/> -->
-                    <button style='border:0' plain="true" open-type='share'><image src="../../assets/images/zhuanfa-icon.png" class="edu-course-gltb"/></button>
+                     <!-- <image src="../../assets/images/zhuanfa-icon.png" class="edu-course-gltb"/>  -->
+                     <button  class="edu-course-btn-share" style='border:0' plain="true" open-type='share'><image src="../../assets/images/zhuanfa-icon.png" class="edu-course-gltb"/></button> 
                 </view>
                 <view class="edu-list-title edu-list-can-q">分享</view>
             </view>

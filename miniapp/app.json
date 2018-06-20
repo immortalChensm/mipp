@@ -1,24 +1,31 @@
 {
   "pages": [
-	"pages/index/index",
+
+
+  
+"pages/index/index",
+"pages/course_detail/index",   
+  "pages/teacher_detail/index",
+
+  "pages/auth/index",
+  "pages/order_detail/index",
+  "pages/user_center/index",
+  "pages/comment/index",
+
+ 
   "pages/near_teacher/index",
-	"pages/teacher_detail/index",
-	"pages/user_center/index",
-	"pages/comment/index",    
 	"pages/yuyue/index",    
 	"pages/confirm_order/index",    
 	"pages/course/index",
 	"pages/stick_teacher/index",
 	"pages/stick_course/index", 
 	"pages/yuyue_suc/index", 
-	"pages/order_detail/index",
 	"pages/follow/index",
 	"pages/apply_teacher/index",   
 	"pages/about/index",
 	"pages/faq/index",
-	"pages/my_order/index",
-	"pages/course_detail/index",
-	"pages/auth/index"
+	"pages/my_order/index"
+
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
