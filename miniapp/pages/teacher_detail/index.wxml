@@ -41,6 +41,7 @@
           <text class="edu-remm-kc">视频介绍</text>
           <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon"/>
       </view>
+      <view class="edu-info-explain">该老师很懒，并未上传视频介绍</view>
       <view class="edu-info-scroll">
          <!-- <view class="edu-info-gd"> -->
          <block wx:for="{{item.links}}" wx:for-item="va">
@@ -72,7 +73,7 @@
 <!-- 主要授课内容 -->
 <view class="{{selected2?'edu-info-sk edu-show':'edu-info-sk edu-none'}}">
      <!-- 课程 start -->
-<view class="edu-recommend-courses-tj" wx:for="{{tlist.course}}" wx:for-item="items" wx:key="key" bindtap="toCourseDetail" data-id="{{items.id}}">
+<view class="edu-recommend-courses-s" wx:for="{{tlist.course}}" wx:for-item="items" wx:key="key" bindtap="toCourseDetail" data-id="{{items.id}}">
     <!-- 列表 -->
            <view class="edu-acticle-list-tj-s edu-acticle-x">
               <view class="edu-list-left">
@@ -106,6 +107,8 @@
 </view>
 <!-- 主要授课内容end -->
 <!-- 学生评价内容 -->
+
+<view class="edu-course-bg-pj">
 <view class="{{selected3?'edu-info-pj-n edu-show':'edu-info-pj-n edu-none'}}"  wx:for="{{tlist.comment}}" wx:for-item="item" wx:key="key"  data-id="{{item.id}}">
   <!-- 课程评价 -->
           <view class="edu-course-pj-content">
@@ -138,7 +141,9 @@
               <!-- <view class="edu-space-d edu-space-e"></view> -->
             <!-- 间隔end -->
         </view>
+      
       <!-- 课程评价 -->
+</view>
 </view>
 <!-- 学生评价内容end -->
 <text class="edu-info-all">-- 已全部展示 --</text>

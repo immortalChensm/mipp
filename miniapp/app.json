@@ -1,8 +1,12 @@
 {
   "pages": [
-      "pages/index/index",
-  "pages/teacher_detail/index", 
-  "pages/course_detail/index",
+
+
+  
+"pages/index/index",
+"pages/course_detail/index",   
+  "pages/teacher_detail/index",
+
   "pages/auth/index",
   "pages/order_detail/index",
   "pages/user_center/index",

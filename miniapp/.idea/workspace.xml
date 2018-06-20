@@ -47,6 +47,11 @@
               <item name="miniapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="miniapp" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="miniapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="miniapp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -83,12 +88,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529459475624</updated>
-      <workItem from="1529459476792" duration="353000" />
+      <workItem from="1529459476792" duration="1056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="353000" />
+    <option name="totallyTimeSpent" value="1056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="18" y="23" width="1440" height="834" extended-state="0" />
