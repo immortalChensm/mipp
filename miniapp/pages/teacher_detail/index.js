@@ -66,12 +66,13 @@ Page({
   },
   //分享
   onShareAppMessage: function (res) {
+    var that = this;
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
     }
     return {
-      title: '去喝茶',
+      title: that.data.tlist.name,
       path: '/pages/index/index',
       success: function (res) {
         // 转发成功
@@ -93,7 +94,8 @@ Page({
       tool.jsalert(res.data.msg);
       if(res.data.status =='1'){
         that.setData({
-          checked: true
+          checked: true,
+          follow_num:res.data.data
         })
       }else {
         that.setData({

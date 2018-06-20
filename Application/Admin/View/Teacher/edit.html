@@ -186,7 +186,7 @@ $(function(){
 			return false;
 		}
 		var str = '<div class="upvideo">';
-		str += '<input type="text" class="form-control" onclick="upVideos()" readonly name="info[links][]" value="http://www.baidu.com" placeholder="点击上传视频，视频大小最大为10M"> ';
+		str += '<input type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[links][]" placeholder="点击上传视频，视频大小最大为10M"> ';
         str += '<input type="file" id="link'+vdo_index+'" name="link'+vdo_index+'" style="display:none;" onchange="upload_video(this.id)"/>';
 	    str += '<span class="btn btn-danger" title="删除" > <i class="fa fa-trash-o"></i></span>';
 	    str += '</div>';

@@ -17,7 +17,8 @@ Page({
     interval: 3000,
     duration: 1000,
     autoplays: false,
-    bools: true
+    bools: true,
+    is_follow:false
   },
   //课程详情和评价点击事件
   tabShow:function(event){
@@ -68,12 +69,6 @@ Page({
     this.setData({
       'request':options
     })
-    //获取课程信息
-    this.getCourseInfo();
-    //获取关联老师的信息
-    this.getTeacherInfo();
-    //获取评价信息
-    this.getCommentInfo();
   },
   /**
    * 获取课程信息
@@ -123,7 +118,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    //获取课程信息
+    this.getCourseInfo();
+    //获取关联老师的信息
+    this.getTeacherInfo();
+    //获取评价信息
+    this.getCommentInfo();
+    //是否关注
+    this.check_follow();
   },
 
   /**
@@ -157,8 +159,27 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function (options) {
+    var that = this;
+
+　　return {
+  　　　　title: that.data.course_info.name,        // 默认是小程序的名称(可以写slogan等)
+  　　　　//path: '/pages/course_detail/index',        // 默认是当前页面，必须是以‘/’开头的完整路径
+  　　　　imgUrl: '',     //自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径，支持PNG及JPG，不传入 imageUrl 则使
+  　　　　success: function (res) {
+    　　　　　　// 转发成功之后的回调
+    　　　　　　if (res.errMsg == 'shareAppMessage:ok') {
+    　　　　　　}
+  　　　　},
+  　　　　fail: function (res) {
+    　　　　　　// 转发失败之后的回调
+    　　　　　　if (res.errMsg == 'shareAppMessage:fail cancel') {
+      　　　　　　　　// 用户取消转发
+    　　　　　　} else if (res.errMsg == 'shareAppMessage:fail') {
+      　　　　　　　　// 转发失败，其中 detail message 为详细失败信息
+    　　　　　　}
+  　　　　}
+　　}
   },
   /**
    * 拨打电话
@@ -176,12 +197,34 @@ Page({
     })
   },
   /**
+   * 检查是否关注
+   */
+  check_follow:function(){
+    var that = this;
+    tool.post('Follow/check_follow', { type: 2, rel_id: that.data.request.id},function(result){
+      var info = result.data;
+      if(info.status == '1'){
+        that.setData({
+          is_follow:info.data
+        })
+      }
+    });
+  },
+  /**
    * 收藏
    */
   collect:function(event){
-    var id = event.currentTarget.dataset['id'];
-    tool.post('User/follow',{relation_id:id,type:2},function(result){
-      tool.jsalert(result.data.msg);
-    })
+    var that = this;
+    if (!that.data.is_follow){
+      var id = event.currentTarget.dataset['id'];
+      tool.post('User/follow', { relation_id: id, type: 2 }, function (result) {
+        that.setData({
+          is_follow:true
+        });
+        tool.jsalert(result.data.msg);
+      })
+    }else{
+      tool.jsalert('您已收藏',2);
+    }
   }
 })
