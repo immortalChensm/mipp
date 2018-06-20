@@ -15,7 +15,7 @@ Page({
     teacher_list: [],
     teacher_type:[],
     default_type: '距离',
-    type_name: '全部',
+    type_name: '茶艺',
     showkecda: false,
     showkecdb: false,
     showkecdab:false,
@@ -23,6 +23,7 @@ Page({
     hidden_typea: true,
     hidden_typeb: true,
     cur_status:1,
+    hidden_status:false,
     lng:0,
     lat:0
   },
@@ -201,6 +202,8 @@ Page({
     });
     that.setData({
       cur_page: ++cur_page,
+      hidden_status:true
+      
     })
     that.getStickTeacher();
     setTimeout(function () { wx.hideToast(); }, 1000);
