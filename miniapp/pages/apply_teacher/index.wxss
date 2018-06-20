@@ -45,6 +45,9 @@
 }
 .edu-come-address{
   width: 400rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .edu-come-t-q{
   margin-right: 140rpx;

@@ -41,7 +41,7 @@ margin:0rpx 4rpx;
 }
 
 .edu-list-fl {
-  width: 24%;
+  width: 25%;
   float: left;
 }
 
@@ -178,6 +178,7 @@ margin:0rpx 4rpx;
   font-size: 26rpx;
   color: rgb(255, 195, 35);
   /* padding-top:2px; */
+  margin-left:8rpx;
   font-family: PingFang-SC-Medium;
 }
 
@@ -297,6 +298,9 @@ margin:0rpx 4rpx;
 .edu-recommend-courses-tj{
    padding-top: 90rpx; 
 }
+.edu-recommend-courses-tjs{
+   padding-top: 90rpx; 
+}
 .edu-border-top {
   border-top: 2rpx solid #f2f2f2;
 }
@@ -330,13 +334,14 @@ margin:0rpx 4rpx;
 }
 
 .edu-sty-qa {
-  margin-top: 90rpx;
+  /* margin-top: 80rpx; */
   z-index: 999;
   padding: 30rpx 0rpx;
-  position: absolute;
+  position: fixed;
   border-top: 2rpx solid #f2f2f2;
   width: 100%;
   background-color: #fff;
+  top: 80rpx;
 }
 
 .edu-show {
