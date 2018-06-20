@@ -18,8 +18,8 @@
       </view>
 </view>
 <!-- 遮罩层 -->
-    <!-- <view class="{{showkecd?'edu-mask':'edu-none'}}"></view> 
-    <view class="{{showkecdb?'edu-mask':'edu-none'}}"></view>  -->
+    <view class="{{showkecd?'edu-mask':'edu-none'}}"></view> 
+    <view class="{{showkecdb?'edu-mask':'edu-none'}}"></view> 
 <!-- 遮罩层 -->
 <!-- 课程类型 -->
 <view hidden='{{hidden_type}}' class="edu-show edu-sty-qa">
