@@ -28,6 +28,7 @@ Page({
     var that = this;
     tool.get('Banner/banner', function (res) {
       //console.log(res.data.data)
+      
       that.setData({ banners: res.data.data });
     })
   },
@@ -35,8 +36,20 @@ Page({
     var that = this;
     tool.get('Course/course_types', function (res) {
       //console.log(res)
+      var info = res.data.data
+      var new_info = [];
+      var block_arr = [];
+      for(var i=0;i<info.length;i++){
+        block_arr.push(info[i]);
+        if ((i+1)%8 == 0){
+          new_info.push(block_arr);
+          block_arr = []
+        }
+      }
+      if (block_arr.length > 0) new_info.push(block_arr);
+      console.log(new_info);
       that.setData({
-        course_types: res.data.data
+        course_types: new_info
       })
     })
   },

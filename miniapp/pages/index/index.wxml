@@ -19,16 +19,16 @@
   <!-- 菜单分类 start -->
   <view class="edu-list">
     <swiper indicator-dots="{{indicatorDots}}" autoplays="{{autoplays}}" interval="{{interval}}" duration="{{duration}}" style="height:412rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
-      <swiper-item class="edu-rows">
-        <block wx:for="{{course_types}}" wx:key="key">
-          <view class="edu-list-fl" bindtap="toCourseList" data-type="{{item.id}}">
-            <view class="edu-icon-k">
-              <image src="{{item.pic}}"/>
-            </view>
-            <view class="edu-list-title-a">{{item.name}}</view>
+
+      <swiper-item class="edu-rows" wx:for="{{course_types}}" wx:for-item="types" wx:key="key">
+        <view class="edu-list-fl" bindtap="toCourseList" wx:for="{{types}}" wx:key="k" data-type="{{item.id}}">
+          <view class="edu-icon-k">
+            <image src="{{item.pic}}"/>
           </view>
-        </block>
+          <view class="edu-list-title-a">{{item.name}}</view>
+        </view>
       </swiper-item>
+
     </swiper>
   </view>
   <!-- 菜单分类 start -->
