@@ -15,7 +15,7 @@ Page({
     teacher_list: [],
     teacher_type:[],
     default_type: '距离',
-    type_name: '茶艺',
+    type_name: '全部',
     showkecda: false,
     showkecdb: false,
     showkecdab:false,
@@ -62,7 +62,6 @@ Page({
   },
   showb: function () {
     var that = this;
-    console.log(that.data.hidden_typeb);
     if (that.data.hidden_typeb) {
       that.setData({
         showkecda: false,
@@ -121,7 +120,6 @@ Page({
   getTypeTeacher:function(){
     var that = this;
     tool.post('Teacher/teach_types',{}, function (res) {
-      // console.log(res.data.data); return false;
       that.setData({
         teacher_type: res.data.data
       })
@@ -136,9 +134,7 @@ Page({
       showkecda: true,
       showkecdb: true,
     })
-    console.log(opt_type);
     switch (opt_type) {
-      
       case 'distance':
         var name = event.currentTarget.dataset['name'];
         var id = event.currentTarget.dataset['val'];

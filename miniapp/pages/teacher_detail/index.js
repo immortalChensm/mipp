@@ -52,7 +52,6 @@ Page({
   onLoad: function (option) {
     var that = this;
     var id = option.id;
-    console.log(id);
     tool.post('Teacher/details', {id:id}, function (res) {
       // console.log(res.data.data); return false;
       var checked = false;
