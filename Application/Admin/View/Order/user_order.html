@@ -68,17 +68,17 @@ function export_order(){
 		                     <td>{$vo.price}</td>
 		                     <if condition="$vo.type eq 1">
 			                     <if condition="$vo.status eq  1"> 
-			                     <td style="color:#25be13;">已付款</td>
-			                     <elseif condition="$vo.status eq  2"/>
-			                     <td style="color:#f39c12;">待付款</td>
-			                     <elseif condition="$vo.status eq  3"/>
-			                     <td style="color:#aaa;">已关闭</td>
-			                     </if>
+                                 <td style="color:red;">待支付</td>
+                                 <elseif condition="$vo.status eq  2"/>
+                                 <td style="color:#f39c12;">待评价</td>
+                                 <elseif condition="$vo.status eq  3"/>
+                                 <td style="color:#25be13;">已完成</td>
+                                 </if>
 		                     <else/>
-            			         <if condition="$vo.status eq  1"> 
-			                     <td style="color:#25be13;">预约中</td>
+            			         <if condition="$vo.status eq  2"> 
+			                     <td style="color:#f39c12;">预约中</td>
 			                     <elseif condition="$vo.status eq  3"/>
-			                     <td style="color:#aaa;">已关闭</td>
+			                     <td style="color:#25be13;">已完成</td>
 			                     </if>
 		                     </if>
 		                     <td>{$vo.create_date}</td>

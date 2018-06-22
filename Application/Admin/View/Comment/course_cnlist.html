@@ -36,8 +36,8 @@
 						  <foreach name="list" item="vo" key="k" >
 						  	<tr role="row" align="center">
 		                     <td>{$vo.id}</td>
-		                     <td>{$vo.course_name}</td>
-		                     <td>{$vo.name}</td>
+		                     <td>{$vo.course_name|default='--'}</td>
+		                     <td>{$vo.order.name|default='--'}</td>
 							 <td>{$vo.star|default='0'}</td>
 							 <td>{$vo.content|default='--'}</td>
 		                     <td>{$vo.create_date}</td>

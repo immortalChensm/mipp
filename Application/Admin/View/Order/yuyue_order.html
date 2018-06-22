@@ -26,8 +26,8 @@ function export_order(){
 				              	<input type="text" name="keywords" class="form-control" placeholder="订单号" value="{$request_data.keywords}">
 				              	<select name="status" class="form-control">
 				              	<option value="">预约状态</option>
-				              	<option value="1" {:$request_data['status'] == 1 ? 'selected':''} >预约中</option>
-				              	<option value="3" {:$request_data['status'] == 3 ? 'selected':''} >已关闭</option>
+				              	<option value="2" {:$request_data['status'] == 2 ? 'selected':''} >预约中</option>
+				              	<option value="3" {:$request_data['status'] == 3 ? 'selected':''} >已完成</option>
 				              	</select>
 				              	<input type="text" id="start_date" name="begin_date" class="form-control" placeholder="开始日期" value="{:I('begin_date')}"> ~ 
 				              	<input type="text" id="end_date" name="end_date" class="form-control" placeholder="结束日期" value="{:I('end_date')}">

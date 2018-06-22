@@ -37,12 +37,12 @@ function request(method,url,data,suc,fail){
 }
 
 //消息弹出框
-function jsalert(msg,type){
+function jsalert(msg,tiptype){
     var toast_type = 'success';
-    switch(type){
+    switch (tiptype){
     	case 1:toast_type = 'success';break;
-    	case 2:toast_type = 'load';break;
-    	case 3:toast_type = 'none';break;
+    	case 2:toast_type = 'none';break;
+    	case 3:toast_type = 'load';break;
     }
     wx.showToast({
       title: msg,

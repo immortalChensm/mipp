@@ -9,6 +9,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onShow: function () {
+    //检查登录
+    if(!app.checkLogin()){
+      app.doLogin();
+      return false;
+    }
     var that = this;
     var openid = wx.getStorageSync('openid');
     tool.post('User/index', { openid: openid}, function (res) {

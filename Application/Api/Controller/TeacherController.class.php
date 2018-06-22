@@ -9,12 +9,16 @@ class TeacherController extends BaseController {
 	public function teacher_stick(){
 		$lng = I('request.lng') ? I('request.lng') : 0;
 		$lat = I('request.lat') ? I('request.lat') : 0;
+        
+        $p = I('request.p') ? (int)I('request.p') : 1;
+    	$pagesize = 5;
+        
 		$where = array();
 		$where['status'] = 1;
 		$where['is_stick'] = 1;
 		D('Teacher')->field('*,ACOS(SIN((' . $lat . ' * '.M_PI.') / 180) * SIN((lat * '.M_PI.') / 180 ) +COS((' . $lat . ' * '.M_PI.') / 180 ) * COS((lat * '.M_PI.') / 180 ) *COS((' . $lng . '* '.M_PI.') / 180 - (lng * '.M_PI.') / 180 ) ) * 6371 as distance');
 		
-		$teachers = D('Teacher')->where($where)->limit(6)->order('distance asc,create_date asc')->select();
+		$teachers = D('Teacher')->where($where)->limit(($p-1)*$pagesize,$pagesize)->order('distance asc,create_date asc')->select();
 		foreach ($teachers as &$val){
 			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
 			$val['star'] = $row['star'] ? round($row['star'],1) : 0;

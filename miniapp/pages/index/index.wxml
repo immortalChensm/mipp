@@ -38,11 +38,11 @@
 <!-- 隔离 end-->
 <!-- 推荐课程 start -->
 <view class="edu-recommend-courses">
-  <view class="edu-remm-name">
+  <view class="edu-remm-name" bindtap='moreCourse'>
     <image src="../../assets/images/remm-left-icon.png" class="edu-tj-icon" />
     <text class="edu-remm-kc">推荐课程</text>
     <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon" />
-    <image src="../../assets/images/more-icon.png" bindtap='moreCourse' class="edu-more-icon" />
+    <image src="../../assets/images/more-icon.png"  class="edu-more-icon" />
   </view>
   <!-- 列表 -->
 
@@ -83,11 +83,11 @@
 <!-- 隔离 end-->
 <!-- 金牌老师 start -->
 <view class="edu-recommend-courses">
-  <view class="edu-remm-name">
+  <view class="edu-remm-name" bindtap='moreTeacher'>
     <image src="../../assets/images/remm-left-icon.png" class="edu-tj-icon" />
     <text class="edu-remm-kc">金牌老师</text>
     <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon" />
-    <image src="../../assets/images/more-icon.png" bindtap='moreTeacher' class="edu-more-icon" />
+    <image src="../../assets/images/more-icon.png" class="edu-more-icon" />
   </view>
 
   <!-- 列表 -->

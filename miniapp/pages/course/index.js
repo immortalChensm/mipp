@@ -18,7 +18,8 @@ Page({
     default_type: '全部课程',
     course_list: [],
     course_types: [],
-    is_add: true
+    is_add: true,
+    data_end:false
   },
   switchType: function () {
     var that = this
@@ -137,8 +138,21 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  //滚动底部监听
+  onReachBottom: function () { //下拉刷新
+    var cur_page = this.data.cur_page;
+    if (!this.data.data_end){
+      this.setData({
+        cur_page: cur_page + 1,
+        is_add: true
+      })
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 1000,
+      });
+      this.courseList();
+    }
   },
 
   /**
@@ -166,9 +180,16 @@ Page({
           course_list: list
         })
       } else {
-        that.setData({
-          course_list: []
-        })
+        if (that.data.is_add){
+          that.setData({
+            data_end: true
+          })
+        }else{
+          that.setData({
+            course_list: []
+          })
+        }
+
         console.log(info.msg, 2)
       }
     })
@@ -182,7 +203,8 @@ Page({
       hidden_type: true,
       hidden_sale_count: true,
       hidden_price: true,
-      is_add: false
+      is_add: false,
+      data_end:false
     })
     switch (opt_type) {
       case 'type':

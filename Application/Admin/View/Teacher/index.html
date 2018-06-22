@@ -63,7 +63,7 @@ function export_order(){
 						  <foreach name="list" item="vo" key="k" >
 						  	<tr role="row" align="center">
 		                     <td>{$vo.id}</td>
-		                     <td><img src="{$vo.headimgurl}" style="width:50px; height:50px;"></td>
+		                     <td><img src="{$vo.headimgurl}" onclick="window.open('{$vo.headimgurl}')" style="width:50px; cursor:pointer;"></td>
 		                     <td>{$vo.nickname}</td>
 		                     <td>{$vo.name}</td>
 		                     <td><if condition="$vo.sex eq 1">男<elseif condition="$vo.sex eq 2"/>女<else/>未知</if></td>

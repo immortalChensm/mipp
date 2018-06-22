@@ -10,7 +10,9 @@ class CourseController extends BaseController {
 		$where = array();
 		$where['status'] = 1;
 		$where['is_stick'] = 1;
-		$courses = D('Course')->where($where)->limit(6)->order('create_date asc')->select();
+        $p = I('request.p') ? (int)I('request.p') : 1;
+    	$pagesize = 5;
+		$courses = D('Course')->where($where)->limit(($p-1)*$pagesize,$pagesize)->order('create_date asc')->select();
 		foreach ($courses as &$val){
 			$val = output_data($val);
 			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>2,'relation_id'=>$val['id']))->find();
@@ -32,7 +34,7 @@ class CourseController extends BaseController {
     	I('request.type') && $where['type'] = I('request.type');
     	
     	$p = I('request.p') ? (int)I('request.p') : 1;
-    	$pagesize = 10;
+    	$pagesize = 5;
     	
     	$order = 'is_stick asc,create_date desc';
     	switch (I('request.sort_sale_count')){
@@ -79,7 +81,7 @@ class CourseController extends BaseController {
     public function comments(){
     	$course_id = (int)I('request.course_id');
     	$course_id || $this->returnError('非法的访问');
-    	$comments = D('Comment')->relation('user')->where(array('type'=>2,'relation_id'=>$course_id))->select();
+    	$comments = D('Comment')->relation('user')->where(array('type'=>2,'status'=>1,'relation_id'=>$course_id))->select();
     	foreach ($comments as &$val){
     		$val['stararr'] = $this->starArr($val['star']);
     	}

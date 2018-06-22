@@ -34,6 +34,9 @@ Page({
       })
     }
   },
+  /**
+   * 购买课程
+   */
   buyCourse:function(info){
     wx.setStorageSync('cart_info', this.data.course_info);
     var postdata = info.detail;
@@ -118,6 +121,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    //检查登录
+    if (!app.checkLogin()) {
+      app.doLogin();
+      return false;
+    }
     //获取课程信息
     this.getCourseInfo();
     //获取关联老师的信息

@@ -85,13 +85,13 @@ Page({
     })
   },
   moreCourse: function (event) {
-    wx.switchTab({
-      url: '/pages/course/index'
+    wx.navigateTo({
+      url: '/pages/stick_course/index'
     })
   },
   moreTeacher: function (event) {
-    wx.switchTab({
-      url: '/pages/near_teacher/index'
+    wx.navigateTo({
+      url: '/pages/stick_teacher/index'
     })
   },
   toCourseDetail: function (event) {

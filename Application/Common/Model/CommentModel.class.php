@@ -18,6 +18,11 @@ class CommentModel extends CommonModel{
 				'mapping_fields'       => 'nickname,headimgurl',
 				'as_fields'       => 'nickname,headimgurl',
 		),
+        'order'=>array(
+				'mapping_type'      => self::BELONGS_TO,
+				'class_name'        => 'Order',
+				'foreign_key'       => 'order_id',
+		),
 	);
 
 	public function addorder($user_id,$data){

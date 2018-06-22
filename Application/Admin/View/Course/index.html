@@ -55,7 +55,7 @@ function export_order(){
 						  <foreach name="list" item="vo" key="k" >
 						  	<tr role="row" align="center">
 		                     <td>{$vo.id}</td>
-		                     <td><img src="{$vo['pics'][0]}" style="height:50px;"></td>
+		                     <td><img src="{$vo['pics'][0]}" style="height:50px;cursor:pointer;" onclick="window.open('{$vo['pics'][0]}')"></td>
 		                     <td>{$vo.name}</td>
 		                     <td>{:$course_types[$vo['type']]}</td>
 							 <td>{$vo.price}</td>

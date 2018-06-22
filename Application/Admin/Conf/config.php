@@ -14,5 +14,5 @@ return array(
 	'UPIMG_INTERFACE' => 'https://'.$_SERVER['HTTP_HOST'].'/Api/Upload/upload_image',
 	'UPVIDEO_INTERFACE' => 'https://'.$_SERVER['HTTP_HOST'].'/Api/Upload/upload_video',
 	'UPFILE_INTERFACE' => 'https://'.$_SERVER['HTTP_HOST'].'/Api/Upload/upload_file',
-    'SHOW_PAGE_TRACE' =>true, 
+    'SHOW_PAGE_TRACE' =>false, 
 );

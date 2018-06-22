@@ -1,4 +1,5 @@
-// pages/goldteacher/goldteacher.js
+var tool = require("../../utils/tool.js")
+const app = getApp()
 Page({
 
   /**
@@ -8,14 +9,9 @@ Page({
 
 
     //初始数据
-      teacherData: [
-        { id: 1, name: "张雨", introduction: "简介：精品茶道，等你来到，等你和大家...", category: "茶艺", distance: 1.2,score:4.7},
-        { id: 2, name: "张雨", introduction: "简介：精品茶道，等你来到，等你和大家...", category: "茶艺", distance: 1.2,score: 4.7},
-        { id: 3, name: "张雨", introduction: "简介：精品茶道，等你来到，等你和大家...", category: "茶艺", distance: 1.2,score: 4.7},
-        { id: 4, name: "张雨", introduction: "简介：精品茶道，等你来到，等你和大家...", category: "茶艺", distance: 1.2,score: 4.7},
-        { id: 5, name: "张雨", introduction: "简介：精品茶道，等你来到，等你和大家...", category: "茶艺", distance: 1.2,score: 4.7},
-        { id: 6, name: "张雨", introduction: "简介：精品茶道，等你来到，等你和大家...", category: "茶艺", distance: 1.2,score: 4.7}
-      ]
+      teacher_list: [],
+      cur_page:1,
+      data_end:false
   },
 
   /**
@@ -36,9 +32,65 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    //获取推荐老师
+    this.getStickTeacher();
+  },
+  /**
+   * 获取推荐老师
+   */
+  getStickTeacher: function () {
+    var that = this;
+    wx.getLocation({
+      success: function (res) {
+        var postdata = {};
+        postdata.lng = res.longitude;
+        postdata.lat = res.latitude;
+        postdata.p = that.data.cur_page;
+        tool.post('Teacher/teacher_stick', postdata, function (result) {
+          var info = result.data;
+          //console.log(info)
+          if (info.status == '1') {
+            that.setData({
+              teacher_list: that.data.teacher_list.concat(info.data)
+            })
+          } else {
+            that.setData({
+              data_end: true
+            })
+          }
+        })
+      },
+    })
+
+  },
+  /***
+   * 去教师详情
+   */
+  toTeacherDetail: function (event) {
+    var teacher_id = event.currentTarget.dataset['id'];
+    wx.navigateTo({
+      url: '/pages/teacher_detail/index?id=' + teacher_id
+    })
   },
 
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  //滚动底部监听
+  onReachBottom: function () { //下拉刷新
+    var cur_page = this.data.cur_page;
+    if (!this.data.data_end) {
+      this.setData({
+        cur_page: cur_page + 1,
+      })
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 1000,
+      });
+      this.getStickTeacher();
+    }
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -57,13 +109,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
   
   },
 

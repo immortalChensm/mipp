@@ -1,28 +1,21 @@
-// pages/nearby/nearby.js
+var tool = require("../../utils/tool.js")
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-     
-     
-    acticleData:[
-      { id: 1, name: "茶艺精品班", introduction: "简介：精品茶道，等你来到...", price:"¥88.00",nums:231},
-      { id: 2, name: "茶艺精品班", introduction: "简介：精品茶道，等你来到...", price: "¥88.00", nums: 231 },
-      { id: 3, name: "茶艺精品班", introduction: "简介：精品茶道，等你来到...", price: "¥88.00", nums: 231 },
-      { id: 4, name: "茶艺精品班", introduction: "简介：精品茶道，等你来到...", price: "¥88.00", nums: 231 },
-      { id: 5, name: "茶艺精品班", introduction: "简介：精品茶道，等你来到...", price: "¥88.00", nums: 231 },
-      { id: 6, name: "茶艺精品班", introduction: "简介：精品茶道，等你来到...", price: "¥88.00", nums: 231 }
-    ]
-
+    course_list:[],
+    cur_page:1,
+    data_end:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
@@ -36,7 +29,35 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    //获取推荐的课程列表
+    this.getCourseList();
+  },
+  /**
+   * 获取推荐的课程列表
+   */
+  getCourseList:function(){
+    var that = this;
+    var postdata = {};
+    postdata.p = this.data.cur_page;
+    tool.post('Course/course_stick', postdata, function (result) {
+      var info = result.data;
+      console.log(info)
+      if (info.status == '1') {
+        that.setData({
+          course_list: that.data.course_list.concat(info.data)
+        })
+      } else {
+        that.setData({
+          data_end: true
+        })
+      }
+    })
+  },
+  toCourseDetail: function (event) {
+    var course_id = event.currentTarget.dataset['id'];
+    wx.navigateTo({
+      url: '/pages/course_detail/index?id=' + course_id
+    })
   },
 
   /**
@@ -63,10 +84,21 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  //滚动底部监听
+  onReachBottom: function () { //下拉刷新
+    var cur_page = this.data.cur_page;
+    if (!this.data.data_end) {
+      this.setData({
+        cur_page: cur_page + 1
+      })
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 1000,
+      });
+      this.getCourseList();
+    }
   },
-
   /**
    * 用户点击右上角分享
    */
