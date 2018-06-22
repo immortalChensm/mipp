@@ -14,7 +14,7 @@ Page({
   userLogin:function(info) { // 需要一个参数来额外接收用户数据
     var postdata = info.detail;
     postdata.session_key = wx.getStorageSync('session_key');
-    // console.log(postdata)
+    console.log(postdata)
     tool.post('Base/getUserInfo', postdata,function(result){
       // console.log(result)
       var info = result.data;

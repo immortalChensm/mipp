@@ -3,7 +3,7 @@ App({
   onLaunch: function (options) {
     //检查登录session
     var that = this;
-    var is_login = wx.checkSession({
+    wx.checkSession({
       success: function () {
         // wx.clearStorage();
         //session_key 未过期，并且在本生命周期一直有效
@@ -15,19 +15,19 @@ App({
     })
 	},
   onShow:function(){
-    if (!this.checkLogin()) {
-      this.doLogin();
-    }
+    // if (!this.checkLogin()) {
+    //   this.doLogin();
+    // }
   },
   /**
    * 检查登录
    */
   checkLogin:function(){
-    var session_key = wx.getStorageSync('session_key');
-    if (session_key) {
-      return true;
-    }else{
+    var openid = wx.getStorageSync('openid');
+    if (!openid) {
       return false;
+    }else{
+      return true;
     }
   },
   /**
@@ -41,6 +41,7 @@ App({
           tool.post('Base/getSessionKey', { code: res.code }, function (result) {
             var returninfo = result.data;
             if (returninfo.status == '1') {
+              console.log(returninfo)
               wx.setStorageSync('openid', returninfo.data.openid);
               wx.setStorageSync('session_key', returninfo.data.session_key);
               wx.navigateTo({

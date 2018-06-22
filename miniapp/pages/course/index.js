@@ -81,7 +81,7 @@ Page({
   onLoad: function () {
     //看是否携带参数
     var course_type = wx.getStorageSync('course_type');
-    wx.clearStorageSync('course_type');
+    wx.removeStorageSync('course_type');
     if (course_type) {
       this.setData({
         cur_type: course_type
@@ -101,7 +101,7 @@ Page({
    */
   onShow: function (options) {
     var course_type = wx.getStorageSync('course_type');
-    wx.clearStorageSync('course_type');
+    wx.removeStorageSync('course_type');
     if (course_type) {
       this.setData({
         cur_type: course_type,

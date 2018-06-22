@@ -1,5 +1,5 @@
-var tool = require("../../utils/tool.js")
-var WxParse = require('../../wxParse/wxParse.js')
+var tool = require("../../utils/tool.js");
+var WxParse = require('../../wxParse/wxParse.js');
 const app = getApp()
 Page({
   onReady: function (res) {
@@ -121,11 +121,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    //检查登录
-    if (!app.checkLogin()) {
-      app.doLogin();
-      return false;
-    }
     //获取课程信息
     this.getCourseInfo();
     //获取关联老师的信息

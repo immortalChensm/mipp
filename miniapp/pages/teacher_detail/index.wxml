@@ -114,20 +114,19 @@
           <view class="edu-course-pj-content">
             <view class="edu-course-evaluate">
                   <view class="edu-course-one">
-                    <image src="../../assets/images/timg.jpeg" class="edu-course-tx"/>
+                    <image src="{{item.headimgurl}}" class="edu-course-tx"/>
                     <text>{{item.nickname}}</text>
                   </view>
                   <view class="edu-course-two">
                     <view class="edu-course-eva-left">
                       <text class="edu-course-bbpj">宝贝评价</text>
-                       <block wx:for="{{item.stararr}}" wx:for-item="va">
-                      <image wx:if="{{va === 1 }}" src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image wx:if="{{va === 2 }}" src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image  wx:if="{{va === 3 }}"src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image wx:if="{{va === 4 }}"src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      <image wx:if="{{va === 5 }}"src="../../assets/images/xing-icon.png" class="edu-course-icon"/>
-                      </block>
-                        <text class="edu-course-nums">{{item.star}}</text>
+                        <block wx:for="{{item.stararr}}" wx:for-item="va">
+                          <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png" class="edu-course-icon"></image> 
+                          <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png" class="edu-course-icon"></image> 
+                          <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png" class="edu-course-icon"></image> 
+                          <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png" class="edu-course-icon"></image> 
+                        </block>
+                          <text class="edu-course-nums">{{item.star}}</text>
                     </view>
                     <view class="edu-course-eva-right">
                       <text>{{item.create_date}}</text>

@@ -25,7 +25,16 @@ class UserController extends BaseController {
     	$flw_data['follow_type'] = $type;
     	$flw_data['relation_id'] = $relation_id;
     	$res = D('Follow')->add($flw_data);
-    	$res ? $this->returnSuccess('收藏成功') : $this->returnError('系统繁忙，请稍后再试');
+	if($res){
+	    if($type == 1){
+	    	$follow_num = D('Follow')->where(array('relation_id'=>$relation_id,'type'=>1))->count();
+    	        $this->returnSuccess('收藏成功',$follow_num) ;
+	    }else{
+	    	$this->returnSuccess('收藏成功');
+	    }
+	}else{
+    	    $this->returnError('系统繁忙，请稍后再试');
+	}
     }
 
 }

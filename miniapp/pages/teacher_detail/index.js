@@ -3,7 +3,6 @@ var tool = require("../../utils/tool.js")
 var WxParse = require('../../wxParse/wxParse.js')
 var app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -88,15 +87,16 @@ Page({
     var that = this;
     var id = event.currentTarget.dataset['id'];
     var openid = wx.getStorageSync('openid');
-    console.log(id);
+    // console.log(id);
     tool.post('User/follow', { relation_id: id, type: 1,openid: openid}, function (res) {
-      tool.jsalert(res.data.msg);
       if(res.data.status =='1'){
+        tool.jsalert(res.data.msg);
         that.setData({
           checked: true,
           follow_num:res.data.data
         })
       }else {
+        tool.jsalert(res.data.msg,2);
         that.setData({
           checked: false
         })

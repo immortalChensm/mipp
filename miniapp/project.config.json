@@ -4,17 +4,22 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.8",
-	"appid": "wx91ff772237eff014",
+	"libVersion": "2.1.0",
+	"appid": "wx6d57d74bdc195b83",
 	"projectname": "c2c%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0",
 	"isGameTourist": false,
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
 	"condition": {
 		"search": {
 			"current": -1,

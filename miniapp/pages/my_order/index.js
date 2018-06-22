@@ -18,6 +18,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //检查登录
+    if (!app.checkLogin()) {
+      app.doLogin();
+      return false;
+    }
     var type = options.type;
     switch(type){
       case 'all': this.seleall();break;
