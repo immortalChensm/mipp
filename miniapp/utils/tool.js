@@ -1,5 +1,5 @@
 
-var API_URL = 'https://edu.mppstore.com/Api/'
+var API_URL = 'http://educate.com/Api/'
 
 //post请求
 function post(url,data,suc,fail){

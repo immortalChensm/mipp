@@ -13,7 +13,7 @@
                  <image src="../../assets/images/shoucang-a-icon.png" class="{{checked?'edu-info-zf edu-none':'edu-info-zf edu-show'}}" />
                  <image src="../../assets/images/shoucang-b-icon.png" class="{{checked?'edu-info-zf edu-show':'edu-info-zf edu-none'}}"/>
             </view>
-            <view class="edu-info-zs-icon"><text>{{follow_num ? follow_num:tlist.follow}}</text></view>
+            <view class="edu-info-zs-icon"><text>{{follow_num ? follow_num : tlist.follow}}</text></view>
         </view>
        <!-- 转发-收藏按钮 -->
 </view>
