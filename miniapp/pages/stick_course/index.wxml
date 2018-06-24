@@ -1,6 +1,6 @@
 <import src="../template/template.wxml"/> 
 <!-- 推荐课程 start -->
-<view class="edu-recommend-courses-tj">
+<view class="edu-recommend-courses-tj" style='padding-top:0;'>
 
            <view class="edu-acticle-list-tj-s" wx:for="{{course_list}}" wx:for-item="item" wx:key="id" bindtap="toCourseDetail" data-id="{{item.id}}">
               <view class="edu-list-left">

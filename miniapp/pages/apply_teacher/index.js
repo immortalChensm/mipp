@@ -38,6 +38,9 @@ Page({
       if(info.status == '1'){
         var teacher_info = info.data;
         var is_edit = teacher_info.status == 2?true:false;
+        var show_fcard = teacher_info.fcard ? true :false;
+        var show_bcard = teacher_info.bcard ? true : false;
+        var show_qualification = teacher_info.qualification ? true : false;
         that.setData({
           is_edit: is_edit,
           lng: teacher_info.lng,
@@ -46,7 +49,10 @@ Page({
           qualification: teacher_info.qualification,
           fcard: teacher_info.fcard,
           bcard: teacher_info.bcard,
-          teacher_info: teacher_info
+          teacher_info: teacher_info,
+          show_fcard: show_fcard,
+          show_bcard: show_fcard,
+          show_qualification: show_qualification
         })
       }
     })

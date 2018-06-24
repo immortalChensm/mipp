@@ -4,6 +4,10 @@
      <image src="../../assets/images/shenhe-icon.png" class="edu-come-statusa"/>
      <text>审核成功</text>
 </view>
+<view class="edu-come-status" wx:if="{{teacher_info.status == 2}}">
+     <image src="../../assets/images/shenhez-icon.png" class="edu-come-statusa"/>   
+     <text>审核不通过</text>
+</view>
 <view class="edu-come-status" wx:if="{{teacher_info.status == 3}}">
      <image src="../../assets/images/shenhez-icon.png" class="edu-come-statusa"/>   
      <text>审核中</text>
@@ -49,23 +53,25 @@
     <view class="edu-come-update-zf">
          <view class="edu-come-update-lr edu-come-lm" bindtap='upImage' data-field="fcard">
               <block wx:if="{{is_edit && !show_fcard}}">
-              <text class="edu-come-qwe edu-come-add">+添加</text>
-              <text class="edu-come-qwr edu-come-up">上传身份证正面照</text>
+                <text class="edu-come-qwe edu-come-add">+添加</text>
+                <text class="edu-come-qwr edu-come-up">上传身份证正面照</text>
               </block>
               <block wx:if="{{!is_edit}}">
-              <text class="edu-come-qwe edu-come-add">已上传</text>
+                <text wx:if="{{!show_fcard}}" class="edu-come-qwe edu-come-add">未上传</text>
+                <text wx:if="{{show_fcard}}" class="edu-come-qwe edu-come-add">已上传</text>
               </block>
-              <image hidden='{{!show_fcard}}' src="{{fcard}}"/>
+              <image wx:if="{{is_edit}}" hidden='{{!show_fcard}}' src="{{fcard}}"/>
          </view>
          <view class="edu-come-update-lr edu-come-rm" bindtap='upImage' data-field="bcard">
               <block wx:if="{{is_edit && !show_bcard}}">
-              <text class="edu-come-qwe edu-come-add">+添加</text>
-              <text class="edu-come-qwr edu-come-up">上传身份证背面照</text>
+                <text class="edu-come-qwe edu-come-add">+添加</text>
+                <text class="edu-come-qwr edu-come-up">上传身份证背面照</text>
               </block>
               <block wx:if="{{!is_edit}}">
-              <text class="edu-come-qwe edu-come-add">已上传</text>
+                <text wx:if="{{!show_bcard}}" class="edu-come-qwe edu-come-add">未上传</text>
+                <text wx:if="{{show_bcard}}" class="edu-come-qwe edu-come-add">已上传</text>
               </block>
-              <image hidden='{{!show_bcard}}' src="{{bcard}}"/>
+              <image wx:if="{{is_edit}}" hidden='{{!show_bcard}}' src="{{bcard}}"/>
          </view>
     </view>
     <text class="edu-come-sm">*上传的证件照，仅用于实名认证，不用于其他商业用途</text>
@@ -86,9 +92,10 @@
           <text class="edu-come-qwe edu-come-add" style='margin-top:10rpx;'>+添加</text>
           </block>
           <block wx:if="{{!is_edit}}">
-          <text class="edu-come-qwe edu-come-add">已上传</text>
+          <text wx:if="{{!show_qualification}}" class="edu-come-qwe edu-come-add">未上传</text>
+          <text wx:if="{{show_qualification}}" class="edu-come-qwe edu-come-add">已上传</text>
           </block>
-          <image hidden='{{!show_qualification}}' src="{{qualification}}"/>
+          <image wx:if="{{is_edit}}" hidden='{{!show_qualification}}' src="{{qualification}}"/>
      </view>
  </view> 
 <!-- 上传教师资格证end -->
