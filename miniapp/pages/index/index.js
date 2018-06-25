@@ -9,8 +9,8 @@ Page({
     teacher_stick:[],
     indicatorDots: true,
     autoplay: true,
-    interval: 4000,
-    duration: 1000,
+    interval: 1000,
+    duration: 500,
     autoplays: false
   },
   onLoad: function (options) {

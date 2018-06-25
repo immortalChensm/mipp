@@ -1,7 +1,7 @@
 <view class="body">
   <!-- 顶部轮播图 start -->
   <view class="edu-banner">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:280rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
+    <swiper indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:280rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
       <block wx:for="{{banners}}">
         <swiper-item>
    
