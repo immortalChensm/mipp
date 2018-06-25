@@ -82,6 +82,7 @@
 }
 .edu-come-update-lr{
   width: 342rpx;
+  height: 242rpx;
   text-align: center;
   background-color: #EFEFEF;
 }
@@ -91,6 +92,9 @@
 }
 .edu-come-qwe{
   margin-top: 84rpx;
+}
+.edu-come-qweas{
+  margin-top: 120rpx;
 }
 .edu-come-qwr{
   margin-bottom: 84rpx;

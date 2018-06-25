@@ -64,15 +64,16 @@ class BaseController extends Controller
                 $user['province'] = $data->province;
                 $user['country'] = $data->country;
                 $user['headimgurl'] = $data->avatarUrl;
+                $user['session_key'] = $sessionKey;
                 if(!$info = D('User')->where(array('openid'=>$data->openId))->find($user)){
                     D('User')->add($user);
                 }else {
                     D('User')->where(array('id'=>$info['id']))->save($user);
                 }
             }
-               $this->returnSuccess('',$data);
+            $this->returnSuccess('',$data);
         }else{
-               $this->returnError($errCode);
+            $this->returnError($errCode);
         }
     }
 
@@ -85,7 +86,7 @@ class BaseController extends Controller
        },
        $str);
       return $str;
-     }
+    }
 
     /**
      * 获取用户手机号

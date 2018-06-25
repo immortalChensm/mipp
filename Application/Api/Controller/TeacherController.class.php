@@ -20,7 +20,7 @@ class TeacherController extends BaseController {
 		
 		$teachers = D('Teacher')->where($where)->limit(($p-1)*$pagesize,$pagesize)->order('distance asc,create_date asc')->select();
 		foreach ($teachers as &$val){
-			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
+			$row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>$val['id']))->find();
 			$val['star'] = $row['star'] ? round($row['star'],1) : 0;
 			$val['stararr'] = $this->starArr($val['star']);
 			$val['distance'] = $val['distance']>1?round($val['distance'],1).'km':(round($val['distance'],3)*1000).'m';
@@ -52,7 +52,7 @@ class TeacherController extends BaseController {
         $teacher = array();
         foreach ($teachers as &$val){
             //获取老师的星级
-            $row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>1))->find();
+            $row = D('Comment')->field('AVG(star) as star')->where(array('type'=>1,'relation_id'=>$val['id']))->find();
             $val['star'] = $row['star'] ? round($row['star'],1) : 0;
             $val['stararr'] = $this->starArr($val['star']);
             //授课类型
@@ -96,6 +96,7 @@ class TeacherController extends BaseController {
                             ->select();
         foreach ($list['comment'] as $key => $val) {
         	 $list['comment'][$key]['stararr'] = $this->starArr($val['star']);
+        	 $list['comment'][$key]['create_date'] = substr($val['create_date'],0,16);
         }
 		foreach ($list['course'] as $key => $val) {
             $img = unserialize($val['pics']);

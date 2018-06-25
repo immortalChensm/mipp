@@ -84,6 +84,7 @@ class CourseController extends BaseController {
     	$comments = D('Comment')->relation('user')->where(array('type'=>2,'status'=>1,'relation_id'=>$course_id))->select();
     	foreach ($comments as &$val){
     		$val['stararr'] = $this->starArr($val['star']);
+    		$val['create_date'] = substr($val['create_date'],0,16);
     	}
     	$comments && $this->returnSuccess('',output_data($comments));
     	$comments || $this->returnError('暂无数据');

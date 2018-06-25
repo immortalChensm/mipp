@@ -54,22 +54,22 @@
          <view class="edu-come-update-lr edu-come-lm" bindtap='upImage' data-field="fcard">
               <block wx:if="{{is_edit && !show_fcard}}">
                 <text class="edu-come-qwe edu-come-add">+添加</text>
-                <text class="edu-come-qwr edu-come-up">上传身份证正面照</text>
+                <text class=" edu-come-up">上传身份证正面照</text>
               </block>
               <block wx:if="{{!is_edit}}">
                 <text wx:if="{{!show_fcard}}" class="edu-come-qwe edu-come-add">未上传</text>
-                <text wx:if="{{show_fcard}}" class="edu-come-qwe edu-come-add">已上传</text>
+                <text wx:if="{{show_fcard}}" class="edu-come-qweas edu-come-add">已上传</text>
               </block>
               <image wx:if="{{is_edit}}" hidden='{{!show_fcard}}' src="{{fcard}}"/>
          </view>
          <view class="edu-come-update-lr edu-come-rm" bindtap='upImage' data-field="bcard">
               <block wx:if="{{is_edit && !show_bcard}}">
                 <text class="edu-come-qwe edu-come-add">+添加</text>
-                <text class="edu-come-qwr edu-come-up">上传身份证背面照</text>
+                <text class=" edu-come-up">上传身份证背面照</text>
               </block>
               <block wx:if="{{!is_edit}}">
-                <text wx:if="{{!show_bcard}}" class="edu-come-qwe edu-come-add">未上传</text>
-                <text wx:if="{{show_bcard}}" class="edu-come-qwe edu-come-add">已上传</text>
+                <text wx:if="{{!show_bcard}}" class="edu-come-qwes edu-come-add">未上传</text>
+                <text wx:if="{{show_bcard}}" class="edu-come-qweas edu-come-add">已上传</text>
               </block>
               <image wx:if="{{is_edit}}" hidden='{{!show_bcard}}' src="{{bcard}}"/>
          </view>
@@ -92,8 +92,8 @@
           <text class="edu-come-qwe edu-come-add" style='margin-top:10rpx;'>+添加</text>
           </block>
           <block wx:if="{{!is_edit}}">
-          <text wx:if="{{!show_qualification}}" class="edu-come-qwe edu-come-add">未上传</text>
-          <text wx:if="{{show_qualification}}" class="edu-come-qwe edu-come-add">已上传</text>
+          <text wx:if="{{!show_qualification}}" class="edu-come-qwes edu-come-add">未上传</text>
+          <text wx:if="{{show_qualification}}" class="edu-come-qwes edu-come-add">已上传</text>
           </block>
           <image wx:if="{{is_edit}}" hidden='{{!show_qualification}}' src="{{qualification}}"/>
      </view>

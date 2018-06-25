@@ -1,1 +1,4 @@
 /* pages/老师介绍/teacherinfo.wxss */
+.wxParse-p image{
+  width: 100% !important;
+}

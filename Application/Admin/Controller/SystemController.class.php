@@ -68,9 +68,11 @@ class SystemController extends BaseController{
 		if(IS_POST){
 			$info = I('post.info');
 			$info['type'] = 1;
+            $info['content'] = htmlentities($info['content']);
 			D('System')->saveData($info) ? $this->success('保存成功!') : $this->error('保存失败！');
 		}else {
 			$info = D('System')->where(array('type'=>1))->find();
+            $info['content'] = html_entity_decode($info['content']);
 			$this->assign('info',$info);
 			$this->display();
 		}
@@ -80,9 +82,11 @@ class SystemController extends BaseController{
 		if(IS_POST){
 			$info = I('post.info');
 			$info['type'] = 2;
+            $info['content'] = htmlentities($info['content']);
 			D('System')->saveData($info) ? $this->success('保存成功!') : $this->error('保存失败！');
 		}else {
 			$info = D('System')->where(array('type'=>2))->find();
+            $info['content'] = html_entity_decode($info['content']);
 			$this->assign('info',$info);
 			$this->display();
 		}

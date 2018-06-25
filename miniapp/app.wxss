@@ -859,7 +859,16 @@ white-space: nowrap;
 }
 
 .edu-course-bot-a {
-  padding-bottom: 120rpx;
+  margin-bottom: 100rpx;
+  padding: 30rpx;
+
+}
+.edu-course-bot-a .wxParse-p .wxParse-img{
+  width: 100% !important;
+}
+ .wxParse-inline{
+   font-size: 28rpx;
+   font-family: PingFang-SC-Regular;
 }
 
 .edu-info-content {
@@ -1673,6 +1682,9 @@ view, scroll-view {
   justify-content: space-between;
   width: 100%;
   overflow: hidden;
+}
+.edu-att-ew-item .content{
+  display: flex;
 }
 
 .edu-score-total {

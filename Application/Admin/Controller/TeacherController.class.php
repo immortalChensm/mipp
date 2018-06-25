@@ -36,6 +36,7 @@ class TeacherController extends BaseController {
 				$info['lng'] = $locats[0];
 				$info['lat'] = $locats[1];
 			}
+            $info['content'] = htmlentities($info['content']);
             if(!D('Teacher')->create($info))$this->error(D('Teacher')->getError());
 			D('Teacher')->saveData($info) ? $this->success('保存成功!',U('Teacher/index')) : $this->error('保存失败！');
 		}else{
@@ -47,6 +48,7 @@ class TeacherController extends BaseController {
 			$id || $this->error('非法的操作');
             $info = D('Teacher')->where(array('id'=>$id))->find();
             $info || $this->error('非法的操作');
+            $info['content'] = html_entity_decode($info['content']);
             $this->assign('info',output_data($info));
             $this->assign('teach_types',getKeyValue(D('TeachType')->where(array('status'=>'1'))->select(),'id','name'));
 			$this->display();

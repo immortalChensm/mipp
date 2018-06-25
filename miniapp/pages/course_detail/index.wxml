@@ -103,9 +103,7 @@
       <!-- 课程内容 -->
       <view class="edu-course-bot-a" hidden="{{hide_content}}">
           <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
-          啊啊啊啊啊啊啊啊啊啊啊啊发发发发发发
       </view>
-      高大上个第三个当是公司丁哥打算
       <!-- 课程内容end -->
       <!-- 课程评价 -->
       <view class="edu-course-bot-a" hidden="{{!hide_content}}">

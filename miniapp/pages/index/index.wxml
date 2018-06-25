@@ -36,51 +36,7 @@
 <!-- 隔离 stsrt-->
 <view class="edu-space-a"></view>
 <!-- 隔离 end-->
-<!-- 推荐课程 start -->
-<view class="edu-recommend-courses">
-  <view class="edu-remm-name" bindtap='moreCourse'>
-    <image src="../../assets/images/remm-left-icon.png" class="edu-tj-icon" />
-    <text class="edu-remm-kc">推荐课程</text>
-    <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon" />
-    <image src="../../assets/images/more-icon.png"  class="edu-more-icon" />
-  </view>
-  <!-- 列表 -->
 
-  <view class=" edu-acticle-list-a" wx:for="{{course_stick}}" wx:for-item="item" wx:key="key" bindtap="toCourseDetail" data-id="{{item.id}}">
-    <view class="edu-list-left">
-      <image src="{{item.pic}}" class="edu-list-img" />
-    </view>
-    <view class="edu-list-right">
-      <view class="edu-list-one">
-        <text class="edu-list-title">{{item.name}}</text>
-      </view>
-
-      <view class="edu-list-two">
-        <block wx:for="{{item.stararr}}" wx:for-item="va">
-          <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
-          <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
-          <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png"></image> 
-          <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
-        </block>
-        <text>{{item.star}}</text>
-      </view>
-      <view class="edu-introduce">
-        <label>简介：{{item.profile}}</label>
-      </view>
-      <view class="edu-price">
-        <label class="edu-price-num">¥{{item.price}}</label>
-        <label class="edu-sales">已售：{{item.sale_count}}</label>
-      </view>
-    </view>
-  </view>
-  
-  <!-- 列表end -->
-</view>
-<!-- 推荐课程 end -->
-
-<!-- 隔离 stsrt-->
-<view class="edu-space-a"></view>
-<!-- 隔离 end-->
 <!-- 金牌老师 start -->
 <view class="edu-recommend-courses">
   <view class="edu-remm-name" bindtap='moreTeacher'>
@@ -123,3 +79,49 @@
   <!-- 列表end -->
 </view>
 <!-- 金牌老师 end -->
+
+<!-- 隔离 stsrt-->
+<view class="edu-space-a"></view>
+<!-- 隔离 end-->
+
+<!-- 推荐课程 start -->
+<view class="edu-recommend-courses">
+  <view class="edu-remm-name" bindtap='moreCourse'>
+    <image src="../../assets/images/remm-left-icon.png" class="edu-tj-icon" />
+    <text class="edu-remm-kc">推荐课程</text>
+    <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon" />
+    <image src="../../assets/images/more-icon.png"  class="edu-more-icon" />
+  </view>
+  <!-- 列表 -->
+
+  <view class=" edu-acticle-list-a" wx:for="{{course_stick}}" wx:for-item="item" wx:key="key" bindtap="toCourseDetail" data-id="{{item.id}}">
+    <view class="edu-list-left">
+      <image src="{{item.pic}}" class="edu-list-img" />
+    </view>
+    <view class="edu-list-right">
+      <view class="edu-list-one">
+        <text class="edu-list-title">{{item.name}}</text>
+      </view>
+
+      <view class="edu-list-two">
+        <block wx:for="{{item.stararr}}" wx:for-item="va">
+          <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
+          <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
+          <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png"></image> 
+          <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
+        </block>
+        <text>{{item.star}}</text>
+      </view>
+      <view class="edu-introduce">
+        <label>简介：{{item.profile}}</label>
+      </view>
+      <view class="edu-price">
+        <label class="edu-price-num">¥{{item.price}}</label>
+        <label class="edu-sales">已售：{{item.sale_count}}</label>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 列表end -->
+</view>
+<!-- 推荐课程 end -->

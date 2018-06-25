@@ -66,11 +66,13 @@ class CourseController extends BaseController {
 			$info = input_data(I('post.info'));
 			if (!D('Course')->create($info)) $this->error(D('Course')->getError());
 			$info['teacher_id'] || $info['teacher_id'] = $this->admin_info['teacher_id'];
+            $info['content'] = htmlentities($info['content']);
 			$info['status'] = 3;//只要编辑了，就要审核
     		D('Course')->saveData($info) ? $this->success('保存成功!',U('Course/wait_check_list')) : $this->error('保存失败！');
     	}else {
     		$info = array();
     		(int)I('get.id') && $info = D('Course')->where(array('id'=>(int)I('get.id')))->find();
+            $info['content'] = html_entity_decode($info['content']);
     		$this->assign('info',output_data($info));
     		$this->assign('tags',getKeyValue(D('CourseTag')->select(),'id','name'));
     		$this->assign('types',getKeyValue(D('CourseType')->select(),'id','name'));
