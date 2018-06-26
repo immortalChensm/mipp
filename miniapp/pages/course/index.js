@@ -105,7 +105,9 @@ Page({
     if (course_type) {
       this.setData({
         cur_type: course_type,
-        is_add: false
+        is_add: false,
+        data_end:false,
+        cur_page: 1
       })
     }
     //获取课程分类
