@@ -146,10 +146,12 @@
 <!-- 底部按钮 -->
 <view class="edu-course-bottom-btn" wx:if="{{course_info.stock > 0}}">
    <view class="edu-course-lr">
-       <button  bindgetphonenumber='buyCourse' open-type='getPhoneNumber'>立即购买</button>
+       <button wx:if="{{!has_phone}}" bindgetphonenumber='buyCourse' open-type='getPhoneNumber'>立即购买</button>
+       <button wx:if="{{has_phone}}" bindtap='buyCourse' >立即购买</button>
    </view>
    <view class="edu-course-lr">
-       <button bindgetphonenumber='toYuyue' open-type='getPhoneNumber'>预约试听</button>
+       <button wx:if="{{!has_phone}}" bindgetphonenumber='toYuyue' open-type='getPhoneNumber'>预约试听</button>
+       <button wx:if="{{has_phone}}" bindtap='toYuyue' >预约试听</button>
    </view>
 </view>
 <view class="edu-course-bottom-btn" wx:if="{{course_info.stock <= 0}}">

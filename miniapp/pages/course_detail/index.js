@@ -18,7 +18,8 @@ Page({
     duration: 1000,
     autoplays: false,
     bools: true,
-    is_follow:false
+    is_follow:false,
+    has_phone:false
   },
   //课程详情和评价点击事件
   tabShow:function(event){
@@ -45,7 +46,7 @@ Page({
     tool.post('Base/getPhone', postdata, function (result) {
       // console.log(result)
       var info = result.data;
-      wx.setStorageSync('phone', info.data.phoneNumber);
+      if (info.data.phoneNumber)wx.setStorageSync('phone', info.data.phoneNumber);
       wx.navigateTo({
         url: '/pages/confirm_order/index'
       })
@@ -59,7 +60,7 @@ Page({
     tool.post('Base/getPhone', postdata, function (result) {
       // console.log(result)
       var info = result.data;
-      wx.setStorageSync('phone', info.data.phoneNumber);
+      if (info.data.phoneNumber ) wx.setStorageSync('phone', info.data.phoneNumber);
       wx.navigateTo({
         url: '/pages/yuyue/index'
       })
@@ -105,9 +106,11 @@ Page({
     var that = this;
     tool.post('Course/comments', { course_id: that.data.request.id }, function (res) {
       //console.log(res)
-      that.setData({
-        comments: res.data.data
-      })
+      if (res.data.status == '1'){
+        that.setData({
+          comments: res.data.data
+        })
+      }
     })
   },
   /**
@@ -121,6 +124,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(wx.getStorageSync('phone')){
+      this.setData({
+        has_phone:true
+      })
+    }
     //获取课程信息
     this.getCourseInfo();
     //获取关联老师的信息
