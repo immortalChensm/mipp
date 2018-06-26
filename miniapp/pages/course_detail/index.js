@@ -160,29 +160,14 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
+   * 分享
    */
-  onShareAppMessage: function (options) {
-    var that = this;
-
-　　return {
-  　　　　title: that.data.course_info.name,        // 默认是小程序的名称(可以写slogan等)
-  　　　　//path: '/pages/course_detail/index',        // 默认是当前页面，必须是以‘/’开头的完整路径
-  　　　　imgUrl: '',     //自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径，支持PNG及JPG，不传入 imageUrl 则使
-  　　　　success: function (res) {
-    　　　　　　// 转发成功之后的回调
-    　　　　　　if (res.errMsg == 'shareAppMessage:ok') {
-    　　　　　　}
-  　　　　},
-  　　　　fail: function (res) {
-    　　　　　　// 转发失败之后的回调
-    　　　　　　if (res.errMsg == 'shareAppMessage:fail cancel') {
-      　　　　　　　　// 用户取消转发
-    　　　　　　} else if (res.errMsg == 'shareAppMessage:fail') {
-      　　　　　　　　// 转发失败，其中 detail message 为详细失败信息
-    　　　　　　}
-  　　　　}
-　　}
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return app.shareApp();
   },
   /**
    * 拨打电话

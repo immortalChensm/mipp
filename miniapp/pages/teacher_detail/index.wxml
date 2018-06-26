@@ -5,7 +5,7 @@
       <text class="edu-info-name">{{tlist.name}}</text>
       <view class="edu-info-address">
         <image src="../../assets/images/gps-address.png" class="edu-gps-address"/> 
-         <text>地址：{{tlist.address}}</text> 
+         <text bindtap='openAddress'>地址：{{tlist.address}}</text> 
       </view>
       <!-- 转发-收藏按钮 -->
         <view class="edu-info-z-s">

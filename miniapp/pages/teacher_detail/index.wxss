@@ -11,6 +11,7 @@
   top: 3px;
   right: 5px;
 }
-.edu-info-address text{
- text-decoration-line: underline;
+
+.edu-info-address text {
+  text-decoration-line: underline;
 }

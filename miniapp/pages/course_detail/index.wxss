@@ -4,5 +4,5 @@
   overflow: hidden;
 }
 .edu-course-bot-q{
-  margin-bottom: 130rpx;
+  margin-bottom: 150rpx;
 }
