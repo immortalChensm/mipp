@@ -130,13 +130,13 @@
 }
 
 .edu-list-left {
-  /* width: 40%; */
-  width: 268rpx;
-  margin-right: 30rpx;
+   width: 40%; 
+  /* width: 268rpx; */
+  margin-right: 4%;
 }
 
 .edu-list-right {
-  width: 60%;
+  width: 55%;
 }
 
 .edu-list-img {
@@ -229,6 +229,7 @@ white-space: nowrap;
 }
 
 .edu-list-left-a {
+  width: 20%;
   /* width: 80px; *//* display: flex; *//* width: 20%; */
   height: 180rpx;
   margin-right: 20rpx;
@@ -239,7 +240,7 @@ white-space: nowrap;
 
 .edu-list-right-a {
   display: inline-block;
-  width: 80%;
+  width: 75%;
 }
 
 .edu-tea-name {
