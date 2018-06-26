@@ -73,21 +73,11 @@ Page({
   },
   //分享
   onShareAppMessage: function (res) {
-    var that = this;
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
     }
-    return {
-      title: that.data.tlist.name,
-      path: '/pages/index/index',
-      success: function (res) {
-        // 转发成功
-      },
-      fail: function (res) {
-        // 转发失败
-      }
-    }
+    return app.shareApp();
   },
   /**
  * 收藏

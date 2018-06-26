@@ -98,9 +98,13 @@ Page({
   
   },
   /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+ * 分享
+ */
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return app.shareApp();
   }
 })
