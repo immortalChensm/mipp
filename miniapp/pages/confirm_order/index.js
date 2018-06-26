@@ -57,7 +57,6 @@ Page({
    * 添加订单
    */
   add_order:function(){
-    console.log(this.data)
     var postdata = {
       'type':1,
       'course_id':this.data.course_info.id,
@@ -67,10 +66,8 @@ Page({
     }
     tool.post('Order/add_order',postdata,function(result){
       var info = result.data;
-      console.log(info)
       if(info.status == '1'){
         var res = JSON.parse(info.data);
-        console.log(res)
         wx.requestPayment({
           timeStamp: res.timeStamp,
           nonceStr: res.nonceStr,
@@ -91,7 +88,7 @@ Page({
           }
         })
       }else{
-        tool.jsalert(info.msg);
+        tool.jsalert(info.msg,2);
       }
     })
   },

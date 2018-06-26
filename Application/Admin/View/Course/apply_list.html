@@ -67,10 +67,9 @@ function export_order(){
 		                     </if>
 		                     <td>{$vo.create_date}</td>
 		                     <td>
-		                      <a title="审核通过" class="btn btn-primary" href="javascript:void(0)" onclick="check_course('{$vo.id}',1)">通过</a>
-		                      <if condition="$vo.status eq 3">
-		                      <a title="审核不通过" class="btn btn-danger" href="javascript:void(0)" onclick="check_course('{$vo.id}',4)">不通过</a>
-		                      </if>
+                              <a title="查看信息" class="btn btn-primary" href="{:U('Course/course_info',array('id'=>$vo['id']))}"><i class="fa fa-eye"></i></a>
+		                      <a title="审核通过" class="btn btn-primary" href="javascript:void(0)" onclick="check_course('{$vo.id}',1)"><i class="fa fa-check"></i></a>
+		                      <a title="审核不通过" class="btn btn-danger" href="javascript:void(0)" onclick="check_course('{$vo.id}',4)"><i class="fa fa-times"></i></a>
 							 </td>
 		                   </tr>
 		                  </foreach>

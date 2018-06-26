@@ -40,8 +40,11 @@
     </view>
     <text class="edu-course-jj">简介：{{course_info.profile}}</text>
      <view class="edu-course-price edu-course-space-a">
-        <label class="edu-price-num">¥{{course_info.price}}</label>
+          <label class="edu-price-num">¥{{course_info.price}}</label>
           <label class="edu-sales">已售：{{course_info.sale_count}}</label>
+    </view>
+    <view class="edu-course-price edu-course-space-a">
+          <label class="edu-price-num"><span style="color:rgb(68, 68, 68)">剩余名额：</span>{{course_info.stock}}</label>
     </view>
     <view class="edu-course-kc edu-border-top">
         <block wx:for="{{course_info.tags}}" wx:key="key">
@@ -142,12 +145,17 @@
       <!-- 课程评价 -->
 <!-- 课程详情和评价end -->
 <!-- 底部按钮 -->
-  <view class="edu-course-bottom-btn">
+<view class="edu-course-bottom-btn" wx:if="{{course_info.stock > 0}}">
    <view class="edu-course-lr">
        <button  bindgetphonenumber='buyCourse' open-type='getPhoneNumber'>立即购买</button>
    </view>
    <view class="edu-course-lr">
        <button bindgetphonenumber='toYuyue' open-type='getPhoneNumber'>预约试听</button>
+   </view>
+</view>
+<view class="edu-course-bottom-btn" wx:if="{{course_info.stock <= 0}}">
+   <view class="edu-course-lr" style='width:100%;'>
+       <button  bindgetphonenumber='buyCourse'>名额已满，不可购买</button>
    </view>
 </view>
 <!-- 底部按钮end -->

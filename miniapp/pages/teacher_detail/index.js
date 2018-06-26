@@ -62,6 +62,15 @@ Page({
       WxParse.wxParse('content', 'html', res.data.data.content, that, 5);
     })
   },
+  openAddress:function(){
+    var lng = parseFloat(this.data.tlist.lng);
+    var lat = parseFloat(this.data.tlist.lat);
+    wx.openLocation({
+      latitude: lat,
+      longitude: lng,
+      scale: 28
+    })
+  },
   //分享
   onShareAppMessage: function (res) {
     var that = this;
