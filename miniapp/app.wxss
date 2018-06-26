@@ -511,7 +511,7 @@ white-space: nowrap;
 .edu-course-teacher {
   position: absolute;
   left: 24rpx;
-  top: 4rpx;
+  top: 5rpx;
   color: rgb(255, 255, 255);
   font-size: 22rpx;
 }
@@ -863,6 +863,7 @@ white-space: nowrap;
   padding: 30rpx;
 
 }
+
 .edu-course-bot-a .wxParse-p .wxParse-img{
   width: 100% !important;
 }

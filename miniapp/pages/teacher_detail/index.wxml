@@ -3,7 +3,10 @@
       <image src="../../assets/images/info-bg.png" class="edu-info-bg-a"/>
       <image src="{{tlist.headimgurl}}" class="edu-info-logo"/> 
       <text class="edu-info-name">{{tlist.name}}</text>
-      <text class="edu-info-address">地址：{{tlist.address}}</text>
+      <view class="edu-info-address">
+        <image src="../../assets/images/gps-address.png" class="edu-gps-address"/> 
+         <text>地址：{{tlist.address}}</text> 
+      </view>
       <!-- 转发-收藏按钮 -->
         <view class="edu-info-z-s">
             <view class="edu-info-zs-icon edu-info-zs-bot" bindtap="onShareAppMessage">

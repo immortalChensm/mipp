@@ -1,2 +1,8 @@
 /* pages/coursename/coursename.wxss */ 
 @import "/wxParse/wxParse.wxss";
+.edu-course-l-icon{
+  overflow: hidden;
+}
+.edu-course-bot-q{
+  margin-bottom: 130rpx;
+}

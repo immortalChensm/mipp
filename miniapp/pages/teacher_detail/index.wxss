@@ -1,4 +1,16 @@
 /* pages/老师介绍/teacherinfo.wxss */
-.wxParse-p image{
+
+.wxParse-p image {
   width: 100% !important;
+}
+
+.edu-gps-address {
+  width: 36rpx;
+  height: 36rpx;
+  position: relative;
+  top: 3px;
+  right: 5px;
+}
+.edu-info-address text{
+ text-decoration-line: underline;
 }

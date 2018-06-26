@@ -57,7 +57,7 @@
 <view class="edu-course-gl">
      <view class="edu-course-l-icon">
       <image src="../../assets/images/guanlian-icon.png" class="edu-course-glimg"/>
-       <label class="edu-course-teacher">关联老师</label>
+        <label class="edu-course-teacher">关联老师</label> 
      </view>
        <view  class="edu-course-info edu-bottom-solid">
             <view class="edu-course-left">
@@ -106,10 +106,11 @@
       </view>
       <!-- 课程内容end -->
       <!-- 课程评价 -->
-      <view class="edu-course-bot-a" hidden="{{!hide_content}}">
+      <view class="edu-course-bg-pj edu-course-bot-q" hidden="{{!hide_content}}">
           <!--循环评价-->
-          <view class="edu-course-pj-content" wx:for="{{comments}}" wx:key="key">
-              <view class="edu-course-evaluate">
+          <view class=" edu-info-pj-n edu-show" wx:for="{{comments}}" wx:key="key">
+            <view class="edu-course-pj-content">
+             <view class="edu-course-evaluate">
                     <view class="edu-course-one">
                       <image src="{{item.headimgurl}}" class="edu-course-tx"/>
                       <text>{{item.nickname}}</text>
@@ -133,9 +134,7 @@
                         <text class="edu-course-assess">{{item.content}}</text>
                     </view>
               </view>
-              <!-- 间隔 -->
-                <view class="edu-space-d"></view>
-              <!-- 间隔end -->
+            </view>
           </view>
           <template is="default" wx:if="{{comments.length == 0}}" data="{{message:'暂无数据'}}"></template>
     </view>
