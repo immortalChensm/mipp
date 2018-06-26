@@ -56,5 +56,26 @@ App({
         }
       }
     });
+  },
+  /**
+   * 分享
+   */
+  shareApp:function(title,path,image_url,suc,fail){
+    var title = title ? title : '【艺术教育平台】好老师成就好学生，好课程铸就新梦想';
+    var path = path ? path : '/pages/index/index';
+    var image_url = image_url ? image_url : '/assets/images/logo.jpg';
+    return {
+      title: title,
+      path: path,
+      imageUrl: image_url,
+      success: function (res) {
+        // 转发成功
+        if (typeof suc == 'function') suc();
+      },
+      fail: function (res) {
+        // 转发失败
+        if (typeof fail == 'function') fail();
+      }
+    };
   }
 })
