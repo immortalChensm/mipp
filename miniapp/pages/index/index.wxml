@@ -1,7 +1,7 @@
 <view class="body">
   <!-- 顶部轮播图 start -->
   <view class="edu-banner">
-    <swiper indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:280rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
+    <swiper indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" style="height:280rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
       <block wx:for="{{banners}}">
         <swiper-item>
    
@@ -17,8 +17,9 @@
   </view>
   <!-- 顶部轮播图end -->
   <!-- 菜单分类 start -->
+
   <view class="edu-list">
-    <swiper indicator-dots="{{indicatorDots}}" autoplays="{{autoplays}}" interval="{{interval}}" duration="{{duration}}" style="height:412rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
+    <swiper indicator-dots="{{indicatorDots}}" autoplays="{{autoplays}}" interval="{{interval}}"  style="height:412rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
 
       <swiper-item class="edu-rows" wx:for="{{course_types}}" wx:for-item="types" wx:key="key">
         <view class="edu-list-fl" bindtap="toCourseList" wx:for="{{types}}" wx:key="k" data-type="{{item.id}}">
