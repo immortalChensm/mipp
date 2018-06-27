@@ -7,7 +7,9 @@ Page({
    */
   data: {
     request: null,
-    order_info:[]
+    order_info:[],
+    pay_click:false,
+    comment_click:false
   },
 
   /**
@@ -18,8 +20,6 @@ Page({
       'request': options
     })
     console.log(options)
-    //获取订单详情
-    this.getOrderInfo();
   },
     /**
    * 获取订单详情
@@ -38,6 +38,13 @@ Page({
    * 去评价
    */
   toComment: function (e) {
+    if (this.data.comment_click) {
+      return false;
+    } else {
+      this.setData({
+        comment_click: true
+      })
+    }
     var order_id = e.currentTarget.dataset['id'];
     wx.navigateTo({
       url: '/pages/comment/index?order_id='+order_id
@@ -47,6 +54,13 @@ Page({
   * 去支付
   */
   payOrder: function (e) {
+    if(this.data.pay_click){
+      return false;
+    }else{
+      this.setData({
+        pay_click:true
+      })
+    }
     var order_id = e.currentTarget.dataset['id'];
     tool.post('Order/pre_pay_order', { order_id: order_id }, function (result) {
       var info = result.data;
@@ -70,7 +84,10 @@ Page({
           }
         })
       } else {
-        tool.jsalert(info.msg);
+        tool.jsalert(info.msg,2);
+        this.setData({
+          pay_click: false
+        })
       }
     })
   }, 
@@ -85,7 +102,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      pay_click: false,
+      comment_click: false
+    })
+    //获取订单详情
+    this.getOrderInfo();
   },
 
   /**

@@ -49,7 +49,7 @@ Page({
           url: '/pages/yuyue_suc/index'
         })
       } else {
-        tool.jsalert(info.msg);
+        tool.jsalert(info.msg,2);
       }
     })
   },

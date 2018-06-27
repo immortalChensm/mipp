@@ -13,6 +13,9 @@ Page({
     list_status:'',
     list_page:1,
     list_info:[],
+    cancel_click:false,
+    pay_click:false,
+    comment_click:false
   },
   /**
    * 生命周期函数--监听页面加载
@@ -28,6 +31,7 @@ Page({
       case 'all': this.seleall();break;
       case 'pay': this.selepay(); break;
       case 'comment': this.selecomment(); break;
+      case 'complete': this.selecomplete(); break;
       default: this.seleall()
     }
   },
@@ -102,6 +106,13 @@ Page({
  * 去评价
  */
   toComment: function (e) {
+    if (this.data.comment_click) {
+      return false;
+    } else {
+      this.setData({
+        comment_click: true
+      })
+    }
     var order_id = e.currentTarget.dataset['id'];
     wx.navigateTo({
       url: '/pages/comment/index?order_id=' + order_id
@@ -111,6 +122,13 @@ Page({
   * 去支付
   */
   payOrder: function (e) {
+    if(this.data.pay_click){
+      return false;
+    }else{
+      this.setData({
+        pay_click:true
+      })
+    }
     var order_id = e.currentTarget.dataset['id'];
     tool.post('Order/pre_pay_order', {order_id:order_id}, function (result) {
       var info = result.data;
@@ -135,6 +153,9 @@ Page({
         })
       } else {
         tool.jsalert(info.msg,2);
+        this.setData({
+          pay_click: false
+        })
       }
     })
   }, 
@@ -142,6 +163,13 @@ Page({
  * 取消订单
  */
   cancelOrder: function (e) {
+    if (this.data.cancel_click) {
+      return false;
+    } else {
+      this.setData({
+        cancel_click: true
+      })
+    }
     var that = this;
     var order_id = e.currentTarget.dataset['id'];
     tool.post('Order/del',{id:order_id},function(result){
@@ -150,7 +178,10 @@ Page({
         tool.jsalert(info.msg)
         that.getOrderList();
       }else{
-        tool.jsalert(info.msg)
+        tool.jsalert(info.msg,2);
+        this.setData({
+          cancel_click: false
+        })
       }
     })
   }, 
@@ -165,7 +196,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      cancel_click: false,
+      pay_click: false,
+      comment_click: false
+    })
   },
 
   /**

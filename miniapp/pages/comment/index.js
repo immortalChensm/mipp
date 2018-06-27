@@ -11,7 +11,8 @@ Page({
     teacher_content: '',
     course_star:1,
     course_content: '',
-    save_status:false
+    save_status:false,
+    save_click:false
   },
   /**
    * 
@@ -48,10 +49,14 @@ Page({
   },
   saveCmt:function(){
     var that = this;
-    // if (that.data.save_status) return false;
-    // that.setData({
-    //   save_status:true
-    // })
+    if (that.data.save_click) {
+      return false;
+    }else{
+      that.setData({
+        save_click: true
+      })
+    }
+
     var postdata = {
       order_id:this.data.request.order_id,
       teacher_star: this.data.teacher_star,
@@ -65,10 +70,13 @@ Page({
         tool.jsalert(info.msg);
         setTimeout(function(){
           wx.navigateTo({
-            url: '/pages/my_order/index?status=3'
+            url: '/pages/my_order/index?type=complete'
           })
         },1200);
       }else{
+        that.setData({
+          save_click:false
+        })
         tool.jsalert(info.msg,2);
       }
     })
