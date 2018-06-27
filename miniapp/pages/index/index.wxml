@@ -39,8 +39,8 @@
 <!-- 隔离 end-->
 
 <!-- 金牌老师 start -->
-<view class="edu-recommend-courses">
-  <view class="edu-remm-name" bindtap='moreTeacher'>
+<view class="edu-recommend-courses-l">
+  <view class="edu-remm-name-l" bindtap='moreTeacher'>
     <image src="../../assets/images/remm-left-icon.png" class="edu-tj-icon" />
     <text class="edu-remm-kc">金牌老师</text>
     <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon" />
@@ -48,7 +48,7 @@
   </view>
 
   <!-- 列表 -->
-  <view class="edu-acticle-list-b edu-bottom-solid" wx:for="{{teacher_stick}}" wx:for-item="item" wx:key="key" bindtap="toTeacherDetail" data-id="{{item.id}}">
+  <view class="edu-acticle-list-b-l edu-bottom-solid" wx:for="{{teacher_stick}}" wx:for-item="item" wx:key="key" bindtap="toTeacherDetail" data-id="{{item.id}}">
     <view class="edu-list-left-a">
       <image src="{{item.headimgurl}}" class="edu-list-img-a" />
     </view>
@@ -86,8 +86,8 @@
 <!-- 隔离 end-->
 
 <!-- 推荐课程 start -->
-<view class="edu-recommend-courses">
-  <view class="edu-remm-name" bindtap='moreCourse'>
+<view class="edu-recommend-courses-l">
+  <view class="edu-remm-name-l" bindtap='moreCourse'>
     <image src="../../assets/images/remm-left-icon.png" class="edu-tj-icon" />
     <text class="edu-remm-kc">推荐课程</text>
     <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon" />
@@ -95,7 +95,7 @@
   </view>
   <!-- 列表 -->
 
-  <view class=" edu-acticle-list-a" wx:for="{{course_stick}}" wx:for-item="item" wx:key="key" bindtap="toCourseDetail" data-id="{{item.id}}">
+  <view class=" edu-acticle-list-b-l edu-bottom-solid" wx:for="{{course_stick}}" wx:for-item="item" wx:key="key" bindtap="toCourseDetail" data-id="{{item.id}}">
     <view class="edu-list-left">
       <image src="{{item.pic}}" class="edu-list-img" />
     </view>

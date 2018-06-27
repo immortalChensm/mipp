@@ -30,7 +30,7 @@
                  <label>简介：{{item.teacher.profile}}</label>
               </view>
                <view class="edu-jl-list">
-                 <label class="edu-tea-name">{{item.teacher.type}}</label>
+                 <label class="edu-tea-name edu-tea-name-a">{{item.teacher.type}}</label>
                   <label class="edu-sales edu-jl">
                     <image src="../../assets/images/gps-icon.png"  class="edu-gps"/>
                      {{item.teacher.distance}}
