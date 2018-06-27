@@ -47,12 +47,11 @@
           <label class="edu-price-num"><span style="color:rgb(68, 68, 68)">剩余名额：</span>{{course_info.stock}}</label>
     </view>
     <view class="edu-course-kc edu-border-top">
-        <block wx:for="{{course_info.tags}}" wx:key="key">
-        <a href="#"  class="edu-btn-a">{{item}}</a>
-        </block>
+      <view class="edu-btn-a" wx:for="{{course_info.tags}}" wx:key="key">{{item}}</view>
     </view>
 </view>
 <!-- 标题end -->
+
 <!-- 隔离 -->
 <view class="edu-course-space-b"></view>
 <!-- 隔离end -->

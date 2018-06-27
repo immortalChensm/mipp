@@ -55,3 +55,6 @@
  -webkit-transform: translateX(0);
  transform: translateX(0);
 }
+.edu-tea-name-a{
+  width: 40%;
+}

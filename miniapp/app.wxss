@@ -95,6 +95,23 @@
   padding: 30rpx;
 }
 
+.edu-recommend-courses-l {
+}
+
+.edu-remm-name-l {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  line-height: 32rpx;
+  margin: 30rpx 30rpx 30rpx 30rpx;
+}
+
+.edu-acticle-list-b-l {
+  display: flex;
+  padding: 30rpx 30rpx;
+}
+
 .edu-remm-name {
   align-items: center;
   display: flex;
@@ -130,7 +147,7 @@
 }
 
 .edu-list-left {
-   width: 40%; 
+  width: 40%;
   /* width: 268rpx; */
   margin-right: 4%;
 }
@@ -156,6 +173,9 @@
   width: 100%;
   height: 40rpx;
   line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .edu-list-two {
@@ -188,8 +208,8 @@
   height: 50rpx;
   line-height: 50rpx;
   overflow: hidden;
-  text-overflow:ellipsis;
-white-space: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .edu-introduce label {
@@ -452,8 +472,7 @@ white-space: nowrap;
   text-align: left;
   width: 100%;
   display: block;
-  overflow: hidden;
-  /* height: 30rpx; */
+  /* overflow: hidden; *//* height: 30rpx; */
   color: rgb(68, 68, 68);
 }
 
@@ -467,6 +486,14 @@ white-space: nowrap;
   padding: 20rpx 0rpx 0rpx 0rpx;
   width: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.edu-course-tags {
+  width: 130rpx;
+  height: 40rpx;
+  line-height: 40rpx;
 }
 
 .edu-course-space-a {
@@ -474,10 +501,11 @@ white-space: nowrap;
 }
 
 .edu-btn-a {
-  margin-right: 20rpx;
+  margin-right: 30rpx;
+  margin-bottom: 2%;
   border-radius: 10rpx;
   display: block;
-  width: 130rpx;
+  width: 140rpx;
   height: 40rpx;
   line-height: 40rpx;
   border: none;
@@ -862,15 +890,15 @@ white-space: nowrap;
 .edu-course-bot-a {
   margin-bottom: 100rpx;
   padding: 30rpx;
-
 }
 
-.edu-course-bot-a .wxParse-p .wxParse-img{
+.edu-course-bot-a .wxParse-p .wxParse-img {
   width: 100% !important;
 }
- .wxParse-inline{
-   font-size: 28rpx;
-   font-family: PingFang-SC-Regular;
+
+.wxParse-inline {
+  font-size: 28rpx;
+  font-family: PingFang-SC-Regular;
 }
 
 .edu-info-content {
@@ -1003,8 +1031,7 @@ white-space: nowrap;
 }
 
 .edu-info-ms {
-  /* height: 70rpx; */
-  /* overflow: hidden; */
+  /* height: 70rpx; *//* overflow: hidden; */
 }
 
 .edu-info-h {
@@ -1685,7 +1712,8 @@ view, scroll-view {
   width: 100%;
   overflow: hidden;
 }
-.edu-att-ew-item .content{
+
+.edu-att-ew-item .content {
   display: flex;
 }
 
