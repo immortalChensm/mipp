@@ -2,7 +2,7 @@
 <view class="edu-recommend-courses-tj" style='padding-top:0;'>
    
     <!-- 列表 -->
-     <view class="edu-acticle-list-tj-s" wx:for="{{teacher_list}}" wx:for-item="item" wx:key="key" bindtap="toTeacherDetail" data-id="{{item.id}}">
+     <view class="edu-acticle-list-tj-s edu-border-top" wx:for="{{teacher_list}}" wx:for-item="item" wx:key="key" bindtap="toTeacherDetail" data-id="{{item.id}}">
          <view class="edu-list-left-a">
             <image src="{{item.headimgurl}}" class="edu-list-img-a"/>
          </view>
