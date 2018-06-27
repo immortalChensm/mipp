@@ -951,7 +951,7 @@ white-space: nowrap;
 }
 
 .edu-info-introduce {
-  height: 240rpx;
+  /* height: 240rpx; */
   background-color: #f2f2f2;
   position: relative;
   display: flex;
@@ -961,7 +961,7 @@ white-space: nowrap;
 
 .edu-info-js {
   z-index: 999;
-  position: absolute;
+  position: relative;
   top: -45rpx;
   width: 87%;
   padding: 34rpx 0rpx 34rpx 42rpx;
@@ -1003,8 +1003,8 @@ white-space: nowrap;
 }
 
 .edu-info-ms {
-  height: 70rpx;
-  overflow: hidden;
+  /* height: 70rpx; */
+  /* overflow: hidden; */
 }
 
 .edu-info-h {
