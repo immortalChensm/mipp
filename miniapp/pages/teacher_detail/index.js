@@ -96,9 +96,9 @@ Page({
         })
       }else {
         tool.jsalert(res.data.msg,2);
-        that.setData({
-          checked: false
-        })
+        // that.setData({
+        //   checked: false
+        // })
       }
     })
   },
