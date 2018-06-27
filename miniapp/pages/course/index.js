@@ -110,6 +110,11 @@ Page({
         cur_page: 1
       })
     }
+    this.setData({
+      hidden_type: true,
+      hidden_sale_count: true,
+      hidden_price: true
+    })
     //获取课程分类
     this.courseType();
     //加载课程列表

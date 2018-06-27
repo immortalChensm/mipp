@@ -19,7 +19,9 @@ Page({
     autoplays: false,
     bools: true,
     is_follow:false,
-    has_phone:false
+    has_phone:false,
+    buy_click:false,
+    yuyue_click: false
   },
   //课程详情和评价点击事件
   tabShow:function(event){
@@ -39,6 +41,13 @@ Page({
    * 购买课程
    */
   buyCourse:function(info){
+    if(this.data.buy_click){
+      return false;
+    }else{
+      this.setData({
+        buy_click:true
+      })
+    }
     wx.setStorageSync('cart_info', this.data.course_info);
     var postdata = info.detail;
     postdata.session_key = wx.getStorageSync('session_key');
@@ -46,13 +55,20 @@ Page({
     tool.post('Base/getPhone', postdata, function (result) {
       // console.log(result)
       var info = result.data;
-      if (info.data.phoneNumber)wx.setStorageSync('phone', info.data.phoneNumber);
+      if (info.data.phoneNumber) wx.setStorageSync('phone', info.data.phoneNumber);
       wx.navigateTo({
         url: '/pages/confirm_order/index'
       })
     });
   },
   toYuyue: function (info) {
+    if (this.data.yuyue_click) {
+      return false;
+    } else {
+      this.setData({
+        yuyue_click: true
+      })
+    }
     wx.setStorageSync('cart_info', this.data.course_info);
     var postdata = info.detail;
     postdata.session_key = wx.getStorageSync('session_key');
@@ -129,6 +145,10 @@ Page({
         has_phone:true
       })
     }
+    this.setData({
+      buy_click:false,
+      yuyue_click:false
+    })
     //获取课程信息
     this.getCourseInfo();
     //获取关联老师的信息

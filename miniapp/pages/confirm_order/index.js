@@ -80,11 +80,13 @@ Page({
             //   content: '',
             // })
             wx.navigateTo({
-              url: '/pages/my_order/index'
+              url: '/pages/my_order/index?type=comment'
             })
           },
           fail: function (res) {
-            console.log(res);
+            wx.navigateTo({
+              url: '/pages/my_order/index?type=pay'
+            })
           }
         })
       }else{

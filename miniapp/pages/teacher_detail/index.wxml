@@ -122,7 +122,7 @@
                   </view>
                   <view class="edu-course-two">
                     <view class="edu-course-eva-left">
-                      <text class="edu-course-bbpj">宝贝评价</text>
+                      <text class="edu-course-bbpj">老师评价</text>
                         <block wx:for="{{item.stararr}}" wx:for-item="va">
                           <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png" class="edu-course-icon"></image> 
                           <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png" class="edu-course-icon"></image> 
