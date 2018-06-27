@@ -79,6 +79,17 @@ class CourseController extends BaseController {
     		$this->display();
     	}
     }
+    
+    public function course_info(){
+        $info = array();
+        (int)I('get.id') && $info = D('Course')->where(array('id'=>(int)I('get.id')))->find();
+        $info = output_data($info);
+        $info['content'] = html_entity_decode($info['content']);
+        $info['type'] = D('CourseType')->where(array('id'=>$info['type']))->getField('name');
+        $this->assign('info',$info);
+        $this->display();
+    }
+    
     //删除课程（注销课程账号，伪删除）
     public function dele_course(){
     	if(IS_POST)

@@ -82,6 +82,7 @@ class AdminController extends BaseController {
     public function over_login_back(){
     	$over_admin_id = session('over_admin_id');
     	if(!empty($over_admin_id)){
+            session('cururl',null);
     		session('admin_id',$over_admin_id);
     		session('over_admin_id',null);
     		$this->redirect(U('Index/index'));

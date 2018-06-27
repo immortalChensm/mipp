@@ -63,6 +63,7 @@
 					'Course/set_status',
 					'Course/apply_list',
 					'Course/check_course',
+					'Course/course_info',
 				)
 			),
          	'comment' => array('name' => '评价管理', 'icon'=>'fa-comments', 

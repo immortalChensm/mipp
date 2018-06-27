@@ -17,6 +17,7 @@ class OrderController extends BaseController {
         $list = D('Order')->where($where)->relation(true)->page($p,$pagesize)->order('create_date desc')->select();
         foreach ($list as &$val){
         	$val['course'] = output_data($val['course']);
+            $val['course']['name'] = mb_strlen($val['course']['name'])>12 ? mb_substr($val['course']['name'],0,12).'...' : $val['course']['name'];
         }
         $this->returnSuccess('',$list);
     }
@@ -33,10 +34,14 @@ class OrderController extends BaseController {
     //取消订单
     public function del(){
         (!$this->user_id || !I('id')) && $this->returnError('参数错误');
-        $order = D('Order')->where(array('id'=>I('id')))->getField('id');
+        $order = D('Order')->where(array('id'=>I('id')))->find();
         !$order && $this->returnError('订单不存在');
         $res = D('Order')->where(array('id'=>I('id')))->save(array('status'=>'4'));
-        $res && $this->returnSuccess('取消成功');
+        if($res){
+            $this->returnSuccess('取消成功');
+        }else{
+            $this->returnError('系统繁忙，操作失败');
+        }
     }
 
     //评价订单
@@ -59,11 +64,15 @@ class OrderController extends BaseController {
     public function add_order(){
     	$post_data = I('request.');
     	$post_data || $this->returnError('非法的操作');
-    	$post_data['name'] || $this->returnError('请输入姓名');
+    	$post_data['name'] || $this->returnError('请输入用户名');
     	$post_data['phone'] || $this->returnError('请输入手机号');
     	$user_id = D('User')->where(array('openid'=>$post_data['openid']))->getField('id');
     	$course_info = D('Course')->where(array('id'=>$post_data['course_id'],'status'=>1))->find();
     	$course_info || $this->returnError('此课程已被删除或下架');
+        $course_info['stock']<1 && $this->returnError('抱歉，该课程名额已满');
+        if($post_data['type'] == 2){
+            D('Order')->where(array('user_id'=>$user_id,'course_id'=>$post_data['course_id'],'status'=>array('NEQ',4)))->getField('id') && $this->returnError('您已经预约过该课程，不可重复预约');
+        } 
     	$order_info = array();
     	$order_info['type'] = $post_data['type'];
     	$order_info['user_id'] = $user_id;
@@ -75,7 +84,6 @@ class OrderController extends BaseController {
     	$order_info['name'] = $post_data['name'];
     	$order_info['phone'] = $post_data['phone'];
     	$order_info['status'] = $post_data['type'] == 2 ? 2 : 1;
-
     	$res = D('Order')->add($order_info);
     	if ($res) {
             //更新用户信息
@@ -93,6 +101,10 @@ class OrderController extends BaseController {
         $order_id = (int)I('request.order_id');
         $openid && $order_id || $this->returnError('参数有误');
         $order_info = D('Order')->where(array('id'=>$order_id))->find();
+        if(!$order_info || $order_info['status'] != '1') $this->returnError('非法的订单参数');
+        //校验库存
+        $course_stock = D('Course')->where(array('id'=>$order_info['course_id']))->getField('stock');
+        if($course_stock < 1) $this->returnError('抱歉，该课程名额已满');
         $paydata = $this->pay_order($openid,$order_info);
 	    $this->returnSuccess('',$paydata);
     }
@@ -143,14 +155,16 @@ class OrderController extends BaseController {
     			//更新订单状态
                 $order = D('Order')->where(array('order_sn'=>$order_sn))->find();
                 if($order){
+                    //更新库存/限购人数
+                    D('Course')->where(array('id'=>$order['course_id']))->setDec('stock');
+                    //增加销量
+                    D('Course')->where(array('id'=>$order['course_id']))->setInc('sale_count');
                     //更新订单数据
                     $update_data = array();
                     $update_data['pay_money'] = $order['price'];
                     $update_data['status'] = 2;
                     $update_data['pay_time'] = date('Y-m-d H:i:s');
                     D('Order')->where(array('id'=>$order['id']))->save($update_data);
-                    //增加销量
-                    D('Course')->where(array('id'=>$order['course_id']))->setInc('sale_count');
                 }
     			exit('SUCCESS');
     		}else{

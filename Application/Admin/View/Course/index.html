@@ -44,6 +44,7 @@ function export_order(){
 			                   <th>图片</th>
 			                   <th>名称</th>
 			                   <th>类型</th>
+                               <th>名额</th>
 			                   <th>价格</th>
 							   <th>是否推荐</th>
 							   <th>上/下架</th>
@@ -56,9 +57,10 @@ function export_order(){
 						  	<tr role="row" align="center">
 		                     <td>{$vo.id}</td>
 		                     <td><img src="{$vo['pics'][0]}" style="height:50px;cursor:pointer;" onclick="window.open('{$vo['pics'][0]}')"></td>
-		                     <td>{$vo.name}</td>
+		                     <td>{$vo.name|default='--'}</td>
 		                     <td>{:$course_types[$vo['type']]}</td>
-							 <td>{$vo.price}</td>
+                             <td>{$vo.stock|default='--'}</td>
+							 <td>{$vo.price|default='--'}</td>
 		                     <if condition="$vo.is_stick eq 1">
 		                     <td><img style="cursor:pointer;" width="20" height="20" src="__PUBLIC__/images/yes.png" onclick="set_stick(this,'{$vo.id}','1')"/></td>
 		                     <else/>

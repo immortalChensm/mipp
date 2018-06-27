@@ -17,7 +17,7 @@ class TeacherModel extends CommonModel{
 			
 			$this->_validate[] =array('fcard','require','请上传身份证正面照');
 			$this->_validate[] =array('bcard','require','请上传身份证反面照');
-			$this->_validate[] =array('qualification','require','请上传资格证书');
+			//$this->_validate[] =array('qualification','require','请上传资格证书');
 			
 			$this->_validate[] =array('profile','require','请输入教师简介');
 			$this->_validate[] =array('content','require','请输入教师详情');

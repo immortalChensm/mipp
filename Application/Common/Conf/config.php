@@ -36,11 +36,10 @@ return array(
     'DEFAULT_FILTER'        => 'strip_sql,htmlspecialchars',   // 系统默认的变量过滤机制
 
     //小程序APPID
-	'APPID' => 'wx91ff772237eff014',
-	'APPSECRET' => '8185656c55109de807ec494953ad080d',
+	'APPID' => 'wx6d57d74bdc195b83',
+	'APPSECRET' => '09fc9500bd9dfed1c09a156e9bdc8390',
 	'APP_AUTH_URL' => 'https://api.weixin.qq.com/sns/jscode2session?grant_type=authorization_code&',//appid=APPID&secret=SECRET&js_code=JSCODE
     //微信支付参数
-    'KEY'					=> '11596e737087dffa9f227cf4b06f9e9a',
-    'MCHID'					=> '1504497671',
-
+    'KEY'					=> '08f65e8d221dc7183890e3aea31c53fc',
+    'MCHID'					=> '1490330742'
 );

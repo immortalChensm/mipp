@@ -15,7 +15,16 @@ class IndexController extends BaseController
         if(session('cururl')){
             $url = session('cururl');
         }
-        $comtroller_url = $url ? $url : U('Admin/Index/welcome');
+        if($url){
+            $comtroller_url = $url;
+        }else{
+            $type = D('Admin')->where(array('id'=>session('admin_id')))->getField('type');
+            if($type == 1){
+                $comtroller_url = U('Admin/Index/welcome');
+            }elseif($type == 2){
+                $comtroller_url = U('Admin/Course/index');
+            }
+        }
         $this->assign('comtroller_url',$comtroller_url);
         $this->assign('menu_list', getMenuList());
         $this->display('index');

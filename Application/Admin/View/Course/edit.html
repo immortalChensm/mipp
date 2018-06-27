@@ -96,7 +96,7 @@ myeditor('content');
                                     <td class="col-sm-2">课程简介：</td>
                                     <td class="col-sm-8">
                                         <textarea style="resize:none;height:80px;"  class="form-control" name="info[profile]">{$info.profile}</textarea>
-                                    </td>                                                                       
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="col-sm-2">课程标签：</td>
@@ -108,7 +108,9 @@ myeditor('content');
                                         </div>
                                         <div class="select_tags">
                                         	<foreach name="info.tags" item="val">
-                                        	<span data-val="{$val}" class="btn btn-default">{$val}  <i class="fa fa-remove"></i></span>
+                                        	<span data-val="{$val}" class="btn btn-default">{$val}  <i class="fa fa-remove">
+                                            </i><input type="hidden" name="info[tags][]" value="{$val}"/>
+                                            </span>
                                         	</foreach>
                                         </div>
                                     </td>
@@ -186,6 +188,10 @@ $(function(){
 	
 	$('.all_tags>span').click(function(){
 		if($(this).hasClass('btn-default')){
+            if($('.select_tags span').length >=3) {
+                jsalert('课程最多添加3个标签',2);
+                return false;
+            }
 			var tag = $(this).text();
 			$('.select_tags').append('<span data-val="'+tag+'" class="btn btn-default">'+tag+'  <i class="fa fa-remove"></i><input type="hidden" name="info[tags][]" value="'+tag+'"/></span>');
 			$(this).removeClass('btn-default').addClass('btn-primary')

@@ -7,6 +7,7 @@ class CommentController extends BaseController {
 	public function teacher_cnlist()
     {
     	$where = array();
+        $this->admin_info['type'] == 2 && $where['relation_id'] = $this->admin_info['teacher_id'];
     	$where['type'] = 1;
         if (I('keywords')) {
         	$teacher_ids = D('Teacher')->where(array('name'=>array('like','%'.I('keywords').'%')))->getField('id',true);
@@ -28,6 +29,10 @@ class CommentController extends BaseController {
 	public function course_cnlist()
 	{
     	$where = array();
+        if($this->admin_info['type'] == 2){
+            $course_ids = D('Course')->where(array('teacher_id'=>$this->admin_info['teacher_id']))->getField('id',true);
+            $course_ids && $where['relation_id'] = array('IN',implode(',',$course_ids));
+        }
     	$where['type'] = 2;
         if (I('keywords')) {
         	$course_ids = D('Course')->where(array('name'=>array('like','%'.I('keywords').'%')))->getField('id',true);

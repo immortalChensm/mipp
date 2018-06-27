@@ -44,7 +44,7 @@
           <text class="edu-remm-kc">视频介绍</text>
           <image src="../../assets/images/remm-right-icon.png" class="edu-tj-icon"/>
       </view>
-      <view wx:if="{{!tlist.links}}" class="edu-info-explain">该老师很懒，并未上传视频介绍</view>
+      <view wx:if="{{tlist.links.length < 1}}" class="edu-info-explain">该老师很懒，并未上传视频介绍</view>
       <view wx:if="{{tlist.links}}" class="edu-info-scroll">
          <!-- <view class="edu-info-gd"> -->
          <block wx:for="{{tlist.links}}" wx:for-item="va">
