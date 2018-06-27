@@ -4,5 +4,5 @@
   overflow: hidden;
 }
 .edu-course-bot-q{
-  margin-bottom: 150rpx;
+  padding-bottom: 120rpx;
 }

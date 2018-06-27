@@ -1,6 +1,6 @@
 <import src="../template/template.wxml"/> 
 
-<view class="edu-att-tab edu-border-top edu-att-position-w">
+<view class="edu-att-tab edu-border-top edu-bottom-solid edu-att-position-w">
     <view class="{{show_teacher?'edu-width-b edu-att-fl  edu-att-select ':'edu-width-b edu-att-fl '}}" bindtap='getFollowTeacher'>老师</view>
     <view class="{{show_course?'edu-width-b edu-att-fl edu-att-select':'edu-width-b edu-att-fl '}}" bindtap='getFollowCourse'>课程</view> 
 </view>
