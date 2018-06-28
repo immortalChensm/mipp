@@ -37,7 +37,7 @@ Page({
       var info = result.data;
       if(info.status == '1'){
         var teacher_info = info.data;
-        var is_edit = teacher_info.status == 2?true:false;
+        var is_edit = teacher_info.status == 3?false:true;
         var show_fcard = teacher_info.fcard ? true :false;
         var show_bcard = teacher_info.bcard ? true : false;
         var show_qualification = teacher_info.qualification ? true : false;

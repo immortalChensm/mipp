@@ -13,7 +13,10 @@ Page({
     selected2: false,
     selected3: false,
     tlist: [],
-    id:0
+    id:0,
+    checed:false,
+    follow_num:'',
+    follow_id:''
   },
 //老师--授课--评价 切换
   selectTab1:function(e){
@@ -57,7 +60,9 @@ Page({
       if (res.data.data.user_follow) checked = true;
       that.setData({
         tlist: res.data.data,
-        checked: checked
+        checked: checked,
+        follow_num: res.data.data.follow,
+        follow_id: res.data.data.user_follow
       })
       WxParse.wxParse('content', 'html', res.data.data.content, that, 5);
     })
@@ -85,22 +90,35 @@ Page({
   collect: function (event) {
     var that = this;
     var id = event.currentTarget.dataset['id'];
-    var openid = wx.getStorageSync('openid');
     // console.log(id);
-    tool.post('User/follow', { relation_id: id, type: 1,openid: openid}, function (res) {
-      if(res.data.status =='1'){
-        tool.jsalert(res.data.msg);
-        that.setData({
-          checked: true,
-          follow_num:res.data.data
-        })
-      }else {
-        tool.jsalert(res.data.msg,2);
-        // that.setData({
-        //   checked: false
-        // })
-      }
-    })
+    if(that.data.checked){
+      tool.post('Follow/cancel', { id: that.data.follow_id }, function (result) {
+        var info = result.data;
+        if (info.status == '1') {
+          that.setData({
+            checked: false,
+            follow_id: '',
+            follow_num:that.data.follow_num-1
+          });
+        } else {
+          tool.jsalert(info.msg, 2);
+        }
+      })
+    }else{
+      tool.post('User/follow', { relation_id: id, type: 1 }, function (res) {
+        var info = res.data;
+        if (info.status == '1') {
+          //tool.jsalert(res.data.msg);
+          that.setData({
+            checked: true,
+            follow_num: info.data.follow_num,
+            follow_id: info.data.follow_id
+          })
+        } else {
+          tool.jsalert(res.data.msg, 2);
+        }
+      })
+    }
   },
   /**
    * 去课程详情

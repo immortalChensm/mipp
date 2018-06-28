@@ -48,14 +48,13 @@ class FollowController extends BaseController {
         $this->user_id || $this->returnError('参数错误');
         $type = I('request.type');
         $rel_id = I('request.rel_id');
-        D('Follow')->where(array('type'=>$type,'user_id'=>$this->user_id,'relation_id'=>$rel_id))->find() ? $this->returnSuccess('',true) : $this->returnSuccess('',false);
+        $flw_id = D('Follow')->where(array('type'=>$type,'user_id'=>$this->user_id,'relation_id'=>$rel_id))->getField('id');
+        $flw_id ? $this->returnSuccess('',$flw_id) : $this->returnError('');
     }
     //取消关注
     public function cancel(){
     	$this->user_id || $this->returnError('参数错误');
     	(int)I('request.id') || $this->returnError('非法的操作');
-    	
 		D('Follow')->delete((int)I('request.id')) ? $this->returnSuccess('已取消') : $this->returnError('系统繁忙，操作失败');
     }
-
 }

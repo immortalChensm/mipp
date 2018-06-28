@@ -58,13 +58,13 @@ myeditor('content');
                                         <input type="text" class="form-control" name="info[email]" value="{$info.email}" placeholder="请输入邮箱账号"/>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="col-sm-2">经纬度：</td>
-                                    <td class="col-sm-8">
-                                        <input type="text" class="form-control" name="location" value="{:$info['lng'].','.$info['lat']}" placeholder="请输入经纬度"/>
-                                        <span style="color:#F00; "> <a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank">点此获取经纬度</a></span>
-                                    </td>
-                                </tr>
+                                <!-- <tr> -->
+                                    <!-- <td class="col-sm-2">经纬度：</td> -->
+                                    <!-- <td class="col-sm-8"> -->
+                                        <!-- <input type="text" class="form-control" name="location" value="{:$info['lng'].','.$info['lat']}" placeholder="请输入经纬度"/> -->
+                                        <!-- <span style="color:#F00; "> <a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank">点此获取经纬度</a></span> -->
+                                    <!-- </td> -->
+                                <!-- </tr> -->
                                 <tr>
                                     <td class="col-sm-2">授课类型：</td>
                                     <td class="col-sm-8">
@@ -223,7 +223,11 @@ function save(){
 	$.post("{:U('Teacher/edit')}",$('#dataForm').serializeArray(),function(data){
 		if(data.status == '1'){
 			jsalert(data.info,1,function(){
-				location.href = data.url;
+				if('{$admin_info.type}' == 2){
+                    location.reload();
+                }else{
+                    location.href = data.url;
+                }
 			});
 		}else{
 			jsalert(data.info,2);

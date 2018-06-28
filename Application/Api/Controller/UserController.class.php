@@ -11,6 +11,8 @@ class UserController extends BaseController {
         $data['pay_num'] = D('Order')->where(array('user_id'=>$data['id'],'status'=>'1'))->count();
         //待评价订单
         $data['com_num'] = D('Order')->where(array('user_id'=>$data['id'],'status'=>'2'))->count();
+        //是否是老师
+        $data['teacher_status'] = D('Teacher')->where(array('user_id'=>$this->user_id))->getField('status');
         $this->returnSuccess('',$data);
     }
     //收藏/关注  老师或课程
@@ -28,9 +30,9 @@ class UserController extends BaseController {
         if($res){
             if($type == 1){
                 $follow_num = D('Follow')->where(array('relation_id'=>$relation_id,'type'=>1))->count();
-                $this->returnSuccess('收藏成功',$follow_num) ;
+                $this->returnSuccess('收藏成功',array('follow_num'=>$follow_num,'follow_id'=>$res)) ;
             }else{
-                $this->returnSuccess('收藏成功');
+                $this->returnSuccess('收藏成功',$res);
             }
         }else{
                 $this->returnError('系统繁忙，请稍后再试');

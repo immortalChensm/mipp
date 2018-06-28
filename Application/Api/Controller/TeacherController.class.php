@@ -123,7 +123,8 @@ class TeacherController extends BaseController {
 	    	$request_data['nickname'] = $user_info['nickname'];
 	    	$request_data['headimgurl'] = $user_info['headimgurl'];
 	    	$request_data['sex'] = $user_info['gender'];
-// 	    	$this->returnSuccess('',$request_data);
+            $request_data['status'] = 3;
+            
 	    	$res = D('Teacher')->saveData($request_data);
 	    	$res ? $this->returnSuccess('提交成功！') : $this->returnError('系统繁忙，请稍后再试');
     	}else {

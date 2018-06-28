@@ -21,7 +21,8 @@ Page({
     is_follow:false,
     has_phone:false,
     buy_click:false,
-    yuyue_click: false
+    yuyue_click: false,
+    follow_id:''
   },
   //课程详情和评价点击事件
   tabShow:function(event){
@@ -221,7 +222,12 @@ Page({
       var info = result.data;
       if(info.status == '1'){
         that.setData({
-          is_follow:info.data
+          is_follow:true,
+          follow_id:info.data
+        })
+      }else{
+        that.setData({
+          is_follow: false
         })
       }
     });
@@ -231,16 +237,33 @@ Page({
    */
   collect:function(event){
     var that = this;
-    if (!that.data.is_follow){
-      var id = event.currentTarget.dataset['id'];
-      tool.post('User/follow', { relation_id: id, type: 2 }, function (result) {
-        that.setData({
-          is_follow:true
-        });
-        tool.jsalert(result.data.msg);
+    var id = event.currentTarget.dataset['id'];
+    // console.log(this.data.follow_id)
+    if (that.data.is_follow) {
+      tool.post('Follow/cancel', { id: that.data.follow_id }, function (result) {
+        var info = result.data;
+        if (info.status == '1') {
+          that.setData({
+            is_follow: false,
+            follow_id: ''
+          });
+        } else {
+          tool.jsalert(info.msg, 2);
+        }
       })
-    }else{
-      tool.jsalert('您已收藏',2);
+    } else {
+      tool.post('User/follow', { relation_id: id, type: 2 }, function (result) {
+        var info = result.data;
+        if (info.status == '1') {
+          that.setData({
+            is_follow: true,
+            follow_id:info.data
+          });
+        } else {
+          tool.jsalert(info.msg, 2);
+        }
+      })
     }
+    
   }
 })
