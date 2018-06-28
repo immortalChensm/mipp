@@ -21,6 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     //检查登录
     if (!app.checkLogin()) {
       app.doLogin();
@@ -206,15 +207,17 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function (e) {
+    // console.log(e);
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    wx.switchTab({
+      url: '/pages/user_center/index'
+    })
   },
 
   /**

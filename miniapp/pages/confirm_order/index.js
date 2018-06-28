@@ -7,11 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    'course_info':[],
-    'form_phone': '',
-    'count':1,
-    'total_price': 0,
-    'form_name':''
+    course_info:[],
+    form_phone: '',
+    count:1,
+    total_price: 0,
+    form_name:'',
+    pay_click:false
   },
 
   /**
@@ -57,6 +58,13 @@ Page({
    * 添加订单
    */
   add_order:function(){
+    if (this.data.pay_click){
+      return false;
+    }else{
+      this.setData({
+        pay_click: true
+      })
+    }
     var postdata = {
       'type':1,
       'course_id':this.data.course_info.id,
@@ -91,6 +99,9 @@ Page({
         })
       }else{
         tool.jsalert(info.msg,2);
+        this.setData({
+          pay_click: false
+        })
       }
     })
   },
@@ -105,7 +116,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      pay_click:false
+    })
   },
 
   /**

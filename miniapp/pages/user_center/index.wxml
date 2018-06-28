@@ -30,14 +30,14 @@
                        <image  src="../../assets/images/wait-pay-icon.png" class="edu-center-pay-icon"/>
                    </view>
                      <text class="edu-center-waitpay-text" >待付款</text> 
-                     <label class="{{user.pay_num > 9?'edu-center-nums-b':'edu-center-nums'}}">{{user.pay_num}}</label>
+                     <label wx:if="{{user.pay_num>0}}" class="{{user.pay_num > 9?'edu-center-nums-b':'edu-center-nums'}}">{{user.pay_num}}</label>
               </view>
               <view class="edu-center-pay edu-width-b" bindtap='toOrder' data-type='comment'>
                    <view class="edu-center-pay-top">
                        <image  src="../../assets/images/evaluate-icon.png" class="edu-center-pay-icon"/>
                    </view>
                      <text class="edu-center-waitpay-text" >待评价</text> 
-                     <label class="{{user.com_num > 9?'edu-center-nums-b':'edu-center-nums'}}">{{user.com_num}}</label>
+                     <label wx:if="{{user.com_num>0}}" class="{{user.com_num > 9?'edu-center-nums-b':'edu-center-nums'}}">{{user.com_num}}</label>
               </view>
           </view>
       </view>
@@ -54,7 +54,7 @@
                         <image src="../../assets/images/teacher-icon.png" class="edu-center-o-icon"/>
                    </view>
                    <text>成为老师</text>
-                   <label class="edu-center-c-t" wx:if="{{user.status ==3}}">审核中</label>
+                   <label class="edu-center-c-t" wx:if="{{user.teacher_status ==3}}">审核中</label>
             </view>
             <view class="edu-center-o-q" bindtap='toFaq'>
                    <view class="edu-center-o-a">
@@ -66,7 +66,7 @@
                    <view class="edu-center-o-a">
                         <image src="../../assets/images/about-icon.png" class="edu-center-o-icon"/>
                    </view>
-                   <text>关于我们</text>  
+                   <text>关于我们</text>
             </view>   
       </view>
       <!-- 其他end -->  
