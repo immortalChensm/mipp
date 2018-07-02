@@ -11,6 +11,8 @@ Page({
     sele_type: false,
     sele_sale_count: false,
     sele_price: false,
+    showkecd:false,
+    showkecdb:false,
     cur_type: '',
     cur_price: '',
     cur_sale_count: '',
@@ -31,11 +33,13 @@ Page({
         hidden_price: true,
         sele_sale_count: false,
         sele_price: false,
+        showkecd: true
       })
     } else {
       that.setData({
         hidden_type: true,
-        sele_type: false
+        sele_type: false,
+        showkecd: false
       })
     }
   },
@@ -49,11 +53,13 @@ Page({
         hidden_price: true,
         sele_type: false,
         sele_price: false,
+        showkecd: true
       })
     } else {
       that.setData({
         hidden_sale_count: true,
-        sele_sale_count: false
+        sele_sale_count: false,
+        showkecd: false
       })
     }
   },
@@ -66,12 +72,14 @@ Page({
         hidden_type: true,
         hidden_sale_count: true,
         sele_type: false,
-        sele_sale_count: false
+        sele_sale_count: false,
+        showkecd: true
       })
     } else {
       that.setData({
         hidden_price: true,
-        sele_price: false
+        sele_price: false,
+        showkecd: false
       })
     }
   },

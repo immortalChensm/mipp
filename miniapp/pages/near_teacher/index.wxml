@@ -18,8 +18,8 @@
       </view>
 </view>
  <!-- 遮罩层  -->
-    <!-- <view class="{{showkecdab?'edu-mask':'edu-none'}}"></view> 
-    <view class="{{showkecdbc?'edu-mask':'edu-none'}}"></view>  -->
+     <view class="{{showkecdab?'edu-mask':'edu-none'}}"></view> 
+    <view class="{{showkecdbc?'edu-mask':'edu-none'}}"></view>  
 <!-- 遮罩层 -->
 <!-- 距离 -->
 <view hidden='{{hidden_typea}}' class="'edu-show edu-sty-qa">
