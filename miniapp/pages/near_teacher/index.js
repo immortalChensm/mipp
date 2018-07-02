@@ -25,17 +25,72 @@ Page({
     cur_status:1,
     hidden_status:false,
     lng:0,
-    lat:0
+    lat:0,
+    // conf_data:null
   },
 
+onShow:function(){
+  //获取附近老师
+  // var that = this;
+  // that.setData({
+  //   showkecda: false,
+  //   showkecdb: false,
+  //   showkecdab: false,
+  //   hidden_typea: true,
+  //   hidden_typeb: true
+  // });
+  this.setData({
+    cur_page: 1,
+    cur_type: '',
+    cur_sale: 1,
+    cur_distance: '',
+    hidden_showa: false,
+    hidden_showb: false,
+    teacher_list: [],
+    teacher_type: [],
+    default_type: '距离',
+    type_name: '全部',
+    showkecda: false,
+    showkecdb: false,
+    showkecdab: false,
+    showkecdbc: false,
+    hidden_typea: true,
+    hidden_typeb: true,
+    cur_status: 1,
+    hidden_status: false,
+    lng: 0,
+    lat: 0,
+  });
+  this.getStickTeacher();
+  //获取类型
+  this.getTypeTeacher();
+
+},
   /**
    * 生命周期函数--监听页面显示
    */
   onLoad: function (options) {
-    //获取附近老师
+  
+    // this.setData({
+    //   conf_data:{
+    //     teacher_list: [],
+    //     teacher_type: [],
+    //     default_type: '距离',
+    //     type_name: '全部'
+    //   }
+    // })
     this.getStickTeacher();
     //获取类型
     this.getTypeTeacher();
+  },
+  ini_data:function(){
+    var conf_data = this.data.conf_data;
+    this.setData({
+      teacher_list: conf_data.teacher_list,
+      teacher_type: conf_data.teacher_type,
+      default_type: conf_data.default_type,
+      type_name: conf_data.type_name
+    })
   },
   // 全部课程筛选点击事件
   showa: function () {
@@ -50,7 +105,6 @@ Page({
         hidden_typeb: true,
         hidden_typec: true,
 
-
       })
     } else {
       that.setData({
@@ -64,8 +118,9 @@ Page({
     var that = this;
     if (that.data.hidden_typeb) {
       that.setData({
+        showkecdab:true,
         showkecda: false,
-        showkecdbc: true,
+        // showkecdbc: true,
         showkecdb: true,
         showkecdc: false,
         hidden_typea: true,
@@ -77,7 +132,8 @@ Page({
       that.setData({
         hidden_typeb: true,
         showkecdb: false,
-        showkecdbc: false
+        // showkecdbc: false,
+        showkecdab: false
       })
     }
   },
@@ -131,8 +187,11 @@ Page({
     var val = event.currentTarget.dataset['val'];
     this.setData({
       cur_page: 1,
-      showkecda: true,
-      showkecdb: true,
+      hidden_typea:true,
+      hidden_typeb:true,
+      showkecda: false,
+      showkecdb: false,
+      showkecdab:false
     })
     switch (opt_type) {
       case 'distance':
@@ -155,8 +214,6 @@ Page({
         this.setData({
           cur_type: id,
           type_name: name,
-
-          showkecdbc: false,
           showkecdb: false,
           hidden_typeb:true,
           showkecda:false,
@@ -233,4 +290,28 @@ Page({
     this.onLoad();
     wx.stopPullDownRefresh();
   },
+  onUnload:function(){
+    this.setData({
+      cur_page: 1,
+      cur_type: '',
+      cur_sale: 1,
+      cur_distance: '',
+      hidden_showa: false,
+      hidden_showb: false,
+      teacher_list: [],
+      teacher_type: [],
+      default_type: '距离',
+      type_name: '全部',
+      showkecda: false,
+      showkecdb: false,
+      showkecdab: false,
+      showkecdbc: false,
+      hidden_typea: true,
+      hidden_typeb: true,
+      cur_status: 1,
+      hidden_status: false,
+      lng: 0,
+      lat: 0,
+    });
+  }
 })

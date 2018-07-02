@@ -57,13 +57,14 @@
         <text class="edu-list-cy-name">{{item.name}}</text>
       </view>
       <view class="edu-list-two">
-        <block wx:for="{{item.stararr}}" wx:for-item="va">
+        <!-- <label class="edu-list-no-pf">暂无评分</label> -->
+         <block wx:for="{{item.stararr}}" wx:for-item="va">
           <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
           <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
           <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png"></image> 
           <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
         </block>
-        <text>{{item.star}}</text>
+        <text>{{item.star}}</text> 
       </view>
       <view class="edu-introduce">
         <label>简介：{{item.profile}}</label>
@@ -105,6 +106,7 @@
       </view>
 
       <view class="edu-list-two">
+        <!-- <label class="edu-list-no-pf">暂无评分</label> -->
         <block wx:for="{{item.stararr}}" wx:for-item="va">
           <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
           <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 

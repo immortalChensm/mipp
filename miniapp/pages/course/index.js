@@ -12,7 +12,6 @@ Page({
     sele_sale_count: false,
     sele_price: false,
     showkecd:false,
-    showkecdb:false,
     cur_type: '',
     cur_price: '',
     cur_sale_count: '',
@@ -34,6 +33,7 @@ Page({
         sele_sale_count: false,
         sele_price: false,
         showkecd: true
+        
       })
     } else {
       that.setData({
@@ -108,6 +108,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
+   this.setData({
+     hidden_type: true,
+     hidden_sale_count: true,
+     hidden_price: true,
+     sele_type: false,
+     sele_sale_count: false,
+     sele_price: false,
+     showkecd: false,
+     cur_type: '',
+     cur_price: '',
+     cur_sale_count: '',
+     cur_page: 1,
+     default_type: '全部课程',
+     course_list: [],
+     course_types: [],
+     is_add: true,
+     data_end: false
+   });
+    
     var course_type = wx.getStorageSync('course_type');
     wx.removeStorageSync('course_type');
     if (course_type) {
@@ -118,11 +137,16 @@ Page({
         cur_page: 1
       })
     }
-    this.setData({
-      hidden_type: true,
-      hidden_sale_count: true,
-      hidden_price: true
-    })
+    // this.setData({
+    //   hidden_type: true,
+    //   hidden_sale_count: true,
+    //   hidden_price: true,
+    //   showkecd:false,
+    //   sele_type:false,
+    //   sele_sale_count:false,
+    //   sele_price:false
+      
+    // })
     //获取课程分类
     this.courseType();
     //加载课程列表
@@ -225,7 +249,11 @@ Page({
       hidden_sale_count: true,
       hidden_price: true,
       is_add: false,
-      data_end:false
+      data_end:false,
+      showkecd:false,
+      sele_price:false
+      
+
     })
     switch (opt_type) {
       case 'type':
@@ -234,6 +262,7 @@ Page({
           cur_type: val,
           default_type: name,
           sele_type: false,
+  
         });
         break;
       case 'sale_count':
@@ -241,13 +270,15 @@ Page({
           cur_sale_count: val,
           cur_price: '',
           sele_sale_count: false,
+  
+   
         });
         break;
       case 'price':
         this.setData({
           cur_price: val,
           cur_sale_count: '',
-          sele_price: false,
+
         });
         break;
     }
