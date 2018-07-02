@@ -32,6 +32,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onLoad: function (options) {
+
+  },
+  onShow:function(){
+    this.setData({
+      showkecda: false,
+      showkecdb: false,
+      showkecdab: false,
+      showkecdbc: false,
+      hidden_typea: true,
+      hidden_typeb: true
+    })
     //获取附近老师
     this.getStickTeacher();
     //获取类型

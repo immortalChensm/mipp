@@ -147,6 +147,7 @@ Page({
       })
     }
     this.setData({
+      
       buy_click:false,
       yuyue_click:false
     })

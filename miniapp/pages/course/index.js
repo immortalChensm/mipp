@@ -110,15 +110,12 @@ Page({
   onShow: function (options) {
     var course_type = wx.getStorageSync('course_type');
     wx.removeStorageSync('course_type');
-    if (course_type) {
-      this.setData({
-        cur_type: course_type,
-        is_add: false,
-        data_end:false,
-        cur_page: 1
-      })
-    }
     this.setData({
+      cur_type: course_type,
+      is_add: false,
+      data_end: false,
+      cur_page: 1,
+      showkecd: false,
       hidden_type: true,
       hidden_sale_count: true,
       hidden_price: true
@@ -225,7 +222,8 @@ Page({
       hidden_sale_count: true,
       hidden_price: true,
       is_add: false,
-      data_end:false
+      data_end:false,
+      showkecd:false
     })
     switch (opt_type) {
       case 'type':
