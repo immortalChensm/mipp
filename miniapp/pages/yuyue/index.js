@@ -8,7 +8,8 @@ Page({
   data: {
     'course_info': [],
     'form_phone': '',
-    'form_name': ''
+    'form_name': '',
+    'yuyue_click':false
   },
 
   /**
@@ -33,6 +34,13 @@ Page({
    * 添加订单
    */
   yuyue_order: function () {
+    if(this.data.yuyue_click){
+      return false;
+    }else{
+      this.set({
+        yuyue_click:true
+      })
+    }
     console.log(this.data)
     var postdata = {
       'type': 2,
@@ -49,6 +57,9 @@ Page({
           url: '/pages/yuyue_suc/index'
         })
       } else {
+        this.set({
+          yuyue_click: false
+        })
         tool.jsalert(info.msg,2);
       }
     })

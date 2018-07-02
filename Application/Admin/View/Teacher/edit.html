@@ -52,12 +52,19 @@ myeditor('content');
                                         <input type="text" class="form-control" name="info[phone]" value="{$info.phone}" placeholder="请输入手机号"/>
                                     </td>
                                 </tr>
+                                <!-- <tr> -->
+                                    <!-- <td class="col-sm-2">邮箱：</td> -->
+                                    <!-- <td class="col-sm-8"> -->
+                                        <!-- <input type="text" class="form-control" name="info[email]" value="{$info.email}" placeholder="请输入邮箱账号"/> -->
+                                    <!-- </td> -->
+                                <!-- </tr> -->
                                 <tr>
-                                    <td class="col-sm-2">邮箱：</td>
+                                    <td class="col-sm-2">地址：</td>
                                     <td class="col-sm-8">
-                                        <input type="text" class="form-control" name="info[email]" value="{$info.email}" placeholder="请输入邮箱账号"/>
+                                        <input type="text" class="form-control" name="info[address]" value="{$info.address}" readonly/>
                                     </td>
                                 </tr>
+                                
                                 <!-- <tr> -->
                                     <!-- <td class="col-sm-2">经纬度：</td> -->
                                     <!-- <td class="col-sm-8"> -->
@@ -182,7 +189,7 @@ $(function(){
     var vdo_index = 1000;
 	$('.col-sm-8>.upvideo').on('click','.btn-primary',function(){
 		if($('.upvideo').length>=3){
-			jsalert('视频最多上传六个！',2);
+			jsalert('视频最多上传3个！',2);
 			return false;
 		}
 		var str = '<div class="upvideo">';

@@ -82,7 +82,11 @@ Page({
       // 来自页面内转发按钮
       console.log(res.target)
     }
-    return app.shareApp();
+    return app.shareApp(
+      this.data.tlist.name,
+      '/pages/teacher_detail/index?id=' + this.data.tlist.id,
+      this.data.tlist.headimgurl
+    );
   },
   /**
  * 收藏

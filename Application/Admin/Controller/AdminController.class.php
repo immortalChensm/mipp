@@ -59,12 +59,16 @@ class AdminController extends BaseController {
             $where['user_name'] = I('post.username');
             $where['password'] = I('post.password');
             if(!$res = D('Admin')->create($where)){
-                var_dump(I('post.')); die();
             	$this->error(D('Admin')->getError());
             }else{
                 $where['password'] = encrypt($where['password']);
                 $admin_info = D('Admin')->where($where)->find();
                 if(is_array($admin_info)){
+                    //老师账号需验证老师状态
+                    if($admin_info['type'] == '2'){
+                        $teacher = D('Teacher')->where(array('id'=>$admin_info['teacher_id']))->find();
+                        $teacher['status'] != '1' && $this->error('该账号尚未审核通过或已被注销');
+                    }
                 	session('admin_id',$admin_info['id']);
                 	$url = session('from_url') ? session('from_url') : U('Admin/Index/index');
                 	$this->success('登录成功！',$url);

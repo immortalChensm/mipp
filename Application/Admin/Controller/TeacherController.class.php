@@ -60,8 +60,15 @@ class TeacherController extends BaseController {
     	{
     		$id = (int)I('post.id');
     		$id || $this->error('非法的操作');
-    		D('Teacher')->where(array('id'=>$id))->save(array('status'=>4)) && $this->success('数据删除成功！');
-    		$this->error('网络异常，删除失败！');
+    		$res = D('Teacher')->where(array('id'=>$id))->save(array('status'=>4));
+            if($res){
+                //更新老师的课程状态
+                D('Course')->where(array('teacher_id'=>$id))->save(array('status'=>'5'));
+                
+                $this->success('数据删除成功！');
+            }else{
+                $this->error('网络异常，删除失败！');
+            }
     	}
     }
     //教师类型
@@ -213,13 +220,18 @@ class TeacherController extends BaseController {
 	//审核教师
     public function check_teacher(){
     	$id = (int)I('post.id');
+        $teacher_info = D('Teacher')->where(array('id'=>$id))->find();
+        $teacher_info || $this->error('非法的操作！');
     	$status = (int)I('post.status');
         $save_data = array();
         $save_data['id'] = $id;
         $save_data['status'] = $status;
         $save_data['check_time'] = date('Y-m-d H:i:s');
-        $save_data['identify'] = $status == '1'? '2':'1';
     	D('Teacher')->save($save_data) && $this->success('审核成功!');
+        //更新用户身份
+        $identify = $status == '1'? '2':'1';
+        D('User')->where(array('id'=>$teacher_info['user_id']))->save(array('identify'=>$identify));
+        
         $this->error('网络异常，请稍后再试！');
     }
     

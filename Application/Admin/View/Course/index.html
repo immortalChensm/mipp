@@ -45,6 +45,7 @@ function export_order(){
 			                   <th>名称</th>
 			                   <th>类型</th>
                                <th>名额</th>
+                               <th>预约名额</th>
 			                   <th>价格</th>
 							   <th>是否推荐</th>
 							   <th>上/下架</th>
@@ -60,6 +61,7 @@ function export_order(){
 		                     <td>{$vo.name|default='--'}</td>
 		                     <td>{:$course_types[$vo['type']]}</td>
                              <td>{$vo.stock|default='--'}</td>
+                             <td>{$vo.yuyue_stock|default='--'}</td>
 							 <td>{$vo.price|default='--'}</td>
 		                     <if condition="$vo.is_stick eq 1">
 		                     <td><img style="cursor:pointer;" width="20" height="20" src="__PUBLIC__/images/yes.png" onclick="set_stick(this,'{$vo.id}','1')"/></td>

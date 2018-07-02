@@ -30,7 +30,7 @@ class UserController extends BaseController {
         if($res){
             if($type == 1){
                 $follow_num = D('Follow')->where(array('relation_id'=>$relation_id,'type'=>1))->count();
-                $this->returnSuccess('收藏成功',array('follow_num'=>$follow_num,'follow_id'=>$res)) ;
+                $this->returnSuccess('关注成功',array('follow_num'=>$follow_num,'follow_id'=>$res)) ;
             }else{
                 $this->returnSuccess('收藏成功',$res);
             }

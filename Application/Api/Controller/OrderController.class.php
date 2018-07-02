@@ -69,7 +69,9 @@ class OrderController extends BaseController {
     	$user_id = D('User')->where(array('openid'=>$post_data['openid']))->getField('id');
     	$course_info = D('Course')->where(array('id'=>$post_data['course_id'],'status'=>1))->find();
     	$course_info || $this->returnError('此课程已被删除或下架');
+        $teacher_info = D('Teacher')->where(array('id'=>$course_info['teacher_id']))->find();
         $course_info['stock']<1 && $this->returnError('抱歉，该课程名额已满');
+        if($user_id == $teacher_info['user_id']) $this->returnError('抱歉，您不可以'.($post_data['type']=='1'?'购买':'预约').'自己的课程');
         if($post_data['type'] == 2){
             D('Order')->where(array('user_id'=>$user_id,'course_id'=>$post_data['course_id'],'status'=>array('NEQ',4)))->getField('id') && $this->returnError('您已经预约过该课程，不可重复预约');
         } 
@@ -120,7 +122,7 @@ class OrderController extends BaseController {
    		$total_fee = $order_info['price'];
 
     	$total  = $total_fee*100;
-    	$total = 1;//暂时使用
+    	// $total = 1;//暂时使用
     
     	vendor("Wxpay.WxPayJsApiPay");
     	$tools = new \JsApiPay();

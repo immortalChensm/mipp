@@ -24,6 +24,12 @@ Page({
     //获取推荐老师
     this.getStickTeacher();
     //console.log(wx.getStorageSync('userinfo'))
+    this.setData({
+      is_fresh: false
+    })
+  },
+  onShow:function(){
+
   },
   getBanner: function () {
     var that = this;
@@ -123,5 +129,14 @@ Page({
       console.log(res.target)
     }
     return app.shareApp();
-  }
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    //重新加载
+    this.onLoad();
+    wx.stopPullDownRefresh();
+  },
 })

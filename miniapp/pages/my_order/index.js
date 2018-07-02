@@ -15,7 +15,8 @@ Page({
     list_info:[],
     cancel_click:false,
     pay_click:false,
-    comment_click:false
+    comment_click:false,
+    type:''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -27,7 +28,10 @@ Page({
       app.doLogin();
       return false;
     }
-    var type = options.type;
+    var type = options.type?options.type : this.data.type;
+    this.setData({
+      type: type
+    })
     switch(type){
       case 'all': this.seleall();break;
       case 'pay': this.selepay(); break;
@@ -164,27 +168,19 @@ Page({
  * 取消订单
  */
   cancelOrder: function (e) {
-    if (this.data.cancel_click) {
-      return false;
-    } else {
-      this.setData({
-        cancel_click: true
-      })
-    }
     var that = this;
-    var order_id = e.currentTarget.dataset['id'];
-    tool.post('Order/del',{id:order_id},function(result){
-      var info = result.data;
-      if(info.status == '1'){
-        tool.jsalert(info.msg)
-        that.getOrderList();
-      }else{
-        tool.jsalert(info.msg,2);
-        this.setData({
-          cancel_click: false
-        })
-      }
-    })
+    tool.jsconfirm('确定要取消此订单吗？',function(){
+      var order_id = e.currentTarget.dataset['id'];
+      tool.post('Order/del', { id: order_id }, function (result) {
+        var info = result.data;
+        if (info.status == '1') {
+          tool.jsalert(info.msg)
+          that.getOrderList();
+        } else {
+          tool.jsalert(info.msg, 2);
+        }
+      })
+    });
   }, 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -224,7 +220,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    //重新加载
+    this.onLoad();
+    this.onShow();
+    wx.stopPullDownRefresh();
   },
 
   /**

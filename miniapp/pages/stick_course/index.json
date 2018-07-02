@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "推荐课程"
+  "navigationBarTitleText": "推荐课程",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 20
 }

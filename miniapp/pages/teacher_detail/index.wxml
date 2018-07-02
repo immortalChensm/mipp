@@ -1,4 +1,5 @@
 <import src="../../wxParse/wxParse.wxml" />
+<import src="../template/template.wxml"/> 
 <view class="edu-info-content">
       <image src="../../assets/images/info-bg.png" class="edu-info-bg-a"/>
       <image src="{{tlist.headimgurl}}" class="edu-info-logo"/> 
@@ -105,14 +106,16 @@
                 </view> 
         </view>
       <!-- 列表end -->
+      
 </view>
+<template is="default_content" wx:if="{{tlist.course.length == 0}}" data="{{message:'暂无数据'}}"></template>
 <!-- 课程 end -->
 </view>
 <!-- 主要授课内容end -->
 <!-- 学生评价内容 -->
 
-<view class="edu-course-bg-pj">
-<view class="{{selected3?'edu-info-pj-n edu-show':'edu-info-pj-n edu-none'}}"  wx:for="{{tlist.comment}}" wx:for-item="item" wx:key="key"  data-id="{{item.id}}">
+<view class="{{selected3?'edu-course-bg-pj  edu-show':'edu-course-bg-pj edu-none'}}">
+<view class="edu-info-pj-n"  wx:for="{{tlist.comment}}" wx:for-item="item" wx:key="key"  data-id="{{item.id}}">
   <!-- 课程评价 -->
           <view class="edu-course-pj-content">
             <view class="edu-course-evaluate">
@@ -146,6 +149,7 @@
       
       <!-- 课程评价 -->
 </view>
+<template is="default_content" wx:if="{{tlist.comment.length == 0}}" data="{{message:'暂无数据'}}"></template>
 </view>
 <!-- 学生评价内容end -->
 <!-- <text class="edu-info-all">-- 已全部展示 --</text> -->

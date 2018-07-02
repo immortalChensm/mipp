@@ -9,6 +9,7 @@ class CourseModel extends CommonModel{
 			$this->_validate[] =array('type','require','请选择课程类型');
 			$this->_validate[] =array('price','require','请输入课程价格');
 			$this->_validate[] =array('stock','require','请输入限购人数');
+			$this->_validate[] =array('yuyue_stock','require','请输入预约名额');
 			$this->_validate[] =array('pics','require','请上传课程图片');
 // 			$this->_validate[] =array('link','require','请上传介绍视频');
 			$this->_validate[] =array('profile','require','请输入课程简介');

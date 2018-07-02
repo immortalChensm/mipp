@@ -56,14 +56,14 @@ function jsconfirm(msg,suc,fail,sucbtntext,failbtntext) {
     sucbtntext = sucbtntext == null || sucbtntext == 'undefined' ? '确认' : sucbtntext;
     failbtntext = failbtntext == null || failbtntext == 'undefined' ? '取消' : failbtntext;
     if (typeof (suc) != 'function'){
-       suc = function(){
-    	   wx.hideToast();
-       }
+        var suc = function(){
+    	      wx.hideToast();
+        }
     }
     if (typeof (fail) != 'function'){
-	    fail = function(){
-		    wx.hideToast();
-	    }
+	      var fail = function(){
+            wx.hideToast();
+        }
     }
     wx.showModal({
 	    title: '提示信息',
@@ -71,8 +71,10 @@ function jsconfirm(msg,suc,fail,sucbtntext,failbtntext) {
 	    showCancel: true,
 	    cancelText: failbtntext,
 	    confirmText: sucbtntext,
-	    success: suc,
-	    fail: fail,
+	    success: function(res){
+        if (res.confirm) suc();
+        if (res.cancel) fail();
+      }
     })
 }
 

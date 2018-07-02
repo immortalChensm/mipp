@@ -196,7 +196,11 @@ Page({
       // 来自页面内转发按钮
       console.log(res.target)
     }
-    return app.shareApp();
+    return app.shareApp(
+      this.data.course_info.name,
+      '/pages/course_detail/index?id=' + this.data.course_info.id,
+      this.data.course_info.pics[0]
+    );
   },
   /**
    * 拨打电话
