@@ -15,6 +15,14 @@ Page({
     autoplays: false
   },
   onLoad: function (options) {
+
+  },
+  onShow:function(){
+    wx.showToast({
+      title: '',
+      icon:'loading',
+      duration:10000
+    })
     //获取banner
     this.getBanner();
     //获取课程分类
@@ -23,13 +31,7 @@ Page({
     this.getStickCourse();
     //获取推荐老师
     this.getStickTeacher();
-    //console.log(wx.getStorageSync('userinfo'))
-    this.setData({
-      is_fresh: false
-    })
-  },
-  onShow:function(){
-
+    wx.hideToast();
   },
   getBanner: function () {
     var that = this;

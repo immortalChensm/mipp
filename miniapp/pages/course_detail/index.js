@@ -248,6 +248,7 @@ Page({
       tool.post('Follow/cancel', { id: that.data.follow_id }, function (result) {
         var info = result.data;
         if (info.status == '1') {
+          tool.jsalert(info.msg);
           that.setData({
             is_follow: false,
             follow_id: ''
@@ -260,6 +261,7 @@ Page({
       tool.post('User/follow', { relation_id: id, type: 2 }, function (result) {
         var info = result.data;
         if (info.status == '1') {
+          tool.jsalert(info.msg);
           that.setData({
             is_follow: true,
             follow_id:info.data

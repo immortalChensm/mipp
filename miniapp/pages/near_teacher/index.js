@@ -25,13 +25,43 @@ Page({
     cur_status:1,
     hidden_status:false,
     lng:0,
-    lat:0
+    lat:0,
   },
 
+onShow:function(){
+  this.setData({
+    cur_page: 1,
+    cur_type: '',
+    cur_sale: 1,
+    cur_distance: '',
+    hidden_showa: false,
+    hidden_showb: false,
+    teacher_list: [],
+    teacher_type: [],
+    default_type: '距离',
+    type_name: '全部',
+    showkecda: false,
+    showkecdb: false,
+    showkecdab: false,
+    showkecdbc: false,
+    hidden_typea: true,
+    hidden_typeb: true,
+    cur_status: 1,
+    hidden_status: false,
+    lng: 0,
+    lat: 0,
+  });
+  //获取附近老师
+  this.getStickTeacher();
+  //获取类型
+  this.getTypeTeacher();
+
+},
   /**
    * 生命周期函数--监听页面显示
    */
   onLoad: function (options) {
+
 
   },
   onShow:function(){
@@ -61,7 +91,6 @@ Page({
         hidden_typeb: true,
         hidden_typec: true,
 
-
       })
     } else {
       that.setData({
@@ -75,8 +104,9 @@ Page({
     var that = this;
     if (that.data.hidden_typeb) {
       that.setData({
+        showkecdab:true,
         showkecda: false,
-        showkecdbc: true,
+        // showkecdbc: true,
         showkecdb: true,
         showkecdc: false,
         hidden_typea: true,
@@ -88,7 +118,8 @@ Page({
       that.setData({
         hidden_typeb: true,
         showkecdb: false,
-        showkecdbc: false
+        // showkecdbc: false,
+        showkecdab: false
       })
     }
   },
@@ -142,8 +173,11 @@ Page({
     var val = event.currentTarget.dataset['val'];
     this.setData({
       cur_page: 1,
-      showkecda: true,
-      showkecdb: true,
+      hidden_typea:true,
+      hidden_typeb:true,
+      showkecda: false,
+      showkecdb: false,
+      showkecdab:false
     })
     switch (opt_type) {
       case 'distance':
@@ -166,8 +200,6 @@ Page({
         this.setData({
           cur_type: id,
           type_name: name,
-
-          showkecdbc: false,
           showkecdb: false,
           hidden_typeb:true,
           showkecda:false,
@@ -214,17 +246,6 @@ Page({
     })
     that.getStickTeacher();
     setTimeout(function () { wx.hideToast(); }, 1000);
-    // tool.post('Teacher/teacher_list', postdatas , function (res) {
-    //     if (res.data.status == '1') {
-    //       that.setData({
-    //         teacher_list: that.data.teacher_list.concat(res.data.data),
-    //         cur_page:cur_page,
-    //       })
-    //     }
-    //     setTimeout(function () { wx.hideToast(); }, 1000);
-    // })
-    // this.getTypeTeacher();
-
   },
   /**
 * 分享
@@ -244,4 +265,28 @@ Page({
     this.onLoad();
     wx.stopPullDownRefresh();
   },
+  onUnload:function(){
+    this.setData({
+      cur_page: 1,
+      cur_type: '',
+      cur_sale: 1,
+      cur_distance: '',
+      hidden_showa: false,
+      hidden_showb: false,
+      teacher_list: [],
+      teacher_type: [],
+      default_type: '距离',
+      type_name: '全部',
+      showkecda: false,
+      showkecdb: false,
+      showkecdab: false,
+      showkecdbc: false,
+      hidden_typea: true,
+      hidden_typeb: true,
+      cur_status: 1,
+      hidden_status: false,
+      lng: 0,
+      lat: 0,
+    });
+  }
 })

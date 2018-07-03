@@ -38,7 +38,7 @@
 </view>
 <!-- 课程类型 end -->
 <!-- 销量 -->
-<view hidden="{{hidden_sale_count}}" class="edu-show edu-sty-qa">
+<!-- <view hidden="{{hidden_sale_count}}" class="edu-show edu-sty-qa">
     <view class="edu-kc-list-a" bindtap="searchList" data-type="sale_count" data-val="1">
        <text class="edu-ke-c-name">按销量从低到高排序</text>
        <view class="edu-success-icon edu-icon-we" hidden="{{cur_sale_count == 1 ? false : true}}">
@@ -51,10 +51,10 @@
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
-</view>
+</view> -->
 <!-- 销量 end -->
 <!-- 价格 -->
-<view hidden="{{hidden_price}}" class="edu-show edu-sty-qa">
+<!-- <view hidden="{{hidden_price}}" class="edu-show edu-sty-qa">
     <view class="edu-kc-list-a" bindtap="searchList" data-type="price" data-val="1">
        <text class="edu-ke-c-name">按价格从低到高排序</text>
        <view class="edu-success-icon edu-icon-we" hidden="{{cur_price == 1 ? false : true}}">
@@ -67,7 +67,7 @@
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
-</view>
+</view> -->
 <!-- 价格 end -->
 <!-- 分类筛选 end -->
 <!-- 课程 start -->
@@ -102,7 +102,7 @@
               </view>
           </view> 
      </view>
-     <template is="default" wx:if="{{course_list.length == 0}}" data="{{message:'暂无课程数据'}}"></template>
+     <template is="default" wx:if="{{course_list.length == 0 && !is_load}}" data="{{message:'暂无课程数据'}}"></template>
      <text class="edu-info-all"  wx:if="{{data_end}}">-- 没有更多课程数据啦 --</text>
       <!-- 列表end -->
 </view>

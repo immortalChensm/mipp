@@ -1761,3 +1761,11 @@ view, scroll-view {
 .edu-info-pj-n {
   margin-bottom: 10rpx;
 }
+
+.edu-list-no-pf{
+  height:50rpx;
+  line-height:60rpx;
+  margin-left:0rpx;
+  font-size: 24rpx;
+  color:rgb(242, 161, 24);
+}

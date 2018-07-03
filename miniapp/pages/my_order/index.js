@@ -134,13 +134,12 @@ Page({
         pay_click:true
       })
     }
+    var that = this;
     var order_id = e.currentTarget.dataset['id'];
     tool.post('Order/pre_pay_order', {order_id:order_id}, function (result) {
       var info = result.data;
-      console.log(info)
       if (info.status == '1') {
         var res = JSON.parse(info.data);
-        console.log(res)
         wx.requestPayment({
           timeStamp: res.timeStamp,
           nonceStr: res.nonceStr,
@@ -153,12 +152,14 @@ Page({
             })
           },
           fail: function (res) {
-            console.log(res);
+            that.setData({
+              pay_click: false
+            })
           }
         })
       } else {
         tool.jsalert(info.msg,2);
-        this.setData({
+        that.setData({
           pay_click: false
         })
       }

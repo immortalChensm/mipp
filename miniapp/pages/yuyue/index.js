@@ -37,7 +37,7 @@ Page({
     if(this.data.yuyue_click){
       return false;
     }else{
-      this.set({
+      this.setData({
         yuyue_click:true
       })
     }
@@ -49,6 +49,7 @@ Page({
       'phone': this.data.form_phone,
       'goods_num': 1
     }
+    var that = this;
     tool.post('Order/add_order', postdata, function (result) {
       var info = result.data;
       console.log(info)
@@ -57,7 +58,7 @@ Page({
           url: '/pages/yuyue_suc/index'
         })
       } else {
-        this.set({
+        that.setData({
           yuyue_click: false
         })
         tool.jsalert(info.msg,2);
