@@ -13,7 +13,7 @@
 
 <!-- 视频 -->
 <view class="edu-course-width">
-      <swiper  indicator-dots="true" autoplay="{{false}}" circular="true">
+      <!-- <swiper  indicator-dots="true" autoplay="{{false}}" circular="true" class="edu-course-video">
         <swiper-item>
             <video src="{{course_info.link}}" class="edu-course-bcg" controls="true" poster='../../image/top.png'></video>
         </swiper-item>
@@ -22,7 +22,12 @@
             <image src="{{item}}" class="edu-course-bcg" />
           </swiper-item>
         </block>
-      </swiper>
+      </swiper> -->
+       <view class="edu-course-imgs">
+         <view class="edu-mask-a"></view>
+           <image src="../../assets/images/video-an.png" class="edu-course-bf"/>
+           <image src="../../assets/images/233.png" class="edu-course-bgs"/>  
+      </view> 
 </view>
 
 <!-- 视频end -->

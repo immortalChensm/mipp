@@ -425,7 +425,7 @@
 }
 
 .edu-course-width {
-  height: 300rpx;
+  height: 469rpx;
 }
 
 .edu-course-bcg {

@@ -1,8 +1,44 @@
-/* pages/coursename/coursename.wxss */ 
+/* pages/coursename/coursename.wxss */
 @import "/wxParse/wxParse.wxss";
-.edu-course-l-icon{
+
+.edu-course-l-icon {
   overflow: hidden;
 }
-.edu-course-bot-q{
+
+.edu-course-bot-q {
   padding-bottom: 120rpx;
+}
+
+.edu-course-imgs {
+  width: 100%;
+  height: 469rpx;
+  position: relative;
+}
+
+.edu-course-bgs {
+  width: 100%;
+  height: 100%;
+}
+
+.edu-course-video {
+  height: 100%;
+}
+
+.edu-course-bf {
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  z-index: 10;
+  top: 200rpx;
+  left: 43%;
+  /* margin-left:-7%; */
+}
+
+.edu-mask-a {
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  position: absolute;
+  background-color: #000;
+  opacity: 0;
 }
