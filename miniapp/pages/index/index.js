@@ -1,8 +1,15 @@
 var tool = require("../../utils/tool.js")
+import tempObj from '../template/template.js'
 const app = getApp()
 
 Page({
+  backpage:tempObj.backpage,
   data: {
+    navdata:{
+      title: '首页', 
+      imgurl: '../../assets/images/fanhui-icon.png', 
+      pageurl: ''
+    },
     banners: [],
     course_types: [],
     course_stick:[],
