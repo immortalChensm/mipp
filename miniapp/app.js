@@ -80,7 +80,8 @@ App({
     };
   },
   global_data:{
-    backimg:'../../assets/images/fanhui-icon.png'
+    backimg:'../../assets/images/fanhui-icon.png',
+    indeximg: '../../assets/images/index-icon.png',
   },
   /**
    * 左上角返回事件
