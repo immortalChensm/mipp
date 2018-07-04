@@ -148,4 +148,11 @@ Page({
     this.onLoad();
     wx.stopPullDownRefresh();
   },
+  set_height:function(){
+    wx.getSystemInfo({
+    success:function(res){
+     console.log(res)
+    }
+    })
+  }
 })

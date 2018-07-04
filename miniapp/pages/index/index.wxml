@@ -1,8 +1,9 @@
+
 <import src="../template/template.wxml"/>
 <template is="navbar" data="{{...navdata}}"></template> 
 <view class="body">
   <!-- 顶部轮播图 start -->
-  <view class="edu-banner">
+  <view class="edu-banner" bindtap='set_height'>
     <swiper indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" style="height:280rpx;" indicator-color="rgb(192,192,192)" indicator-active-color="rgb(242,161,24)">
       <block wx:for="{{banners}}">
         <swiper-item>
@@ -71,7 +72,7 @@
         <text style="color:#aaa;">暂无评分</text>
       </view>
       <view class="edu-introduce">
-        <label>简介：{{item.profile}}</label>
+        <text>简介：{{item.profile}}</text>
       </view>
       <view class="edu-jl-list">
         <label class="edu-tea-name">{{item.teach_type}}</label>

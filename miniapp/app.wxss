@@ -1,8 +1,8 @@
 /* @import "/wxParse/wxParse.wxss"; */
 
-view{
+/* view{
     overflow:initial !important;
-}
+} */
 .edu-content {
   padding: 30rpx;
 }
@@ -216,9 +216,15 @@ view{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size:13px;
+  color:rgb(68, 68, 68);
+  font-family:PingFang-SC-Regular;
+
 }
 
-.edu-introduce label {
+.edu-introduce text {
+  width: 200px;
+  overflow: hidden;
   font-size: 13px;
   color: rgb(68, 68, 68);
   font-family: PingFang-SC-Regular;
@@ -372,7 +378,7 @@ view{
   border-top: 2rpx solid #f2f2f2;
   width: 100%;
   background-color: #fff;
-  top: 80rpx;
+  top: 219rpx;
 }
 
 .edu-show {
@@ -1738,14 +1744,15 @@ view, scroll-view {
   width: 100%;
   top: 0;
   position: fixed;
-  font-size: 36rpx;
-  text-align: center;
-  margin-bottom: 0rpx;
-  height: 70rpx;
-  padding-top: 60rpx;
-  /* line-height: 180rpx; */
+  font-size: 14px;
+   text-align: center; 
+   /* height: 40px;    */
+   /* line-height: 40px; */
+   /* padding-top: 49px;  */
   background-color: #fff;
 }
+
+
 .edu-no-data-c{
   padding-top: 100rpx;
 }
