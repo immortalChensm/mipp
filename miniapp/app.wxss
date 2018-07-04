@@ -1,9 +1,14 @@
 /* @import "/wxParse/wxParse.wxss"; */
 
+view{
+    overflow:initial !important;
+}
 .edu-content {
   padding: 30rpx;
 }
-
+.edu-info-body{
+  padding-top: 130rpx;
+}
 /** wxss **/
 
 .body {
@@ -307,11 +312,11 @@
   padding: 30rpx 30rpx;
   /* border-top: 2rpx solid #e5e5e5; */
 }
-
 .edu-screen {
   display: flex;
   height: 88rpx;
   padding: 0rpx 30rpx;
+  top:129rpx;
   /* position: relative; */
   position: fixed;
   width: 100%;
@@ -1203,8 +1208,9 @@ view, scroll-view {
 }
 
 .edu-center-top {
+  /* margin-top: 130rpx; */
   background-color: #fff;
-  padding: 28rpx 30rpx 36rpx 30rpx;
+  padding: 150rpx 30rpx 36rpx 30rpx;
 }
 
 .edu-center-n-info {
@@ -1414,7 +1420,7 @@ view, scroll-view {
   position: fixed;
   height: 78rpx;
   z-index: 999;
-  top: 0;
+  top: 130rpx;
   background-color: #fff;
 }
 
@@ -1723,9 +1729,12 @@ view, scroll-view {
   margin-top: 6rpx;
   margin-left: 4rpx;
 }
+.edu-nodata-one{
+  text-align: center;
+}
 
-.edu-no-data {
-  z-index: 99;
+.edu-no-data-b {
+  z-index: 9999;
   width: 100%;
   top: 0;
   position: fixed;
@@ -1736,6 +1745,9 @@ view, scroll-view {
   padding-top: 60rpx;
   /* line-height: 180rpx; */
   background-color: #fff;
+}
+.edu-no-data-c{
+  padding-top: 100rpx;
 }
 
 .edu-nav-img {
@@ -1792,4 +1804,7 @@ view, scroll-view {
 
 .edu-color-active {
   color: rgb(242, 161, 24);
+}
+.edu-top-pad-b{
+  padding-top: 220rpx;
 }

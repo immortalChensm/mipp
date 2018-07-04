@@ -1,3 +1,5 @@
+<import src="../template/template.wxml"/> 
+<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
 <view class="edu-center-top">
     <view class="edu-center-n-info">
         <view class="edu-center-left">

@@ -1,4 +1,5 @@
 <import src="../template/template.wxml"/> 
+<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
 <!-- 分类筛选 start -->
 <view class="edu-screen edu-border-top edu-bottom-solid">
       <view class="{{sele_type?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="switchType">
@@ -71,7 +72,7 @@
 <!-- 价格 end -->
 <!-- 分类筛选 end -->
 <!-- 课程 start -->
-<view class="edu-recommend-courses-tj">
+<view class="edu-top-pad-b">
     <!-- 列表 -->
      <view class="edu-acticle-list-tj-s edu-bottom-solid" wx:for="{{course_list}}" wx:key="key" bindtap="toCourseDetail" data-id="{{item.id}}">
          <view class="edu-list-left">

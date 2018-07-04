@@ -1,4 +1,7 @@
 <import src="../../wxParse/wxParse.wxml" />
+<import src="../template/template.wxml"/> 
+<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
+<view class="edu-info-body">
 <view class="edu-pro-contents edu-border-top">
  <template is="wxParse" data="{{wxParseData:content.nodes}}" />
     <!-- <text class="edu-pro-name">{{info.content}}</text> -->
@@ -6,4 +9,5 @@
    <text class="edu-pro-b edu-e-w">包含（但不仅限于）以下行为者</text>
    <text class="edu-pro-b">i）有过虚假交易（编造不存在的买卖订单）</text>
    <text class="edu-pro-b">i）有过恶意下单的行为</text> -->
+</view>
 </view>

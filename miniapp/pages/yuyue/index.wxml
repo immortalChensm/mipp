@@ -1,3 +1,7 @@
+
+<import src="../template/template.wxml"/> 
+<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
+<view class="edu-info-body">
 <!-- 订单展示 -->
 <view class=" edu-bottom-solid edu-border-top">
     <!-- 列表 -->
@@ -56,3 +60,4 @@
       <button class="edu-order-pays">立即预约</button>
 </view>
 <!-- 底部按钮end -->
+</view>

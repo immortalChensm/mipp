@@ -1,3 +1,6 @@
+<import src="../template/template.wxml"/> 
+<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
+<view class="edu-info-body">
 <!-- 审核状态 -->
 
 <view class="edu-come-status" wx:if="{{teacher_info.status == 1}}">
@@ -118,3 +121,4 @@
 </view>
 </form>
 <!-- 资格证书end -->
+</view>

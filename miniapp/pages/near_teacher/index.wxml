@@ -68,7 +68,7 @@
 <!-- 销量 end -->
 <!-- 分类筛选 end -->
 <!-- 金牌老师 start -->
-<view class="edu-recommend-courses-tjs">
+<view class="edu-top-pad-b">
    
     <!-- 列表 -->
      <view class="edu-acticle-list-tj-s edu-bottom-solid" wx:for="{{teacher_list}}"  wx:for-item="item" wx:for-key="key" bindtap="toTeacherDetail" data-id="{{item.id}}">

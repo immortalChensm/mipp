@@ -19,7 +19,7 @@
 }
 .edu-att-position-w{
   position: fixed;
-  top:0;
+  top:130rpx;
   width: 100%;
   background-color: #ffffff;
   z-index: 999;

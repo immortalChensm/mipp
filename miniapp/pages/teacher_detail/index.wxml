@@ -1,5 +1,7 @@
 <import src="../../wxParse/wxParse.wxml" />
 <import src="../template/template.wxml"/> 
+<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
+<view class="edu-info-body">
 <view class="edu-info-content">
       <image src="../../assets/images/info-bg.png" class="edu-info-bg-a"/>
       <image src="{{tlist.headimgurl}}" class="edu-info-logo"/> 
@@ -153,3 +155,4 @@
 </view>
 <!-- 学生评价内容end -->
 <!-- <text class="edu-info-all">-- 已全部展示 --</text> -->
+</view>

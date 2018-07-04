@@ -1,30 +1,25 @@
 {
   "pages": [
-
-
-  
+    
 "pages/index/index",
-"pages/course_detail/index",   
-  "pages/teacher_detail/index",
-
-  "pages/auth/index",
-  "pages/order_detail/index",
-  "pages/user_center/index",
-  "pages/comment/index",
-
- 
-  "pages/near_teacher/index",
-	"pages/yuyue/index",    
-	"pages/confirm_order/index",    
-	"pages/course/index",
-	"pages/stick_teacher/index",
-	"pages/stick_course/index", 
-	"pages/yuyue_suc/index", 
-	"pages/follow/index",
-	"pages/apply_teacher/index",   
-	"pages/about/index",
-	"pages/faq/index",
-	"pages/my_order/index"
+"pages/my_order/index",   
+"pages/about/index",
+"pages/faq/index",
+"pages/apply_teacher/index",
+"pages/follow/index",
+"pages/yuyue_suc/index",
+"pages/stick_course/index",
+"pages/stick_teacher/index",
+"pages/course/index",
+"pages/confirm_order/index",
+"pages/yuyue/index",
+"pages/near_teacher/index",
+"pages/comment/index",
+"pages/user_center/index",
+"pages/order_detail/index",
+"pages/auth/index",
+"pages/teacher_detail/index",
+"pages/course_detail/index"
 
   ],
   "window": {

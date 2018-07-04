@@ -1,5 +1,7 @@
 <import src="../../wxParse/wxParse.wxml"/> 
 <import src="../template/template.wxml"/> 
+<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
+<view class="edu-info-body">
 <!-- 视频 
 <view class="edu-course-width">
     <view class="section tc">
@@ -173,3 +175,4 @@
    </view>
 </view> -->
 <!-- 底部按钮end -->
+</view>
