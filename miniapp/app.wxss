@@ -943,7 +943,6 @@
   top: 280rpx;
   text-align: center;
   z-index: 99;
-  text-decoration-line: underline;
   padding: 5rpx 20rpx;
 }
 
@@ -1770,4 +1769,7 @@ view, scroll-view {
   margin-left:0rpx;
   font-size: 24rpx;
   color:rgb(242, 161, 24);
+}
+.edu-color-active{
+ color:rgb(242, 161, 24);
 }

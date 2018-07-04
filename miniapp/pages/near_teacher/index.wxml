@@ -24,13 +24,13 @@
 <!-- 距离 -->
 <view hidden='{{hidden_typea}}' class="'edu-show edu-sty-qa">
     <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="" data-name="距离">
-       <text class="edu-ke-c-name">全部</text>
+       <text class="edu-ke-c-name ">全部</text>
        <view class="edu-success-icon edu-icon-we" hidden="{{cur_distance == '' ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
     </view>
     <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="1" data-name="1km内">
-       <text class="edu-ke-c-name">1km内</text>
+       <text class="edu-ke-c-name edu-color-active">1km内</text>
        <view class="edu-success-icon edu-icon-we" hidden="{{cur_distance == '1' ? false : true}}">
             <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/> 
        </view>

@@ -30,7 +30,7 @@
        </view>
     </view>
     <view class="edu-kc-list-a" wx:for="{{course_types}}" wx:key="key" bindtap="searchList" data-type="type" data-val="{{item.id}}" data-name="{{item.name}}">
-       <text class="edu-ke-c-name">{{item.name}}</text>
+       <text class="edu-ke-c-name edu-color-active">{{item.name}}</text>
        <view class="edu-success-icon edu-icon-we" hidden="{{cur_type == item.id ? false : true}}">
            <image src="../../assets/images/success-icon.png" class="edu-ty-sty edu-slect-succ"/>
        </view>
