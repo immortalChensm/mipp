@@ -2,10 +2,17 @@ var tool = require("../../utils/tool.js");
 var WxParse = require('../../wxParse/wxParse.js');
 const app = getApp()
 Page({
+  backpage: app.backpage,
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')
   },
   data: {
+    navdata: {
+      title: '课程详情',
+      imgurl: app.global_data.backimg,
+      pageurl: '',
+      showbtn: 1
+    },
     request:null,
     course_info:[],
     teacher_info: [],

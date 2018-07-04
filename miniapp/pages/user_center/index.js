@@ -2,7 +2,14 @@
 var tool = require("../../utils/tool.js")
 const app = getApp()
 Page({
+  backpage: app.backpage,
   data: {
+    navdata: {
+      title: '个人中心',
+      imgurl: app.global_data.backimg,
+      pageurl: '',
+      showbtn: 1
+    },
     user:''
   },
   /**

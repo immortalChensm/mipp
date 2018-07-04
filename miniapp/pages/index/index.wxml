@@ -1,5 +1,4 @@
 <import src="../template/template.wxml"/>
-<import src="../template/template.js"/> 
 <template is="navbar" data="{{...navdata}}"></template> 
 <view class="body">
   <!-- 顶部轮播图 start -->

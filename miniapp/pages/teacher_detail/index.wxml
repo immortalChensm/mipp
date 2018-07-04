@@ -1,5 +1,7 @@
 <import src="../../wxParse/wxParse.wxml" />
-<import src="../template/template.wxml"/> 
+<import src="../template/template.wxml"/>
+<template is="navbar" data="{{...navdata}}"></template>
+
 <view class="edu-info-content">
       <image src="../../assets/images/info-bg.png" class="edu-info-bg-a"/>
       <image src="{{tlist.headimgurl}}" class="edu-info-logo"/> 

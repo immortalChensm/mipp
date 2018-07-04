@@ -1,4 +1,7 @@
 <import src="../../wxParse/wxParse.wxml" />
+<import src="../template/template.wxml"/>
+<template is="navbar" data="{{...navdata}}"></template>
+
 <view class="edu-about-contents">
   <text class="edu-about-user-title">用户协助</text>
         <template is="wxParse" data="{{wxParseData:content.nodes}}" />

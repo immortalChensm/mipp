@@ -1,4 +1,6 @@
 <import src="../template/template.wxml"/> 
+<template is="navbar" data="{{...navdata}}"></template>
+
 <!-- 分类筛选 start -->
 <view class="edu-screen edu-border-top edu-bottom-solid">
       <view class="{{sele_type?'edu-screen-a edu-select-fl':'edu-screen-a'}}" bindtap="switchType">

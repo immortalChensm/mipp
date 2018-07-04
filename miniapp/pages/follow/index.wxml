@@ -1,4 +1,5 @@
 <import src="../template/template.wxml"/> 
+<template is="navbar" data="{{...navdata}}"></template>
 
 <view class="edu-att-tab edu-border-top edu-bottom-solid edu-att-position-w">
     <view class="{{show_teacher?'edu-width-b edu-att-fl  edu-att-select ':'edu-width-b edu-att-fl '}}" bindtap='getFollowTeacher'>老师</view>

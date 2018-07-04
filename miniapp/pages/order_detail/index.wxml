@@ -1,3 +1,5 @@
+<import src="../template/template.wxml"/>
+<template is="navbar" data="{{...navdata}}"></template>
 
 <view class="edu-det-status" wx:if="{{order_info.status == 1}}">
     <image src="../../assets/images/waitpayb-icon.png" class="edu-status-b"/>    

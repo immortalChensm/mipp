@@ -1,3 +1,6 @@
+<import src="../template/template.wxml"/>
+<template is="navbar" data="{{...navdata}}"></template>
+
 <!-- 审核状态 -->
 
 <view class="edu-come-status" wx:if="{{teacher_info.status == 1}}">

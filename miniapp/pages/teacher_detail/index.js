@@ -3,10 +3,17 @@ var tool = require("../../utils/tool.js")
 var WxParse = require('../../wxParse/wxParse.js')
 var app = getApp()
 Page({
+  backpage: app.backpage,
   /**
    * 页面的初始数据
    */
   data: {
+    navdata: {
+      title: '教师详情',
+      imgurl: app.global_data.backimg,
+      pageurl: '',
+      showbtn: 1
+    },
     request:null,
     bools: 1,
     selected1: true,

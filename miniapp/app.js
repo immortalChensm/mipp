@@ -1,4 +1,5 @@
 var tool = require("./utils/tool.js")
+import tempobj from "./pages/template/template.js"
 App({
   onLaunch: function (options) {
     //检查登录session
@@ -77,5 +78,12 @@ App({
         if (typeof fail == 'function') fail();
       }
     };
-  }
+  },
+  global_data:{
+    backimg:'../../assets/images/fanhui-icon.png'
+  },
+  /**
+   * 左上角返回事件
+   */
+  backpage:tempobj.backpage
 })

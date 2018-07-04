@@ -3,7 +3,14 @@ var tool = require("../../utils/tool.js")
 var WxParse = require('../../wxParse/wxParse.js')
 const app = getApp()
 Page({
+  backpage: app.backpage,
   data: {
+    navdata: {
+      title: '关于我们',
+      imgurl: app.global_data.backimg,
+      pageurl: '',
+      showbtn:1
+    },
     info: ''
   },
 

@@ -1,8 +1,14 @@
 var tool = require("../../utils/tool.js")
 var app = getApp()
 Page({
+  backpage: app.backpage,
   data: {
-
+    navdata: {
+      title: '用户登录',
+      imgurl: app.global_data.backimg,
+      pageurl: '',
+      showbtn: 0
+    }
   },
   onLoad: function (option) {
 
