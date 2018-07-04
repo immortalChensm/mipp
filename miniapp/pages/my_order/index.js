@@ -34,55 +34,16 @@ Page({
       })
     }
   },
-  seleall: function () {
-    var that = this;
-    that.setData({
-      list_status: '',
-      showall: true,
-      showpay: false,
-      showcomment: false,
-      showcomplete: false
+  seletab:function(e){
+    var type = e.currentTarget.dataset['type'];
+    wx.navigateTo({
+      url: '/pages/my_order/index?type=' + type,
     })
-    that.getOrderList()
-  },
-  selepay: function () {
-    var that = this;
-    that.setData({
-      list_status: '1',
-      showall: false,
-      showpay: true,
-      showcomment: false,
-      showcomplete: false
-    })
-    that.getOrderList()
-  },
-  selecomment: function () {
-    var that = this;
-    that.setData({
-      list_status: '2',
-      showall: false,
-      showpay: false,
-      showcomment: true,
-      showcomplete: false
-    })
-    that.getOrderList()
-  },
-  selecomplete: function () {
-    var that = this;
-    that.setData({
-      list_status: '3',
-      showall: false,
-      showpay: false,
-      showcomment: false,
-      showcomplete: true
-    })
-    that.getOrderList()
   },
   getOrderList: function () {
     var that = this;
     tool.post('Order/index', { status: this.data.list_status, p: this.data.list_page }, function (result) {
       var info = result.data;
-      console.log(info)
       if(info.status == '1'){
         that.setData({
           list_info: info.data
@@ -188,6 +149,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.showToast({
+      title: '',
+      icon:'loading',
+      duration:100000
+    })
     var request_data = this.data.request_data;
     var type = request_data.type ? request_data.type : this.data.type;
     this.setData({
@@ -203,17 +169,19 @@ Page({
       comment_click: false,
       type: type
     })
+    console.log(request_data)
     var set_data = {};
     switch (type) {
-      case 'all': set_data = { showall: true }; break;
-      case 'pay': set_data = { showpay: true }; break;
-      case 'comment': set_data = { showcomment: true }; break;
-      case 'complete': set_data = { showcomplete: true }; break;
+      case 'all': set_data = { showall: true , list_status: '' }; break;
+      case 'pay': set_data = { showpay: true , list_status: '1' }; break;
+      case 'comment': set_data = { showcomment: true , list_status: '2'}; break;
+      case 'complete': set_data = { showcomplete: true , list_status: '3'}; break;
       default: set_data = { showall: true }
     }
     this.setData(set_data);
-    that.getOrderList()
-  },
+    this.getOrderList()
+    wx.hideToast()
+;  },
 
   /**
    * 生命周期函数--监听页面隐藏

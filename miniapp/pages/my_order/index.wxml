@@ -1,10 +1,10 @@
 <import src="../template/template.wxml"/> 
 <!-- 顶部切换 -->
 <view class="edu-myorder-tab edu-bottom-solid edu-border-top">
-     <view class="{{showall?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='seleall'>全部</view>
-     <view class="{{showpay?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='selepay'>待付款</view>
-     <view class="{{showcomment?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='selecomment'>待评价</view>
-     <view class="{{showcomplete?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='selecomplete'>已完成</view> 
+     <view class="{{showall?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='seletab' data-type='all'>全部</view>
+     <view class="{{showpay?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='seletab' data-type='pay'>待付款</view>
+     <view class="{{showcomment?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='seletab' data-type='comment'>待评价</view>
+     <view class="{{showcomplete?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='seletab' data-type='complete'>已完成</view> 
 </view>
 <!-- 顶部切换end -->
 <!-- 全部订单 -->
