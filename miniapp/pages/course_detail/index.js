@@ -160,6 +160,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.showToast({
+      title: '',
+      icon:'loading',
+      duration:10000
+    })
     if(wx.getStorageSync('phone')){
       this.setData({
         has_phone:true
@@ -188,6 +193,7 @@ Page({
     this.getCommentInfo();
     //是否关注
     this.check_follow();
+    wx.hideToast();
   },
 
   /**
