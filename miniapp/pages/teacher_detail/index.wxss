@@ -8,10 +8,14 @@
   width: 36rpx;
   height: 36rpx;
   position: relative;
-  top: 3px;
-  right: 5px;
+  top: 4px;
+  left: 5px;
+  /* margin-left:22rpx; */
 }
 
 .edu-info-address text {
+  position: relative;
   text-decoration-line: underline;
+  padding: 0rpx 20rpx;
+  margin: 20rpx 0rpx;
 }

@@ -1,5 +1,5 @@
-<import src="../template/template.wxml"/> 
-<template is="navbar" data="{{title:'首页',imgurl:''}}"></template>
+ <import src="../template/template.wxml"/> 
+<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
 <view class="body">
   <!-- 顶部轮播图 start -->
   <view class="edu-banner">
