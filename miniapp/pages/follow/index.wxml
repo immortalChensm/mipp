@@ -17,7 +17,7 @@
               <view class="edu-list-one">
                   <text class="edu-list-cy-name">{{item.teacher.name}}</text>
               </view>
-              <view class="edu-list-two">
+              <view class="edu-list-two"  wx:if="{{item.teacher.star > 0 }}">
                 <block wx:for="{{item.teacher.stararr}}" wx:for-item="va">
                   <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
                   <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
@@ -25,6 +25,9 @@
                   <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
                 </block>
                 <text>{{item.teacher.star}}</text>
+              </view>
+              <view class="edu-list-two" wx:if="{{item.teacher.star == 0 }}">
+                <text style="color:#aaa">暂无评分</text>
               </view>
               <view class="edu-introduce">
                  <label>简介：{{item.teacher.profile}}</label>
@@ -36,7 +39,7 @@
                      {{item.teacher.distance}}
                   </label>
               </view>
-          </view> 
+          </view>
           </view>
           <view class="  del scroll-view-item" catchtap="del" data-type="1" data-id="{{item.id}}" data-index="{{index}}">取消关注</view>
      </view>
@@ -54,7 +57,7 @@
               <view class="edu-list-one">
                   <text class="edu-list-cy-name">{{item.course.name}}</text>
               </view>
-              <view class="edu-list-two">
+              <view class="edu-list-two" wx:if="{{item.course.star > 0 }}">
                 <block wx:for="{{item.course.stararr}}" wx:for-item="va">
                   <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
                   <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
@@ -62,6 +65,9 @@
                   <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
                 </block>
                 <text>{{item.course.star}}</text>
+              </view>
+              <view class="edu-list-two" wx:if="{{item.course.star == 0 }}">
+                <text style="color:#aaa">暂无评分</text>
               </view>
               <view class="edu-introduce">
                  <label>简介：{{item.course.profile}}</label>

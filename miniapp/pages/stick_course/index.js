@@ -29,6 +29,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      cur_page: 1,
+      is_add:false,
+      data_end: false
+    })
     //获取推荐的课程列表
     this.getCourseList();
   },
@@ -43,9 +48,15 @@ Page({
       var info = result.data;
       console.log(info)
       if (info.status == '1') {
-        that.setData({
-          course_list: that.data.course_list.concat(info.data)
-        })
+          if(that.data.is_add){
+            that.setData({
+              course_list: that.data.course_list.concat(info.data)
+            })
+          }else{
+            that.setData({
+              course_list: info.data
+            })
+          }
       } else {
         that.setData({
           data_end: true
@@ -79,7 +90,6 @@ Page({
    */
   onPullDownRefresh: function () {
     //重新加载
-    this.onLoad();
     this.onShow();
     wx.stopPullDownRefresh();
   },
@@ -92,7 +102,8 @@ Page({
     var cur_page = this.data.cur_page;
     if (!this.data.data_end) {
       this.setData({
-        cur_page: cur_page + 1
+        cur_page: cur_page + 1,
+        is_add:true
       })
       wx.showToast({
         title: '加载中',

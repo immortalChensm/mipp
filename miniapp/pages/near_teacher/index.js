@@ -26,19 +26,9 @@ Page({
     hidden_status:false,
     lng:0,
     lat:0,
-    // conf_data:null
   },
 
 onShow:function(){
-  //获取附近老师
-  // var that = this;
-  // that.setData({
-  //   showkecda: false,
-  //   showkecdb: false,
-  //   showkecdab: false,
-  //   hidden_typea: true,
-  //   hidden_typeb: true
-  // });
   this.setData({
     cur_page: 1,
     cur_type: '',
@@ -61,6 +51,7 @@ onShow:function(){
     lng: 0,
     lat: 0,
   });
+  //获取附近老师
   this.getStickTeacher();
   //获取类型
   this.getTypeTeacher();
@@ -70,27 +61,22 @@ onShow:function(){
    * 生命周期函数--监听页面显示
    */
   onLoad: function (options) {
-  
-    // this.setData({
-    //   conf_data:{
-    //     teacher_list: [],
-    //     teacher_type: [],
-    //     default_type: '距离',
-    //     type_name: '全部'
-    //   }
-    // })
+
+
+  },
+  onShow:function(){
+    this.setData({
+      showkecda: false,
+      showkecdb: false,
+      showkecdab: false,
+      showkecdbc: false,
+      hidden_typea: true,
+      hidden_typeb: true
+    })
+    //获取附近老师
     this.getStickTeacher();
     //获取类型
     this.getTypeTeacher();
-  },
-  ini_data:function(){
-    var conf_data = this.data.conf_data;
-    this.setData({
-      teacher_list: conf_data.teacher_list,
-      teacher_type: conf_data.teacher_type,
-      default_type: conf_data.default_type,
-      type_name: conf_data.type_name
-    })
   },
   // 全部课程筛选点击事件
   showa: function () {
@@ -260,17 +246,6 @@ onShow:function(){
     })
     that.getStickTeacher();
     setTimeout(function () { wx.hideToast(); }, 1000);
-    // tool.post('Teacher/teacher_list', postdatas , function (res) {
-    //     if (res.data.status == '1') {
-    //       that.setData({
-    //         teacher_list: that.data.teacher_list.concat(res.data.data),
-    //         cur_page:cur_page,
-    //       })
-    //     }
-    //     setTimeout(function () { wx.hideToast(); }, 1000);
-    // })
-    // this.getTypeTeacher();
-
   },
   /**
 * 分享

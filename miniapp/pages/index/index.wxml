@@ -1,3 +1,5 @@
+ <import src="../template/template.wxml"/> 
+<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
 <view class="body">
   <!-- 顶部轮播图 start -->
   <view class="edu-banner">
@@ -56,15 +58,17 @@
       <view class="edu-list-one">
         <text class="edu-list-cy-name">{{item.name}}</text>
       </view>
-      <view class="edu-list-two">
-        <!-- <label class="edu-list-no-pf">暂无评分</label> -->
-         <block wx:for="{{item.stararr}}" wx:for-item="va">
+      <view class="edu-list-two" wx:if="{{item.star > 0}}">
+        <block wx:for="{{item.stararr}}" wx:for-item="va">
           <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
           <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
           <image wx:elif="{{va === 3 }}" src="../../assets/images/xing3.png"></image> 
           <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
         </block>
         <text>{{item.star}}</text> 
+      </view>
+      <view class="edu-list-two" wx:if="{{item.star == 0}}">
+        <text style="color:#aaa;">暂无评分</text>
       </view>
       <view class="edu-introduce">
         <label>简介：{{item.profile}}</label>
@@ -104,9 +108,7 @@
       <view class="edu-list-one">
         <text class="edu-list-title">{{item.name}}</text>
       </view>
-
-      <view class="edu-list-two">
-        <!-- <label class="edu-list-no-pf">暂无评分</label> -->
+      <view class="edu-list-two" wx:if="{{item.star > 0}}">
         <block wx:for="{{item.stararr}}" wx:for-item="va">
           <image wx:if="{{va === 1 }}" src="../../assets/images/xing1.png"></image> 
           <image wx:elif="{{va === 2 }}" src="../../assets/images/xing2.png"></image> 
@@ -114,6 +116,9 @@
           <image wx:elif="{{va === 4 }}" src="../../assets/images/xing4.png"></image> 
         </block>
         <text>{{item.star}}</text>
+      </view>
+      <view class="edu-list-two" wx:if="{{item.star == 0}}">
+        <text style="color:#aaa;">暂无评分</text>
       </view>
       <view class="edu-introduce">
         <label>简介：{{item.profile}}</label>

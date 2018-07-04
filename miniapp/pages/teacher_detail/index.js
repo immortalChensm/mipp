@@ -67,6 +67,9 @@ Page({
       WxParse.wxParse('content', 'html', res.data.data.content, that, 5);
     })
   },
+  /**
+   * 打开地图
+   */
   openAddress:function(){
     var lng = parseFloat(this.data.tlist.lng);
     var lat = parseFloat(this.data.tlist.lat);
@@ -99,6 +102,7 @@ Page({
       tool.post('Follow/cancel', { id: that.data.follow_id }, function (result) {
         var info = result.data;
         if (info.status == '1') {
+          tool.jsalert(info.msg);
           that.setData({
             checked: false,
             follow_id: '',
@@ -112,7 +116,7 @@ Page({
       tool.post('User/follow', { relation_id: id, type: 1 }, function (res) {
         var info = res.data;
         if (info.status == '1') {
-          //tool.jsalert(res.data.msg);
+          tool.jsalert(res.data.msg);
           that.setData({
             checked: true,
             follow_num: info.data.follow_num,

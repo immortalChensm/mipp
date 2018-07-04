@@ -6,8 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    request_data:{},
-    showall:false,
+    showall:true,
     showpay: false,
     showcomment: false,
     showcomplete: false,
@@ -23,27 +22,73 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     //检查登录
     if (!app.checkLogin()) {
       app.doLogin();
       return false;
     }
-    if (options){
-      this.setData({
-        request_data: options
-      })
+    var type = options.type?options.type : this.data.type;
+    this.setData({
+      type: type
+    })
+    switch(type){
+      case 'all': this.seleall();break;
+      case 'pay': this.selepay(); break;
+      case 'comment': this.selecomment(); break;
+      case 'complete': this.selecomplete(); break;
+      default: this.seleall()
     }
   },
-  seletab:function(e){
-    var type = e.currentTarget.dataset['type'];
-    wx.navigateTo({
-      url: '/pages/my_order/index?type=' + type,
+  seleall: function () {
+    var that = this;
+    that.setData({
+      list_status: '',
+      showall: true,
+      showpay: false,
+      showcomment: false,
+      showcomplete: false
     })
+    that.getOrderList()
+  },
+  selepay: function () {
+    var that = this;
+    that.setData({
+      list_status: '1',
+      showall: false,
+      showpay: true,
+      showcomment: false,
+      showcomplete: false
+    })
+    that.getOrderList()
+  },
+  selecomment: function () {
+    var that = this;
+    that.setData({
+      list_status: '2',
+      showall: false,
+      showpay: false,
+      showcomment: true,
+      showcomplete: false
+    })
+    that.getOrderList()
+  },
+  selecomplete: function () {
+    var that = this;
+    that.setData({
+      list_status: '3',
+      showall: false,
+      showpay: false,
+      showcomment: false,
+      showcomplete: true
+    })
+    that.getOrderList()
   },
   getOrderList: function () {
     var that = this;
     tool.post('Order/index', { status: this.data.list_status, p: this.data.list_page }, function (result) {
       var info = result.data;
+      console.log(info)
       if(info.status == '1'){
         that.setData({
           list_info: info.data
@@ -142,46 +187,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.showToast({
-      title: '',
-      icon:'loading',
-      duration:100000
-    })
-    var request_data = this.data.request_data;
-    var type = request_data.type ? request_data.type : this.data.type;
     this.setData({
-      showall: false,
-      showpay: false,
-      showcomment: false,
-      showcomplete: false,
-      list_status: '',
-      list_page: 1,
-      list_info: [],
       cancel_click: false,
       pay_click: false,
-      comment_click: false,
-      type: type
+      comment_click: false
     })
-    console.log(request_data)
-    var set_data = {};
-    switch (type) {
-      case 'all': set_data = { showall: true , list_status: '' }; break;
-      case 'pay': set_data = { showpay: true , list_status: '1' }; break;
-      case 'comment': set_data = { showcomment: true , list_status: '2'}; break;
-      case 'complete': set_data = { showcomplete: true , list_status: '3'}; break;
-      default: set_data = { showall: true }
-    }
-    this.setData(set_data);
-    this.getOrderList()
-    wx.hideToast()
-;  },
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

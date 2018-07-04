@@ -131,6 +131,18 @@ Page({
     })
   },
   /**
+ * 打开地图
+ */
+  openAddress: function () {
+    var lng = parseFloat(this.data.teacher_info.lng);
+    var lat = parseFloat(this.data.teacher_info.lat);
+    wx.openLocation({
+      latitude: lat,
+      longitude: lng,
+      scale: 28
+    })
+  },
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
@@ -147,6 +159,7 @@ Page({
       })
     }
     this.setData({
+      
       buy_click:false,
       yuyue_click:false
     })
@@ -247,6 +260,7 @@ Page({
       tool.post('Follow/cancel', { id: that.data.follow_id }, function (result) {
         var info = result.data;
         if (info.status == '1') {
+          tool.jsalert(info.msg);
           that.setData({
             is_follow: false,
             follow_id: ''
@@ -259,6 +273,7 @@ Page({
       tool.post('User/follow', { relation_id: id, type: 2 }, function (result) {
         var info = result.data;
         if (info.status == '1') {
+          tool.jsalert(info.msg);
           that.setData({
             is_follow: true,
             follow_id:info.data

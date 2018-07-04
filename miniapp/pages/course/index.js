@@ -20,7 +20,8 @@ Page({
     course_list: [],
     course_types: [],
     is_add: true,
-    data_end:false
+    data_end:false,
+    is_load:true
   },
   switchType: function () {
     var that = this
@@ -45,43 +46,51 @@ Page({
   },
   switchSaleCount: function () {
     var that = this
-    if (that.data.hidden_sale_count) {
+    that.setData({
+      hidden_sale_count: true,
+      hidden_type: true,
+      hidden_price: true,
+      sele_type: false,
+      sele_price: false,
+      cur_price: '',
+      showkecd: false
+    })
+    if (!that.data.sele_sale_count) {
       that.setData({
-        hidden_sale_count: false,
         sele_sale_count: true,
-        hidden_type: true,
-        hidden_price: true,
-        sele_type: false,
-        sele_price: false,
-        showkecd: true
+        cur_sale_count: 1
       })
     } else {
       that.setData({
-        hidden_sale_count: true,
         sele_sale_count: false,
-        showkecd: false
+        cur_sale_count: 2
       })
     }
+    this.courseList();
   },
   switchPrice: function () {
     var that = this
-    if (that.data.hidden_price) {
+    that.setData({
+      hidden_sale_count: true,
+      hidden_type: true,
+      hidden_price: true,
+      sele_type: false,
+      sele_sale_count: false,
+      cur_sale_count: '',
+      showkecd: false
+    })
+    if (!that.data.sele_price) {
       that.setData({
-        hidden_price: false,
         sele_price: true,
-        hidden_type: true,
-        hidden_sale_count: true,
-        sele_type: false,
-        sele_sale_count: false,
-        showkecd: true
+        cur_price: 1
       })
     } else {
       that.setData({
-        hidden_price: true,
         sele_price: false,
-        showkecd: false
+        cur_price: 2
       })
     }
+    this.courseList();
   },
   /**
    * 生命周期函数--监听页面加载
@@ -108,6 +117,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
+    wx.showToast({
+      title: '',
+      duration:10000,
+      icon:'loading'
+    })
    this.setData({
      hidden_type: true,
      hidden_sale_count: true,
@@ -121,36 +135,32 @@ Page({
      cur_sale_count: '',
      cur_page: 1,
      default_type: '全部课程',
-     course_list: [],
-     course_types: [],
-     is_add: true,
-     data_end: false
+     is_add: false,
+     data_end: false,
+     is_load:true
    });
-    
     var course_type = wx.getStorageSync('course_type');
     wx.removeStorageSync('course_type');
-    if (course_type) {
-      this.setData({
-        cur_type: course_type,
-        is_add: false,
-        data_end:false,
-        cur_page: 1
-      })
-    }
-    // this.setData({
-    //   hidden_type: true,
-    //   hidden_sale_count: true,
-    //   hidden_price: true,
-    //   showkecd:false,
-    //   sele_type:false,
-    //   sele_sale_count:false,
-    //   sele_price:false
-      
-    // })
+    this.setData({
+      cur_type: course_type,
+      is_add: false,
+      data_end: false,
+      cur_page: 1,
+      showkecd: false,
+      hidden_type: true,
+      hidden_sale_count: true,
+      hidden_price: true
+    })
+
     //获取课程分类
     this.courseType();
     //加载课程列表
     this.courseList();
+    
+    wx.hideToast();
+    this.setData({
+      is_load: false
+    })
   },
 
   /**
@@ -252,8 +262,6 @@ Page({
       data_end:false,
       showkecd:false,
       sele_price:false
-      
-
     })
     switch (opt_type) {
       case 'type':
@@ -261,24 +269,16 @@ Page({
         this.setData({
           cur_type: val,
           default_type: name,
-          sele_type: false,
-  
+          sele_type: false
         });
         break;
       case 'sale_count':
-        this.setData({
-          cur_sale_count: val,
-          cur_price: '',
-          sele_sale_count: false,
-  
-   
-        });
+        
         break;
       case 'price':
         this.setData({
           cur_price: val,
-          cur_sale_count: '',
-
+          cur_sale_count: ''
         });
         break;
     }

@@ -8,6 +8,7 @@
      </view>
  </view>
 </template>
+
 <template name="default_content">
  <view class="edu-no-data" style='padding-top:50rpx;padding-bottom:50rpx'>
      <view class="edu-nodata-one">
@@ -16,5 +17,13 @@
      <view class="edu-nodata-l">
         <label class="edu-nodata-wu">{{message ? message : '暂无相关数据'}}</label>
      </view>
+ </view>
+</template>
+
+<template name="navbar">
+ <view class="edu-no-data">
+      <!-- <image src="../../assets/images/index-icon.png" class="edu-nav-img"/>   -->
+      <image src="../../assets/images/fanhui-icon.png" class="edu-nav-img"/>  
+    {{title}}
  </view>
 </template>
