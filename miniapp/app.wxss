@@ -902,7 +902,7 @@
 }
 
 .edu-info-content {
-  height: 400rpx;
+  height: 430rpx;
   width: 100%;
   position: relative;
 }
@@ -938,11 +938,13 @@
   color: rgb(255, 255, 255);
   font-size: 26rpx;
   display: block;
-  width: 100%;
+  /* width: 100%; */
   position: absolute;
   top: 280rpx;
   text-align: center;
   z-index: 99;
+  text-decoration-line: underline;
+  padding: 5rpx 20rpx;
 }
 
 .edu-info-z-s {
