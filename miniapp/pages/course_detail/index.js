@@ -131,6 +131,18 @@ Page({
     })
   },
   /**
+ * 打开地图
+ */
+  openAddress: function () {
+    var lng = parseFloat(this.data.teacher_info.lng);
+    var lat = parseFloat(this.data.teacher_info.lat);
+    wx.openLocation({
+      latitude: lat,
+      longitude: lng,
+      scale: 28
+    })
+  },
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {

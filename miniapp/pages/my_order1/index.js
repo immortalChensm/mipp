@@ -6,8 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    request_data:{},
-    showall:false,
+    showall:true,
     showpay: false,
     showcomment: false,
     showcomplete: false,
@@ -23,15 +22,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     //检查登录
     if (!app.checkLogin()) {
       app.doLogin();
       return false;
     }
-    if (options){
-      this.setData({
-        request_data: options
-      })
+    var type = options.type?options.type : this.data.type;
+    this.setData({
+      type: type
+    })
+    switch(type){
+      case 'all': this.seleall();break;
+      case 'pay': this.selepay(); break;
+      case 'comment': this.selecomment(); break;
+      case 'complete': this.selecomplete(); break;
+      default: this.seleall()
     }
   },
   seleall: function () {
@@ -181,38 +187,18 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var request_data = this.data.request_data;
-    var type = request_data.type ? request_data.type : this.data.type;
     this.setData({
-      showall: false,
-      showpay: false,
-      showcomment: false,
-      showcomplete: false,
-      list_status: '',
-      list_page: 1,
-      list_info: [],
       cancel_click: false,
       pay_click: false,
-      comment_click: false,
-      type: type
+      comment_click: false
     })
-    var set_data = {};
-    switch (type) {
-      case 'all': set_data = { showall: true }; break;
-      case 'pay': set_data = { showpay: true }; break;
-      case 'comment': set_data = { showcomment: true }; break;
-      case 'complete': set_data = { showcomplete: true }; break;
-      default: set_data = { showall: true }
-    }
-    this.setData(set_data);
-    that.getOrderList()
   },
 
   /**

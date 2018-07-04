@@ -75,7 +75,7 @@
             </view>
             <view class="edu-course-right">
                  <text class="edu-course-teach-name">{{teacher_info.name}}</text>
-                 <text class="edu-course-address">地址：{{teacher_info.address}}</text>
+                 <text bindtap='openAddress' class="edu-course-address">地址：{{teacher_info.address}}</text>
             </view>
        </view>
        <view class="edu-course-fl-icon">

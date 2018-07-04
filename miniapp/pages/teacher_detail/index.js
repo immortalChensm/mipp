@@ -67,6 +67,9 @@ Page({
       WxParse.wxParse('content', 'html', res.data.data.content, that, 5);
     })
   },
+  /**
+   * 打开地图
+   */
   openAddress:function(){
     var lng = parseFloat(this.data.tlist.lng);
     var lat = parseFloat(this.data.tlist.lat);
