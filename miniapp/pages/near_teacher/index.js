@@ -11,7 +11,7 @@ Page({
       title: '附近老师',
       imgurl: app.global_data.backimg,
       pageurl: '',
-      showbtn: 1
+      showbtn: 0
     },
     cur_page: 1,
     cur_type:'',
@@ -130,7 +130,22 @@ onShow:function(){
       })
     }
   },
-
+  /**
+   * 取消筛选
+   */
+  cancel_sele:function(){
+    this.setData({
+      showkecda: false,
+      showkecdb: false,
+      showkecdab: false,
+      showkecdbc: false,
+      hidden_typea: true,
+      hidden_typeb: true
+    })
+  },
+  /**
+   * 获取推荐老师
+   */
   getStickTeacher: function () {
     var that = this;
     var postdata = {};
@@ -166,6 +181,9 @@ onShow:function(){
       },
     })
   },
+  /**
+   * 获取老师的授课类型
+   */
   getTypeTeacher:function(){
     var that = this;
     tool.post('Teacher/teach_types',{}, function (res) {

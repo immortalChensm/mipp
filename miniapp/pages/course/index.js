@@ -100,6 +100,20 @@ Page({
     this.courseList();
   },
   /**
+   * 取消筛选
+   */
+  cancel_sele:function(){
+    this.setData({
+      hidden_type: true,
+      hidden_sale_count: true,
+      hidden_price: true,
+      sele_type: false,
+      sele_sale_count: false,
+      sele_price: false,
+      showkecd: false
+    })
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {

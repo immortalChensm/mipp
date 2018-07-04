@@ -19,7 +19,7 @@
       </view>
 </view>
 <!-- 遮罩层 -->
-    <view class="{{showkecd?'edu-mask':'edu-none'}}"></view> 
+    <view class="{{showkecd?'edu-mask':'edu-none'}}" bindtap='cancel_sele'></view> 
     <!-- <view class="{{showkecdb?'edu-mask':'edu-none'}}"></view>  -->
 <!-- 遮罩层 -->
 <!-- 课程类型 -->
