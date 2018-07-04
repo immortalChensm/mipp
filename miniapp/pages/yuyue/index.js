@@ -1,11 +1,17 @@
 var tool = require("../../utils/tool.js")
-
+const app = getApp()
 Page({
-
+  backpage: app.backpage,
   /**
    * 页面的初始数据
    */
   data: {
+    navdata: {
+      title: '预约课程',
+      imgurl: app.global_data.backimg,
+      pageurl: '',
+      showbtn: 1
+    },
     'course_info': [],
     'form_phone': '',
     'form_name': '',

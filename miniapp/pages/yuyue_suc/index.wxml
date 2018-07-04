@@ -1,3 +1,6 @@
+<import src="../template/template.wxml"/>
+<template is="navbar" data="{{...navdata}}"></template>
+
 <view class="edu-success-content">
   <image src="../../assets/images/success-y-icon.png" class="edu-success-img"/>
 </view>

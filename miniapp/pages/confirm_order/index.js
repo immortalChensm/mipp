@@ -2,11 +2,17 @@ var tool = require("../../utils/tool.js")
 const app = getApp()
 // pages/确认订单/确认订单.js
 Page({
-
+  backpage: app.backpage,
   /**
    * 页面的初始数据
    */
   data: {
+    navdata: {
+      title: '确认订单',
+      imgurl: app.global_data.backimg,
+      pageurl: '',
+      showbtn: 1
+    },
     course_info:[],
     form_phone: '',
     count:1,

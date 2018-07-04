@@ -1,10 +1,17 @@
 var tool = require("../../utils/tool.js")
 var app = getApp()
 Page({
+  backpage: app.backpage,
   /**
     * 页面的初始数据
     */
   data: {
+    navdata: {
+      title: '课程列表',
+      imgurl: app.global_data.backimg,
+      pageurl: '',
+      showbtn: 0
+    },
     hidden_type: true,
     hidden_sale_count: true,
     hidden_price: true,

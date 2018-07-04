@@ -1,6 +1,5 @@
 <import src="../../wxParse/wxParse.wxml" />
-<import src="../template/template.wxml"/> 
-<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
+<template is="navbar" data="{{...navdata}}"></template>
 <view class="edu-info-body">
 <view class="edu-about-contents">
   <text class="edu-about-user-title">用户协助</text>

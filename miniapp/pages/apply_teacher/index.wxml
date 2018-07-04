@@ -1,5 +1,5 @@
-<import src="../template/template.wxml"/> 
-<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
+<import src="../template/template.wxml"/>
+<template is="navbar" data="{{...navdata}}"></template>
 <view class="edu-info-body">
 <!-- 审核状态 -->
 

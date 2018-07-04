@@ -3,7 +3,14 @@ var tool = require("../../utils/tool.js")
 const app = getApp()
 var WxParse = require('../../wxParse/wxParse.js')
 Page({
+  backpage: app.backpage,
   data: {
+    navdata: {
+      title: '常见问题',
+      imgurl: app.global_data.backimg,
+      pageurl: '',
+      showbtn: 1
+    },
   },
   /**
    * 生命周期函数--监听页面显示

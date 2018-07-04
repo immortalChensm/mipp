@@ -1,11 +1,17 @@
 // pages/预约成功/success.js
+const app = getApp()
 Page({
-
+  backpage: app.backpage,
   /**
    * 页面的初始数据
    */
   data: {
-  
+    navdata: {
+      title: '预约成功',
+      imgurl: app.global_data.backimg,
+      pageurl: '',
+      showbtn: 1
+    },
   },
 
   /**

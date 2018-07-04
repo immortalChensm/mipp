@@ -1,5 +1,6 @@
- <import src="../template/template.wxml"/> 
-<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
+<import src="../template/template.wxml"/>
+<template is="navbar" data="{{...navdata}}"></template>
+
 <!-- 分类筛选 start -->
 <view class="edu-screen edu-border-top edu-bottom-solid">
       <view class="{{showkecda?'edu-screen-a edu-select-fl':'edu-screen-a '}}" bindtap="showa">

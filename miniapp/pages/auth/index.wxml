@@ -1,3 +1,6 @@
+<import src="../template/template.wxml"/>
+<template is="navbar" data="{{...navdata}}"></template>
+
 <!-- <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button> -->
 <view class='shadow logo'>
   <image class='logo' src='/assets/images/art-icon.png'></image>

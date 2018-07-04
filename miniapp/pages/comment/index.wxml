@@ -1,3 +1,5 @@
+<import src="../template/template.wxml"/>
+<template is="navbar" data="{{...navdata}}"></template>
 
 <import src="../template/template.wxml"/> 
 <template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 

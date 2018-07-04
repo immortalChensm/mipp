@@ -1,5 +1,6 @@
+
 <import src="../template/template.wxml"/> 
-<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
+<template is="navbar" data="{{...navdata}}"></template>
 <view class="edu-info-body">
 <!-- 金牌老师 start -->
 <view class="edu-recommend-courses-tj" style='padding-top:0;'>
