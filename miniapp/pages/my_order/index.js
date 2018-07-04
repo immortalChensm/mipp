@@ -154,6 +154,7 @@ Page({
       icon:'loading',
       duration:100000
     })
+    console.log(this.data.request_data)
     var request_data = this.data.request_data;
     var type = request_data.type ? request_data.type : this.data.type;
     this.setData({
@@ -169,7 +170,6 @@ Page({
       comment_click: false,
       type: type
     })
-    console.log(request_data)
     var set_data = {};
     switch (type) {
       case 'all': set_data = { showall: true , list_status: '' }; break;
