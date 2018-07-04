@@ -8,7 +8,7 @@ Page({
       title: '个人中心',
       imgurl: app.global_data.backimg,
       pageurl: '',
-      showbtn: 1
+      showbtn: 0
     },
     user:''
   },
