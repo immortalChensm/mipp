@@ -165,8 +165,18 @@ Page({
         has_phone:true
       })
     }
+    //转发页面左上角加去首页的按钮
+    if(this.data.request.is_share == '1'){
+      this.setData({
+        navdata: {
+          title: '课程详情',
+          imgurl: app.global_data.indeximg,
+          pageurl: '/pages/index/index',
+          showbtn: 1
+        }
+      })
+    }
     this.setData({
-      
       buy_click:false,
       yuyue_click:false
     })
@@ -218,7 +228,7 @@ Page({
     }
     return app.shareApp(
       this.data.course_info.name,
-      '/pages/course_detail/index?id=' + this.data.course_info.id,
+      '/pages/course_detail/index?is_share=1&id=' + this.data.course_info.id,
       this.data.course_info.pics[0]
     );
   },
