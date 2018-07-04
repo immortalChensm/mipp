@@ -36,6 +36,11 @@ Page({
   },
 
 onShow:function(){
+  wx.showToast({
+    title: '',
+    icon:'loading',
+    duration:10000
+  })
   this.setData({
     cur_page: 1,
     cur_type: '',
@@ -62,7 +67,7 @@ onShow:function(){
   this.getStickTeacher();
   //获取类型
   this.getTypeTeacher();
-
+  wx.hideToast();
 },
   /**
    * 生命周期函数--监听页面显示
