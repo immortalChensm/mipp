@@ -37,6 +37,7 @@
     "backgroundColor":"#ffffff",
     "borderStyle":"#e5e5e5",
     "backgroundTextStyle": "dark",
+
     "list": [
       {
         "pagePath": "pages/index/index",
