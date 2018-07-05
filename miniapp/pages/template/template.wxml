@@ -21,11 +21,11 @@
 </template>
 
 <template name="navbar">
- <!-- <view class="edu-no-data-b"> -->
-      <!-- <image src="../../assets/images/index-icon.png" class="edu-nav-img"/>   -->
-      <!-- <image src="../../assets/images/fanhui-icon.png" class="edu-nav-img"/>   -->
- <view class="edu-no-data-b">
-      <image wx:if="{{showbtn == 1}}" src="{{imgurl ? imgurl : '../../assets/images/fanhui-icon.png'}}" class="edu-nav-img" bindtap='backpage' data-url="{{pageurl}}"/>  
-    <!-- {{title}} -->
- </view>
+ <!-- <view class="nav-container" style='height:{{tabbarh}}rpx'>
+    <view class='nav-div'>
+        <image class="nav-img" wx:if="{{showbtn == 1}}" src="{{imgurl ? imgurl : '../../assets/images/fanhui-icon.png'}}" bindtap='backpage' data-url="{{pageurl}}"/>
+        <view class="nav-title">{{title}}</view>
+    </view>
+ </view> -->
+ <header background-color="#fff" color="#000" fixed back="{{backtype}}">{{title}}</header>
 </template>

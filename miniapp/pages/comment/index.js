@@ -8,9 +8,7 @@ Page({
   data: {
     navdata: {
       title: '订单评价',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 1
+      backtype: 1
     },
     request:null,
     teacher_star:1,

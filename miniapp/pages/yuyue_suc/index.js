@@ -8,9 +8,7 @@ Page({
   data: {
     navdata: {
       title: '预约成功',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 1
+      backtype: 1
     },
   },
 

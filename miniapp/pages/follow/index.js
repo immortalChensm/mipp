@@ -5,9 +5,7 @@ Page({
   data: {
     navdata: {
       title: '我的关注',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 1
+      backtype: 1
     },
     bools: 1, //课程--老师切换初始状态
     startX: 0, //开始坐标

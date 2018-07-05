@@ -5,9 +5,7 @@ Page({
   data: {
     navdata: {
       title: '用户登录',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 0
+      backtype: 0
     }
   },
   onLoad: function (option) {

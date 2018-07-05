@@ -9,9 +9,7 @@ Page({
   data: {
     navdata: {
       title: '确认订单',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 1
+      backtype: 1
     },
     course_info:[],
     form_phone: '',

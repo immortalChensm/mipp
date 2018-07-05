@@ -9,9 +9,7 @@ Page({
   data: {
     navdata: {
       title: '课程详情',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 1
+      backtype: 1
     },
     request:null,
     course_info:[],
@@ -175,9 +173,7 @@ Page({
       this.setData({
         navdata: {
           title: '课程详情',
-          imgurl: app.global_data.indeximg,
-          pageurl: '/pages/index/index',
-          showbtn: 1
+          backtype:2
         }
       })
     }

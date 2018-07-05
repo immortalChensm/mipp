@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "申请老师"
+  "navigationBarTitleText": "申请老师",
+    "usingComponents": {
+      "header": "../../component/header"
+    }
 }

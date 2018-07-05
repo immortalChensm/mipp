@@ -2,5 +2,8 @@
   "navigationBarTitleText": "推荐老师",
     "enablePullDownRefresh": true,
     "backgroundTextStyle": "dark",
-    "onReachBottomDistance": 20
+    "onReachBottomDistance": 20,
+      "usingComponents": {
+        "header": "../../component/header"
+      }
 }

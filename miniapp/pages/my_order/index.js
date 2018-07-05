@@ -8,9 +8,7 @@ Page({
   data: {
     navdata: {
       title: '我的订单',
-      imgurl: app.global_data.backimg,
-      pageurl: '/pages/user_center/index',
-      showbtn: 1
+      backtype: 1
     },
     request_data:{},
     showall:false,

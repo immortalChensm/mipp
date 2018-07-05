@@ -7,13 +7,13 @@
   padding: 30rpx;
 }
 .edu-info-body{
-  padding-top: 130rpx;
+  /* padding-top: 130rpx; */
 }
 /** wxss **/
 
 .body {
   background-color: #f2f2f2;
-  margin-top:130rpx;
+  /* margin-top:130rpx; */
 }
 
 .edu-banner {
@@ -1216,7 +1216,7 @@ view, scroll-view {
 .edu-center-top {
   /* margin-top: 130rpx; */
   background-color: #fff;
-  padding: 150rpx 30rpx 36rpx 30rpx;
+  padding: 0rpx 30rpx 36rpx 30rpx;
 }
 
 .edu-center-n-info {
@@ -1813,5 +1813,34 @@ view, scroll-view {
   color: rgb(242, 161, 24);
 }
 .edu-top-pad-b{
-  padding-top: 220rpx;
+  /* padding-top: 220rpx; */
+  padding-top: 88rpx;
+}
+.nav-container{
+  position: fixed;
+  top:0;
+  width: 100%;
+  background-color:#fff;
+  z-index: 9999
+}
+.nav-div{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.nav-img{
+  position: absolute;
+  left:15rpx;
+  bottom: 20rpx;
+  width: 35rpx;
+  height: 35rpx;
+}
+.nav-title{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  position: absolute;
+  left:0rpx;
+  bottom: 20rpx;
 }

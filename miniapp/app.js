@@ -86,5 +86,12 @@ App({
   /**
    * 左上角返回事件
    */
-  backpage:tempobj.backpage
+  backpage:tempobj.backpage,
+  getBarHeight:function(getHeight){
+    wx.getSystemInfo({
+      success: function(res) {
+        getHeight(res)
+      }
+    })
+  }
 })

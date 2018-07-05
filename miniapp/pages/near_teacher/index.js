@@ -9,9 +9,7 @@ Page({
   data: {
     navdata: {
       title: '附近老师',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 0
+      backtype: 0
     },
     cur_page: 1,
     cur_type:'',

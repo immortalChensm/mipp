@@ -6,9 +6,7 @@ Page({
   data: {
     navdata: {
       title: '个人中心',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 0
+      backtype: 0
     },
     user:''
   },

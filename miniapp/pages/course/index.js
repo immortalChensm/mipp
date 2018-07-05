@@ -8,9 +8,7 @@ Page({
   data: {
     navdata: {
       title: '课程列表',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 0
+      backtype: 0
     },
     hidden_type: true,
     hidden_sale_count: true,

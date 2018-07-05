@@ -8,9 +8,7 @@ Page({
   data: {
     navdata: {
       title: '订单详情',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 1
+      backtype: 1
     },
     request: null,
     order_info:[],

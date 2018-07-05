@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "预约课程"
+  "navigationBarTitleText": "预约课程",
+    "usingComponents": {
+      "header": "../../component/header"
+    }
 }

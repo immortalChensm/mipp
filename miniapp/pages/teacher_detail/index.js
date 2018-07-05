@@ -10,9 +10,7 @@ Page({
   data: {
     navdata: {
       title: '教师详情',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 1
+      backtype:1
     },
     request:null,
     bools: 1,
@@ -58,9 +56,18 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onLoad: function (option) {
+  onShow: function (option) {
     var that = this;
-    var id = option.id;
+    var id = this.data.request.id;
+    //转发页面左上角加去首页的按钮
+    if (this.data.request.is_share == '1') {
+      this.setData({
+        navdata: {
+          title: '教师详情',
+          backtype: 2
+        }
+      })
+    }
     tool.post('Teacher/details', {id:id}, function (res) {
       // console.log(res.data.data); return false;
       var checked = false;
@@ -94,7 +101,7 @@ Page({
     }
     return app.shareApp(
       this.data.tlist.name,
-      '/pages/teacher_detail/index?id=' + this.data.tlist.id,
+      '/pages/teacher_detail/index?is_share=1&id=' + this.data.tlist.id,
       this.data.tlist.headimgurl
     );
   },

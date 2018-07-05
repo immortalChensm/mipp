@@ -8,9 +8,7 @@ Page({
   data: {
     navdata: {
       title: '申请老师',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 1
+      backtype: 1
     },
     is_edit:true,
     lng:null,

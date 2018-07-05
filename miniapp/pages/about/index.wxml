@@ -1,4 +1,5 @@
 <import src="../../wxParse/wxParse.wxml" />
+<import src="../template/template.wxml"/>
 <template is="navbar" data="{{...navdata}}"></template>
 <view class="edu-info-body">
 <view class="edu-about-contents">

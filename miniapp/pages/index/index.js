@@ -5,10 +5,8 @@ Page({
   backpage:app.backpage,
   data: {
     navdata:{
-      title: '首页', 
-      imgurl: app.global_data.backimg, 
-      pageurl: '',
-      showbtn:0
+      title: '首页',  
+      backtype: 0
     },
     banners: [],
     course_types: [],
@@ -22,7 +20,15 @@ Page({
     autoplays: false
   },
   onLoad: function (options) {
-
+    var that = this;
+    var navdata = that.data.navdata;
+    app.getBarHeight(function(info){
+      navdata.tabbarh = (info.statusBarHeight + 15) * info.pixelRatio;
+      console.log(info)
+      that.setData({
+        navdata:navdata
+      })
+    })
   },
   onShow:function(){
     wx.showToast({
@@ -146,6 +152,7 @@ Page({
   onPullDownRefresh: function () {
     //重新加载
     this.onLoad();
+    this.onShow();
     wx.stopPullDownRefresh();
   },
   set_height:function(){

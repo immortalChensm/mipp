@@ -7,9 +7,7 @@ Page({
   data: {
     navdata: {
       title: '常见问题',
-      imgurl: app.global_data.backimg,
-      pageurl: '',
-      showbtn: 1
+      backtype: 1
     },
   },
   /**
