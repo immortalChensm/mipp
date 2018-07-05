@@ -95,7 +95,7 @@
                 </view>
                 <view class="edu-list-title edu-list-can-q">分享</view>
             </view>
-            <view class="edu-course-cft" bindtap='calling' data-phone='{{teacher_info.phone}}'>
+            <view class="edu-course-cft" bindtap='show_telebox'>
                  <view class="edu-course-icon-jg">
                     <image src="../../assets/images/tel-icon.png" class="edu-course-gltb"/>
                 </view>
@@ -103,18 +103,18 @@
             </view>
 
             <!-- 拨打电话弹出层 -->
-               <view class="edu-tel-mask-form">
+               <view class="edu-tel-mask-form" wx:if="{{show_telebox}}">
                    <view class="edu-tel-nums">拨打18860897067</view>
                    <view class="edu-tel-msk-tbs">
                        <view class="edu-tel-msk-a edu-tel-tyzr" bindlongtap='cancel_tel'>
-                          <button   hover-class="other-button-hover"> 取消 </button>
+                          <button hover-class="other-button-hover" bindtap='cancel_telebox'> 取消 </button>
                        </view>
                       <view class="edu-tel-msk-b edu-tel-tyzr">
-                        <button   hover-class="other-button-hover"> 确定 </button>
+                        <button hover-class="other-button-hover" bindtap='calling' data-phone='{{teacher_info.phone}}'> 确定 </button>
                       </view> 
                    </view>
                </view> 
-              <view class="edu-tel-mask"></view>
+              <view class="edu-tel-mask" wx:if="{{show_telebox}}"></view>
              <!-- 拨打电话弹出层 -->
        </view>
 </view>

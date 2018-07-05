@@ -27,7 +27,8 @@ Page({
     has_phone:false,
     buy_click:false,
     yuyue_click: false,
-    follow_id:''
+    follow_id:'',
+    show_telebox:false
   },
   //课程详情和评价点击事件
   tabShow:function(event){
@@ -303,6 +304,15 @@ Page({
         }
       })
     }
-    
+  },
+  show_telebox:function(){
+    this.setData({
+      show_telebox:true
+    })
+  },
+  cancel_telebox:function(){
+    this.setData({
+      show_telebox:false
+    })
   }
 })
