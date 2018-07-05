@@ -1733,7 +1733,7 @@ view, scroll-view {
 }
 
 .edu-att-ew-item .content {
-  /* display: flex; */
+   display: flex; 
 }
 
 .edu-score-total {
