@@ -67,7 +67,7 @@ Page({
         })
         tool.jsalert(info.msg,2);
       }
-    })
+    }, null, 2)
   },
   setFormName: function (e) {
     this.setData({

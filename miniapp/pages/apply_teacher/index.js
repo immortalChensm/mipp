@@ -81,7 +81,7 @@ Page({
       }else{
         tool.jsalert(info.msg,2)
       }
-    })
+    }, null, 2)
   },
   /**
    * 选择地理位置

@@ -161,7 +161,7 @@ Page({
           pay_click: false
         })
       }
-    })
+    }, null, 2)
   }, 
   /**
  * 取消订单
@@ -179,7 +179,7 @@ Page({
           tool.jsalert(info.msg, 2);
         }
       })
-    });
+    }, null, 2);
   }, 
   /**
    * 生命周期函数--监听页面初次渲染完成

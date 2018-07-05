@@ -83,7 +83,7 @@ Page({
         })
         tool.jsalert(info.msg,2);
       }
-    })
+    }, null, 2)
   },
   /**
    * 生命周期函数--监听页面加载
