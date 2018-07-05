@@ -3,19 +3,21 @@
 /* view{
     overflow:initial !important;
 } */
+
 .edu-content {
   padding: 30rpx;
 }
-.edu-info-body{
+
+.edu-info-body {
   /* padding-top: 130rpx; */
 }
+
 /** wxss **/
 
 .body {
   background-color: #f2f2f2;
   /* margin-top:130rpx; */
 }
-
 
 .edu-banner {
   width: 100%;
@@ -204,9 +206,8 @@
 
 .edu-list-two text {
   font-size: 26rpx;
-  color: rgb(255, 195, 35);
-  /* padding-top:2px; */
-  /* margin-left: 8rpx; */
+  color: rgb(242, 161, 24);
+  /* padding-top:2px; *//* margin-left: 8rpx; */
   font-family: PingFang-SC-Medium;
 }
 
@@ -217,10 +218,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size:13px;
-  color:rgb(68, 68, 68);
-  font-family:PingFang-SC-Regular;
-
+  font-size: 13px;
+  color: rgb(68, 68, 68);
+  font-family: PingFang-SC-Regular;
 }
 
 .edu-introduce text {
@@ -319,12 +319,12 @@
   padding: 30rpx 30rpx;
   /* border-top: 2rpx solid #e5e5e5; */
 }
+
 .edu-screen {
   display: flex;
   height: 88rpx;
   padding: 0rpx 30rpx;
-  /* top:129rpx; */
-  /* position: relative; */
+  /* top:129rpx; *//* position: relative; */
   position: fixed;
   width: 100%;
   background-color: #fff;
@@ -372,8 +372,7 @@
 }
 
 .edu-sty-qa {
-  /* margin-top: 80rpx; */
-  /* display: flex; */
+  /* margin-top: 80rpx; *//* display: flex; */
   z-index: 9999;
   padding: 30rpx 0rpx;
   position: absolute;
@@ -414,8 +413,8 @@
 }
 
 .edu-icon-we {
-   display: flex; 
-   width: 37.1%;
+  display: flex;
+  width: 37.1%;
   justify-content: flex-end;
   align-items: center;
 }
@@ -940,7 +939,7 @@
   /* opacity: 0.4; */
 }
 
- .edu-info-name {
+.edu-info-name {
   color: #fff;
   font-size: 32rpx;
   display: block;
@@ -952,7 +951,7 @@
 }
 
 .edu-info-address {
-   width: 96%; 
+  width: 96%;
   color: rgb(255, 255, 255);
   font-size: 26rpx;
   display: block;
@@ -960,7 +959,7 @@
   top: 280rpx;
   text-align: center;
   z-index: 99;
-   padding: 0rpx 2%; 
+  padding: 0rpx 2%;
 }
 
 .edu-info-z-s {
@@ -1733,46 +1732,49 @@ view, scroll-view {
 }
 
 .edu-att-ew-item .content {
-   display: flex; 
+  display: flex;
 }
 
 .edu-score-total {
   margin-top: 6rpx;
   margin-left: 4rpx;
 }
-.edu-nodata-one{
+
+.edu-nodata-one {
   text-align: center;
 }
+
 .body {
   background-color: #f2f2f2;
-  /* margin-top: 158rpx; */
-  /* margin-top:130rpx; */
+  /* margin-top: 158rpx; *//* margin-top:130rpx; */
 }
+
 .edu-no-data-b {
-    z-index: 9999;
-    width: 100%;
-    top: 0;
-    position: fixed;
-    font-size: 14px;
-    text-align: center; 
-    height: 90rpx;    
-    line-height:90rpx;   
-    padding-top: 30px;   
-       /* padding-bottom: 40rpx;         */
-    background-color: #fff;
+  z-index: 9999;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  font-size: 14px;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-top: 30px;
+  /* padding-bottom: 40rpx;         */
+  background-color: #fff;
 }
-.edu-nav-titles{
-  
+
+.edu-nav-titles {
 }
-.edu-no-data-b text{
-    /* height: 26px; 
+
+.edu-no-data-b text {
+  /* height: 26px; 
   position: absolute;
   bottom: 0;
   width: 100%;
   left: 0;  */
 }
 
-.edu-no-data-c{
+.edu-no-data-c {
   padding-top: 100rpx;
 }
 
@@ -1805,7 +1807,7 @@ view, scroll-view {
   font-size: 24rpx;
   text-align: center;
   padding: 20rpx 0rpx;
-  color:rgb(119, 119, 119);
+  color: rgb(119, 119, 119);
 }
 
 .edu-course-btn-share {
@@ -1832,35 +1834,40 @@ view, scroll-view {
 .edu-color-active {
   color: rgb(242, 161, 24);
 }
-.edu-top-pad-b{
+
+.edu-top-pad-b {
   /* padding-top: 220rpx; */
   padding-top: 88rpx;
 }
-.nav-container{
+
+.nav-container {
   position: fixed;
-  top:0;
+  top: 0;
   width: 100%;
-  background-color:#fff;
-  z-index: 9999
+  background-color: #fff;
+  z-index: 9999;
 }
-.nav-div{
+
+.nav-div {
   position: relative;
   width: 100%;
   height: 100%;
 }
-.nav-img{
+
+.nav-img {
   position: absolute;
-  left:15rpx;
+  left: 15rpx;
   bottom: 20rpx;
   width: 35rpx;
   height: 35rpx;
 }
-.nav-title{
+
+.nav-title {
   width: 100%;
   height: 40rpx;
   line-height: 40rpx;
   text-align: center;
   position: absolute;
-  left:0rpx;
+  left: 0rpx;
   bottom: 20rpx;
 }
