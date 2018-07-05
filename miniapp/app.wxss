@@ -210,6 +210,9 @@
   /* padding-top:2px; *//* margin-left: 8rpx; */
   font-family: PingFang-SC-Medium;
 }
+.edu-list-two text{
+    color: rgb(242, 161, 24);
+}
 
 .edu-introduce {
   width: 91%;

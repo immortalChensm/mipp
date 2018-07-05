@@ -95,7 +95,7 @@
                 <text>{{item.star}}</text>
               </view>
               <view class="edu-list-two" wx:if="{{item.star == 0 }}">
-                <text style="color:#aaa">暂无评分</text>
+                <text>暂无评分</text>
               </view>
               <view class="edu-introduce">
                  <label>简介：{{item.profile}}</label>

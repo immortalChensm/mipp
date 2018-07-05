@@ -49,7 +49,8 @@ Page({
   },
 
   /***视频播放**/
-  edu_video_auto:function(){
+  edu_video_auto: function (){
+
     this.setData({
       hide_video_a: false,
       hide_video_b: true,
@@ -108,8 +109,13 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
+<<<<<<< HEAD
       'request':options
+=======
+      'request':options,
+>>>>>>> b2395edc195ea51929d1ce7d070f32306f712e27
     })
+  
   },
   /**
    * 获取课程信息
@@ -170,10 +176,21 @@ Page({
     this.videoContext = wx.createVideoContext('myvideo')
   },
 
+
+
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+<<<<<<< HEAD
+=======
+    
+    wx.showToast({
+      title: '',
+      icon:'loading',
+      duration:10000
+    })
+>>>>>>> b2395edc195ea51929d1ce7d070f32306f712e27
     if(wx.getStorageSync('phone')){
       this.setData({
         has_phone:true
@@ -190,7 +207,8 @@ Page({
     }
     this.setData({
       buy_click:false,
-      yuyue_click:false
+      yuyue_click:false,
+   
     })
     //获取课程信息
     this.getCourseInfo();
