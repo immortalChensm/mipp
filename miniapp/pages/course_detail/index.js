@@ -21,7 +21,7 @@ Page({
     autoplay: false,
     interval: 3000,
     duration: 1000,
-    autoplays: false,
+    // autoplays: false,
     bools: true,
     is_follow:false,
     has_phone:false,
@@ -31,7 +31,7 @@ Page({
     show_telebox:false,
     hide_video_a:true,
     hide_video_b: false,
-    auto_play: true
+    auto_play: false
   },
   //课程详情和评价点击事件
   tabShow:function(event){

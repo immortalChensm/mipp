@@ -1,8 +1,5 @@
 <import src="../template/template.wxml"/>
 <template is="navbar" data="{{...navdata}}"></template>
-
-<import src="../template/template.wxml"/> 
-<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
 <view class="edu-info-body">
 <view class="edu-eva-section">
       <view class="edu-eva-kc edu-bottom-solid edu-border-top">

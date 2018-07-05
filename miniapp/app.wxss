@@ -952,16 +952,15 @@
 }
 
 .edu-info-address {
-  width: 100%;
+   width: 96%; 
   color: rgb(255, 255, 255);
   font-size: 26rpx;
   display: block;
-  /* width: 100%; */
   position: absolute;
   top: 280rpx;
   text-align: center;
   z-index: 99;
-  padding: 5rpx 20rpx;
+   padding: 0rpx 2%; 
 }
 
 .edu-info-z-s {
@@ -1734,7 +1733,7 @@ view, scroll-view {
 }
 
 .edu-att-ew-item .content {
-  display: flex;
+   display: flex; 
 }
 
 .edu-score-total {
@@ -1806,6 +1805,7 @@ view, scroll-view {
   font-size: 24rpx;
   text-align: center;
   padding: 20rpx 0rpx;
+  color:rgb(119, 119, 119);
 }
 
 .edu-course-btn-share {

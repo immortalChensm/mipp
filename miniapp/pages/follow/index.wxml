@@ -10,11 +10,11 @@
 <!-- 老师列表 -->
 <view class="{{show_teacher?'container edu-show':'container edu-none'}}">
      <view wx:for="{{follow_teacher}}" wx:key="key" class="edu-att-ew-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-id="{{item.id}}" bindtouchstart="touchTeacherStart" bindtouchmove="touchTeacherMove" data-index="{{index}}">
-       <view class="content edu-acticle-list-tj scroll-view-item " bindtap='toTeacherDetail' data-id='{{item.teacher.id}}'>
-         <view class="edu-list-left-a edu-att-l-q">
+       <view class="content edu-acticle-list-tj  " bindtap='toTeacherDetail' data-id='{{item.teacher.id}}'>
+         <view class="edu-list-left-a">
             <image src="{{item.teacher.headimgurl}}" class="edu-list-img-a"/>
          </view>
-          <view class="edu-list-right-a edu-att-l-w">
+          <view class="edu-list-right-a">
               <view class="edu-list-one">
                   <text class="edu-list-cy-name">{{item.teacher.name}}</text>
               </view>
@@ -31,7 +31,7 @@
                 <text style="color:#aaa">暂无评分</text>
               </view>
               <view class="edu-introduce">
-                 <label>简介：{{item.teacher.profile}}</label>
+                 <text>简介：{{item.teacher.profile}}</text>
               </view>
                <view class="edu-jl-list">
                  <label class="edu-tea-name edu-tea-name-a">{{item.teacher.type}}</label>
