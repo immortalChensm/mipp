@@ -101,6 +101,21 @@
                 </view>
                 <view class="edu-list-title edu-list-can-q">电话</view>
             </view>
+
+            <!-- 拨打电话弹出层 -->
+               <view class="edu-tel-mask-form">
+                   <view class="edu-tel-nums">拨打18860897067</view>
+                   <view class="edu-tel-msk-tbs">
+                       <view class="edu-tel-msk-a edu-tel-tyzr" bindlongtap='cancel_tel'>
+                          <button   hover-class="other-button-hover"> 取消 </button>
+                       </view>
+                      <view class="edu-tel-msk-b edu-tel-tyzr">
+                        <button   hover-class="other-button-hover"> 确定 </button>
+                      </view> 
+                   </view>
+               </view> 
+              <view class="edu-tel-mask"></view>
+             <!-- 拨打电话弹出层 -->
        </view>
 </view>
 <!-- 关联老师end -->

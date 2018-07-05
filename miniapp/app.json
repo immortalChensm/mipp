@@ -1,6 +1,6 @@
 {
   "pages": [
- 
+ "pages/course_detail/index",
 "pages/index/index",
 "pages/my_order/index",   
 "pages/about/index",
@@ -18,8 +18,8 @@
 "pages/user_center/index",
 "pages/order_detail/index",
 "pages/auth/index",
-"pages/teacher_detail/index",
-"pages/course_detail/index"
+"pages/teacher_detail/index"
+
 
   ],
   "window": {
