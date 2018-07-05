@@ -211,7 +211,7 @@
 }
 
 .edu-introduce {
-  width: 100%;
+  width: 91%;
   height: 50rpx;
   line-height: 50rpx;
   overflow: hidden;
@@ -940,7 +940,7 @@
   /* opacity: 0.4; */
 }
 
-.edu-info-content .edu-info-name {
+ .edu-info-name {
   color: #fff;
   font-size: 32rpx;
   display: block;

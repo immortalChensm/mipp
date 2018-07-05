@@ -5,7 +5,7 @@
 <view class="edu-info-content">
       <image src="../../assets/images/info-bg.png" class="edu-info-bg-a"/>
       <image src="{{tlist.headimgurl}}" class="edu-info-logo"/> 
-      <text calss="edu-info-name">{{tlist.name}}</text>
+      <text class="edu-info-name">{{tlist.name}}</text>
       <view class="edu-info-address">
          <text bindtap='openAddress'>地址：{{tlist.address}}</text> 
           <image src="../../assets/images/aircraft.png" class="edu-gps-address"/> 
