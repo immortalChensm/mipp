@@ -3,8 +3,11 @@
   display: inline-block;
   width: 51%;
 }
-.edu-att-l-w{
+.edu-att-l-ws{
   width: 70%;
+}
+.edu-introduce-k-a{
+  width: 100%;
 }
 .edu-att-l-q{
   width: 25%;
@@ -26,7 +29,7 @@
 }
 .content {
  width: 100%;
- padding: 30rpx; 
+ padding: 30rpx 0rpx; 
  margin-right:0rpx;
  transition: all 0.2s;
  transform: translateX(180rpx);
