@@ -109,11 +109,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-<<<<<<< HEAD
       'request':options
-=======
-      'request':options,
->>>>>>> b2395edc195ea51929d1ce7d070f32306f712e27
     })
   
   },
@@ -182,15 +178,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-<<<<<<< HEAD
-=======
-    
-    wx.showToast({
-      title: '',
-      icon:'loading',
-      duration:10000
-    })
->>>>>>> b2395edc195ea51929d1ce7d070f32306f712e27
     if(wx.getStorageSync('phone')){
       this.setData({
         has_phone:true
