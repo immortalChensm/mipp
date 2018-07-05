@@ -2,28 +2,33 @@
 var API_URL = 'https://edu.mppstore.com/Api/';
 
 //post请求
-function post(url,data,suc,fail){
-    request('POST',url,data,suc,fail);
+function post(url,data,suc,fail,is_load){
+    request('POST',url,data,suc,fail,is_load);
 }
 
 //get请求
-function get(url,suc,fail){
-    request('GET',url,null,suc,fail);
+function get(url,suc,fail,is_load){
+    request('GET',url,null,suc,fail,is_load);
 }
 
 //request
-function request(method,url,data,suc,fail){
-  wx.showToast({
-    title: '',
-    icon: 'loading',
-    duration: 100000
-  })
+function request(method,url,data,suc,fail,is_load){
+  is_load = is_load ? is_load : 1;
+  if(is_load == 1){
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+      duration: 100000
+    })
+  }
 	var request_obj = {
 	        url: API_URL+url+'?ajax=1',
 	        method: method, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
 		    success: function(res){
           suc(res);
-          wx.hideToast();
+          if (is_load == 1) {
+            wx.hideToast();
+          }
         },
 		    fail: fail
 	    }

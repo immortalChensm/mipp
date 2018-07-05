@@ -131,7 +131,7 @@ Page({
         } else {
           tool.jsalert(info.msg, 2);
         }
-      })
+      },null,2)
     }else{
       tool.post('User/follow', { relation_id: id, type: 1 }, function (res) {
         var info = res.data;
@@ -145,7 +145,7 @@ Page({
         } else {
           tool.jsalert(res.data.msg, 2);
         }
-      })
+      }, null, 2)
     }
   },
   /**
