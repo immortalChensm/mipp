@@ -39,12 +39,50 @@ Page({
     }
   },
   seletab:function(e){
+    var that = this
     var type = e.currentTarget.dataset['type'];
-    wx.navigateTo({
-      url: '/pages/my_order/index?type=' + type,
-    })
+    // wx.navigateTo({
+    //   url: '/pages/my_order/index?type=' + type,
+    // })
+    switch (type){
+      case 'all':that.setData({
+                    showall:true,
+                    list_status:'',
+                    showpay:false,
+                    showcomment: false,
+                    showcomplete: false
+                });break;
+      case 'pay': that.setData({
+                    showall: false,
+                    list_status: '1',
+                    showpay: true,
+                    showcomment: false,
+                    showcomplete: false
+                  }); break;
+      case 'comment': that.setData({
+                    showall: false,
+                    list_status: '2',
+                    showpay: false,
+                    showcomment: true,
+                    showcomplete: false
+                  }); break;
+      case 'complete': that.setData({
+                    showall: false,
+                    list_status: '3',
+                    showpay: false,
+                    showcomment: false,
+                    showcomplete: true
+                  }); break;
+    }
+    //获取订单列表
+    this.getOrderList();
   },
   getOrderList: function () {
+    wx.showToast({
+      title: '',
+      icon: 'loading',
+      duration: 100000
+    })
     var that = this;
     tool.post('Order/index', { status: this.data.list_status, p: this.data.list_page }, function (result) {
       var info = result.data;
@@ -58,6 +96,7 @@ Page({
           list_info: []
         })
       }
+      wx.hideToast()
     })
   },
   toOrderDetail:function(e){
@@ -158,7 +197,6 @@ Page({
       icon:'loading',
       duration:100000
     })
-    console.log(this.data.request_data)
     var request_data = this.data.request_data;
     var type = request_data.type ? request_data.type : this.data.type;
     this.setData({
@@ -184,7 +222,6 @@ Page({
     }
     this.setData(set_data);
     this.getOrderList()
-    wx.hideToast()
 ;  },
 
   /**

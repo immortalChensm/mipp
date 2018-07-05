@@ -17,7 +17,7 @@
 <view class="edu-course-width">
        <swiper  hidden='{{hide_video_a}}'  indicator-dots="true" autoplay="{{auto_play}}" circular="true" class="edu-course-video">
         <swiper-item>
-            <video src="{{course_info.link}}" autoplay="{{auto_play}}" class="edu-course-bcg" controls="true" poster='{{course_info.pics[0]}}'></video>
+            <video id="myvideo" src="{{course_info.link}}" autoplay="{{auto_play}}" class="edu-course-bcg" controls="true" poster='{{course_info.pics[0]}}'></video>
         </swiper-item>
         <block wx:for="{{course_info.pics}}" wx:for-key="key">
           <swiper-item wx:if="{{key > 0}}">
@@ -28,7 +28,7 @@
        <view class="edu-course-imgs" hidden='{{hide_video_b}}'>
            <view class="edu-mask-a"></view>
            <image src="../../assets/images/video-an.png" bindtap='edu_video_auto' class="edu-course-bf"/>
-           <image src="{{course_info.pics[0]}}" class="edu-course-bgs"/>  
+           <image src="{{course_info.pics[0]}}" class="edu-course-bgs"/>
       </view> 
 </view>
 

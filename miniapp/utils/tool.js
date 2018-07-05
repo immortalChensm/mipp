@@ -13,10 +13,18 @@ function get(url,suc,fail){
 
 //request
 function request(method,url,data,suc,fail){
+  wx.showToast({
+    title: '',
+    icon: 'loading',
+    duration: 100000
+  })
 	var request_obj = {
 	        url: API_URL+url+'?ajax=1',
 	        method: method, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-		    success: suc,
+		    success: function(res){
+          suc(res);
+          wx.hideToast();
+        },
 		    fail: fail
 	    }
 	if(method == 'POST'){

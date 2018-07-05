@@ -57,6 +57,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (option) {
+    wx.showToast({
+      title: '',
+      icon:'loading',
+      duration:10000
+    })
     var that = this;
     var id = this.data.request.id;
     //转发页面左上角加去首页的按钮
@@ -79,6 +84,7 @@ Page({
         follow_id: res.data.data.user_follow
       })
       WxParse.wxParse('content', 'html', res.data.data.content, that, 5);
+      wx.hideToast();
     })
   },
   /**

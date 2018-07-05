@@ -55,6 +55,7 @@ Page({
       hide_video_b: true,
       auto_play:true
     })
+    this.videoContext.play();
   },
 
   /**
@@ -107,9 +108,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      'request':options,
-      auto_play: true
-
+      'request':options
     })
   },
   /**
@@ -123,6 +122,7 @@ Page({
         course_info: res.data.data,
       })
       WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
+      wx.hideToast();
     })
   },
   /**
@@ -167,18 +167,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.videoContext = wx.createVideoContext('myvideo')
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.showToast({
-      title: '',
-      icon:'loading',
-      duration:10000
-    })
     if(wx.getStorageSync('phone')){
       this.setData({
         has_phone:true
@@ -205,7 +200,7 @@ Page({
     this.getCommentInfo();
     //是否关注
     this.check_follow();
-    wx.hideToast();
+    
   },
 
   /**
