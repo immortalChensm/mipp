@@ -35,7 +35,7 @@
  transform: translateX(190rpx);
  margin-left: -190rpx;
 }
-.del {
+.del{
   width:190rpx;
   font-size:28rpx;
   color:rgb(255,255,255);
