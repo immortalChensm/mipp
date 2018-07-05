@@ -107,7 +107,9 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      'request':options
+      'request':options,
+      auto_play: true
+
     })
   },
   /**

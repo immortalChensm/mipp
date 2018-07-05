@@ -15,7 +15,7 @@
 
 <!-- 视频 -->
 <view class="edu-course-width">
-       <swiper  hidden='{{hide_video_a}}'  indicator-dots="true" autoplay="{{false}}" circular="true" class="edu-course-video">
+       <swiper  hidden='{{hide_video_a}}'  indicator-dots="true" autoplay="{{auto_play}}" circular="true" class="edu-course-video">
         <swiper-item>
             <video src="{{course_info.link}}" autoplay="{{auto_play}}" class="edu-course-bcg" controls="true" poster='{{course_info.pics[0]}}'></video>
         </swiper-item>
