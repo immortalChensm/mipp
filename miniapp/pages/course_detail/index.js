@@ -303,7 +303,7 @@ Page({
         } else {
           tool.jsalert(info.msg, 2);
         }
-      })
+      }, null, 2)
     } else {
       tool.post('User/follow', { relation_id: id, type: 2 }, function (result) {
         var info = result.data;
@@ -316,7 +316,7 @@ Page({
         } else {
           tool.jsalert(info.msg, 2);
         }
-      })
+      }, null, 2)
     }
   },
   show_telebox:function(){
