@@ -2,32 +2,32 @@
 <import src="../template/template.wxml"/> 
 <template is="navbar" data="{{...navdata}}"></template>
 <view class="edu-info-body">
-<!-- 视频 
-<view class="edu-course-width">
+ <!-- 视频  -->
+<!-- <view class="edu-course-width">
     <view class="section tc">
       <video src="{{src}}"   controls class="edu-course-width"></video>
       <block wx:for="{{course_info.pics}}" wx:key="key">
         <image src='{{item}}'></image>
       </block>
     </view>
-</view>
- 视频end -->
+</view> -->
+ <!-- 视频end  -->
 
 <!-- 视频 -->
 <view class="edu-course-width">
-      <!-- <swiper  indicator-dots="true" autoplay="{{false}}" circular="true" class="edu-course-video">
+       <swiper  hidden='{{hide_video_a}}'  indicator-dots="true" autoplay="{{false}}" circular="true" class="edu-course-video">
         <swiper-item>
-            <video src="{{course_info.link}}" class="edu-course-bcg" controls="true" poster='../../image/top.png'></video>
+            <video src="{{course_info.link}}" autoplay="{{auto_play}}" class="edu-course-bcg" controls="true" poster='../../image/top.png'></video>
         </swiper-item>
         <block wx:for="{{course_info.pics}}">
           <swiper-item>
             <image src="{{item}}" class="edu-course-bcg" />
           </swiper-item>
         </block>
-      </swiper> -->
-       <view class="edu-course-imgs">
+      </swiper> 
+       <view class="edu-course-imgs" hidden='{{hide_video_b}}'>
          <view class="edu-mask-a"></view>
-           <image src="../../assets/images/video-an.png" class="edu-course-bf"/>
+           <image src="../../assets/images/video-an.png" bindtap='edu_video_auto' class="edu-course-bf"/>
            <image src="../../assets/images/233.png" class="edu-course-bgs"/>  
       </view> 
 </view>

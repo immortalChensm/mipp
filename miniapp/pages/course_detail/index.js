@@ -28,7 +28,10 @@ Page({
     buy_click:false,
     yuyue_click: false,
     follow_id:'',
-    show_telebox:false
+    show_telebox:false,
+    hide_video_a:true,
+    hide_video_b: false,
+    auto_play: true
   },
   //课程详情和评价点击事件
   tabShow:function(event){
@@ -43,6 +46,15 @@ Page({
         hide_content: true
       })
     }
+  },
+
+  /***视频播放**/
+  edu_video_auto:function(){
+    this.setData({
+      hide_video_a: false,
+      hide_video_b: true,
+      auto_play:true
+    })
   },
 
   /**
