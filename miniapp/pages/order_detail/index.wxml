@@ -1,9 +1,5 @@
 <import src="../template/template.wxml"/>
 <template is="navbar" data="{{...navdata}}"></template>
-
-<import src="../template/template.wxml"/> 
-<template is="navbar" data="{{title:'首页',imgurl:''}}"></template> 
-<view class="edu-info-body">
 <view class="edu-det-status" wx:if="{{order_info.status == 1}}">
     <image src="../../assets/images/waitpayb-icon.png" class="edu-status-b"/>    
     <text>待支付</text>
@@ -52,4 +48,3 @@
    <button wx:if="{{order_info.status == '2'}}" bindtap='toComment' data-id='{{order_info.id}}' class="edu-det-btns">评价</button>
 </view>
 <!-- 底部end -->
-</view>
