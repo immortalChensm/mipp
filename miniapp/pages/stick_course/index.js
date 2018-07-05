@@ -33,6 +33,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.showToast({
+      title: '',
+      icon: 'loading',
+      duration: 10000
+    })
     this.setData({
       cur_page: 1,
       is_add:false,
@@ -40,6 +45,7 @@ Page({
     })
     //获取推荐的课程列表
     this.getCourseList();
+    wx.hideToast();
   },
   /**
    * 获取推荐的课程列表
