@@ -1,6 +1,7 @@
 {
   "pages": [
-   
+"pages/course/index",
+   "pages/near_teacher/index",
 "pages/index/index",
 "pages/course_detail/index",
 "pages/my_order/index",   
@@ -11,10 +12,10 @@
 "pages/yuyue_suc/index",
 "pages/stick_course/index",
 "pages/stick_teacher/index",
-"pages/course/index",
+
 "pages/confirm_order/index",
 "pages/yuyue/index",
-"pages/near_teacher/index",
+
 "pages/comment/index",
 "pages/user_center/index",
 "pages/order_detail/index",

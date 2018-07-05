@@ -373,7 +373,7 @@
 
 .edu-sty-qa {
   /* margin-top: 80rpx; */
-  display: flex;
+  /* display: flex; */
   z-index: 9999;
   padding: 30rpx 0rpx;
   position: absolute;
@@ -395,6 +395,7 @@
 
 .edu-kc-list {
   display: flex;
+  /* width: 100%; */
   padding: 14rpx 30rpx 14rpx 110rpx;
 }
 
@@ -413,7 +414,8 @@
 }
 
 .edu-icon-we {
-  display: flex;
+   display: flex; 
+   width: 37.1%;
   justify-content: flex-end;
   align-items: center;
 }
@@ -950,6 +952,7 @@
 }
 
 .edu-info-address {
+  width: 100%;
   color: rgb(255, 255, 255);
   font-size: 26rpx;
   display: block;
