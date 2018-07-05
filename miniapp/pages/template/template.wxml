@@ -20,12 +20,14 @@
  </view>
 </template>
 
-<template name="navbar">
+<template name="navbars">
  <!-- <view class="edu-no-data-b"> -->
       <!-- <image src="../../assets/images/index-icon.png" class="edu-nav-img"/>   -->
       <!-- <image src="../../assets/images/fanhui-icon.png" class="edu-nav-img"/>   -->
  <view class="edu-no-data-b">
-      <image wx:if="{{showbtn == 1}}" src="{{imgurl ? imgurl : '../../assets/images/fanhui-icon.png'}}" class="edu-nav-img" bindtap='backpage' data-url="{{pageurl}}"/>  
-    <!-- {{title}} -->
+      <!-- <image wx:if="{{showbtn == 1}}" src="{{imgurl ? imgurl : '../../assets/images/fanhui-icon.png'}}" class="edu-nav-img" bindtap='backpage' data-url="{{pageurl}}"/>   -->
+     
+     <!-- <text class="edu-nav-titles">{{title}} </text> -->
+     {{title}}
  </view>
 </template>
