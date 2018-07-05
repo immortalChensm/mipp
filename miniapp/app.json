@@ -1,7 +1,7 @@
 {
   "pages": [
- "pages/course_detail/index",
 "pages/index/index",
+"pages/course_detail/index",
 "pages/my_order/index",   
 "pages/about/index",
 "pages/faq/index",

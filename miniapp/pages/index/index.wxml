@@ -1,6 +1,6 @@
 
 <import src="../template/template.wxml"/>
-<template is="navbars" data="{{...navdata}}"></template> 
+<template is="navbar" data="{{...navdata}}"></template> 
 <view class="body">
   <!-- 顶部轮播图 start -->
   <view class="edu-banner" bindtap='set_height'>

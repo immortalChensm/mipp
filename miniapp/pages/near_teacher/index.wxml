@@ -18,11 +18,7 @@
            <image src="../../assets/images/w-top-icon.png" class="edu-a-b" hidden="{{cur_sale == '1' ? false : true}}"/>
           <image src="../../assets/images/w-botton-icon.png" class="edu-a-b" hidden="{{cur_sale == '2' ? false : true}}"/> 
       </view>
-</view>
- <!-- 遮罩层  -->
-     <view class="{{showkecdab?'edu-mask':'edu-none'}}" bindtap='cancel_sele'></view> 
-    <!-- <view class="{{showkecdbc?'edu-mask':'edu-none'}}"></view>   -->
-<!-- 遮罩层 -->
+
 <!-- 距离 -->
 <view hidden='{{hidden_typea}}' class="'edu-show edu-sty-qa">
     <view class="edu-kc-list" bindtap="searchList" data-type="distance" data-val="" data-name="距离">
@@ -51,7 +47,8 @@
     </view>
 </view>
 <!-- 距离 end -->
-<!-- 茶艺 -->
+
+<!-- 分类 -->
 <view  hidden="{{hidden_typeb}}" class="edu-show edu-sty-qa">
     <view class="edu-kc-list" bindtap="searchList" data-type="type" data-val="" data-name="全部">
        <text class="edu-ke-c-name">全部</text>
@@ -66,7 +63,15 @@
        </view>
     </view>
 </view>
-<!-- 销量 end -->
+<!-- 分类 end -->
+      
+</view>
+ <!-- 遮罩层  -->
+     <view class="{{showkecdab?'edu-mask':'edu-none'}}" bindtap='cancel_sele'></view> 
+    <!-- <view class="{{showkecdbc?'edu-mask':'edu-none'}}"></view>   -->
+<!-- 遮罩层 -->
+
+
 <!-- 分类筛选 end -->
 <!-- 金牌老师 start -->
 <view class="edu-top-pad-b">

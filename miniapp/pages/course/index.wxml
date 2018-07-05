@@ -17,11 +17,7 @@
           <image src="../../assets/images/w-top-icon.png" class="{{sele_price?'edu-a-b edu-show':'edu-a-b edu-none'}}"/>
           <image src="../../assets/images/w-botton-icon.png" class="{{sele_price?'edu-a-b edu-none':'edu-a-b edu-show'}}"/>
       </view>
-</view>
-<!-- 遮罩层 -->
-    <view class="{{showkecd?'edu-mask':'edu-none'}}" bindtap='cancel_sele'></view> 
-    <!-- <view class="{{showkecdb?'edu-mask':'edu-none'}}"></view>  -->
-<!-- 遮罩层 -->
+
 <!-- 课程类型 -->
 <view hidden='{{hidden_type}}' class="edu-show edu-sty-qa">
     <view class="edu-kc-list-a" bindtap="searchList" data-type="type" data-val="" data-name="全部课程">
@@ -38,6 +34,13 @@
     </view>
 </view>
 <!-- 课程类型 end -->
+
+</view>
+<!-- 遮罩层 -->
+    <view class="{{showkecd?'edu-mask':'edu-none'}}" bindtap='cancel_sele'></view> 
+    <!-- <view class="{{showkecdb?'edu-mask':'edu-none'}}"></view>  -->
+<!-- 遮罩层 -->
+
 <!-- 销量 -->
 <!-- <view hidden="{{hidden_sale_count}}" class="edu-show edu-sty-qa">
     <view class="edu-kc-list-a" bindtap="searchList" data-type="sale_count" data-val="1">

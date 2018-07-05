@@ -1,7 +1,7 @@
 
 <import src="../template/template.wxml"/>
 <template is="navbar" data="{{...navdata}}"></template>
-<view class="edu-info-body">
+
 <!-- 顶部切换 -->
 <view class="edu-myorder-tab edu-bottom-solid edu-border-top">
      <view class="{{showall?'edu-myorder-pal edu-myorder-select':'edu-myorder-pal'}}" bindtap='seletab' data-type='all'>全部</view>
@@ -40,6 +40,6 @@
   </view>
   <template is="default" wx:if="{{list_info.length == 0}}" data="{{message:'暂无订单数据'}}"></template>
 </view>
-</view>
+
 
 

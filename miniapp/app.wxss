@@ -323,7 +323,7 @@
   display: flex;
   height: 88rpx;
   padding: 0rpx 30rpx;
-  top:129rpx;
+  /* top:129rpx; */
   /* position: relative; */
   position: fixed;
   width: 100%;
@@ -373,13 +373,15 @@
 
 .edu-sty-qa {
   /* margin-top: 80rpx; */
-  z-index: 999;
+  display: flex;
+  z-index: 9999;
   padding: 30rpx 0rpx;
-  position: fixed;
+  position: absolute;
   border-top: 2rpx solid #f2f2f2;
   width: 100%;
   background-color: #fff;
-  top: 219rpx;
+  top: 88rpx;
+  left: 0;
 }
 
 .edu-show {
@@ -1427,7 +1429,7 @@ view, scroll-view {
   position: fixed;
   height: 78rpx;
   z-index: 999;
-  top: 130rpx;
+  /* top: 130rpx; */
   background-color: #fff;
 }
 
