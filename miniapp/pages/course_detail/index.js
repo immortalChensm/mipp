@@ -49,12 +49,14 @@ Page({
   },
 
   /***视频播放**/
-  edu_video_auto:function(){
+  edu_video_auto: function (){
+
     this.setData({
       hide_video_a: false,
       hide_video_b: true,
       auto_play:true
     })
+  
   },
 
   /**
@@ -108,9 +110,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       'request':options,
-      auto_play: true
-
     })
+  
   },
   /**
    * 获取课程信息
@@ -170,10 +171,13 @@ Page({
   
   },
 
+
+
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    
     wx.showToast({
       title: '',
       icon:'loading',
@@ -195,7 +199,8 @@ Page({
     }
     this.setData({
       buy_click:false,
-      yuyue_click:false
+      yuyue_click:false,
+   
     })
     //获取课程信息
     this.getCourseInfo();
