@@ -20,6 +20,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+      duration: 100000
+    })
     var course_info = wx.getStorageSync('cart_info');
     var phone = wx.getStorageSync('phone');
     this.setData({
@@ -83,7 +88,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.hideToast();
   },
 
   /**

@@ -125,7 +125,7 @@ Page({
       })
       WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
       wx.hideToast();
-    })
+    }, null, 1)
   },
   /**
    * 获取关联老师的信息
@@ -137,7 +137,7 @@ Page({
       that.setData({
         teacher_info: res.data.data
       })
-    })
+    }, null, 1)
   },
   /**
  * 获取评价信息
@@ -151,7 +151,7 @@ Page({
           comments: res.data.data
         })
       }
-    })
+    },null,1)
   },
   /**
  * 打开地图

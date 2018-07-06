@@ -42,13 +42,13 @@ myeditor('content');
                             <table class="table table-bordered">
                                 <tbody>
                                 <tr>
-                                    <td class="col-sm-2">课程名称：</td>
+                                    <td class="col-sm-2"><span class="must-field">*</span>课程名称：</td>
                                     <td class="col-sm-8">
                                         <input type="text" class="form-control" name="info[name]" value="{$info.name}" placeholder="请输入课程名称"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-2">课程类型：</td>
+                                    <td class="col-sm-2"><span class="must-field">*</span>课程类型：</td>
                                     <td class="col-sm-8">
                                         <select class="form-control" name="info[type]">
                                             <option value="">请选择课程类型</option>
@@ -59,25 +59,25 @@ myeditor('content');
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-2">课程价格：</td>
+                                    <td class="col-sm-2"><span class="must-field">*</span>课程价格：</td>
                                     <td class="col-sm-8">
                                         <input type="number" class="form-control" name="info[price]" value="{$info.price}" placeholder="请输入课程价格"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-2">限购人数：</td>
+                                    <td class="col-sm-2"><span class="must-field">*</span>限购人数：</td>
                                     <td class="col-sm-8">
                                         <input type="number" class="form-control" name="info[stock]" value="{$info.stock}" placeholder="请输入限购人数"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                <td class="col-sm-2">预约名额：</td>
+                                <td class="col-sm-2"><span class="must-field">*</span>预约名额：</td>
                                     <td class="col-sm-8">
                                         <input type="number" class="form-control" name="info[yuyue_stock]" value="{$info.yuyue_stock}" placeholder="请输入预约名额"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-2">课程图片：</td>
+                                    <td class="col-sm-2"><span class="must-field">*</span>课程图片：</td>
                                     <td class="col-sm-8">
 										<div  class="image-contain" >
 											<foreach name="info.pics" item="val">
@@ -89,23 +89,24 @@ myeditor('content');
 											<div class="image-div" id="image_btn" onclick="$(this).next('input[name=upimg]').click()"></div>
 											<input type="file" id="upimg" name="upimg" onchange="upload_img(this.id)" style="display:none;"/>
 										</div>
+                                        <div class="must-field">建议尺寸：750*470</div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-2">介绍视频：</td>
+                                    <td class="col-sm-2"><span class="must-field">*</span>介绍视频：</td>
                                     <td class="col-sm-8">
                                         <input style="cursor:pointer" type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[link]" value="{$info.link}" placeholder="点击上传视频，视频大小最大为10M">
                                         <input type="file" id="link" name="link" style="display:none;" onchange="upload_video(this.id)"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-2">课程简介：</td>
+                                    <td class="col-sm-2"><span class="must-field">*</span>课程简介：</td>
                                     <td class="col-sm-8">
-                                        <textarea style="resize:none;height:80px;"  class="form-control" name="info[profile]">{$info.profile}</textarea>
+                                        <textarea style="resize:none;height:80px;" placeholder="请输入课程简介，上限140字" class="form-control" name="info[profile]">{$info.profile}</textarea>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-2">课程标签：</td>
+                                    <td class="col-sm-2"><span class="must-field">*</span>课程标签：</td>
                                     <td class="col-sm-8">
                                         <div class="all_tags">
                                         	<foreach name="tags" item="val">
@@ -122,11 +123,11 @@ myeditor('content');
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-sm-2">课程详情：</td>
+                                    <td class="col-sm-2"><span class="must-field">*</span>课程详情：</td>
                                     <td width="85%" class="col-sm-8">
                                         <textarea class="span12 ckeditor" id="content" name="info[content]" title="">{$info.content}</textarea>
                                     </td>                                                                       
-                                </tr>  
+                                </tr>
                                 </tbody> 
                                 <tfoot>
                                 	<tr>

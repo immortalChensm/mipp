@@ -75,6 +75,9 @@
 		                 <tfoot>		                 
 		                 </tfoot>
 		               </table>	 
+		               <if condition="$list eq null">
+                           <include file="Public/none" />
+                       </if>
 	               </div>
 	          </div>
 	<if condition="$list neq null">

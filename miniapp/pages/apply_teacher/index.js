@@ -20,7 +20,8 @@ Page({
     show_fcard:false,
     show_bcard:false,
     show_qualification: false,
-    teacher_info:[]
+    teacher_info:[],
+    commit_click:false
   },
 
   /**
@@ -28,8 +29,6 @@ Page({
    */
   onLoad: function (options) {
 
-    //获取老师信息
-    this.getTeacherInfo();
   },
   /**
    * 获取老师信息
@@ -37,7 +36,6 @@ Page({
   getTeacherInfo:function(){
     var that = this;
     tool.post('Teacher/apply_teacher',{act:'show'},function(result){
-      console.log(result)
       var info = result.data;
       if(info.status == '1'){
         var teacher_info = info.data;
@@ -59,14 +57,24 @@ Page({
           show_qualification: show_qualification
         })
       }
-    })
+    },null,1)
   },
   /**
    * 申请表单提交
    */
   formSubmit:function(e){
-    if(!this.data.is_edit) return false;
+    if(!this.data.is_edit) {
+      return false;
+    }
+    if (this.data.commit_click){
+      return false;
+    }else{
+      this.setData({
+        commit_click:true
+      })
+    }
     var form_data = e.detail.value;
+    var that = this;
     console.log(form_data)
     form_data.act = 'save';
     tool.post('Teacher/apply_teacher', form_data,function(result){
@@ -79,6 +87,9 @@ Page({
           })
         },1200)
       }else{
+        that.setData({
+          commit_click: false
+        })
         tool.jsalert(info.msg,2)
       }
     }, null, 2)
@@ -139,7 +150,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    //获取老师信息
+    this.getTeacherInfo();
   },
 
   /**

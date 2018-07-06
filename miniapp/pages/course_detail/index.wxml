@@ -78,6 +78,7 @@
             <view class="edu-course-right">
                  <text class="edu-course-teach-name">{{teacher_info.name}}</text>
                  <text bindtap='openAddress' class="edu-course-address">地址：{{teacher_info.address}}</text>
+                 <image src="../../assets/images/golocate.png" style="width: 28rpx; height: 28rpx; margin-left: 10rpx;"/>
             </view>
        </view>
        <view class="edu-course-fl-icon">

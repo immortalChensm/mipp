@@ -78,11 +78,6 @@ Page({
     this.getOrderList();
   },
   getOrderList: function () {
-    wx.showToast({
-      title: '',
-      icon: 'loading',
-      duration: 100000
-    })
     var that = this;
     tool.post('Order/index', { status: this.data.list_status, p: this.data.list_page }, function (result) {
       var info = result.data;
@@ -97,7 +92,7 @@ Page({
         })
       }
       wx.hideToast()
-    })
+    }, null, 1)
   },
   toOrderDetail:function(e){
     var order_id = e.currentTarget.dataset['id'];
@@ -178,8 +173,8 @@ Page({
         } else {
           tool.jsalert(info.msg, 2);
         }
-      })
-    }, null, 2);
+      }, null, 2)
+    });
   }, 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -21,7 +21,6 @@
 "pages/auth/index",
 "pages/teacher_detail/index"
 
-
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

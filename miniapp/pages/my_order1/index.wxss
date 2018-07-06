@@ -1,4 +1,0 @@
-/* pages/我的订单/myorder.wxss */
-page{
-  background-color: #f2f2f2;
-}

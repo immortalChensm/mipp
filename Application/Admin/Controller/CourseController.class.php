@@ -13,6 +13,7 @@ class CourseController extends BaseController {
     	$this->admin_info['type'] == 2 && $where['teacher_id'] = $this->admin_info['teacher_id'];
         I('keywords') && $where['name'] = array('like','%'.I('keywords').'%');
         I('type') && $where['type'] = I('type');
+        I('status') && $where['status'] = I('status');
     	$datapage = D('Course')->getPager($where,10,'create_date desc',true);
     	$list = $datapage['data'];
     	foreach ($list as $key=>$val){
@@ -28,7 +29,7 @@ class CourseController extends BaseController {
     public function wait_check_list()
     {
     	$where = array();
-    	$where['status'] = array('EGT',3);
+    	$where['status'] = array('between','3,4');
     	$this->admin_info['type'] == 2 && $where['teacher_id'] = $this->admin_info['teacher_id'];
     	I('keywords') && $where['name'] = array('like','%'.I('keywords').'%');
     	I('type') && $where['type'] = I('type');
@@ -96,7 +97,7 @@ class CourseController extends BaseController {
     	{
     		$id = (int)I('post.id');
     		$id || $this->error('非法的操作');
-    		D('Course')->where(array('id'=>$id))->save(array('status'=>4)) && $this->success('数据删除成功！');
+    		D('Course')->where(array('id'=>$id))->save(array('status'=>5)) && $this->success('数据删除成功！');
     		$this->error('网络异常，删除失败！');
     	}
     }
@@ -146,14 +147,14 @@ class CourseController extends BaseController {
 		if(IS_POST){
 			$id = (int)I('post.id');
 			$id || $this->error('非法的操作');
-			$course = D('Course')->where(array('course_type'=>$id))->find();
+			$course = D('Course')->where(array('type'=>$id,'status'=>array('NEQ','5')))->find();
 			if($course)
 			{
 				$this->error('该类型下还有课程数据，不可删除！');
 			}
 			else 
 			{
-				D('CourseType')->where(array('id'=>$id))->save(array('status'=>2)) && $this->success('数据删除成功！');
+				D('CourseType')->where(array('id'=>$id))->delete() && $this->success('删除成功！');
 				$this->error('网络异常，删除失败！');
 			}
 		}
@@ -225,7 +226,8 @@ class CourseController extends BaseController {
     public function check_course(){
     	$id = (int)I('post.id');
     	$status = (int)I('post.status');
-    	D('Course')->save(array('id'=>$id,'status'=>$status,'check_time'=>date('Y-m-d H:i:s'))) && $this->success('审核成功!');
+        $msg = $status == 1 ? '审核通过!':'审核不通过！';
+    	D('Course')->save(array('id'=>$id,'status'=>$status,'check_time'=>date('Y-m-d H:i:s'))) && $this->success($msg);
         $this->error('网络异常，请稍后再试！');
     }
 }

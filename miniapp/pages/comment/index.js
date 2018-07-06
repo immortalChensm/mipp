@@ -89,6 +89,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showToast({
+      title: '加载中...',
+      icon:'loading',
+      duration:10000
+    })
     this.setData({
       request:options
     })
@@ -105,7 +110,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.hideToast();
   },
 
   /**

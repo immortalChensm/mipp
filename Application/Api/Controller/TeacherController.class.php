@@ -76,7 +76,8 @@ class TeacherController extends BaseController {
         $where['t.status'] = 1;
         $where['t.id'] = I('request.id');
         //老师信息
-        $list = D('Teacher')->where(array('status'=>'1','id'=>I('request.id')))->find();
+        // $list = D('Teacher')->where(array('status'=>'1','id'=>I('request.id')))->find();
+        $list = D('Teacher')->where(array('id'=>I('request.id')))->find();
         $list['links'] = unserialize($list['links']);
         $list['content'] = htmlspecialchars_decode($list['content']);
         $list['profile'] = strip_tags(htmlspecialchars_decode($list['profile']));

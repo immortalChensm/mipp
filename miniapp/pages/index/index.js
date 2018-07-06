@@ -31,11 +31,6 @@ Page({
     })
   },
   onShow:function(){
-    wx.showToast({
-      title: '',
-      icon:'loading',
-      duration:10000
-    })
     //获取banner
     this.getBanner();
     //获取课程分类
@@ -44,7 +39,6 @@ Page({
     this.getStickCourse();
     //获取推荐老师
     this.getStickTeacher();
-    wx.hideToast();
   },
   getBanner: function () {
     var that = this;
@@ -69,7 +63,6 @@ Page({
         }
       }
       if (block_arr.length > 0) new_info.push(block_arr);
-      console.log(new_info);
       that.setData({
         course_types: new_info
       })
@@ -154,12 +147,5 @@ Page({
     this.onLoad();
     this.onShow();
     wx.stopPullDownRefresh();
-  },
-  set_height:function(){
-    wx.getSystemInfo({
-    success:function(res){
-     console.log(res)
-    }
-    })
   }
 })

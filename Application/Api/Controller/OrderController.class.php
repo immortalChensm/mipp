@@ -120,17 +120,19 @@ class OrderController extends BaseController {
     {
     	$order_info || $this->error('订单已失效！');
    		$total_fee = $order_info['price'];
+        $order_sn = $order_info['order_sn'].mt_rand(1000,9999);
 
     	$total  = $total_fee*100;
-    	// $total = 1;//暂时使用
+        //$this->returnSuccess('',$total);
+    	//$total = 100;//暂时使用
     
     	vendor("Wxpay.WxPayJsApiPay");
     	$tools = new \JsApiPay();
     	$input = new \WxPayUnifiedOrder();
 
     	$input->SetBody("C2C艺术教育");
-    	$input->SetAttach($order_info['order_sn']);
-    	$input->SetOut_trade_no($order_info['order_sn']);
+    	$input->SetAttach($order_sn);
+    	$input->SetOut_trade_no($order_sn);
     	$input->SetTotal_fee($total);
     	$input->SetTime_start(date("YmdHis"));
     	$input->SetTime_expire(date("YmdHis", time() + 600));
@@ -152,7 +154,7 @@ class OrderController extends BaseController {
         // file_put_contents('aaa.txt',json_encode($xmlObj));
     	if($xmlArr['return_code']=='SUCCESS'){
     		$total_fee = $xmlArr['total_fee']/100;
-    		$order_sn = $xmlArr['attach'];
+    		$order_sn = substr($xmlArr['attach'],0,18);
     		if($total_fee){
     			//更新订单状态
                 $order = D('Order')->where(array('order_sn'=>$order_sn))->find();

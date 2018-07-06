@@ -13,7 +13,7 @@ function get(url,suc,fail,is_load){
 
 //request
 function request(method,url,data,suc,fail,is_load){
-  is_load = is_load ? is_load : 1;
+  is_load = is_load ? is_load : 2;
   if(is_load == 1){
     wx.showToast({
       title: '加载中...',
@@ -26,6 +26,7 @@ function request(method,url,data,suc,fail,is_load){
 	        method: method, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
 		    success: function(res){
           suc(res);
+          
           if (is_load == 1) {
             wx.hideToast();
           }

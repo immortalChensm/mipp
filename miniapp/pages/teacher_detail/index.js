@@ -85,7 +85,7 @@ Page({
       })
       WxParse.wxParse('content', 'html', res.data.data.content, that, 5);
       wx.hideToast();
-    })
+    },null,1)
   },
   /**
    * 打开地图

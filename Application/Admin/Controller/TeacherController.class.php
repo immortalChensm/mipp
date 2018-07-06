@@ -227,12 +227,15 @@ class TeacherController extends BaseController {
         $save_data['id'] = $id;
         $save_data['status'] = $status;
         $save_data['check_time'] = date('Y-m-d H:i:s');
-    	D('Teacher')->save($save_data) && $this->success('审核成功!');
-        //更新用户身份
-        $identify = $status == '1'? '2':'1';
-        D('User')->where(array('id'=>$teacher_info['user_id']))->save(array('identify'=>$identify));
-        
-        $this->error('网络异常，请稍后再试！');
+
+        if($res = D('Teacher')->save($save_data)){
+            //更新用户身份
+            $identify = $status == '1'? '2':'1';
+            D('User')->where(array('id'=>$teacher_info['user_id']))->save(array('identify'=>$identify));
+            $this->success('审核成功!');
+        }else{
+            $this->error('网络异常，请稍后再试！');
+        }
     }
     
     public function info(){

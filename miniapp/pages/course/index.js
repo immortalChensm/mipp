@@ -136,11 +136,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
-    wx.showToast({
-      title: '',
-      duration:10000,
-      icon:'loading'
-    })
    this.setData({
      hidden_type: true,
      hidden_sale_count: true,
@@ -155,8 +150,7 @@ Page({
      cur_page: 1,
      default_type: '全部课程',
      is_add: false,
-     data_end: false,
-     is_load:true
+     data_end: false
    });
     var course_type = wx.getStorageSync('course_type');
     wx.removeStorageSync('course_type');
@@ -175,11 +169,7 @@ Page({
     this.courseType();
     //加载课程列表
     this.courseList();
-    
-    wx.hideToast();
-    this.setData({
-      is_load: false
-    })
+
   },
 
   /**

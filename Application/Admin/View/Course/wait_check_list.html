@@ -79,6 +79,9 @@ function export_order(){
 		                 <tfoot>		                 
 		                 </tfoot>
 		               </table>	 
+		               <if condition="$list eq null">
+                           <include file="Public/none" />
+                       </if>
 	               </div>
 	          </div>
               <div class="row">
@@ -114,7 +117,7 @@ function set_status(obj,id,status){
 }
 //注销老师账号
 function dele_course(id){
-	jsconfirm('确认要注销此账号吗？',function(){
+	jsconfirm('确认要删除此课程吗？',function(){
 		$.ajax({
 			type : 'post',
 			url : "{:U('Course/dele_course')}",

@@ -81,7 +81,7 @@ class CourseController extends BaseController {
     public function comments(){
     	$course_id = (int)I('request.course_id');
     	$course_id || $this->returnError('非法的访问');
-    	$comments = D('Comment')->relation('user')->where(array('type'=>2,'status'=>1,'relation_id'=>$course_id))->select();
+    	$comments = D('Comment')->relation('user')->where(array('type'=>2,'status'=>1,'relation_id'=>$course_id))->order('create_date desc')->select();
     	foreach ($comments as &$val){
     		$val['stararr'] = $this->starArr($val['star']);
     		$val['create_date'] = substr($val['create_date'],0,16);

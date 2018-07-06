@@ -28,6 +28,11 @@ function export_order(){
 				              	<option value="{$key}" <if condition="$request.type eq $key">selected</if> >{$val}</option>
 				              	</foreach>
 				              	</select>
+                                <select name="status" class="form-control">
+				              	<option value="">状态</option>
+				              	<option value="1" <if condition="$request.status eq 1">selected</if> >上架</option>
+				              	<option value="2" <if condition="$request.status eq 2">selected</if> >下架</option>
+				              	</select>
 				            </div>
 				            <button type="submit" class="btn btn-default">搜索</button>
 				          </form>		
@@ -50,7 +55,7 @@ function export_order(){
 							   <th>是否推荐</th>
 							   <th>上/下架</th>
 			                   <th>添加时间</th>
-			                   <th>操作</th>
+			                   <if condition="$admin_info.type eq 2"><th>操作</th></if>
 		                   </tr>
 		                 </thead>
 						<tbody>
@@ -77,8 +82,8 @@ function export_order(){
 		                     <td>
 		                       <if condition="$admin_info.type eq 2">
 		                       <a title="编辑信息" class="btn btn-primary" href="{:U('Course/edit',array('id'=>$vo['id']))}"><i class="fa fa-pencil"></i></a>
-		                       </if>
 		                       <a title="删除课程" class="btn btn-danger" href="javascript:void(0)" data-id="{$vo.id}" onclick="dele_course('{$vo.id}')"><i class="fa fa-trash-o"></i></a>
+                               </if>
 							 </td>
 		                   </tr>
 		                  </foreach>
@@ -86,6 +91,9 @@ function export_order(){
 		                 <tfoot>		                 
 		                 </tfoot>
 		               </table>	 
+		               <if condition="$list eq null">
+                           <include file="Public/none" />
+                       </if>
 	               </div>
 	          </div>
               <div class="row">
@@ -121,7 +129,7 @@ function set_status(obj,id,status){
 }
 //注销老师账号
 function dele_course(id){
-	jsconfirm('确认要注销此账号吗？',function(){
+	jsconfirm('确认要删除此课程吗？',function(){
 		$.ajax({
 			type : 'post',
 			url : "{:U('Course/dele_course')}",
