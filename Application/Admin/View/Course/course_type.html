@@ -123,7 +123,7 @@ function upload_img(ele_id,save_id){
 	 		$('#'+ele_id).prev('img').attr('src',data.info.image_url);
 	 		$('#'+save_id).val(data.info.image_url);
 	 	}else{
-	 		jsalert(data.msg,2);
+	 		jsalert(data.info,2);
 	 	}
 	});
 }

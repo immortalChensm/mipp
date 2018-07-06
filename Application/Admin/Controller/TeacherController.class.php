@@ -64,6 +64,8 @@ class TeacherController extends BaseController {
             if($res){
                 //更新老师的课程状态
                 D('Course')->where(array('teacher_id'=>$id))->save(array('status'=>'5'));
+                //删除老师的后台账号
+                D('Admin')->where(array('teacher_id'=>$id))->save(array('status'=>'2'));
                 
                 $this->success('数据删除成功！');
             }else{

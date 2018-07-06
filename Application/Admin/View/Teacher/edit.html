@@ -104,13 +104,13 @@ myeditor('content');
                                     	<foreach name="info.links" item="val" key="key">
                                     	<if condition="$key eq 0">
                                     	<div class="upvideo">
-	                                        <input type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[links][]" value="{$val}" placeholder="点击上传视频，视频大小最大为10M">
+	                                        <input type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[links][]" value="{$val}" placeholder="点击上传视频，视频大小最大为10M，支持mp4/3gp等格式">
                                             <input type="file" id="link{$key}" name="link{$key}" style="display:none;" onchange="upload_video(this.id)"/>
 	                                        <span class="btn btn-primary" title="添加" ><i class="fa fa-plus"></i></span>
                                         </div>
                                         <else/>
                                     	<div class="upvideo">
-	                                        <input type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[links][]" value="{$val}" placeholder="点击上传视频，视频大小最大为10M">
+	                                        <input type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[links][]" value="{$val}" placeholder="点击上传视频，视频大小最大为10M，支持mp4/3gp等格式">
                                             <input type="file" id="link{$key}" name="link{$key}" style="display:none;" onchange="upload_video(this.id)"/>
 	                                        <span class="btn btn-danger" title="删除" ><i class="fa fa-trash-o"></i></span>
                                         </div>
@@ -118,7 +118,7 @@ myeditor('content');
                                         </foreach>
                                         <else/>
                                         <div class="upvideo">
-	                                        <input type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[links][]" placeholder="点击上传视频，视频大小最大为10M">
+	                                        <input type="text" class="form-control" onclick="$(this).next().click()" readonly name="info[links][]" placeholder="点击上传视频，视频大小最大为10M，支持mp4/3gp等格式">
                                             <input type="file" id="link0" name="link0" style="display:none;" onchange="upload_video(this.id)"/>
 	                                        <span class="btn btn-primary" title="删除" ><i class="fa fa-plus"></i></span>
                                         </div>
@@ -210,7 +210,7 @@ function upload_img(ele_id){
 	 		$('#image_btn').css({'background':'url('+data.info.image_url+') no-repeat center','background-size':'cover'});
 	 		$('#'+ele_id).next('input').val(data.info.image_url)
 	 	}else{
-	 		jsalert(data.msg,2);
+	 		jsalert(data.info,2);
 	 	}
 	});
 }
@@ -222,7 +222,7 @@ function upload_video(ele_id){
 		if(data.status == '1'){
 	 		$('#'+ele_id).prev('input').val(data.info.video_url);
 	 	}else{
-	 		jsalert(data.msg,2);
+	 		jsalert(data.info,2);
 	 	}
 	});
 }
