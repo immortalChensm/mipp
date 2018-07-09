@@ -63,6 +63,11 @@ Page({
         }
       }
       if (block_arr.length > 0) new_info.push(block_arr);
+      if (block_arr.length > 1) {
+        that.setData({
+          indicatorDots: true
+        })
+      }
       that.setData({
         course_types: new_info
       })
