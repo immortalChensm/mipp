@@ -12,7 +12,7 @@ Page({
     course_types: [],
     course_stick:[],
     teacher_stick:[],
-    indicatorDots: true,
+    indicatorDots: false,
     autoplay: true,
     interval: 3000,
     duration: 1000,

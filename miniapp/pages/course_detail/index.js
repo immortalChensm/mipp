@@ -57,6 +57,7 @@ Page({
       auto_play:true
     })
     this.videoContext.play();
+    
   },
 
   /**
