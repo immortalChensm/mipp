@@ -122,7 +122,6 @@ Page({
     })
   },
   toBannerLink: function (event) {
-	  return false;
     var link = event.currentTarget.dataset['link'];
     wx.navigateTo({
       url: link
