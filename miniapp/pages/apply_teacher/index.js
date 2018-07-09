@@ -77,22 +77,44 @@ Page({
     var that = this;
     console.log(form_data)
     form_data.act = 'save';
-    tool.post('Teacher/apply_teacher', form_data,function(result){
-      var info = result.data;
-      if(info.status == '1'){
-        tool.jsalert(info.msg)
-        setTimeout(function(){
-          wx.switchTab({
-            url: '/pages/user_center/index',
+    if(this.data.teacher_info.id){
+      tool.jsconfirm('更新信息需要重新审核，若审核不通过，您的课程将会被下架，继续此操作吗?',function(){
+        tool.post('Teacher/apply_teacher', form_data, function (result) {
+          var info = result.data;
+          if (info.status == '1') {
+            tool.jsalert(info.msg)
+            setTimeout(function () {
+              wx.switchTab({
+                url: '/pages/user_center/index',
+              })
+            }, 1200)
+          } else {
+            that.setData({
+              commit_click: false
+            })
+            tool.jsalert(info.msg, 2)
+          }
+        }, null, 2)
+      })
+    }else{
+      tool.post('Teacher/apply_teacher', form_data, function (result) {
+        var info = result.data;
+        if (info.status == '1') {
+          tool.jsalert(info.msg)
+          setTimeout(function () {
+            wx.switchTab({
+              url: '/pages/user_center/index',
+            })
+          }, 1200)
+        } else {
+          that.setData({
+            commit_click: false
           })
-        },1200)
-      }else{
-        that.setData({
-          commit_click: false
-        })
-        tool.jsalert(info.msg,2)
-      }
-    }, null, 2)
+          tool.jsalert(info.msg, 2)
+        }
+      }, null, 2)
+    }
+    
   },
   /**
    * 选择地理位置

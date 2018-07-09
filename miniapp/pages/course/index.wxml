@@ -106,7 +106,7 @@
               </view>
           </view> 
      </view>
-     <template is="default" wx:if="{{course_list.length == 0 && !is_load}}" data="{{message:'暂无课程数据'}}"></template>
+     <template is="default" wx:if="{{course_list.length == 0}}" data="{{message:'暂无课程数据'}}"></template>
      <text class="edu-info-all"  wx:if="{{data_end}}">-- 没有更多课程数据啦 --</text>
       <!-- 列表end -->
 </view>
