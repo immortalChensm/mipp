@@ -63,7 +63,7 @@ Page({
         }
       }
       if (block_arr.length > 0) new_info.push(block_arr);
-      if (block_arr.length > 1) {
+      if (new_info.length > 1) {
         that.setData({
           indicatorDots: true
         })
