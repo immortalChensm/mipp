@@ -37,17 +37,24 @@ App({
   doLogin:function(){
     wx.login({
       success: function (res) {
+        console.log(res);
         if (res.code) {
           //发起网络请求
           tool.post('Base/getSessionKey', { code: res.code }, function (result) {
+            console.log(result);
             var returninfo = result.data;
             if (returninfo.status == '1') {
               console.log(returninfo)
-              wx.setStorageSync('openid', returninfo.data.openid);
-              wx.setStorageSync('session_key', returninfo.data.session_key);
-              wx.navigateTo({
-                url: '/pages/auth/index'
-              })
+              if (returninfo.data.openid && returninfo.data.session_key){
+                wx.setStorageSync('openid', returninfo.data.openid);
+                wx.setStorageSync('session_key', returninfo.data.session_key);
+                wx.navigateTo({
+                  url: '/pages/auth/index'
+                })
+              }else{
+                tool.jsalert('小程序授权失败', 2);
+              }
+              
             } else {
               tool.jsalert('登录失败', 2)
             }

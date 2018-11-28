@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.1.0",
-	"appid": "wx6d57d74bdc195b83",
-	"projectname": "c2c%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0",
+	"appid": "wx74f9ef5632f66943",
+	"projectname": "qqc2c_platform",
 	"isGameTourist": false,
 	"scripts": {
 		"beforeCompile": "",
